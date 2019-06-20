@@ -60,9 +60,9 @@ pub enum Type {
     #[serde(rename = "Featurette")]
     Featurette,
     #[serde(rename = "Opening Credits")]
-    Opening_Credits,
+    OpeningCredits,
     #[serde(rename = "Behind the Scenes")]
-    Behind_the_Scenes,
+    BehindTheScenes,
     #[serde(rename = "Bloopers")]
     Bloopers,
 }

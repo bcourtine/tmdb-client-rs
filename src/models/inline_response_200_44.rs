@@ -89,9 +89,9 @@ pub enum Status {
     #[serde(rename = "Planned")]
     Planned,
     #[serde(rename = "In Production")]
-    In_Production,
+    InProduction,
     #[serde(rename = "Post Production")]
-    Post_Production,
+    PostProduction,
     #[serde(rename = "Released")]
     Released,
     #[serde(rename = "Canceled")]
