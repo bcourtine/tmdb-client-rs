@@ -1,0 +1,30 @@
+= Génération du client Rust
+:Author: Benoît Courtine
+:Email: benoit.courtine@mediavision.fr
+:Date: 2019-06-20
+:Revision: 1.0
+:icons: font
+:icon-set: fa
+:source-highlighter: pygments
+:experimental:
+:toc:
+:toc-title: Table des matières
+
+== TMDB API
+
+https://www.themoviedb.org/[The Movie DataBase] provides an https://www.themoviedb.org/documentation/api[API].
+https://developers.themoviedb.org/3/[Developer's documentation] provides https://openapi-generator.tech/[OpenAPI] files for client generation.
+
+=== Client generation
+
+Client code was generated using https://github.com/OpenAPITools/openapi-generator/releases/tag/v4.0.2[OpenAPI Generator 4.0.2].
+
+[code, bash]
+----
+java -jar modules/openapi-generator-cli/target/openapi-generator-cli.jar generate \
+-i https://api.stoplight.io/v1/versions/9WaNJfGpnnQ76opqe/export/oas.json \
+--skip-validate-spec \
+-g rust \
+--library reqwest \
+-o tmdb-rust-client
+----
