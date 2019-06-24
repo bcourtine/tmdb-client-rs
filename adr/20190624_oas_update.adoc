@@ -1,0 +1,31 @@
+= OAS file update
+:Author: Benoît Courtine
+:Email: benoit.courtine@mediavision.fr
+:Date: 2019-06-24
+:Revision: 1.0
+:icons: font
+:icon-set: fa
+:experimental:
+:toc:
+
+== OAS file
+
+https://api.stoplight.io/v1/versions/9WaNJfGpnnQ76opqe/export/oas.json[Official OAS file] has several problems{nbsp}:
+
+* WS operation are not tagged. So they are all generated in the `default_api` file.
+* API parameters is incomplete.
+  For example, `/search/movie` operation only has two parameters `year` and `primary_release_year`.
+  https://developers.themoviedb.org/3/search/search-movies[Documentation] mentions 5 more parameters, including a required `query` parameter.
+* Response schemas are inlined.
+  So, generated code cannot infer a functional name and code is difficult to read.
+
+== Problem documentation
+
+Theses problems (and their cause) are explained in the forum:
+
+* https://www.themoviedb.org/talk/5ab9c36b0e0a26364500dff6[OAS json doesn't match documentation...]
+* https://www.themoviedb.org/talk/58b926d992514160840085fd[Swagger generator produces bad-named models]
+
+== Correction
+
+To solve theses problems, we update the OAS file before code generation.

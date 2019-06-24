@@ -1,14 +1,12 @@
-= Génération du client Rust
+= Rust client generation
 :Author: Benoît Courtine
 :Email: benoit.courtine@mediavision.fr
 :Date: 2019-06-20
 :Revision: 1.0
 :icons: font
 :icon-set: fa
-:source-highlighter: pygments
 :experimental:
 :toc:
-:toc-title: Table des matières
 
 == TMDB API
 
