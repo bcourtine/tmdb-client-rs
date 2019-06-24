@@ -3,6 +3,10 @@ name = "openapi"
 version = "1.0.0"
 authors = ["OpenAPI Generator team and contributors"]
 
+[lib]
+name = "tmdb_client"
+path = "src/lib.rs"
+
 [dependencies]
 serde = "^1.0"
 serde_derive = "^1.0"
