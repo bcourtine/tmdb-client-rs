@@ -28,4 +28,24 @@ Theses problems (and their cause) are explained in the forum:
 
 == Correction
 
-To solve theses problems, we update the OAS file before code generation.
+To solve theses problems, we update the OAS file manually before code generation.
+
+[NOTE]
+====
+Several operations responses are little variations of the same objet: `movie`, `movie-with-rating`, `movie-with-dates`, `movie-with-media-type` for example.
+When this case occurs, I fusion all theses fields in a unique `movie` object, to avoid a lot of duplication in generated models.
+====
+
+== Client code generation
+
+Client code generation is now based on this custom OAS file:
+
+[code, bash]
+----
+java -jar ${PATH_TO_OPENAPI_CLI_JAR}/openapi-generator-cli.jar generate \
+-i ${PROJECT_ROOT}/tmdb_oas.json \
+--skip-validate-spec \
+-g rust \
+--library reqwest \
+-o ${DESTINATION}/tmdb-client-rs
+----
