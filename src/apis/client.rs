@@ -63,6 +63,16 @@ impl APIClient {
         }
     }
 
+    pub fn new_with_api_key<T: Into<String>>(api_key: T) -> APIClient {
+        let configuration = Configuration::new_with_api_key(api_key);
+        APIClient::new(configuration)
+    }
+
+    pub fn new_from_env() -> APIClient {
+        let api_key = env!("TMDB_API_KEY");
+        APIClient::new_with_api_key(api_key)
+    }
+
     pub fn account_api(&self) -> &crate::apis::AccountApi{
         self.account_api.as_ref()
     }
