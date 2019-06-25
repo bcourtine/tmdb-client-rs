@@ -15,14 +15,15 @@ use serde_json::Value;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct InlineObject6 {
-    #[serde(rename = "request_token")]
-    pub request_token: String,
+    /// This is the value of the rating you want to submit. The value is expected to be between 0.5 and 10.0.
+    #[serde(rename = "value")]
+    pub value: f32,
 }
 
 impl InlineObject6 {
-    pub fn new(request_token: String) -> InlineObject6 {
+    pub fn new(value: f32) -> InlineObject6 {
         InlineObject6 {
-            request_token: request_token,
+            value: value,
         }
     }
 }

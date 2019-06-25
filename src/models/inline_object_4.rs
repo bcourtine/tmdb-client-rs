@@ -15,14 +15,14 @@ use serde_json::Value;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct InlineObject4 {
-    #[serde(rename = "access_token")]
-    pub access_token: String,
+    #[serde(rename = "media_id")]
+    pub media_id: i32,
 }
 
 impl InlineObject4 {
-    pub fn new(access_token: String) -> InlineObject4 {
+    pub fn new(media_id: i32) -> InlineObject4 {
         InlineObject4 {
-            access_token: access_token,
+            media_id: media_id,
         }
     }
 }

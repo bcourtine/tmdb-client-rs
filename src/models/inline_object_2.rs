@@ -15,30 +15,22 @@ use serde_json::Value;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct InlineObject2 {
-    #[serde(rename = "media_type")]
-    pub media_type: String,
-    #[serde(rename = "media_id")]
-    pub media_id: i32,
-    #[serde(rename = "favorite")]
-    pub favorite: bool,
+    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
+    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
+    #[serde(rename = "language", skip_serializing_if = "Option::is_none")]
+    pub language: Option<String>,
 }
 
 impl InlineObject2 {
-    pub fn new(media_type: String, media_id: i32, favorite: bool) -> InlineObject2 {
+    pub fn new() -> InlineObject2 {
         InlineObject2 {
-            media_type: media_type,
-            media_id: media_id,
-            favorite: favorite,
+            name: None,
+            description: None,
+            language: None,
         }
     }
 }
 
-/// 
-#[derive(Debug, Serialize, Deserialize)]
-pub enum MediaType {
-    #[serde(rename = "movie")]
-    Movie,
-    #[serde(rename = "tv")]
-    Tv,
-}
 

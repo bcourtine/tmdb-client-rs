@@ -15,14 +15,14 @@ use serde_json::Value;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct InlineObject3 {
-    #[serde(rename = "value")]
-    pub value: f32,
+    #[serde(rename = "media_id")]
+    pub media_id: i32,
 }
 
 impl InlineObject3 {
-    pub fn new(value: f32) -> InlineObject3 {
+    pub fn new(media_id: i32) -> InlineObject3 {
         InlineObject3 {
-            value: value,
+            media_id: media_id,
         }
     }
 }

@@ -15,14 +15,15 @@ use serde_json::Value;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct InlineObject7 {
-    #[serde(rename = "media_id")]
-    pub media_id: i32,
+    /// This is the value of the rating you want to submit. The value is expected to be between 0.5 and 10.0.
+    #[serde(rename = "value")]
+    pub value: f32,
 }
 
 impl InlineObject7 {
-    pub fn new(media_id: i32) -> InlineObject7 {
+    pub fn new(value: f32) -> InlineObject7 {
         InlineObject7 {
-            media_id: media_id,
+            value: value,
         }
     }
 }

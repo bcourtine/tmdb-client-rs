@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**media_type** | **String** |  | 
-**media_id** | **i32** |  | 
-**favorite** | **bool** |  | 
+**name** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
+**language** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

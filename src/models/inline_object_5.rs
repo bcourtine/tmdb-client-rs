@@ -15,20 +15,15 @@ use serde_json::Value;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct InlineObject5 {
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
-    pub description: Option<String>,
-    #[serde(rename = "language", skip_serializing_if = "Option::is_none")]
-    pub language: Option<String>,
+    /// This is the value of the rating you want to submit. The value is expected to be between 0.5 and 10.0.
+    #[serde(rename = "value")]
+    pub value: f32,
 }
 
 impl InlineObject5 {
-    pub fn new() -> InlineObject5 {
+    pub fn new(value: f32) -> InlineObject5 {
         InlineObject5 {
-            name: None,
-            description: None,
-            language: None,
+            value: value,
         }
     }
 }
