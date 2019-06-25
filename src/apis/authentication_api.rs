@@ -28,14 +28,15 @@ impl AuthenticationApiClient {
 }
 
 pub trait AuthenticationApi {
-    fn get_new_authentication_guest_session(&self, ) -> Result<crate::models::GuestSessionResponse, Error>;
+    fn get_new_authentication_guest_session(&self) -> Result<crate::models::GuestSessionResponse, Error>;
     fn get_new_authentication_session(&self, request_token: &str) -> Result<crate::models::SessionResponse, Error>;
-    fn get_new_authentication_token(&self, ) -> Result<crate::models::TokenResponseWithExpiration, Error>;
+    fn get_new_authentication_token(&self) -> Result<crate::models::TokenResponseWithExpiration, Error>;
     fn get_validate_authentication_token_with_login(&self, username: &str, password: &str, request_token: &str) -> Result<crate::models::TokenResponse, Error>;
 }
 
 impl AuthenticationApi for AuthenticationApiClient {
-    fn get_new_authentication_guest_session(&self, ) -> Result<crate::models::GuestSessionResponse, Error> {
+    fn get_new_authentication_guest_session(&self) -> Result<crate::models::GuestSessionResponse, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -61,6 +62,7 @@ impl AuthenticationApi for AuthenticationApiClient {
     }
 
     fn get_new_authentication_session(&self, request_token: &str) -> Result<crate::models::SessionResponse, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -86,7 +88,8 @@ impl AuthenticationApi for AuthenticationApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_new_authentication_token(&self, ) -> Result<crate::models::TokenResponseWithExpiration, Error> {
+    fn get_new_authentication_token(&self) -> Result<crate::models::TokenResponseWithExpiration, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -112,6 +115,7 @@ impl AuthenticationApi for AuthenticationApiClient {
     }
 
     fn get_validate_authentication_token_with_login(&self, username: &str, password: &str, request_token: &str) -> Result<crate::models::TokenResponse, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

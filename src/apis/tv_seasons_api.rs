@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -28,26 +29,33 @@ impl TVSeasonsApiClient {
 }
 
 pub trait TVSeasonsApi {
-    fn get_tv_season_account_states(&self, tv_id: i32, season_number: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::EpisodeRatingList, Error>;
-    fn get_tv_season_changes(&self, season_id: i32, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error>;
-    fn get_tv_season_credits(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::Credits, Error>;
-    fn get_tv_season_details(&self, tv_id: i32, season_number: i32, language: &str, append_to_response: &str) -> Result<crate::models::SeasonDetails, Error>;
-    fn get_tv_season_external_ids(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::MovieTvExternalIds, Error>;
-    fn get_tv_season_images(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::Images, Error>;
-    fn get_tv_season_videos(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::VideosList, Error>;
+    fn get_tv_season_account_states(&self, tv_id: i32, season_number: i32, language: Option<&str>, guest_session_id: Option<&str>, session_id: Option<&str>) -> Result<crate::models::EpisodeRatingList, Error>;
+    fn get_tv_season_changes(&self, season_id: i32, start_date: Option<String>, end_date: Option<String>, page: Option<i32>) -> Result<crate::models::ChangeDetails, Error>;
+    fn get_tv_season_credits(&self, tv_id: i32, season_number: i32, language: Option<&str>) -> Result<crate::models::Credits, Error>;
+    fn get_tv_season_details(&self, tv_id: i32, season_number: i32, language: Option<&str>, append_to_response: Option<&str>) -> Result<crate::models::SeasonDetails, Error>;
+    fn get_tv_season_external_ids(&self, tv_id: i32, season_number: i32, language: Option<&str>) -> Result<crate::models::MovieTvExternalIds, Error>;
+    fn get_tv_season_images(&self, tv_id: i32, season_number: i32, language: Option<&str>) -> Result<crate::models::Images, Error>;
+    fn get_tv_season_videos(&self, tv_id: i32, season_number: i32, language: Option<&str>) -> Result<crate::models::VideosList, Error>;
 }
 
 impl TVSeasonsApi for TVSeasonsApiClient {
-    fn get_tv_season_account_states(&self, tv_id: i32, season_number: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::EpisodeRatingList, Error> {
+    fn get_tv_season_account_states(&self, tv_id: i32, season_number: i32, language: Option<&str>, guest_session_id: Option<&str>, session_id: Option<&str>) -> Result<crate::models::EpisodeRatingList, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/season/{season_number}/account_states", configuration.base_path, tv_id=tv_id, season_number=season_number);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("guest_session_id", &guest_session_id.to_string())]);
-        req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = guest_session_id {
+            req_builder = req_builder.query(&[("guest_session_id", &s.to_string())]);
+        }
+        if let Some(ref s) = session_id {
+            req_builder = req_builder.query(&[("session_id", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -66,16 +74,23 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_changes(&self, season_id: i32, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error> {
+    fn get_tv_season_changes(&self, season_id: i32, start_date: Option<String>, end_date: Option<String>, page: Option<i32>) -> Result<crate::models::ChangeDetails, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/season/{season_id}/changes", configuration.base_path, season_id=season_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("start_date", &start_date.to_string())]);
-        req_builder = req_builder.query(&[("end_date", &end_date.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = start_date {
+            req_builder = req_builder.query(&[("start_date", &s.to_string())]);
+        }
+        if let Some(ref s) = end_date {
+            req_builder = req_builder.query(&[("end_date", &s.to_string())]);
+        }
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -94,14 +109,17 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_credits(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::Credits, Error> {
+    fn get_tv_season_credits(&self, tv_id: i32, season_number: i32, language: Option<&str>) -> Result<crate::models::Credits, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/season/{season_number}/credits", configuration.base_path, tv_id=tv_id, season_number=season_number);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -120,15 +138,20 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_details(&self, tv_id: i32, season_number: i32, language: &str, append_to_response: &str) -> Result<crate::models::SeasonDetails, Error> {
+    fn get_tv_season_details(&self, tv_id: i32, season_number: i32, language: Option<&str>, append_to_response: Option<&str>) -> Result<crate::models::SeasonDetails, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/season/{season_number}", configuration.base_path, tv_id=tv_id, season_number=season_number);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("append_to_response", &append_to_response.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = append_to_response {
+            req_builder = req_builder.query(&[("append_to_response", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -147,14 +170,17 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_external_ids(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::MovieTvExternalIds, Error> {
+    fn get_tv_season_external_ids(&self, tv_id: i32, season_number: i32, language: Option<&str>) -> Result<crate::models::MovieTvExternalIds, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/season/{season_number}/external_ids", configuration.base_path, tv_id=tv_id, season_number=season_number);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -173,14 +199,17 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_images(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::Images, Error> {
+    fn get_tv_season_images(&self, tv_id: i32, season_number: i32, language: Option<&str>) -> Result<crate::models::Images, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/season/{season_number}/images", configuration.base_path, tv_id=tv_id, season_number=season_number);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -199,14 +228,17 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_videos(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::VideosList, Error> {
+    fn get_tv_season_videos(&self, tv_id: i32, season_number: i32, language: Option<&str>) -> Result<crate::models::VideosList, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/season/{season_number}/videos", configuration.base_path, tv_id=tv_id, season_number=season_number);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {

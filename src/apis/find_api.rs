@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -28,11 +29,12 @@ impl FindApiClient {
 }
 
 pub trait FindApi {
-    fn get_find_external_id(&self, external_id: &str, external_source: &str, language: &str) -> Result<crate::models::FindByExternalIdResults, Error>;
+    fn get_find_external_id(&self, external_id: &str, external_source: &str, language: Option<&str>) -> Result<crate::models::FindByExternalIdResults, Error>;
 }
 
 impl FindApi for FindApiClient {
-    fn get_find_external_id(&self, external_id: &str, external_source: &str, language: &str) -> Result<crate::models::FindByExternalIdResults, Error> {
+    fn get_find_external_id(&self, external_id: &str, external_source: &str, language: Option<&str>) -> Result<crate::models::FindByExternalIdResults, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -40,7 +42,9 @@ impl FindApi for FindApiClient {
         let mut req_builder = client.get(uri_str.as_str());
 
         req_builder = req_builder.query(&[("external_source", &external_source.to_string())]);
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {

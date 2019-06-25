@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -28,26 +29,31 @@ impl SearchApiClient {
 }
 
 pub trait SearchApi {
-    fn get_search_collection_paginated(&self, query: &str, language: &str, page: i32) -> Result<crate::models::SearchCollectionResultsPaginated, Error>;
-    fn get_search_company_paginated(&self, query: &str, page: i32) -> Result<crate::models::SearchCompanyResultsPaginated, Error>;
-    fn get_search_keyword_paginated(&self, query: &str, page: i32) -> Result<crate::models::SearchKeywordResultsPaginated, Error>;
-    fn get_search_movie_paginated(&self, query: &str, year: i32, primary_release_year: i32, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::MoviePaginated, Error>;
-    fn get_search_multi_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::SearchMultiResultsPaginated, Error>;
-    fn get_search_person_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::SearchPersonResultsPaginated, Error>;
-    fn get_search_tv_paginated(&self, query: &str, first_air_date_year: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
+    fn get_search_collection_paginated(&self, query: &str, language: Option<&str>, page: Option<i32>) -> Result<crate::models::SearchCollectionResultsPaginated, Error>;
+    fn get_search_company_paginated(&self, query: &str, page: Option<i32>) -> Result<crate::models::SearchCompanyResultsPaginated, Error>;
+    fn get_search_keyword_paginated(&self, query: &str, page: Option<i32>) -> Result<crate::models::SearchKeywordResultsPaginated, Error>;
+    fn get_search_movie_paginated(&self, query: &str, year: Option<i32>, primary_release_year: Option<i32>, language: Option<&str>, page: Option<i32>, include_adult: Option<bool>, region: Option<&str>) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_search_multi_paginated(&self, query: &str, language: Option<&str>, page: Option<i32>, include_adult: Option<bool>, region: Option<&str>) -> Result<crate::models::SearchMultiResultsPaginated, Error>;
+    fn get_search_person_paginated(&self, query: &str, language: Option<&str>, page: Option<i32>, include_adult: Option<bool>, region: Option<&str>) -> Result<crate::models::SearchPersonResultsPaginated, Error>;
+    fn get_search_tv_paginated(&self, query: &str, first_air_date_year: Option<i32>, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error>;
 }
 
 impl SearchApi for SearchApiClient {
-    fn get_search_collection_paginated(&self, query: &str, language: &str, page: i32) -> Result<crate::models::SearchCollectionResultsPaginated, Error> {
+    fn get_search_collection_paginated(&self, query: &str, language: Option<&str>, page: Option<i32>) -> Result<crate::models::SearchCollectionResultsPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/search/collection", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         req_builder = req_builder.query(&[("query", &query.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -66,7 +72,8 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_company_paginated(&self, query: &str, page: i32) -> Result<crate::models::SearchCompanyResultsPaginated, Error> {
+    fn get_search_company_paginated(&self, query: &str, page: Option<i32>) -> Result<crate::models::SearchCompanyResultsPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -74,7 +81,9 @@ impl SearchApi for SearchApiClient {
         let mut req_builder = client.get(uri_str.as_str());
 
         req_builder = req_builder.query(&[("query", &query.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -93,7 +102,8 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_keyword_paginated(&self, query: &str, page: i32) -> Result<crate::models::SearchKeywordResultsPaginated, Error> {
+    fn get_search_keyword_paginated(&self, query: &str, page: Option<i32>) -> Result<crate::models::SearchKeywordResultsPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -101,7 +111,9 @@ impl SearchApi for SearchApiClient {
         let mut req_builder = client.get(uri_str.as_str());
 
         req_builder = req_builder.query(&[("query", &query.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -120,20 +132,33 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_movie_paginated(&self, query: &str, year: i32, primary_release_year: i32, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::MoviePaginated, Error> {
+    fn get_search_movie_paginated(&self, query: &str, year: Option<i32>, primary_release_year: Option<i32>, language: Option<&str>, page: Option<i32>, include_adult: Option<bool>, region: Option<&str>) -> Result<crate::models::MoviePaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/search/movie", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("year", &year.to_string())]);
-        req_builder = req_builder.query(&[("primary_release_year", &primary_release_year.to_string())]);
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = year {
+            req_builder = req_builder.query(&[("year", &s.to_string())]);
+        }
+        if let Some(ref s) = primary_release_year {
+            req_builder = req_builder.query(&[("primary_release_year", &s.to_string())]);
+        }
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         req_builder = req_builder.query(&[("query", &query.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
-        req_builder = req_builder.query(&[("include_adult", &include_adult.to_string())]);
-        req_builder = req_builder.query(&[("region", &region.to_string())]);
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
+        if let Some(ref s) = include_adult {
+            req_builder = req_builder.query(&[("include_adult", &s.to_string())]);
+        }
+        if let Some(ref s) = region {
+            req_builder = req_builder.query(&[("region", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -152,18 +177,27 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_multi_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::SearchMultiResultsPaginated, Error> {
+    fn get_search_multi_paginated(&self, query: &str, language: Option<&str>, page: Option<i32>, include_adult: Option<bool>, region: Option<&str>) -> Result<crate::models::SearchMultiResultsPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/search/multi", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         req_builder = req_builder.query(&[("query", &query.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
-        req_builder = req_builder.query(&[("include_adult", &include_adult.to_string())]);
-        req_builder = req_builder.query(&[("region", &region.to_string())]);
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
+        if let Some(ref s) = include_adult {
+            req_builder = req_builder.query(&[("include_adult", &s.to_string())]);
+        }
+        if let Some(ref s) = region {
+            req_builder = req_builder.query(&[("region", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -182,18 +216,27 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_person_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::SearchPersonResultsPaginated, Error> {
+    fn get_search_person_paginated(&self, query: &str, language: Option<&str>, page: Option<i32>, include_adult: Option<bool>, region: Option<&str>) -> Result<crate::models::SearchPersonResultsPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/search/person", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         req_builder = req_builder.query(&[("query", &query.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
-        req_builder = req_builder.query(&[("include_adult", &include_adult.to_string())]);
-        req_builder = req_builder.query(&[("region", &region.to_string())]);
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
+        if let Some(ref s) = include_adult {
+            req_builder = req_builder.query(&[("include_adult", &s.to_string())]);
+        }
+        if let Some(ref s) = region {
+            req_builder = req_builder.query(&[("region", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -212,17 +255,24 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_tv_paginated(&self, query: &str, first_air_date_year: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
+    fn get_search_tv_paginated(&self, query: &str, first_air_date_year: Option<i32>, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/search/tv", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("first_air_date_year", &first_air_date_year.to_string())]);
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = first_air_date_year {
+            req_builder = req_builder.query(&[("first_air_date_year", &s.to_string())]);
+        }
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         req_builder = req_builder.query(&[("query", &query.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {

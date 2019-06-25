@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -28,23 +29,26 @@ impl ListsApiClient {
 }
 
 pub trait ListsApi {
-    fn get_list_details(&self, list_id: &str, language: &str) -> Result<crate::models::ListDetails, Error>;
+    fn get_list_details(&self, list_id: &str, language: Option<&str>) -> Result<crate::models::ListDetails, Error>;
     fn get_list_item_status(&self, list_id: &str, movie_id: i32) -> Result<crate::models::ItemStatus, Error>;
-    fn post_list(&self, content_type: &str, session_id: &str, body: crate::models::ListBody) -> Result<crate::models::ListStatusResponse, Error>;
-    fn post_list_add_item(&self, list_id: &str, content_type: &str, session_id: &str, body: crate::models::MediaIdBody) -> Result<crate::models::InlineResponse401, Error>;
+    fn post_list(&self, content_type: &str, session_id: &str, body: Option<crate::models::ListBody>) -> Result<crate::models::ListStatusResponse, Error>;
+    fn post_list_add_item(&self, list_id: &str, content_type: &str, session_id: &str, body: Option<crate::models::MediaIdBody>) -> Result<crate::models::InlineResponse401, Error>;
     fn post_list_clear(&self, list_id: &str, confirm: bool, session_id: &str) -> Result<crate::models::InlineResponse401, Error>;
-    fn post_list_remove_item(&self, list_id: &str, content_type: &str, session_id: &str, body: crate::models::MediaIdBody) -> Result<crate::models::InlineResponse401, Error>;
+    fn post_list_remove_item(&self, list_id: &str, content_type: &str, session_id: &str, body: Option<crate::models::MediaIdBody>) -> Result<crate::models::InlineResponse401, Error>;
 }
 
 impl ListsApi for ListsApiClient {
-    fn get_list_details(&self, list_id: &str, language: &str) -> Result<crate::models::ListDetails, Error> {
+    fn get_list_details(&self, list_id: &str, language: Option<&str>) -> Result<crate::models::ListDetails, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/list/{list_id}", configuration.base_path, list_id=urlencode(list_id));
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -64,6 +68,7 @@ impl ListsApi for ListsApiClient {
     }
 
     fn get_list_item_status(&self, list_id: &str, movie_id: i32) -> Result<crate::models::ItemStatus, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -89,7 +94,8 @@ impl ListsApi for ListsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_list(&self, content_type: &str, session_id: &str, body: crate::models::ListBody) -> Result<crate::models::ListStatusResponse, Error> {
+    fn post_list(&self, content_type: &str, session_id: &str, body: Option<crate::models::ListBody>) -> Result<crate::models::ListStatusResponse, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -117,7 +123,8 @@ impl ListsApi for ListsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_list_add_item(&self, list_id: &str, content_type: &str, session_id: &str, body: crate::models::MediaIdBody) -> Result<crate::models::InlineResponse401, Error> {
+    fn post_list_add_item(&self, list_id: &str, content_type: &str, session_id: &str, body: Option<crate::models::MediaIdBody>) -> Result<crate::models::InlineResponse401, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -146,6 +153,7 @@ impl ListsApi for ListsApiClient {
     }
 
     fn post_list_clear(&self, list_id: &str, confirm: bool, session_id: &str) -> Result<crate::models::InlineResponse401, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -172,7 +180,8 @@ impl ListsApi for ListsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_list_remove_item(&self, list_id: &str, content_type: &str, session_id: &str, body: crate::models::MediaIdBody) -> Result<crate::models::InlineResponse401, Error> {
+    fn post_list_remove_item(&self, list_id: &str, content_type: &str, session_id: &str, body: Option<crate::models::MediaIdBody>) -> Result<crate::models::InlineResponse401, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

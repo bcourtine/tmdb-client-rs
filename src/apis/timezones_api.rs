@@ -12,7 +12,6 @@ use std::rc::Rc;
 use std::borrow::Borrow;
 
 use reqwest;
-use serde_json::Value;
 
 use super::{Error, configuration};
 
@@ -29,11 +28,12 @@ impl TimezonesApiClient {
 }
 
 pub trait TimezonesApi {
-    fn get_timezones_list(&self, ) -> Result<Vec<Value>, Error>;
+    fn get_timezones_list(&self) -> Result<Vec<serde_json::Value>, Error>;
 }
 
 impl TimezonesApi for TimezonesApiClient {
-    fn get_timezones_list(&self, ) -> Result<Vec<Value>, Error> {
+    fn get_timezones_list(&self) -> Result<Vec<serde_json::Value>, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

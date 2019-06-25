@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -28,18 +29,21 @@ impl ConfigurationApiClient {
 }
 
 pub trait ConfigurationApi {
-    fn get_configuration(&self, api_key: &str) -> Result<crate::models::Configuration, Error>;
+    fn get_configuration(&self, api_key: Option<&str>) -> Result<crate::models::Configuration, Error>;
 }
 
 impl ConfigurationApi for ConfigurationApiClient {
-    fn get_configuration(&self, api_key: &str) -> Result<crate::models::Configuration, Error> {
+    fn get_configuration(&self, api_key: Option<&str>) -> Result<crate::models::Configuration, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/configuration", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("api_key", &api_key.to_string())]);
+        if let Some(ref s) = api_key {
+            req_builder = req_builder.query(&[("api_key", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {

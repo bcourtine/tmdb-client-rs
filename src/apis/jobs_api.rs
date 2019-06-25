@@ -28,11 +28,12 @@ impl JobsApiClient {
 }
 
 pub trait JobsApi {
-    fn get_jobs_list(&self, ) -> Result<crate::models::Jobs, Error>;
+    fn get_jobs_list(&self) -> Result<crate::models::Jobs, Error>;
 }
 
 impl JobsApi for JobsApiClient {
-    fn get_jobs_list(&self, ) -> Result<crate::models::Jobs, Error> {
+    fn get_jobs_list(&self) -> Result<crate::models::Jobs, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

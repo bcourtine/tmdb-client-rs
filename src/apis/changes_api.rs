@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -28,21 +29,26 @@ impl ChangesApiClient {
 }
 
 pub trait ChangesApi {
-    fn get_movie_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error>;
-    fn get_person_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error>;
-    fn get_tv_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error>;
+    fn get_movie_changes_paginated(&self, start_date: Option<String>, end_date: Option<String>) -> Result<crate::models::ChangesPaginated, Error>;
+    fn get_person_changes_paginated(&self, start_date: Option<String>, end_date: Option<String>) -> Result<crate::models::ChangesPaginated, Error>;
+    fn get_tv_changes_paginated(&self, start_date: Option<String>, end_date: Option<String>) -> Result<crate::models::ChangesPaginated, Error>;
 }
 
 impl ChangesApi for ChangesApiClient {
-    fn get_movie_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error> {
+    fn get_movie_changes_paginated(&self, start_date: Option<String>, end_date: Option<String>) -> Result<crate::models::ChangesPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/movie/changes", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("start_date", &start_date.to_string())]);
-        req_builder = req_builder.query(&[("end_date", &end_date.to_string())]);
+        if let Some(ref s) = start_date {
+            req_builder = req_builder.query(&[("start_date", &s.to_string())]);
+        }
+        if let Some(ref s) = end_date {
+            req_builder = req_builder.query(&[("end_date", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -61,15 +67,20 @@ impl ChangesApi for ChangesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error> {
+    fn get_person_changes_paginated(&self, start_date: Option<String>, end_date: Option<String>) -> Result<crate::models::ChangesPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/person/changes", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("start_date", &start_date.to_string())]);
-        req_builder = req_builder.query(&[("end_date", &end_date.to_string())]);
+        if let Some(ref s) = start_date {
+            req_builder = req_builder.query(&[("start_date", &s.to_string())]);
+        }
+        if let Some(ref s) = end_date {
+            req_builder = req_builder.query(&[("end_date", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -88,15 +99,20 @@ impl ChangesApi for ChangesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error> {
+    fn get_tv_changes_paginated(&self, start_date: Option<String>, end_date: Option<String>) -> Result<crate::models::ChangesPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/changes", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("start_date", &start_date.to_string())]);
-        req_builder = req_builder.query(&[("end_date", &end_date.to_string())]);
+        if let Some(ref s) = start_date {
+            req_builder = req_builder.query(&[("start_date", &s.to_string())]);
+        }
+        if let Some(ref s) = end_date {
+            req_builder = req_builder.query(&[("end_date", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {

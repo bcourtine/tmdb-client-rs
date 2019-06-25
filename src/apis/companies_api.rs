@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -29,11 +30,12 @@ impl CompaniesApiClient {
 
 pub trait CompaniesApi {
     fn get_company_details(&self, company_id: i32) -> Result<crate::models::CompanyDetails, Error>;
-    fn get_company_movies_paginated(&self, company_id: i32, language: &str) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_company_movies_paginated(&self, company_id: i32, language: Option<&str>) -> Result<crate::models::MoviePaginated, Error>;
 }
 
 impl CompaniesApi for CompaniesApiClient {
     fn get_company_details(&self, company_id: i32) -> Result<crate::models::CompanyDetails, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -58,14 +60,17 @@ impl CompaniesApi for CompaniesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_company_movies_paginated(&self, company_id: i32, language: &str) -> Result<crate::models::MoviePaginated, Error> {
+    fn get_company_movies_paginated(&self, company_id: i32, language: Option<&str>) -> Result<crate::models::MoviePaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/company/{company_id}/movies", configuration.base_path, company_id=company_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {

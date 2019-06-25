@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -28,21 +29,26 @@ impl GuestSessionsApiClient {
 }
 
 pub trait GuestSessionsApi {
-    fn get_guest_session_rated_movies_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::MoviePaginated, Error>;
-    fn get_guest_session_rated_tv_episodes_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvEpisodesPaginated, Error>;
-    fn get_guest_session_rated_tv_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvPaginated, Error>;
+    fn get_guest_session_rated_movies_paginated(&self, guest_session_id: &str, language: Option<&str>, sort_by: Option<&str>) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_guest_session_rated_tv_episodes_paginated(&self, guest_session_id: &str, language: Option<&str>, sort_by: Option<&str>) -> Result<crate::models::TvEpisodesPaginated, Error>;
+    fn get_guest_session_rated_tv_paginated(&self, guest_session_id: &str, language: Option<&str>, sort_by: Option<&str>) -> Result<crate::models::TvPaginated, Error>;
 }
 
 impl GuestSessionsApi for GuestSessionsApiClient {
-    fn get_guest_session_rated_movies_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::MoviePaginated, Error> {
+    fn get_guest_session_rated_movies_paginated(&self, guest_session_id: &str, language: Option<&str>, sort_by: Option<&str>) -> Result<crate::models::MoviePaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/guest_session/{guest_session_id}/rated/movies", configuration.base_path, guest_session_id=urlencode(guest_session_id));
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("sort_by", &sort_by.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = sort_by {
+            req_builder = req_builder.query(&[("sort_by", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -61,15 +67,20 @@ impl GuestSessionsApi for GuestSessionsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_guest_session_rated_tv_episodes_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvEpisodesPaginated, Error> {
+    fn get_guest_session_rated_tv_episodes_paginated(&self, guest_session_id: &str, language: Option<&str>, sort_by: Option<&str>) -> Result<crate::models::TvEpisodesPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/guest_session/{guest_session_id}/rated/tv/episodes", configuration.base_path, guest_session_id=urlencode(guest_session_id));
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("sort_by", &sort_by.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = sort_by {
+            req_builder = req_builder.query(&[("sort_by", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -88,15 +99,20 @@ impl GuestSessionsApi for GuestSessionsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_guest_session_rated_tv_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvPaginated, Error> {
+    fn get_guest_session_rated_tv_paginated(&self, guest_session_id: &str, language: Option<&str>, sort_by: Option<&str>) -> Result<crate::models::TvPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/guest_session/{guest_session_id}/rated/tv", configuration.base_path, guest_session_id=urlencode(guest_session_id));
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("sort_by", &sort_by.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = sort_by {
+            req_builder = req_builder.query(&[("sort_by", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {

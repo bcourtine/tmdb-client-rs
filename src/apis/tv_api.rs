@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -28,38 +29,43 @@ impl TVApiClient {
 }
 
 pub trait TVApi {
-    fn delete_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::InlineResponse401, Error>;
-    fn get_tv_account_states(&self, tv_id: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::AccountStates, Error>;
-    fn get_tv_airing_today_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
-    fn get_tv_alternative_titles_list(&self, tv_id: i32, language: &str) -> Result<crate::models::AlternativeTitlesList, Error>;
-    fn get_tv_changes(&self, tv_id: i32, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error>;
-    fn get_tv_content_ratings_list(&self, tv_id: i32, language: &str) -> Result<crate::models::RatingsList, Error>;
-    fn get_tv_credits(&self, tv_id: i32, language: &str) -> Result<crate::models::Credits, Error>;
-    fn get_tv_details(&self, tv_id: i32, language: &str, append_to_response: &str) -> Result<crate::models::TvDetails, Error>;
-    fn get_tv_external_ids(&self, tv_id: i32, language: &str) -> Result<crate::models::MovieTvExternalIds, Error>;
-    fn get_tv_images(&self, tv_id: i32, language: &str) -> Result<crate::models::Images, Error>;
+    fn delete_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: Option<&str>, session_id: Option<&str>) -> Result<crate::models::InlineResponse401, Error>;
+    fn get_tv_account_states(&self, tv_id: i32, language: Option<&str>, guest_session_id: Option<&str>, session_id: Option<&str>) -> Result<crate::models::AccountStates, Error>;
+    fn get_tv_airing_today_paginated(&self, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_alternative_titles_list(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::AlternativeTitlesList, Error>;
+    fn get_tv_changes(&self, tv_id: i32, start_date: Option<String>, end_date: Option<String>, page: Option<i32>) -> Result<crate::models::ChangeDetails, Error>;
+    fn get_tv_content_ratings_list(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::RatingsList, Error>;
+    fn get_tv_credits(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::Credits, Error>;
+    fn get_tv_details(&self, tv_id: i32, language: Option<&str>, append_to_response: Option<&str>) -> Result<crate::models::TvDetails, Error>;
+    fn get_tv_external_ids(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::MovieTvExternalIds, Error>;
+    fn get_tv_images(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::Images, Error>;
     fn get_tv_keywords_list(&self, tv_id: i32) -> Result<crate::models::KeywordsList, Error>;
-    fn get_tv_latest_details(&self, language: &str) -> Result<crate::models::TvDetails, Error>;
-    fn get_tv_on_the_air_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
-    fn get_tv_popular_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
-    fn get_tv_recommendations_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
-    fn get_tv_similar_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
-    fn get_tv_top_rated_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
-    fn get_tv_translations_list(&self, tv_id: i32, language: &str) -> Result<crate::models::Translations, Error>;
-    fn get_tv_videos_list(&self, tv_id: i32, language: &str) -> Result<crate::models::VideosList, Error>;
-    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::ValueBody) -> Result<crate::models::InlineResponse401, Error>;
+    fn get_tv_latest_details(&self, language: Option<&str>) -> Result<crate::models::TvDetails, Error>;
+    fn get_tv_on_the_air_paginated(&self, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_popular_paginated(&self, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_recommendations_paginated(&self, tv_id: i32, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_similar_paginated(&self, tv_id: i32, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_top_rated_paginated(&self, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_translations_list(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::Translations, Error>;
+    fn get_tv_videos_list(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::VideosList, Error>;
+    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: Option<&str>, session_id: Option<&str>, body: Option<crate::models::ValueBody>) -> Result<crate::models::InlineResponse401, Error>;
 }
 
 impl TVApi for TVApiClient {
-    fn delete_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::InlineResponse401, Error> {
+    fn delete_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: Option<&str>, session_id: Option<&str>) -> Result<crate::models::InlineResponse401, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/rating", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.delete(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("guest_session_id", &guest_session_id.to_string())]);
-        req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
+        if let Some(ref s) = guest_session_id {
+            req_builder = req_builder.query(&[("guest_session_id", &s.to_string())]);
+        }
+        if let Some(ref s) = session_id {
+            req_builder = req_builder.query(&[("session_id", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -79,16 +85,23 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_account_states(&self, tv_id: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::AccountStates, Error> {
+    fn get_tv_account_states(&self, tv_id: i32, language: Option<&str>, guest_session_id: Option<&str>, session_id: Option<&str>) -> Result<crate::models::AccountStates, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/account_states", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("guest_session_id", &guest_session_id.to_string())]);
-        req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = guest_session_id {
+            req_builder = req_builder.query(&[("guest_session_id", &s.to_string())]);
+        }
+        if let Some(ref s) = session_id {
+            req_builder = req_builder.query(&[("session_id", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -107,15 +120,20 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_airing_today_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
+    fn get_tv_airing_today_paginated(&self, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/airing_today", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -134,14 +152,17 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_alternative_titles_list(&self, tv_id: i32, language: &str) -> Result<crate::models::AlternativeTitlesList, Error> {
+    fn get_tv_alternative_titles_list(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::AlternativeTitlesList, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/alternative_titles", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -160,16 +181,23 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_changes(&self, tv_id: i32, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error> {
+    fn get_tv_changes(&self, tv_id: i32, start_date: Option<String>, end_date: Option<String>, page: Option<i32>) -> Result<crate::models::ChangeDetails, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/changes", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("start_date", &start_date.to_string())]);
-        req_builder = req_builder.query(&[("end_date", &end_date.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = start_date {
+            req_builder = req_builder.query(&[("start_date", &s.to_string())]);
+        }
+        if let Some(ref s) = end_date {
+            req_builder = req_builder.query(&[("end_date", &s.to_string())]);
+        }
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -188,14 +216,17 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_content_ratings_list(&self, tv_id: i32, language: &str) -> Result<crate::models::RatingsList, Error> {
+    fn get_tv_content_ratings_list(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::RatingsList, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/content_ratings", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -214,14 +245,17 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_credits(&self, tv_id: i32, language: &str) -> Result<crate::models::Credits, Error> {
+    fn get_tv_credits(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::Credits, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/credits", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -240,15 +274,20 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_details(&self, tv_id: i32, language: &str, append_to_response: &str) -> Result<crate::models::TvDetails, Error> {
+    fn get_tv_details(&self, tv_id: i32, language: Option<&str>, append_to_response: Option<&str>) -> Result<crate::models::TvDetails, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("append_to_response", &append_to_response.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = append_to_response {
+            req_builder = req_builder.query(&[("append_to_response", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -267,14 +306,17 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_external_ids(&self, tv_id: i32, language: &str) -> Result<crate::models::MovieTvExternalIds, Error> {
+    fn get_tv_external_ids(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::MovieTvExternalIds, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/external_ids", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -293,14 +335,17 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_images(&self, tv_id: i32, language: &str) -> Result<crate::models::Images, Error> {
+    fn get_tv_images(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::Images, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/images", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -320,6 +365,7 @@ impl TVApi for TVApiClient {
     }
 
     fn get_tv_keywords_list(&self, tv_id: i32) -> Result<crate::models::KeywordsList, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -344,14 +390,17 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_latest_details(&self, language: &str) -> Result<crate::models::TvDetails, Error> {
+    fn get_tv_latest_details(&self, language: Option<&str>) -> Result<crate::models::TvDetails, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/latest", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -370,15 +419,20 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_on_the_air_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
+    fn get_tv_on_the_air_paginated(&self, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/on_the_air", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -397,15 +451,20 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_popular_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
+    fn get_tv_popular_paginated(&self, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/popular", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -424,15 +483,20 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_recommendations_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
+    fn get_tv_recommendations_paginated(&self, tv_id: i32, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/recommendations", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -451,15 +515,20 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_similar_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
+    fn get_tv_similar_paginated(&self, tv_id: i32, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/similar", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -478,15 +547,20 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_top_rated_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
+    fn get_tv_top_rated_paginated(&self, language: Option<&str>, page: Option<i32>) -> Result<crate::models::TvPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/top_rated", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -505,14 +579,17 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_translations_list(&self, tv_id: i32, language: &str) -> Result<crate::models::Translations, Error> {
+    fn get_tv_translations_list(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::Translations, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/translations", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -531,14 +608,17 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_videos_list(&self, tv_id: i32, language: &str) -> Result<crate::models::VideosList, Error> {
+    fn get_tv_videos_list(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::VideosList, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/videos", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -557,15 +637,20 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::ValueBody) -> Result<crate::models::InlineResponse401, Error> {
+    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: Option<&str>, session_id: Option<&str>, body: Option<crate::models::ValueBody>) -> Result<crate::models::InlineResponse401, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/rating", configuration.base_path, tv_id=tv_id);
         let mut req_builder = client.post(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("guest_session_id", &guest_session_id.to_string())]);
-        req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
+        if let Some(ref s) = guest_session_id {
+            req_builder = req_builder.query(&[("guest_session_id", &s.to_string())]);
+        }
+        if let Some(ref s) = session_id {
+            req_builder = req_builder.query(&[("session_id", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {

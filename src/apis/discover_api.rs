@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -28,49 +29,112 @@ impl DiscoverApiClient {
 }
 
 pub trait DiscoverApi {
-    fn get_discover_movie_paginated(&self, sort_by: &str, certification_country: &str, certification: &str, certification_lte: &str, include_adult: bool, include_video: bool, language: &str, page: i32, primary_release_year: i32, primary_release_date_gte: String, primary_release_date_lte: String, release_date_gte: String, release_date_lte: String, vote_count_gte: i32, vote_count_lte: i32, vote_average_gte: f32, vote_average_lte: f32, with_cast: &str, with_crew: &str, with_companies: &str, with_genres: &str, with_keywords: &str, with_people: &str, year: i32, without_genres: &str, with_runtime_gte: i32, with_runtime_lte: i32, with_release_type: i32, with_original_language: &str, without_keywords: &str, region: &str) -> Result<crate::models::MoviePaginated, Error>;
-    fn get_discover_tv_paginated(&self, sort_by: &str, air_date_gte: String, air_date_lte: String, first_air_date_gte: String, first_air_date_lte: String, first_air_date_year: i32, language: &str, page: i32, timezone: &str, vote_average_gte: f32, vote_count_gte: i32, with_genres: &str, with_networks: &str, without_genres: &str, with_runtime_gte: i32, with_runtime_lte: i32, include_null_first_air_dates: bool, with_original_language: &str, without_keywords: &str) -> Result<crate::models::TvPaginated, Error>;
+    fn get_discover_movie_paginated(&self, sort_by: Option<&str>, certification_country: Option<&str>, certification: Option<&str>, certification_lte: Option<&str>, include_adult: Option<bool>, include_video: Option<bool>, language: Option<&str>, page: Option<i32>, primary_release_year: Option<i32>, primary_release_date_gte: Option<String>, primary_release_date_lte: Option<String>, release_date_gte: Option<String>, release_date_lte: Option<String>, vote_count_gte: Option<i32>, vote_count_lte: Option<i32>, vote_average_gte: Option<f32>, vote_average_lte: Option<f32>, with_cast: Option<&str>, with_crew: Option<&str>, with_companies: Option<&str>, with_genres: Option<&str>, with_keywords: Option<&str>, with_people: Option<&str>, year: Option<i32>, without_genres: Option<&str>, with_runtime_gte: Option<i32>, with_runtime_lte: Option<i32>, with_release_type: Option<i32>, with_original_language: Option<&str>, without_keywords: Option<&str>, region: Option<&str>) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_discover_tv_paginated(&self, sort_by: Option<&str>, air_date_gte: Option<String>, air_date_lte: Option<String>, first_air_date_gte: Option<String>, first_air_date_lte: Option<String>, first_air_date_year: Option<i32>, language: Option<&str>, page: Option<i32>, timezone: Option<&str>, vote_average_gte: Option<f32>, vote_count_gte: Option<i32>, with_genres: Option<&str>, with_networks: Option<&str>, without_genres: Option<&str>, with_runtime_gte: Option<i32>, with_runtime_lte: Option<i32>, include_null_first_air_dates: Option<bool>, with_original_language: Option<&str>, without_keywords: Option<&str>) -> Result<crate::models::TvPaginated, Error>;
 }
 
 impl DiscoverApi for DiscoverApiClient {
-    fn get_discover_movie_paginated(&self, sort_by: &str, certification_country: &str, certification: &str, certification_lte: &str, include_adult: bool, include_video: bool, language: &str, page: i32, primary_release_year: i32, primary_release_date_gte: String, primary_release_date_lte: String, release_date_gte: String, release_date_lte: String, vote_count_gte: i32, vote_count_lte: i32, vote_average_gte: f32, vote_average_lte: f32, with_cast: &str, with_crew: &str, with_companies: &str, with_genres: &str, with_keywords: &str, with_people: &str, year: i32, without_genres: &str, with_runtime_gte: i32, with_runtime_lte: i32, with_release_type: i32, with_original_language: &str, without_keywords: &str, region: &str) -> Result<crate::models::MoviePaginated, Error> {
+    fn get_discover_movie_paginated(&self, sort_by: Option<&str>, certification_country: Option<&str>, certification: Option<&str>, certification_lte: Option<&str>, include_adult: Option<bool>, include_video: Option<bool>, language: Option<&str>, page: Option<i32>, primary_release_year: Option<i32>, primary_release_date_gte: Option<String>, primary_release_date_lte: Option<String>, release_date_gte: Option<String>, release_date_lte: Option<String>, vote_count_gte: Option<i32>, vote_count_lte: Option<i32>, vote_average_gte: Option<f32>, vote_average_lte: Option<f32>, with_cast: Option<&str>, with_crew: Option<&str>, with_companies: Option<&str>, with_genres: Option<&str>, with_keywords: Option<&str>, with_people: Option<&str>, year: Option<i32>, without_genres: Option<&str>, with_runtime_gte: Option<i32>, with_runtime_lte: Option<i32>, with_release_type: Option<i32>, with_original_language: Option<&str>, without_keywords: Option<&str>, region: Option<&str>) -> Result<crate::models::MoviePaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/discover/movie", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("sort_by", &sort_by.to_string())]);
-        req_builder = req_builder.query(&[("certification_country", &certification_country.to_string())]);
-        req_builder = req_builder.query(&[("certification", &certification.to_string())]);
-        req_builder = req_builder.query(&[("certification.lte", &certification_lte.to_string())]);
-        req_builder = req_builder.query(&[("include_adult", &include_adult.to_string())]);
-        req_builder = req_builder.query(&[("include_video", &include_video.to_string())]);
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
-        req_builder = req_builder.query(&[("primary_release_year", &primary_release_year.to_string())]);
-        req_builder = req_builder.query(&[("primary_release_date.gte", &primary_release_date_gte.to_string())]);
-        req_builder = req_builder.query(&[("primary_release_date.lte", &primary_release_date_lte.to_string())]);
-        req_builder = req_builder.query(&[("release_date.gte", &release_date_gte.to_string())]);
-        req_builder = req_builder.query(&[("release_date.lte", &release_date_lte.to_string())]);
-        req_builder = req_builder.query(&[("vote_count.gte", &vote_count_gte.to_string())]);
-        req_builder = req_builder.query(&[("vote_count.lte", &vote_count_lte.to_string())]);
-        req_builder = req_builder.query(&[("vote_average.gte", &vote_average_gte.to_string())]);
-        req_builder = req_builder.query(&[("vote_average.lte", &vote_average_lte.to_string())]);
-        req_builder = req_builder.query(&[("with_cast", &with_cast.to_string())]);
-        req_builder = req_builder.query(&[("with_crew", &with_crew.to_string())]);
-        req_builder = req_builder.query(&[("with_companies", &with_companies.to_string())]);
-        req_builder = req_builder.query(&[("with_genres", &with_genres.to_string())]);
-        req_builder = req_builder.query(&[("with_keywords", &with_keywords.to_string())]);
-        req_builder = req_builder.query(&[("with_people", &with_people.to_string())]);
-        req_builder = req_builder.query(&[("year", &year.to_string())]);
-        req_builder = req_builder.query(&[("without_genres", &without_genres.to_string())]);
-        req_builder = req_builder.query(&[("with_runtime.gte", &with_runtime_gte.to_string())]);
-        req_builder = req_builder.query(&[("with_runtime.lte", &with_runtime_lte.to_string())]);
-        req_builder = req_builder.query(&[("with_release_type", &with_release_type.to_string())]);
-        req_builder = req_builder.query(&[("with_original_language", &with_original_language.to_string())]);
-        req_builder = req_builder.query(&[("without_keywords", &without_keywords.to_string())]);
-        req_builder = req_builder.query(&[("region", &region.to_string())]);
+        if let Some(ref s) = sort_by {
+            req_builder = req_builder.query(&[("sort_by", &s.to_string())]);
+        }
+        if let Some(ref s) = certification_country {
+            req_builder = req_builder.query(&[("certification_country", &s.to_string())]);
+        }
+        if let Some(ref s) = certification {
+            req_builder = req_builder.query(&[("certification", &s.to_string())]);
+        }
+        if let Some(ref s) = certification_lte {
+            req_builder = req_builder.query(&[("certification.lte", &s.to_string())]);
+        }
+        if let Some(ref s) = include_adult {
+            req_builder = req_builder.query(&[("include_adult", &s.to_string())]);
+        }
+        if let Some(ref s) = include_video {
+            req_builder = req_builder.query(&[("include_video", &s.to_string())]);
+        }
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
+        if let Some(ref s) = primary_release_year {
+            req_builder = req_builder.query(&[("primary_release_year", &s.to_string())]);
+        }
+        if let Some(ref s) = primary_release_date_gte {
+            req_builder = req_builder.query(&[("primary_release_date.gte", &s.to_string())]);
+        }
+        if let Some(ref s) = primary_release_date_lte {
+            req_builder = req_builder.query(&[("primary_release_date.lte", &s.to_string())]);
+        }
+        if let Some(ref s) = release_date_gte {
+            req_builder = req_builder.query(&[("release_date.gte", &s.to_string())]);
+        }
+        if let Some(ref s) = release_date_lte {
+            req_builder = req_builder.query(&[("release_date.lte", &s.to_string())]);
+        }
+        if let Some(ref s) = vote_count_gte {
+            req_builder = req_builder.query(&[("vote_count.gte", &s.to_string())]);
+        }
+        if let Some(ref s) = vote_count_lte {
+            req_builder = req_builder.query(&[("vote_count.lte", &s.to_string())]);
+        }
+        if let Some(ref s) = vote_average_gte {
+            req_builder = req_builder.query(&[("vote_average.gte", &s.to_string())]);
+        }
+        if let Some(ref s) = vote_average_lte {
+            req_builder = req_builder.query(&[("vote_average.lte", &s.to_string())]);
+        }
+        if let Some(ref s) = with_cast {
+            req_builder = req_builder.query(&[("with_cast", &s.to_string())]);
+        }
+        if let Some(ref s) = with_crew {
+            req_builder = req_builder.query(&[("with_crew", &s.to_string())]);
+        }
+        if let Some(ref s) = with_companies {
+            req_builder = req_builder.query(&[("with_companies", &s.to_string())]);
+        }
+        if let Some(ref s) = with_genres {
+            req_builder = req_builder.query(&[("with_genres", &s.to_string())]);
+        }
+        if let Some(ref s) = with_keywords {
+            req_builder = req_builder.query(&[("with_keywords", &s.to_string())]);
+        }
+        if let Some(ref s) = with_people {
+            req_builder = req_builder.query(&[("with_people", &s.to_string())]);
+        }
+        if let Some(ref s) = year {
+            req_builder = req_builder.query(&[("year", &s.to_string())]);
+        }
+        if let Some(ref s) = without_genres {
+            req_builder = req_builder.query(&[("without_genres", &s.to_string())]);
+        }
+        if let Some(ref s) = with_runtime_gte {
+            req_builder = req_builder.query(&[("with_runtime.gte", &s.to_string())]);
+        }
+        if let Some(ref s) = with_runtime_lte {
+            req_builder = req_builder.query(&[("with_runtime.lte", &s.to_string())]);
+        }
+        if let Some(ref s) = with_release_type {
+            req_builder = req_builder.query(&[("with_release_type", &s.to_string())]);
+        }
+        if let Some(ref s) = with_original_language {
+            req_builder = req_builder.query(&[("with_original_language", &s.to_string())]);
+        }
+        if let Some(ref s) = without_keywords {
+            req_builder = req_builder.query(&[("without_keywords", &s.to_string())]);
+        }
+        if let Some(ref s) = region {
+            req_builder = req_builder.query(&[("region", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
@@ -89,32 +153,71 @@ impl DiscoverApi for DiscoverApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_discover_tv_paginated(&self, sort_by: &str, air_date_gte: String, air_date_lte: String, first_air_date_gte: String, first_air_date_lte: String, first_air_date_year: i32, language: &str, page: i32, timezone: &str, vote_average_gte: f32, vote_count_gte: i32, with_genres: &str, with_networks: &str, without_genres: &str, with_runtime_gte: i32, with_runtime_lte: i32, include_null_first_air_dates: bool, with_original_language: &str, without_keywords: &str) -> Result<crate::models::TvPaginated, Error> {
+    fn get_discover_tv_paginated(&self, sort_by: Option<&str>, air_date_gte: Option<String>, air_date_lte: Option<String>, first_air_date_gte: Option<String>, first_air_date_lte: Option<String>, first_air_date_year: Option<i32>, language: Option<&str>, page: Option<i32>, timezone: Option<&str>, vote_average_gte: Option<f32>, vote_count_gte: Option<i32>, with_genres: Option<&str>, with_networks: Option<&str>, without_genres: Option<&str>, with_runtime_gte: Option<i32>, with_runtime_lte: Option<i32>, include_null_first_air_dates: Option<bool>, with_original_language: Option<&str>, without_keywords: Option<&str>) -> Result<crate::models::TvPaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/discover/tv", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("sort_by", &sort_by.to_string())]);
-        req_builder = req_builder.query(&[("air_date.gte", &air_date_gte.to_string())]);
-        req_builder = req_builder.query(&[("air_date.lte", &air_date_lte.to_string())]);
-        req_builder = req_builder.query(&[("first_air_date.gte", &first_air_date_gte.to_string())]);
-        req_builder = req_builder.query(&[("first_air_date.lte", &first_air_date_lte.to_string())]);
-        req_builder = req_builder.query(&[("first_air_date_year", &first_air_date_year.to_string())]);
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("page", &page.to_string())]);
-        req_builder = req_builder.query(&[("timezone", &timezone.to_string())]);
-        req_builder = req_builder.query(&[("vote_average.gte", &vote_average_gte.to_string())]);
-        req_builder = req_builder.query(&[("vote_count.gte", &vote_count_gte.to_string())]);
-        req_builder = req_builder.query(&[("with_genres", &with_genres.to_string())]);
-        req_builder = req_builder.query(&[("with_networks", &with_networks.to_string())]);
-        req_builder = req_builder.query(&[("without_genres", &without_genres.to_string())]);
-        req_builder = req_builder.query(&[("with_runtime.gte", &with_runtime_gte.to_string())]);
-        req_builder = req_builder.query(&[("with_runtime.lte", &with_runtime_lte.to_string())]);
-        req_builder = req_builder.query(&[("include_null_first_air_dates", &include_null_first_air_dates.to_string())]);
-        req_builder = req_builder.query(&[("with_original_language", &with_original_language.to_string())]);
-        req_builder = req_builder.query(&[("without_keywords", &without_keywords.to_string())]);
+        if let Some(ref s) = sort_by {
+            req_builder = req_builder.query(&[("sort_by", &s.to_string())]);
+        }
+        if let Some(ref s) = air_date_gte {
+            req_builder = req_builder.query(&[("air_date.gte", &s.to_string())]);
+        }
+        if let Some(ref s) = air_date_lte {
+            req_builder = req_builder.query(&[("air_date.lte", &s.to_string())]);
+        }
+        if let Some(ref s) = first_air_date_gte {
+            req_builder = req_builder.query(&[("first_air_date.gte", &s.to_string())]);
+        }
+        if let Some(ref s) = first_air_date_lte {
+            req_builder = req_builder.query(&[("first_air_date.lte", &s.to_string())]);
+        }
+        if let Some(ref s) = first_air_date_year {
+            req_builder = req_builder.query(&[("first_air_date_year", &s.to_string())]);
+        }
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = page {
+            req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
+        if let Some(ref s) = timezone {
+            req_builder = req_builder.query(&[("timezone", &s.to_string())]);
+        }
+        if let Some(ref s) = vote_average_gte {
+            req_builder = req_builder.query(&[("vote_average.gte", &s.to_string())]);
+        }
+        if let Some(ref s) = vote_count_gte {
+            req_builder = req_builder.query(&[("vote_count.gte", &s.to_string())]);
+        }
+        if let Some(ref s) = with_genres {
+            req_builder = req_builder.query(&[("with_genres", &s.to_string())]);
+        }
+        if let Some(ref s) = with_networks {
+            req_builder = req_builder.query(&[("with_networks", &s.to_string())]);
+        }
+        if let Some(ref s) = without_genres {
+            req_builder = req_builder.query(&[("without_genres", &s.to_string())]);
+        }
+        if let Some(ref s) = with_runtime_gte {
+            req_builder = req_builder.query(&[("with_runtime.gte", &s.to_string())]);
+        }
+        if let Some(ref s) = with_runtime_lte {
+            req_builder = req_builder.query(&[("with_runtime.lte", &s.to_string())]);
+        }
+        if let Some(ref s) = include_null_first_air_dates {
+            req_builder = req_builder.query(&[("include_null_first_air_dates", &s.to_string())]);
+        }
+        if let Some(ref s) = with_original_language {
+            req_builder = req_builder.query(&[("with_original_language", &s.to_string())]);
+        }
+        if let Some(ref s) = without_keywords {
+            req_builder = req_builder.query(&[("without_keywords", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {

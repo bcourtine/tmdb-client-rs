@@ -10,6 +10,7 @@
 
 use std::rc::Rc;
 use std::borrow::Borrow;
+use std::option::Option;
 
 use reqwest;
 
@@ -29,11 +30,12 @@ impl KeywordsApiClient {
 
 pub trait KeywordsApi {
     fn get_keyword_details(&self, keyword_id: i32) -> Result<crate::models::Keyword, Error>;
-    fn get_movies_by_keyword_paginated(&self, keyword_id: i32, language: &str, include_adult: bool) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_movies_by_keyword_paginated(&self, keyword_id: i32, language: Option<&str>, include_adult: Option<bool>) -> Result<crate::models::MoviePaginated, Error>;
 }
 
 impl KeywordsApi for KeywordsApiClient {
     fn get_keyword_details(&self, keyword_id: i32) -> Result<crate::models::Keyword, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -58,15 +60,20 @@ impl KeywordsApi for KeywordsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movies_by_keyword_paginated(&self, keyword_id: i32, language: &str, include_adult: bool) -> Result<crate::models::MoviePaginated, Error> {
+    fn get_movies_by_keyword_paginated(&self, keyword_id: i32, language: Option<&str>, include_adult: Option<bool>) -> Result<crate::models::MoviePaginated, Error> {
+
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
         let uri_str = format!("{}/keyword/{keyword_id}/movies", configuration.base_path, keyword_id=keyword_id);
         let mut req_builder = client.get(uri_str.as_str());
 
-        req_builder = req_builder.query(&[("language", &language.to_string())]);
-        req_builder = req_builder.query(&[("include_adult", &include_adult.to_string())]);
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = include_adult {
+            req_builder = req_builder.query(&[("include_adult", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {
