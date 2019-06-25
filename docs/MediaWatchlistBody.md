@@ -1,12 +1,12 @@
-# InlineObject2
+# MediaWatchlistBody
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**description** | **String** |  | [optional] 
-**language** | **String** |  | [optional] 
+**media_type** | [***::models::MediaType**](media-type.md) |  | 
+**media_id** | **i32** |  | 
+**watchlist** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

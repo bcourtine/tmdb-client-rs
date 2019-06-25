@@ -48,7 +48,7 @@ pub trait MoviesApi {
     fn get_movie_translations_list(&self, movie_id: i32, api_key: &str) -> Result<crate::models::Translations, Error>;
     fn get_movie_upcoming_paginated(&self, language: &str, page: i32, region: &str) -> Result<crate::models::MoviePaginated, Error>;
     fn get_movie_videos_list(&self, movie_id: &str, api_key: &str, language: &str) -> Result<crate::models::VideosList, Error>;
-    fn post_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::InlineObject5) -> Result<crate::models::InlineResponse401, Error>;
+    fn post_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::ValueBody) -> Result<crate::models::InlineResponse401, Error>;
 }
 
 impl MoviesApi for MoviesApiClient {
@@ -595,7 +595,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::InlineObject5) -> Result<crate::models::InlineResponse401, Error> {
+    fn post_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::ValueBody) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

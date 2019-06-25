@@ -880,7 +880,7 @@ Name | Type | Description  | Notes
  **content_type** | **String**|  | [default to application/json;charset=utf-8]
  **guest_session_id** | **String**|  | 
  **session_id** | **String**|  | 
- **body** | [**InlineObject5**](InlineObject5.md)|  | 
+ **body** | [**ValueBody**](ValueBody.md)|  | 
 
 ### Return type
 

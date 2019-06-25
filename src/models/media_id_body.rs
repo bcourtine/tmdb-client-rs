@@ -14,21 +14,15 @@ use serde_json::Value;
 
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct InlineObject1 {
-    #[serde(rename = "media_type")]
-    pub media_type: crate::models::MediaType,
+pub struct MediaIdBody {
     #[serde(rename = "media_id")]
     pub media_id: i32,
-    #[serde(rename = "watchlist")]
-    pub watchlist: bool,
 }
 
-impl InlineObject1 {
-    pub fn new(media_type: crate::models::MediaType, media_id: i32, watchlist: bool) -> InlineObject1 {
-        InlineObject1 {
-            media_type: media_type,
+impl MediaIdBody {
+    pub fn new(media_id: i32) -> MediaIdBody {
+        MediaIdBody {
             media_id: media_id,
-            watchlist: watchlist,
         }
     }
 }

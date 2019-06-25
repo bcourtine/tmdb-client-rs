@@ -47,7 +47,7 @@ pub trait TVApi {
     fn get_tv_top_rated_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
     fn get_tv_translations_list(&self, tv_id: i32, language: &str) -> Result<crate::models::Translations, Error>;
     fn get_tv_videos_list(&self, tv_id: i32, language: &str) -> Result<crate::models::VideosList, Error>;
-    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::InlineObject6) -> Result<crate::models::InlineResponse401, Error>;
+    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::ValueBody) -> Result<crate::models::InlineResponse401, Error>;
 }
 
 impl TVApi for TVApiClient {
@@ -557,7 +557,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::InlineObject6) -> Result<crate::models::InlineResponse401, Error> {
+    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::ValueBody) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

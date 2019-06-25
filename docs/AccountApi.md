@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
  **account_id** | **i32**|  | 
  **content_type** | **String**|  | [default to application/json;charset=utf-8]
  **session_id** | **String**|  | 
- **body** | [**InlineObject1**](InlineObject1.md)|  | 
+ **body** | [**MediaWatchlistBody**](MediaWatchlistBody.md)|  | 
 
 ### Return type
 

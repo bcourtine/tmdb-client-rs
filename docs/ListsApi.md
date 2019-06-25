@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_type** | **String**|  | [default to application/json;charset=utf-8]
  **session_id** | **String**|  | 
- **body** | [**InlineObject2**](InlineObject2.md)|  | 
+ **body** | [**ListBody**](ListBody.md)|  | 
 
 ### Return type
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
  **list_id** | **String**|  | 
  **content_type** | **String**|  | [default to application/json;charset=utf-8]
  **session_id** | **String**|  | 
- **body** | [**InlineObject3**](InlineObject3.md)|  | 
+ **body** | [**MediaIdBody**](MediaIdBody.md)|  | 
 
 ### Return type
 

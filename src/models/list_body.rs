@@ -14,7 +14,7 @@ use serde_json::Value;
 
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct InlineObject2 {
+pub struct ListBody {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
@@ -23,9 +23,9 @@ pub struct InlineObject2 {
     pub language: Option<String>,
 }
 
-impl InlineObject2 {
-    pub fn new() -> InlineObject2 {
-        InlineObject2 {
+impl ListBody {
+    pub fn new() -> ListBody {
+        ListBody {
             name: None,
             description: None,
             language: None,

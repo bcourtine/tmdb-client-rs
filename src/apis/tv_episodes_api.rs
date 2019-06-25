@@ -36,7 +36,7 @@ pub trait TVEpisodesApi {
     fn get_tv_season_episode_external_ids(&self, tv_id: i32, season_number: i32, episode_number: i32) -> Result<crate::models::MovieTvExternalIds, Error>;
     fn get_tv_season_episode_images(&self, tv_id: i32, season_number: i32, episode_number: i32) -> Result<crate::models::Images, Error>;
     fn get_tv_season_episode_videos_list(&self, tv_id: i32, season_number: i32, episode_number: i32, language: &str) -> Result<crate::models::VideosList, Error>;
-    fn post_tv_season_episode_rating(&self, tv_id: i32, season_number: i32, episode_number: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::InlineObject7) -> Result<crate::models::InlineResponse401, Error>;
+    fn post_tv_season_episode_rating(&self, tv_id: i32, season_number: i32, episode_number: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::ValueBody) -> Result<crate::models::InlineResponse401, Error>;
 }
 
 impl TVEpisodesApi for TVEpisodesApiClient {
@@ -251,7 +251,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_tv_season_episode_rating(&self, tv_id: i32, season_number: i32, episode_number: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::InlineObject7) -> Result<crate::models::InlineResponse401, Error> {
+    fn post_tv_season_episode_rating(&self, tv_id: i32, season_number: i32, episode_number: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::ValueBody) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
