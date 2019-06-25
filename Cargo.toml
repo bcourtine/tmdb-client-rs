@@ -1,6 +1,6 @@
 [package]
 name = "tmdb_client"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Benoît Courtine <benoit.courtine@gmail.com>"]
 license = "MIT"
 readme = "README.md"
