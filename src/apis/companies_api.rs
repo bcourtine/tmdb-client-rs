@@ -28,12 +28,12 @@ impl CompaniesApiClient {
 }
 
 pub trait CompaniesApi {
-    fn get_company_details(&self, company_id: i32) -> Result<::models::CompanyDetails, Error>;
-    fn get_company_movies_paginated(&self, company_id: i32, language: &str) -> Result<::models::MoviePaginated, Error>;
+    fn get_company_details(&self, company_id: i32) -> Result<crate::models::CompanyDetails, Error>;
+    fn get_company_movies_paginated(&self, company_id: i32, language: &str) -> Result<crate::models::MoviePaginated, Error>;
 }
 
 impl CompaniesApi for CompaniesApiClient {
-    fn get_company_details(&self, company_id: i32) -> Result<::models::CompanyDetails, Error> {
+    fn get_company_details(&self, company_id: i32) -> Result<crate::models::CompanyDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -58,7 +58,7 @@ impl CompaniesApi for CompaniesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_company_movies_paginated(&self, company_id: i32, language: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_company_movies_paginated(&self, company_id: i32, language: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

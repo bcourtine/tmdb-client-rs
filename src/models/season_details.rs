@@ -20,7 +20,7 @@ pub struct SeasonDetails {
     #[serde(rename = "air_date", skip_serializing_if = "Option::is_none")]
     pub air_date: Option<String>,
     #[serde(rename = "episodes", skip_serializing_if = "Option::is_none")]
-    pub episodes: Option<Vec<::models::EpisodeDetails>>,
+    pub episodes: Option<Vec<crate::models::EpisodeDetails>>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "overview", skip_serializing_if = "Option::is_none")]

@@ -16,23 +16,23 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CertificationsCertifications {
     #[serde(rename = "BR", skip_serializing_if = "Option::is_none")]
-    pub br: Option<Vec<::models::Certification>>,
+    pub br: Option<Vec<crate::models::Certification>>,
     #[serde(rename = "DE", skip_serializing_if = "Option::is_none")]
-    pub de: Option<Vec<::models::Certification>>,
+    pub de: Option<Vec<crate::models::Certification>>,
     #[serde(rename = "AU", skip_serializing_if = "Option::is_none")]
-    pub au: Option<Vec<::models::Certification>>,
+    pub au: Option<Vec<crate::models::Certification>>,
     #[serde(rename = "IN", skip_serializing_if = "Option::is_none")]
-    pub india: Option<Vec<::models::Certification>>,
+    pub india: Option<Vec<crate::models::Certification>>,
     #[serde(rename = "GB", skip_serializing_if = "Option::is_none")]
-    pub gb: Option<Vec<::models::Certification>>,
+    pub gb: Option<Vec<crate::models::Certification>>,
     #[serde(rename = "FR", skip_serializing_if = "Option::is_none")]
-    pub fr: Option<Vec<::models::Certification>>,
+    pub fr: Option<Vec<crate::models::Certification>>,
     #[serde(rename = "NZ", skip_serializing_if = "Option::is_none")]
-    pub nz: Option<Vec<::models::Certification>>,
+    pub nz: Option<Vec<crate::models::Certification>>,
     #[serde(rename = "US", skip_serializing_if = "Option::is_none")]
-    pub us: Option<Vec<::models::Certification>>,
+    pub us: Option<Vec<crate::models::Certification>>,
     #[serde(rename = "CA", skip_serializing_if = "Option::is_none")]
-    pub ca: Option<Vec<::models::Certification>>,
+    pub ca: Option<Vec<crate::models::Certification>>,
 }
 
 impl CertificationsCertifications {

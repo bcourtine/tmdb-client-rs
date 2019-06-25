@@ -28,17 +28,17 @@ impl SearchApiClient {
 }
 
 pub trait SearchApi {
-    fn get_search_collection_paginated(&self, query: &str, language: &str, page: i32) -> Result<::models::SearchCollectionResultsPaginated, Error>;
-    fn get_search_company_paginated(&self, query: &str, page: i32) -> Result<::models::SearchCompanyResultsPaginated, Error>;
-    fn get_search_keyword_paginated(&self, query: &str, page: i32) -> Result<::models::SearchKeywordResultsPaginated, Error>;
-    fn get_search_movie_paginated(&self, query: &str, year: i32, primary_release_year: i32, language: &str, page: i32, include_adult: bool, region: &str) -> Result<::models::MoviePaginated, Error>;
-    fn get_search_multi_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<::models::SearchMultiResultsPaginated, Error>;
-    fn get_search_person_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<::models::SearchPersonResultsPaginated, Error>;
-    fn get_search_tv_paginated(&self, query: &str, first_air_date_year: i32, language: &str, page: i32) -> Result<::models::TvPaginated, Error>;
+    fn get_search_collection_paginated(&self, query: &str, language: &str, page: i32) -> Result<crate::models::SearchCollectionResultsPaginated, Error>;
+    fn get_search_company_paginated(&self, query: &str, page: i32) -> Result<crate::models::SearchCompanyResultsPaginated, Error>;
+    fn get_search_keyword_paginated(&self, query: &str, page: i32) -> Result<crate::models::SearchKeywordResultsPaginated, Error>;
+    fn get_search_movie_paginated(&self, query: &str, year: i32, primary_release_year: i32, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_search_multi_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::SearchMultiResultsPaginated, Error>;
+    fn get_search_person_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::SearchPersonResultsPaginated, Error>;
+    fn get_search_tv_paginated(&self, query: &str, first_air_date_year: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
 }
 
 impl SearchApi for SearchApiClient {
-    fn get_search_collection_paginated(&self, query: &str, language: &str, page: i32) -> Result<::models::SearchCollectionResultsPaginated, Error> {
+    fn get_search_collection_paginated(&self, query: &str, language: &str, page: i32) -> Result<crate::models::SearchCollectionResultsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -66,7 +66,7 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_company_paginated(&self, query: &str, page: i32) -> Result<::models::SearchCompanyResultsPaginated, Error> {
+    fn get_search_company_paginated(&self, query: &str, page: i32) -> Result<crate::models::SearchCompanyResultsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -93,7 +93,7 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_keyword_paginated(&self, query: &str, page: i32) -> Result<::models::SearchKeywordResultsPaginated, Error> {
+    fn get_search_keyword_paginated(&self, query: &str, page: i32) -> Result<crate::models::SearchKeywordResultsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -120,7 +120,7 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_movie_paginated(&self, query: &str, year: i32, primary_release_year: i32, language: &str, page: i32, include_adult: bool, region: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_search_movie_paginated(&self, query: &str, year: i32, primary_release_year: i32, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -152,7 +152,7 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_multi_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<::models::SearchMultiResultsPaginated, Error> {
+    fn get_search_multi_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::SearchMultiResultsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -182,7 +182,7 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_person_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<::models::SearchPersonResultsPaginated, Error> {
+    fn get_search_person_paginated(&self, query: &str, language: &str, page: i32, include_adult: bool, region: &str) -> Result<crate::models::SearchPersonResultsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -212,7 +212,7 @@ impl SearchApi for SearchApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_search_tv_paginated(&self, query: &str, first_air_date_year: i32, language: &str, page: i32) -> Result<::models::TvPaginated, Error> {
+    fn get_search_tv_paginated(&self, query: &str, first_air_date_year: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

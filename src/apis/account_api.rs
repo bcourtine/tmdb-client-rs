@@ -28,21 +28,21 @@ impl AccountApiClient {
 }
 
 pub trait AccountApi {
-    fn get_account_favorite_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::MoviePaginated, Error>;
-    fn get_account_favorite_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvPaginated, Error>;
-    fn get_account_rated_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::MoviePaginated, Error>;
-    fn get_account_rated_tv_episodes_paginated(&self, account_id: &str, session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvEpisodesPaginated, Error>;
-    fn get_account_rated_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvPaginated, Error>;
-    fn get_account_watchlist_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::MoviePaginated, Error>;
-    fn get_account_watchlist_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvPaginated, Error>;
-    fn get_current_account_details(&self, session_id: &str) -> Result<::models::AccountDetails, Error>;
-    fn get_current_account_lists_paginated(&self, account_id: i32, session_id: &str, api_key: &str, language: &str) -> Result<::models::ListsPaginated, Error>;
-    fn post_account_favorite(&self, account_id: i32, session_id: &str, content_type: &str, body: ::models::InlineObject) -> Result<::models::InlineResponse401, Error>;
-    fn post_account_watchlist(&self, account_id: i32, content_type: &str, session_id: &str, body: ::models::InlineObject1) -> Result<::models::InlineResponse401, Error>;
+    fn get_account_favorite_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_account_favorite_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvPaginated, Error>;
+    fn get_account_rated_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_account_rated_tv_episodes_paginated(&self, account_id: &str, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvEpisodesPaginated, Error>;
+    fn get_account_rated_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvPaginated, Error>;
+    fn get_account_watchlist_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_account_watchlist_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvPaginated, Error>;
+    fn get_current_account_details(&self, session_id: &str) -> Result<crate::models::AccountDetails, Error>;
+    fn get_current_account_lists_paginated(&self, account_id: i32, session_id: &str, api_key: &str, language: &str) -> Result<crate::models::ListsPaginated, Error>;
+    fn post_account_favorite(&self, account_id: i32, session_id: &str, content_type: &str, body: crate::models::InlineObject) -> Result<crate::models::InlineResponse401, Error>;
+    fn post_account_watchlist(&self, account_id: i32, content_type: &str, session_id: &str, body: crate::models::InlineObject1) -> Result<crate::models::InlineResponse401, Error>;
 }
 
 impl AccountApi for AccountApiClient {
-    fn get_account_favorite_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_account_favorite_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -70,7 +70,7 @@ impl AccountApi for AccountApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_account_favorite_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvPaginated, Error> {
+    fn get_account_favorite_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -98,7 +98,7 @@ impl AccountApi for AccountApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_account_rated_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_account_rated_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -126,7 +126,7 @@ impl AccountApi for AccountApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_account_rated_tv_episodes_paginated(&self, account_id: &str, session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvEpisodesPaginated, Error> {
+    fn get_account_rated_tv_episodes_paginated(&self, account_id: &str, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvEpisodesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -154,7 +154,7 @@ impl AccountApi for AccountApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_account_rated_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvPaginated, Error> {
+    fn get_account_rated_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -182,7 +182,7 @@ impl AccountApi for AccountApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_account_watchlist_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_account_watchlist_movies_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -210,7 +210,7 @@ impl AccountApi for AccountApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_account_watchlist_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvPaginated, Error> {
+    fn get_account_watchlist_tv_paginated(&self, account_id: i32, session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -238,7 +238,7 @@ impl AccountApi for AccountApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_current_account_details(&self, session_id: &str) -> Result<::models::AccountDetails, Error> {
+    fn get_current_account_details(&self, session_id: &str) -> Result<crate::models::AccountDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -264,7 +264,7 @@ impl AccountApi for AccountApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_current_account_lists_paginated(&self, account_id: i32, session_id: &str, api_key: &str, language: &str) -> Result<::models::ListsPaginated, Error> {
+    fn get_current_account_lists_paginated(&self, account_id: i32, session_id: &str, api_key: &str, language: &str) -> Result<crate::models::ListsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -292,7 +292,7 @@ impl AccountApi for AccountApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_account_favorite(&self, account_id: i32, session_id: &str, content_type: &str, body: ::models::InlineObject) -> Result<::models::InlineResponse401, Error> {
+    fn post_account_favorite(&self, account_id: i32, session_id: &str, content_type: &str, body: crate::models::InlineObject) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -320,7 +320,7 @@ impl AccountApi for AccountApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_account_watchlist(&self, account_id: i32, content_type: &str, session_id: &str, body: ::models::InlineObject1) -> Result<::models::InlineResponse401, Error> {
+    fn post_account_watchlist(&self, account_id: i32, content_type: &str, session_id: &str, body: crate::models::InlineObject1) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

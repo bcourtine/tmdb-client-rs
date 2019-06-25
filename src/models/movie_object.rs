@@ -48,7 +48,7 @@ pub struct MovieObject {
     #[serde(rename = "media_type")]
     pub media_type: Option<MovieMediaType>,
     #[serde(rename = "dates", skip_serializing_if = "Option::is_none")]
-    pub dates: Option<::models::MovieobjectDates>,
+    pub dates: Option<crate::models::MovieobjectDates>,
 }
 
 impl MovieObject {

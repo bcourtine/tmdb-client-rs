@@ -28,20 +28,20 @@ impl PeopleApiClient {
 }
 
 pub trait PeopleApi {
-    fn get_person_changes(&self, person_id: i32, language: &str, start_date: String, end_date: String, page: i32) -> Result<::models::ChangeDetails, Error>;
-    fn get_person_combined_credits(&self, person_id: i32, language: &str) -> Result<::models::PersonCredits, Error>;
-    fn get_person_details(&self, person_id: i32, language: &str, append_to_response: &str) -> Result<::models::PersonDetails, Error>;
-    fn get_person_external_ids(&self, person_id: i32, language: &str) -> Result<::models::PersonExternalIds, Error>;
-    fn get_person_images_list(&self, person_id: i32) -> Result<::models::PersonImagesList, Error>;
-    fn get_person_latest_details(&self, language: &str) -> Result<::models::PersonDetails, Error>;
-    fn get_person_movie_credits(&self, person_id: i32, language: &str) -> Result<::models::PersonCredits, Error>;
-    fn get_person_popular_paginated(&self, language: &str, page: i32) -> Result<::models::PersonPopularPaginated, Error>;
-    fn get_person_tagged_images_paginated(&self, person_id: i32, language: &str, page: i32) -> Result<::models::PersonTaggedImagesPaginated, Error>;
-    fn get_person_tv_credits(&self, person_id: i32, language: &str) -> Result<::models::PersonCredits, Error>;
+    fn get_person_changes(&self, person_id: i32, language: &str, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error>;
+    fn get_person_combined_credits(&self, person_id: i32, language: &str) -> Result<crate::models::PersonCredits, Error>;
+    fn get_person_details(&self, person_id: i32, language: &str, append_to_response: &str) -> Result<crate::models::PersonDetails, Error>;
+    fn get_person_external_ids(&self, person_id: i32, language: &str) -> Result<crate::models::PersonExternalIds, Error>;
+    fn get_person_images_list(&self, person_id: i32) -> Result<crate::models::PersonImagesList, Error>;
+    fn get_person_latest_details(&self, language: &str) -> Result<crate::models::PersonDetails, Error>;
+    fn get_person_movie_credits(&self, person_id: i32, language: &str) -> Result<crate::models::PersonCredits, Error>;
+    fn get_person_popular_paginated(&self, language: &str, page: i32) -> Result<crate::models::PersonPopularPaginated, Error>;
+    fn get_person_tagged_images_paginated(&self, person_id: i32, language: &str, page: i32) -> Result<crate::models::PersonTaggedImagesPaginated, Error>;
+    fn get_person_tv_credits(&self, person_id: i32, language: &str) -> Result<crate::models::PersonCredits, Error>;
 }
 
 impl PeopleApi for PeopleApiClient {
-    fn get_person_changes(&self, person_id: i32, language: &str, start_date: String, end_date: String, page: i32) -> Result<::models::ChangeDetails, Error> {
+    fn get_person_changes(&self, person_id: i32, language: &str, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -70,7 +70,7 @@ impl PeopleApi for PeopleApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_combined_credits(&self, person_id: i32, language: &str) -> Result<::models::PersonCredits, Error> {
+    fn get_person_combined_credits(&self, person_id: i32, language: &str) -> Result<crate::models::PersonCredits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -96,7 +96,7 @@ impl PeopleApi for PeopleApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_details(&self, person_id: i32, language: &str, append_to_response: &str) -> Result<::models::PersonDetails, Error> {
+    fn get_person_details(&self, person_id: i32, language: &str, append_to_response: &str) -> Result<crate::models::PersonDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -123,7 +123,7 @@ impl PeopleApi for PeopleApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_external_ids(&self, person_id: i32, language: &str) -> Result<::models::PersonExternalIds, Error> {
+    fn get_person_external_ids(&self, person_id: i32, language: &str) -> Result<crate::models::PersonExternalIds, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -149,7 +149,7 @@ impl PeopleApi for PeopleApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_images_list(&self, person_id: i32) -> Result<::models::PersonImagesList, Error> {
+    fn get_person_images_list(&self, person_id: i32) -> Result<crate::models::PersonImagesList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -174,7 +174,7 @@ impl PeopleApi for PeopleApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_latest_details(&self, language: &str) -> Result<::models::PersonDetails, Error> {
+    fn get_person_latest_details(&self, language: &str) -> Result<crate::models::PersonDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -200,7 +200,7 @@ impl PeopleApi for PeopleApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_movie_credits(&self, person_id: i32, language: &str) -> Result<::models::PersonCredits, Error> {
+    fn get_person_movie_credits(&self, person_id: i32, language: &str) -> Result<crate::models::PersonCredits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -226,7 +226,7 @@ impl PeopleApi for PeopleApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_popular_paginated(&self, language: &str, page: i32) -> Result<::models::PersonPopularPaginated, Error> {
+    fn get_person_popular_paginated(&self, language: &str, page: i32) -> Result<crate::models::PersonPopularPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -253,7 +253,7 @@ impl PeopleApi for PeopleApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_tagged_images_paginated(&self, person_id: i32, language: &str, page: i32) -> Result<::models::PersonTaggedImagesPaginated, Error> {
+    fn get_person_tagged_images_paginated(&self, person_id: i32, language: &str, page: i32) -> Result<crate::models::PersonTaggedImagesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -280,7 +280,7 @@ impl PeopleApi for PeopleApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_tv_credits(&self, person_id: i32, language: &str) -> Result<::models::PersonCredits, Error> {
+    fn get_person_tv_credits(&self, person_id: i32, language: &str) -> Result<crate::models::PersonCredits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

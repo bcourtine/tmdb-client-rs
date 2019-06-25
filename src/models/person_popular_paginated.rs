@@ -22,7 +22,7 @@ pub struct PersonPopularPaginated {
     #[serde(rename = "total_results", skip_serializing_if = "Option::is_none")]
     pub total_results: Option<i32>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<::models::PersonObject>>,
+    pub results: Option<Vec<crate::models::PersonObject>>,
 }
 
 impl PersonPopularPaginated {

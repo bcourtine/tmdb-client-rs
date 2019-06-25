@@ -16,7 +16,7 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ChangedetailsChanges {
     #[serde(rename = "items", skip_serializing_if = "Option::is_none")]
-    pub items: Option<Vec<::models::ChangedetailsItems>>,
+    pub items: Option<Vec<crate::models::ChangedetailsItems>>,
     #[serde(rename = "key", skip_serializing_if = "Option::is_none")]
     pub key: Option<String>,
 }

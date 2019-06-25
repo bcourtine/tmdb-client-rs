@@ -28,17 +28,17 @@ impl TVSeasonsApiClient {
 }
 
 pub trait TVSeasonsApi {
-    fn get_tv_season_account_states(&self, tv_id: i32, season_number: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<::models::EpisodeRatingList, Error>;
-    fn get_tv_season_changes(&self, season_id: i32, start_date: String, end_date: String, page: i32) -> Result<::models::ChangeDetails, Error>;
-    fn get_tv_season_credits(&self, tv_id: i32, season_number: i32, language: &str) -> Result<::models::Credits, Error>;
-    fn get_tv_season_details(&self, tv_id: i32, season_number: i32, language: &str, append_to_response: &str) -> Result<::models::SeasonDetails, Error>;
-    fn get_tv_season_external_ids(&self, tv_id: i32, season_number: i32, language: &str) -> Result<::models::MovieTvExternalIds, Error>;
-    fn get_tv_season_images(&self, tv_id: i32, season_number: i32, language: &str) -> Result<::models::Images, Error>;
-    fn get_tv_season_videos(&self, tv_id: i32, season_number: i32, language: &str) -> Result<::models::VideosList, Error>;
+    fn get_tv_season_account_states(&self, tv_id: i32, season_number: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::EpisodeRatingList, Error>;
+    fn get_tv_season_changes(&self, season_id: i32, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error>;
+    fn get_tv_season_credits(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::Credits, Error>;
+    fn get_tv_season_details(&self, tv_id: i32, season_number: i32, language: &str, append_to_response: &str) -> Result<crate::models::SeasonDetails, Error>;
+    fn get_tv_season_external_ids(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::MovieTvExternalIds, Error>;
+    fn get_tv_season_images(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::Images, Error>;
+    fn get_tv_season_videos(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::VideosList, Error>;
 }
 
 impl TVSeasonsApi for TVSeasonsApiClient {
-    fn get_tv_season_account_states(&self, tv_id: i32, season_number: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<::models::EpisodeRatingList, Error> {
+    fn get_tv_season_account_states(&self, tv_id: i32, season_number: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::EpisodeRatingList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -66,7 +66,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_changes(&self, season_id: i32, start_date: String, end_date: String, page: i32) -> Result<::models::ChangeDetails, Error> {
+    fn get_tv_season_changes(&self, season_id: i32, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -94,7 +94,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_credits(&self, tv_id: i32, season_number: i32, language: &str) -> Result<::models::Credits, Error> {
+    fn get_tv_season_credits(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::Credits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -120,7 +120,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_details(&self, tv_id: i32, season_number: i32, language: &str, append_to_response: &str) -> Result<::models::SeasonDetails, Error> {
+    fn get_tv_season_details(&self, tv_id: i32, season_number: i32, language: &str, append_to_response: &str) -> Result<crate::models::SeasonDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -147,7 +147,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_external_ids(&self, tv_id: i32, season_number: i32, language: &str) -> Result<::models::MovieTvExternalIds, Error> {
+    fn get_tv_season_external_ids(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::MovieTvExternalIds, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -173,7 +173,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_images(&self, tv_id: i32, season_number: i32, language: &str) -> Result<::models::Images, Error> {
+    fn get_tv_season_images(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -199,7 +199,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_season_videos(&self, tv_id: i32, season_number: i32, language: &str) -> Result<::models::VideosList, Error> {
+    fn get_tv_season_videos(&self, tv_id: i32, season_number: i32, language: &str) -> Result<crate::models::VideosList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

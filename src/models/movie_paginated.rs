@@ -22,7 +22,7 @@ pub struct MoviePaginated {
     #[serde(rename = "total_results", skip_serializing_if = "Option::is_none")]
     pub total_results: Option<i32>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<::models::MovieObject>>,
+    pub results: Option<Vec<crate::models::MovieObject>>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
 }

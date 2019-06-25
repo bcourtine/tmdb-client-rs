@@ -28,30 +28,30 @@ impl TVApiClient {
 }
 
 pub trait TVApi {
-    fn delete_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str) -> Result<::models::InlineResponse401, Error>;
-    fn get_tv_account_states(&self, tv_id: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<::models::AccountStates, Error>;
-    fn get_tv_airing_today_paginated(&self, language: &str, page: i32) -> Result<::models::TvPaginated, Error>;
-    fn get_tv_alternative_titles_list(&self, tv_id: i32, language: &str) -> Result<::models::AlternativeTitlesList, Error>;
-    fn get_tv_changes(&self, tv_id: i32, start_date: String, end_date: String, page: i32) -> Result<::models::ChangeDetails, Error>;
-    fn get_tv_content_ratings_list(&self, tv_id: i32, language: &str) -> Result<::models::RatingsList, Error>;
-    fn get_tv_credits(&self, tv_id: i32, language: &str) -> Result<::models::Credits, Error>;
-    fn get_tv_details(&self, tv_id: i32, language: &str, append_to_response: &str) -> Result<::models::TvDetails, Error>;
-    fn get_tv_external_ids(&self, tv_id: i32, language: &str) -> Result<::models::MovieTvExternalIds, Error>;
-    fn get_tv_images(&self, tv_id: i32, language: &str) -> Result<::models::Images, Error>;
-    fn get_tv_keywords_list(&self, tv_id: i32) -> Result<::models::KeywordsList, Error>;
-    fn get_tv_latest_details(&self, language: &str) -> Result<::models::TvDetails, Error>;
-    fn get_tv_on_the_air_paginated(&self, language: &str, page: i32) -> Result<::models::TvPaginated, Error>;
-    fn get_tv_popular_paginated(&self, language: &str, page: i32) -> Result<::models::TvPaginated, Error>;
-    fn get_tv_recommendations_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<::models::TvPaginated, Error>;
-    fn get_tv_similar_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<::models::TvPaginated, Error>;
-    fn get_tv_top_rated_paginated(&self, language: &str, page: i32) -> Result<::models::TvPaginated, Error>;
-    fn get_tv_translations_list(&self, tv_id: i32, language: &str) -> Result<::models::Translations, Error>;
-    fn get_tv_videos_list(&self, tv_id: i32, language: &str) -> Result<::models::VideosList, Error>;
-    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: ::models::InlineObject6) -> Result<::models::InlineResponse401, Error>;
+    fn delete_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::InlineResponse401, Error>;
+    fn get_tv_account_states(&self, tv_id: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::AccountStates, Error>;
+    fn get_tv_airing_today_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_alternative_titles_list(&self, tv_id: i32, language: &str) -> Result<crate::models::AlternativeTitlesList, Error>;
+    fn get_tv_changes(&self, tv_id: i32, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error>;
+    fn get_tv_content_ratings_list(&self, tv_id: i32, language: &str) -> Result<crate::models::RatingsList, Error>;
+    fn get_tv_credits(&self, tv_id: i32, language: &str) -> Result<crate::models::Credits, Error>;
+    fn get_tv_details(&self, tv_id: i32, language: &str, append_to_response: &str) -> Result<crate::models::TvDetails, Error>;
+    fn get_tv_external_ids(&self, tv_id: i32, language: &str) -> Result<crate::models::MovieTvExternalIds, Error>;
+    fn get_tv_images(&self, tv_id: i32, language: &str) -> Result<crate::models::Images, Error>;
+    fn get_tv_keywords_list(&self, tv_id: i32) -> Result<crate::models::KeywordsList, Error>;
+    fn get_tv_latest_details(&self, language: &str) -> Result<crate::models::TvDetails, Error>;
+    fn get_tv_on_the_air_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_popular_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_recommendations_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_similar_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_top_rated_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_translations_list(&self, tv_id: i32, language: &str) -> Result<crate::models::Translations, Error>;
+    fn get_tv_videos_list(&self, tv_id: i32, language: &str) -> Result<crate::models::VideosList, Error>;
+    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::InlineObject6) -> Result<crate::models::InlineResponse401, Error>;
 }
 
 impl TVApi for TVApiClient {
-    fn delete_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str) -> Result<::models::InlineResponse401, Error> {
+    fn delete_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -79,7 +79,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_account_states(&self, tv_id: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<::models::AccountStates, Error> {
+    fn get_tv_account_states(&self, tv_id: i32, language: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::AccountStates, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -107,7 +107,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_airing_today_paginated(&self, language: &str, page: i32) -> Result<::models::TvPaginated, Error> {
+    fn get_tv_airing_today_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -134,7 +134,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_alternative_titles_list(&self, tv_id: i32, language: &str) -> Result<::models::AlternativeTitlesList, Error> {
+    fn get_tv_alternative_titles_list(&self, tv_id: i32, language: &str) -> Result<crate::models::AlternativeTitlesList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -160,7 +160,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_changes(&self, tv_id: i32, start_date: String, end_date: String, page: i32) -> Result<::models::ChangeDetails, Error> {
+    fn get_tv_changes(&self, tv_id: i32, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -188,7 +188,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_content_ratings_list(&self, tv_id: i32, language: &str) -> Result<::models::RatingsList, Error> {
+    fn get_tv_content_ratings_list(&self, tv_id: i32, language: &str) -> Result<crate::models::RatingsList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -214,7 +214,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_credits(&self, tv_id: i32, language: &str) -> Result<::models::Credits, Error> {
+    fn get_tv_credits(&self, tv_id: i32, language: &str) -> Result<crate::models::Credits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -240,7 +240,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_details(&self, tv_id: i32, language: &str, append_to_response: &str) -> Result<::models::TvDetails, Error> {
+    fn get_tv_details(&self, tv_id: i32, language: &str, append_to_response: &str) -> Result<crate::models::TvDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -267,7 +267,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_external_ids(&self, tv_id: i32, language: &str) -> Result<::models::MovieTvExternalIds, Error> {
+    fn get_tv_external_ids(&self, tv_id: i32, language: &str) -> Result<crate::models::MovieTvExternalIds, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -293,7 +293,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_images(&self, tv_id: i32, language: &str) -> Result<::models::Images, Error> {
+    fn get_tv_images(&self, tv_id: i32, language: &str) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -319,7 +319,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_keywords_list(&self, tv_id: i32) -> Result<::models::KeywordsList, Error> {
+    fn get_tv_keywords_list(&self, tv_id: i32) -> Result<crate::models::KeywordsList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -344,7 +344,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_latest_details(&self, language: &str) -> Result<::models::TvDetails, Error> {
+    fn get_tv_latest_details(&self, language: &str) -> Result<crate::models::TvDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -370,7 +370,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_on_the_air_paginated(&self, language: &str, page: i32) -> Result<::models::TvPaginated, Error> {
+    fn get_tv_on_the_air_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -397,7 +397,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_popular_paginated(&self, language: &str, page: i32) -> Result<::models::TvPaginated, Error> {
+    fn get_tv_popular_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -424,7 +424,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_recommendations_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<::models::TvPaginated, Error> {
+    fn get_tv_recommendations_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -451,7 +451,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_similar_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<::models::TvPaginated, Error> {
+    fn get_tv_similar_paginated(&self, tv_id: i32, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -478,7 +478,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_top_rated_paginated(&self, language: &str, page: i32) -> Result<::models::TvPaginated, Error> {
+    fn get_tv_top_rated_paginated(&self, language: &str, page: i32) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -505,7 +505,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_translations_list(&self, tv_id: i32, language: &str) -> Result<::models::Translations, Error> {
+    fn get_tv_translations_list(&self, tv_id: i32, language: &str) -> Result<crate::models::Translations, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -531,7 +531,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_videos_list(&self, tv_id: i32, language: &str) -> Result<::models::VideosList, Error> {
+    fn get_tv_videos_list(&self, tv_id: i32, language: &str) -> Result<crate::models::VideosList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -557,7 +557,7 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: ::models::InlineObject6) -> Result<::models::InlineResponse401, Error> {
+    fn post_tv_rating(&self, tv_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::InlineObject6) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

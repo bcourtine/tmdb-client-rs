@@ -28,11 +28,11 @@ impl ReviewsApiClient {
 }
 
 pub trait ReviewsApi {
-    fn get_review_details(&self, review_id: &str) -> Result<::models::Review, Error>;
+    fn get_review_details(&self, review_id: &str) -> Result<crate::models::Review, Error>;
 }
 
 impl ReviewsApi for ReviewsApiClient {
-    fn get_review_details(&self, review_id: &str) -> Result<::models::Review, Error> {
+    fn get_review_details(&self, review_id: &str) -> Result<crate::models::Review, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

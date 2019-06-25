@@ -28,12 +28,12 @@ impl CertificationsApiClient {
 }
 
 pub trait CertificationsApi {
-    fn get_movie_certifications_list(&self, ) -> Result<::models::Certifications, Error>;
-    fn get_tv_certifications_list(&self, ) -> Result<::models::Certifications, Error>;
+    fn get_movie_certifications_list(&self, ) -> Result<crate::models::Certifications, Error>;
+    fn get_tv_certifications_list(&self, ) -> Result<crate::models::Certifications, Error>;
 }
 
 impl CertificationsApi for CertificationsApiClient {
-    fn get_movie_certifications_list(&self, ) -> Result<::models::Certifications, Error> {
+    fn get_movie_certifications_list(&self, ) -> Result<crate::models::Certifications, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -58,7 +58,7 @@ impl CertificationsApi for CertificationsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_certifications_list(&self, ) -> Result<::models::Certifications, Error> {
+    fn get_tv_certifications_list(&self, ) -> Result<crate::models::Certifications, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

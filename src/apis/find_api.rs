@@ -28,11 +28,11 @@ impl FindApiClient {
 }
 
 pub trait FindApi {
-    fn get_find_external_id(&self, external_id: &str, external_source: &str, language: &str) -> Result<::models::FindByExternalIdResults, Error>;
+    fn get_find_external_id(&self, external_id: &str, external_source: &str, language: &str) -> Result<crate::models::FindByExternalIdResults, Error>;
 }
 
 impl FindApi for FindApiClient {
-    fn get_find_external_id(&self, external_id: &str, external_source: &str, language: &str) -> Result<::models::FindByExternalIdResults, Error> {
+    fn get_find_external_id(&self, external_id: &str, external_source: &str, language: &str) -> Result<crate::models::FindByExternalIdResults, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

@@ -18,11 +18,11 @@ pub struct EpisodeDetails {
     #[serde(rename = "air_date", skip_serializing_if = "Option::is_none")]
     pub air_date: Option<String>,
     #[serde(rename = "crew", skip_serializing_if = "Option::is_none")]
-    pub crew: Option<Vec<::models::Crew>>,
+    pub crew: Option<Vec<crate::models::Crew>>,
     #[serde(rename = "episode_number", skip_serializing_if = "Option::is_none")]
     pub episode_number: Option<i32>,
     #[serde(rename = "guest_stars", skip_serializing_if = "Option::is_none")]
-    pub guest_stars: Option<Vec<::models::GuestStar>>,
+    pub guest_stars: Option<Vec<crate::models::GuestStar>>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "overview", skip_serializing_if = "Option::is_none")]

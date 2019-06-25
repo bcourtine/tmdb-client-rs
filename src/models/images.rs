@@ -18,9 +18,9 @@ pub struct Images {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "backdrops", skip_serializing_if = "Option::is_none")]
-    pub backdrops: Option<Vec<::models::Image>>,
+    pub backdrops: Option<Vec<crate::models::Image>>,
     #[serde(rename = "posters", skip_serializing_if = "Option::is_none")]
-    pub posters: Option<Vec<::models::Image>>,
+    pub posters: Option<Vec<crate::models::Image>>,
 }
 
 impl Images {

@@ -24,7 +24,7 @@ pub struct ListDetails {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
     #[serde(rename = "items", skip_serializing_if = "Option::is_none")]
-    pub items: Option<Vec<::models::MovieObject>>,
+    pub items: Option<Vec<crate::models::MovieObject>>,
     #[serde(rename = "item_count", skip_serializing_if = "Option::is_none")]
     pub item_count: Option<i32>,
     #[serde(rename = "iso_639_1", skip_serializing_if = "Option::is_none")]

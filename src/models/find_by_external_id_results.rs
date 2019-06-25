@@ -16,11 +16,11 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct FindByExternalIdResults {
     #[serde(rename = "movie_results", skip_serializing_if = "Option::is_none")]
-    pub movie_results: Option<Vec<::models::MovieObject>>,
+    pub movie_results: Option<Vec<crate::models::MovieObject>>,
     #[serde(rename = "person_results", skip_serializing_if = "Option::is_none")]
-    pub person_results: Option<Vec<::models::PersonObject>>,
+    pub person_results: Option<Vec<crate::models::PersonObject>>,
     #[serde(rename = "tv_results", skip_serializing_if = "Option::is_none")]
-    pub tv_results: Option<Vec<::models::TvObject>>,
+    pub tv_results: Option<Vec<crate::models::TvObject>>,
     #[serde(rename = "tv_episode_results", skip_serializing_if = "Option::is_none")]
     pub tv_episode_results: Option<Vec<String>>,
     #[serde(rename = "tv_season_results", skip_serializing_if = "Option::is_none")]

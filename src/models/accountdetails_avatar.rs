@@ -16,7 +16,7 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct AccountdetailsAvatar {
     #[serde(rename = "gravatar", skip_serializing_if = "Option::is_none")]
-    pub gravatar: Option<::models::AccountdetailsAvatarGravatar>,
+    pub gravatar: Option<crate::models::AccountdetailsAvatarGravatar>,
 }
 
 impl AccountdetailsAvatar {

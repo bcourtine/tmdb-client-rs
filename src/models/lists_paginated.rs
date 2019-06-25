@@ -22,7 +22,7 @@ pub struct ListsPaginated {
     #[serde(rename = "total_results", skip_serializing_if = "Option::is_none")]
     pub total_results: Option<i32>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<::models::ListObject>>,
+    pub results: Option<Vec<crate::models::ListObject>>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
 }

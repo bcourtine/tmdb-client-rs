@@ -18,7 +18,7 @@ pub struct CreditMedia {
     #[serde(rename = "character", skip_serializing_if = "Option::is_none")]
     pub character: Option<String>,
     #[serde(rename = "seasons", skip_serializing_if = "Option::is_none")]
-    pub seasons: Option<Vec<::models::CreditMediaSeasons>>,
+    pub seasons: Option<Vec<crate::models::CreditMediaSeasons>>,
     #[serde(rename = "original_name", skip_serializing_if = "Option::is_none")]
     pub original_name: Option<String>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]

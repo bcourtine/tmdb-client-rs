@@ -28,11 +28,11 @@ impl NetworksApiClient {
 }
 
 pub trait NetworksApi {
-    fn get_network_details(&self, network_id: i32) -> Result<::models::Network, Error>;
+    fn get_network_details(&self, network_id: i32) -> Result<crate::models::Network, Error>;
 }
 
 impl NetworksApi for NetworksApiClient {
-    fn get_network_details(&self, network_id: i32) -> Result<::models::Network, Error> {
+    fn get_network_details(&self, network_id: i32) -> Result<crate::models::Network, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

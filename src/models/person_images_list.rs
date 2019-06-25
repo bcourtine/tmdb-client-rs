@@ -18,7 +18,7 @@ pub struct PersonImagesList {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "profiles", skip_serializing_if = "Option::is_none")]
-    pub profiles: Option<Vec<::models::Image>>,
+    pub profiles: Option<Vec<crate::models::Image>>,
 }
 
 impl PersonImagesList {

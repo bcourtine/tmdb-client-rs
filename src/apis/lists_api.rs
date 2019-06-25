@@ -28,16 +28,16 @@ impl ListsApiClient {
 }
 
 pub trait ListsApi {
-    fn get_list_details(&self, list_id: &str, language: &str) -> Result<::models::ListDetails, Error>;
-    fn get_list_item_status(&self, list_id: &str, movie_id: i32) -> Result<::models::ItemStatus, Error>;
-    fn post_list(&self, content_type: &str, session_id: &str, body: ::models::InlineObject2) -> Result<::models::ListStatusResponse, Error>;
-    fn post_list_add_item(&self, list_id: &str, content_type: &str, session_id: &str, body: ::models::InlineObject3) -> Result<::models::InlineResponse401, Error>;
-    fn post_list_clear(&self, list_id: &str, confirm: bool, session_id: &str) -> Result<::models::InlineResponse401, Error>;
-    fn post_list_remove_item(&self, list_id: &str, content_type: &str, session_id: &str, body: ::models::InlineObject4) -> Result<::models::InlineResponse401, Error>;
+    fn get_list_details(&self, list_id: &str, language: &str) -> Result<crate::models::ListDetails, Error>;
+    fn get_list_item_status(&self, list_id: &str, movie_id: i32) -> Result<crate::models::ItemStatus, Error>;
+    fn post_list(&self, content_type: &str, session_id: &str, body: crate::models::InlineObject2) -> Result<crate::models::ListStatusResponse, Error>;
+    fn post_list_add_item(&self, list_id: &str, content_type: &str, session_id: &str, body: crate::models::InlineObject3) -> Result<crate::models::InlineResponse401, Error>;
+    fn post_list_clear(&self, list_id: &str, confirm: bool, session_id: &str) -> Result<crate::models::InlineResponse401, Error>;
+    fn post_list_remove_item(&self, list_id: &str, content_type: &str, session_id: &str, body: crate::models::InlineObject4) -> Result<crate::models::InlineResponse401, Error>;
 }
 
 impl ListsApi for ListsApiClient {
-    fn get_list_details(&self, list_id: &str, language: &str) -> Result<::models::ListDetails, Error> {
+    fn get_list_details(&self, list_id: &str, language: &str) -> Result<crate::models::ListDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -63,7 +63,7 @@ impl ListsApi for ListsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_list_item_status(&self, list_id: &str, movie_id: i32) -> Result<::models::ItemStatus, Error> {
+    fn get_list_item_status(&self, list_id: &str, movie_id: i32) -> Result<crate::models::ItemStatus, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -89,7 +89,7 @@ impl ListsApi for ListsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_list(&self, content_type: &str, session_id: &str, body: ::models::InlineObject2) -> Result<::models::ListStatusResponse, Error> {
+    fn post_list(&self, content_type: &str, session_id: &str, body: crate::models::InlineObject2) -> Result<crate::models::ListStatusResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -117,7 +117,7 @@ impl ListsApi for ListsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_list_add_item(&self, list_id: &str, content_type: &str, session_id: &str, body: ::models::InlineObject3) -> Result<::models::InlineResponse401, Error> {
+    fn post_list_add_item(&self, list_id: &str, content_type: &str, session_id: &str, body: crate::models::InlineObject3) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -145,7 +145,7 @@ impl ListsApi for ListsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_list_clear(&self, list_id: &str, confirm: bool, session_id: &str) -> Result<::models::InlineResponse401, Error> {
+    fn post_list_clear(&self, list_id: &str, confirm: bool, session_id: &str) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -172,7 +172,7 @@ impl ListsApi for ListsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_list_remove_item(&self, list_id: &str, content_type: &str, session_id: &str, body: ::models::InlineObject4) -> Result<::models::InlineResponse401, Error> {
+    fn post_list_remove_item(&self, list_id: &str, content_type: &str, session_id: &str, body: crate::models::InlineObject4) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

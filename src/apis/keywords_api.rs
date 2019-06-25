@@ -28,12 +28,12 @@ impl KeywordsApiClient {
 }
 
 pub trait KeywordsApi {
-    fn get_keyword_details(&self, keyword_id: i32) -> Result<::models::Keyword, Error>;
-    fn get_movies_by_keyword_paginated(&self, keyword_id: i32, language: &str, include_adult: bool) -> Result<::models::MoviePaginated, Error>;
+    fn get_keyword_details(&self, keyword_id: i32) -> Result<crate::models::Keyword, Error>;
+    fn get_movies_by_keyword_paginated(&self, keyword_id: i32, language: &str, include_adult: bool) -> Result<crate::models::MoviePaginated, Error>;
 }
 
 impl KeywordsApi for KeywordsApiClient {
-    fn get_keyword_details(&self, keyword_id: i32) -> Result<::models::Keyword, Error> {
+    fn get_keyword_details(&self, keyword_id: i32) -> Result<crate::models::Keyword, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -58,7 +58,7 @@ impl KeywordsApi for KeywordsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movies_by_keyword_paginated(&self, keyword_id: i32, language: &str, include_adult: bool) -> Result<::models::MoviePaginated, Error> {
+    fn get_movies_by_keyword_paginated(&self, keyword_id: i32, language: &str, include_adult: bool) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

@@ -1,11 +1,18 @@
 [package]
-name = "openapi"
-version = "1.0.0"
-authors = ["OpenAPI Generator team and contributors"]
-
-[lib]
 name = "tmdb_client"
-path = "src/lib.rs"
+version = "0.1.0"
+authors = ["Benoît Courtine <benoit.courtine@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/bcourtine/tmdb-client-rs"
+documentation = "https://docs.rs/crate/tmdb-client"
+homepage = "https://crates.io/crates/tmdb-client"
+description = """
+Rust client for The Movie Database (TMDB) API.
+"""
+keywords = ["tmdb", "api", "client"]
+categories = ["api-bindings"]
+edition = "2018"
 
 [dependencies]
 serde = "^1.0"

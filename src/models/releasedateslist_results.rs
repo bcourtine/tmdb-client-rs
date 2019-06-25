@@ -16,7 +16,7 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ReleasedateslistResults {
     #[serde(rename = "release_dates", skip_serializing_if = "Option::is_none")]
-    pub release_dates: Option<Vec<::models::ReleaseDate>>,
+    pub release_dates: Option<Vec<crate::models::ReleaseDate>>,
     #[serde(rename = "iso_3166_1", skip_serializing_if = "Option::is_none")]
     pub iso_3166_1: Option<String>,
 }

@@ -28,11 +28,11 @@ impl ConfigurationApiClient {
 }
 
 pub trait ConfigurationApi {
-    fn get_configuration(&self, api_key: &str) -> Result<::models::Configuration, Error>;
+    fn get_configuration(&self, api_key: &str) -> Result<crate::models::Configuration, Error>;
 }
 
 impl ConfigurationApi for ConfigurationApiClient {
-    fn get_configuration(&self, api_key: &str) -> Result<::models::Configuration, Error> {
+    fn get_configuration(&self, api_key: &str) -> Result<crate::models::Configuration, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

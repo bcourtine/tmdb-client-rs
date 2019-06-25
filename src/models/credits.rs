@@ -18,11 +18,11 @@ pub struct Credits {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "cast", skip_serializing_if = "Option::is_none")]
-    pub cast: Option<Vec<::models::Cast>>,
+    pub cast: Option<Vec<crate::models::Cast>>,
     #[serde(rename = "crew", skip_serializing_if = "Option::is_none")]
-    pub crew: Option<Vec<::models::Crew>>,
+    pub crew: Option<Vec<crate::models::Crew>>,
     #[serde(rename = "guest_stars", skip_serializing_if = "Option::is_none")]
-    pub guest_stars: Option<Vec<::models::GuestStar>>,
+    pub guest_stars: Option<Vec<crate::models::GuestStar>>,
 }
 
 impl Credits {

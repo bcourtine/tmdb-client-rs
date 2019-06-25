@@ -16,7 +16,7 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct GenresList {
     #[serde(rename = "genres", skip_serializing_if = "Option::is_none")]
-    pub genres: Option<Vec<::models::Genre>>,
+    pub genres: Option<Vec<crate::models::Genre>>,
 }
 
 impl GenresList {

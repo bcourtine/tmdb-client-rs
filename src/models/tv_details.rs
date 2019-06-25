@@ -18,13 +18,13 @@ pub struct TvDetails {
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
     pub backdrop_path: Option<Value>,
     #[serde(rename = "created_by", skip_serializing_if = "Option::is_none")]
-    pub created_by: Option<Vec<::models::Creator>>,
+    pub created_by: Option<Vec<crate::models::Creator>>,
     #[serde(rename = "episode_run_time", skip_serializing_if = "Option::is_none")]
     pub episode_run_time: Option<Vec<i32>>,
     #[serde(rename = "first_air_date", skip_serializing_if = "Option::is_none")]
     pub first_air_date: Option<String>,
     #[serde(rename = "genres", skip_serializing_if = "Option::is_none")]
-    pub genres: Option<Vec<::models::Genre>>,
+    pub genres: Option<Vec<crate::models::Genre>>,
     #[serde(rename = "homepage", skip_serializing_if = "Option::is_none")]
     pub homepage: Option<String>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
@@ -38,7 +38,7 @@ pub struct TvDetails {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "networks", skip_serializing_if = "Option::is_none")]
-    pub networks: Option<Vec<::models::Network>>,
+    pub networks: Option<Vec<crate::models::Network>>,
     #[serde(rename = "number_of_episodes", skip_serializing_if = "Option::is_none")]
     pub number_of_episodes: Option<i32>,
     #[serde(rename = "number_of_seasons", skip_serializing_if = "Option::is_none")]
@@ -56,9 +56,9 @@ pub struct TvDetails {
     #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
     pub poster_path: Option<Value>,
     #[serde(rename = "production_companies", skip_serializing_if = "Option::is_none")]
-    pub production_companies: Option<Vec<::models::Company>>,
+    pub production_companies: Option<Vec<crate::models::Company>>,
     #[serde(rename = "seasons", skip_serializing_if = "Option::is_none")]
-    pub seasons: Option<Vec<::models::SeasonObject>>,
+    pub seasons: Option<Vec<crate::models::SeasonObject>>,
     #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
     #[serde(rename = "type", skip_serializing_if = "Option::is_none")]

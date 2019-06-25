@@ -16,9 +16,9 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct PersonCredits {
     #[serde(rename = "cast", skip_serializing_if = "Option::is_none")]
-    pub cast: Option<Vec<::models::CastDetails>>,
+    pub cast: Option<Vec<crate::models::CastDetails>>,
     #[serde(rename = "crew", skip_serializing_if = "Option::is_none")]
-    pub crew: Option<Vec<::models::CrewDetails>>,
+    pub crew: Option<Vec<crate::models::CrewDetails>>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
 }

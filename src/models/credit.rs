@@ -22,13 +22,13 @@ pub struct Credit {
     #[serde(rename = "job", skip_serializing_if = "Option::is_none")]
     pub job: Option<String>,
     #[serde(rename = "media", skip_serializing_if = "Option::is_none")]
-    pub media: Option<::models::CreditMedia>,
+    pub media: Option<crate::models::CreditMedia>,
     #[serde(rename = "media_type", skip_serializing_if = "Option::is_none")]
     pub media_type: Option<String>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
     #[serde(rename = "person", skip_serializing_if = "Option::is_none")]
-    pub person: Option<::models::CreditPerson>,
+    pub person: Option<crate::models::CreditPerson>,
 }
 
 impl Credit {

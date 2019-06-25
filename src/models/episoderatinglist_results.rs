@@ -16,7 +16,7 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct EpisoderatinglistResults {
     #[serde(rename = "rated", skip_serializing_if = "Option::is_none")]
-    pub rated: Option<::models::EpisoderatinglistRated>,
+    pub rated: Option<crate::models::EpisoderatinglistRated>,
     #[serde(rename = "episode_number", skip_serializing_if = "Option::is_none")]
     pub episode_number: Option<i32>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]

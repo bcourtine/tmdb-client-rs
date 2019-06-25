@@ -28,12 +28,12 @@ impl CollectionsApiClient {
 }
 
 pub trait CollectionsApi {
-    fn get_collection_details(&self, collection_id: i32, language: &str) -> Result<::models::CollectionObject, Error>;
-    fn get_collection_images_list(&self, collection_id: i32, language: &str) -> Result<::models::Images, Error>;
+    fn get_collection_details(&self, collection_id: i32, language: &str) -> Result<crate::models::CollectionObject, Error>;
+    fn get_collection_images_list(&self, collection_id: i32, language: &str) -> Result<crate::models::Images, Error>;
 }
 
 impl CollectionsApi for CollectionsApiClient {
-    fn get_collection_details(&self, collection_id: i32, language: &str) -> Result<::models::CollectionObject, Error> {
+    fn get_collection_details(&self, collection_id: i32, language: &str) -> Result<crate::models::CollectionObject, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -59,7 +59,7 @@ impl CollectionsApi for CollectionsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_collection_images_list(&self, collection_id: i32, language: &str) -> Result<::models::Images, Error> {
+    fn get_collection_images_list(&self, collection_id: i32, language: &str) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

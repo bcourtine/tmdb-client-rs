@@ -28,13 +28,13 @@ impl GenresApiClient {
 }
 
 pub trait GenresApi {
-    fn get_all_movie_genres_list(&self, language: &str) -> Result<::models::GenresList, Error>;
-    fn get_all_tv_genres_list(&self, language: &str) -> Result<::models::GenresList, Error>;
-    fn get_movies_by_genre_paginated(&self, genre_id: i32, language: &str, include_adult: bool, sort_by: &str) -> Result<::models::MoviePaginated, Error>;
+    fn get_all_movie_genres_list(&self, language: &str) -> Result<crate::models::GenresList, Error>;
+    fn get_all_tv_genres_list(&self, language: &str) -> Result<crate::models::GenresList, Error>;
+    fn get_movies_by_genre_paginated(&self, genre_id: i32, language: &str, include_adult: bool, sort_by: &str) -> Result<crate::models::MoviePaginated, Error>;
 }
 
 impl GenresApi for GenresApiClient {
-    fn get_all_movie_genres_list(&self, language: &str) -> Result<::models::GenresList, Error> {
+    fn get_all_movie_genres_list(&self, language: &str) -> Result<crate::models::GenresList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -60,7 +60,7 @@ impl GenresApi for GenresApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_all_tv_genres_list(&self, language: &str) -> Result<::models::GenresList, Error> {
+    fn get_all_tv_genres_list(&self, language: &str) -> Result<crate::models::GenresList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -86,7 +86,7 @@ impl GenresApi for GenresApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movies_by_genre_paginated(&self, genre_id: i32, language: &str, include_adult: bool, sort_by: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_movies_by_genre_paginated(&self, genre_id: i32, language: &str, include_adult: bool, sort_by: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

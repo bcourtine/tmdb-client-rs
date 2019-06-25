@@ -18,7 +18,7 @@ pub struct KeywordsList {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "keywords", skip_serializing_if = "Option::is_none")]
-    pub keywords: Option<Vec<::models::Keyword>>,
+    pub keywords: Option<Vec<crate::models::Keyword>>,
 }
 
 impl KeywordsList {

@@ -28,31 +28,31 @@ impl MoviesApiClient {
 }
 
 pub trait MoviesApi {
-    fn delete_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str) -> Result<::models::InlineResponse401, Error>;
-    fn get_movie_account_states(&self, movie_id: &str, session_id: &str, guest_session_id: &str) -> Result<::models::AccountStates, Error>;
-    fn get_movie_alternative_titles_list(&self, movie_id: i32, country: &str) -> Result<::models::AlternativeTitlesList, Error>;
-    fn get_movie_changes_list(&self, movie_id: &str, start_date: String, end_date: String, page: i32) -> Result<::models::ChangeDetails, Error>;
-    fn get_movie_credits(&self, movie_id: i32) -> Result<::models::Credits, Error>;
-    fn get_movie_details(&self, movie_id: i32, language: &str, append_to_response: &str) -> Result<::models::MovieDetails, Error>;
-    fn get_movie_images(&self, movie_id: i32, include_image_language: &str, language: &str) -> Result<::models::Images, Error>;
-    fn get_movie_keywords_list(&self, movie_id: i32, api_key: &str) -> Result<::models::KeywordsList, Error>;
-    fn get_movie_latest_details(&self, language: &str) -> Result<::models::MovieDetails, Error>;
-    fn get_movie_lists_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<::models::ListsPaginated, Error>;
-    fn get_movie_now_playing_paginated(&self, language: &str, page: i32, region: &str) -> Result<::models::MoviePaginated, Error>;
-    fn get_movie_popular_paginated(&self, language: &str, page: i32, region: &str) -> Result<::models::MoviePaginated, Error>;
-    fn get_movie_recommendations_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<::models::MoviePaginated, Error>;
-    fn get_movie_release_dates(&self, movie_id: i32, api_key: &str) -> Result<::models::ReleaseDatesList, Error>;
-    fn get_movie_reviews_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<::models::ReviewsPaginated, Error>;
-    fn get_movie_similar_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<::models::MoviePaginated, Error>;
-    fn get_movie_top_rated_paginated(&self, language: &str, page: i32, region: &str) -> Result<::models::MoviePaginated, Error>;
-    fn get_movie_translations_list(&self, movie_id: i32, api_key: &str) -> Result<::models::Translations, Error>;
-    fn get_movie_upcoming_paginated(&self, language: &str, page: i32, region: &str) -> Result<::models::MoviePaginated, Error>;
-    fn get_movie_videos_list(&self, movie_id: &str, api_key: &str, language: &str) -> Result<::models::VideosList, Error>;
-    fn post_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: ::models::InlineObject5) -> Result<::models::InlineResponse401, Error>;
+    fn delete_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::InlineResponse401, Error>;
+    fn get_movie_account_states(&self, movie_id: &str, session_id: &str, guest_session_id: &str) -> Result<crate::models::AccountStates, Error>;
+    fn get_movie_alternative_titles_list(&self, movie_id: i32, country: &str) -> Result<crate::models::AlternativeTitlesList, Error>;
+    fn get_movie_changes_list(&self, movie_id: &str, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error>;
+    fn get_movie_credits(&self, movie_id: i32) -> Result<crate::models::Credits, Error>;
+    fn get_movie_details(&self, movie_id: i32, language: &str, append_to_response: &str) -> Result<crate::models::MovieDetails, Error>;
+    fn get_movie_images(&self, movie_id: i32, include_image_language: &str, language: &str) -> Result<crate::models::Images, Error>;
+    fn get_movie_keywords_list(&self, movie_id: i32, api_key: &str) -> Result<crate::models::KeywordsList, Error>;
+    fn get_movie_latest_details(&self, language: &str) -> Result<crate::models::MovieDetails, Error>;
+    fn get_movie_lists_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<crate::models::ListsPaginated, Error>;
+    fn get_movie_now_playing_paginated(&self, language: &str, page: i32, region: &str) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_movie_popular_paginated(&self, language: &str, page: i32, region: &str) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_movie_recommendations_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_movie_release_dates(&self, movie_id: i32, api_key: &str) -> Result<crate::models::ReleaseDatesList, Error>;
+    fn get_movie_reviews_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<crate::models::ReviewsPaginated, Error>;
+    fn get_movie_similar_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_movie_top_rated_paginated(&self, language: &str, page: i32, region: &str) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_movie_translations_list(&self, movie_id: i32, api_key: &str) -> Result<crate::models::Translations, Error>;
+    fn get_movie_upcoming_paginated(&self, language: &str, page: i32, region: &str) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_movie_videos_list(&self, movie_id: &str, api_key: &str, language: &str) -> Result<crate::models::VideosList, Error>;
+    fn post_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::InlineObject5) -> Result<crate::models::InlineResponse401, Error>;
 }
 
 impl MoviesApi for MoviesApiClient {
-    fn delete_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str) -> Result<::models::InlineResponse401, Error> {
+    fn delete_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -80,7 +80,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_account_states(&self, movie_id: &str, session_id: &str, guest_session_id: &str) -> Result<::models::AccountStates, Error> {
+    fn get_movie_account_states(&self, movie_id: &str, session_id: &str, guest_session_id: &str) -> Result<crate::models::AccountStates, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -107,7 +107,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_alternative_titles_list(&self, movie_id: i32, country: &str) -> Result<::models::AlternativeTitlesList, Error> {
+    fn get_movie_alternative_titles_list(&self, movie_id: i32, country: &str) -> Result<crate::models::AlternativeTitlesList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -133,7 +133,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_changes_list(&self, movie_id: &str, start_date: String, end_date: String, page: i32) -> Result<::models::ChangeDetails, Error> {
+    fn get_movie_changes_list(&self, movie_id: &str, start_date: String, end_date: String, page: i32) -> Result<crate::models::ChangeDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -161,7 +161,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_credits(&self, movie_id: i32) -> Result<::models::Credits, Error> {
+    fn get_movie_credits(&self, movie_id: i32) -> Result<crate::models::Credits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -186,7 +186,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_details(&self, movie_id: i32, language: &str, append_to_response: &str) -> Result<::models::MovieDetails, Error> {
+    fn get_movie_details(&self, movie_id: i32, language: &str, append_to_response: &str) -> Result<crate::models::MovieDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -213,7 +213,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_images(&self, movie_id: i32, include_image_language: &str, language: &str) -> Result<::models::Images, Error> {
+    fn get_movie_images(&self, movie_id: i32, include_image_language: &str, language: &str) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -240,7 +240,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_keywords_list(&self, movie_id: i32, api_key: &str) -> Result<::models::KeywordsList, Error> {
+    fn get_movie_keywords_list(&self, movie_id: i32, api_key: &str) -> Result<crate::models::KeywordsList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -266,7 +266,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_latest_details(&self, language: &str) -> Result<::models::MovieDetails, Error> {
+    fn get_movie_latest_details(&self, language: &str) -> Result<crate::models::MovieDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -292,7 +292,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_lists_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<::models::ListsPaginated, Error> {
+    fn get_movie_lists_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<crate::models::ListsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -320,7 +320,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_now_playing_paginated(&self, language: &str, page: i32, region: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_movie_now_playing_paginated(&self, language: &str, page: i32, region: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -348,7 +348,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_popular_paginated(&self, language: &str, page: i32, region: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_movie_popular_paginated(&self, language: &str, page: i32, region: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -376,7 +376,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_recommendations_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<::models::MoviePaginated, Error> {
+    fn get_movie_recommendations_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -404,7 +404,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_release_dates(&self, movie_id: i32, api_key: &str) -> Result<::models::ReleaseDatesList, Error> {
+    fn get_movie_release_dates(&self, movie_id: i32, api_key: &str) -> Result<crate::models::ReleaseDatesList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -430,7 +430,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_reviews_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<::models::ReviewsPaginated, Error> {
+    fn get_movie_reviews_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<crate::models::ReviewsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -458,7 +458,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_similar_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<::models::MoviePaginated, Error> {
+    fn get_movie_similar_paginated(&self, movie_id: i32, api_key: &str, language: &str, page: i32) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -486,7 +486,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_top_rated_paginated(&self, language: &str, page: i32, region: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_movie_top_rated_paginated(&self, language: &str, page: i32, region: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -514,7 +514,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_translations_list(&self, movie_id: i32, api_key: &str) -> Result<::models::Translations, Error> {
+    fn get_movie_translations_list(&self, movie_id: i32, api_key: &str) -> Result<crate::models::Translations, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -540,7 +540,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_upcoming_paginated(&self, language: &str, page: i32, region: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_movie_upcoming_paginated(&self, language: &str, page: i32, region: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -568,7 +568,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_videos_list(&self, movie_id: &str, api_key: &str, language: &str) -> Result<::models::VideosList, Error> {
+    fn get_movie_videos_list(&self, movie_id: &str, api_key: &str, language: &str) -> Result<crate::models::VideosList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -595,7 +595,7 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn post_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: ::models::InlineObject5) -> Result<::models::InlineResponse401, Error> {
+    fn post_movie_rating(&self, movie_id: i32, content_type: &str, guest_session_id: &str, session_id: &str, body: crate::models::InlineObject5) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

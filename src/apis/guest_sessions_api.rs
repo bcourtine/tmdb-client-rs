@@ -28,13 +28,13 @@ impl GuestSessionsApiClient {
 }
 
 pub trait GuestSessionsApi {
-    fn get_guest_session_rated_movies_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<::models::MoviePaginated, Error>;
-    fn get_guest_session_rated_tv_episodes_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvEpisodesPaginated, Error>;
-    fn get_guest_session_rated_tv_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvPaginated, Error>;
+    fn get_guest_session_rated_movies_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::MoviePaginated, Error>;
+    fn get_guest_session_rated_tv_episodes_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvEpisodesPaginated, Error>;
+    fn get_guest_session_rated_tv_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvPaginated, Error>;
 }
 
 impl GuestSessionsApi for GuestSessionsApiClient {
-    fn get_guest_session_rated_movies_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<::models::MoviePaginated, Error> {
+    fn get_guest_session_rated_movies_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -61,7 +61,7 @@ impl GuestSessionsApi for GuestSessionsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_guest_session_rated_tv_episodes_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvEpisodesPaginated, Error> {
+    fn get_guest_session_rated_tv_episodes_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvEpisodesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -88,7 +88,7 @@ impl GuestSessionsApi for GuestSessionsApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_guest_session_rated_tv_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<::models::TvPaginated, Error> {
+    fn get_guest_session_rated_tv_paginated(&self, guest_session_id: &str, language: &str, sort_by: &str) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

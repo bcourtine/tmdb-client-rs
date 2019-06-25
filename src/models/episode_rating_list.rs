@@ -18,7 +18,7 @@ pub struct EpisodeRatingList {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<::models::EpisoderatinglistResults>>,
+    pub results: Option<Vec<crate::models::EpisoderatinglistResults>>,
 }
 
 impl EpisodeRatingList {

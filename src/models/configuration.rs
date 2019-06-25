@@ -16,7 +16,7 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Configuration {
     #[serde(rename = "images", skip_serializing_if = "Option::is_none")]
-    pub images: Option<::models::ConfigurationImages>,
+    pub images: Option<crate::models::ConfigurationImages>,
     #[serde(rename = "change_keys", skip_serializing_if = "Option::is_none")]
     pub change_keys: Option<Vec<String>>,
 }

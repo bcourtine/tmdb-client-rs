@@ -28,13 +28,13 @@ impl ChangesApiClient {
 }
 
 pub trait ChangesApi {
-    fn get_movie_changes_paginated(&self, start_date: String, end_date: String) -> Result<::models::ChangesPaginated, Error>;
-    fn get_person_changes_paginated(&self, start_date: String, end_date: String) -> Result<::models::ChangesPaginated, Error>;
-    fn get_tv_changes_paginated(&self, start_date: String, end_date: String) -> Result<::models::ChangesPaginated, Error>;
+    fn get_movie_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error>;
+    fn get_person_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error>;
+    fn get_tv_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error>;
 }
 
 impl ChangesApi for ChangesApiClient {
-    fn get_movie_changes_paginated(&self, start_date: String, end_date: String) -> Result<::models::ChangesPaginated, Error> {
+    fn get_movie_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -61,7 +61,7 @@ impl ChangesApi for ChangesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_changes_paginated(&self, start_date: String, end_date: String) -> Result<::models::ChangesPaginated, Error> {
+    fn get_person_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -88,7 +88,7 @@ impl ChangesApi for ChangesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_changes_paginated(&self, start_date: String, end_date: String) -> Result<::models::ChangesPaginated, Error> {
+    fn get_tv_changes_paginated(&self, start_date: String, end_date: String) -> Result<crate::models::ChangesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

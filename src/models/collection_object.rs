@@ -24,7 +24,7 @@ pub struct CollectionObject {
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
     pub backdrop_path: Option<String>,
     #[serde(rename = "parts", skip_serializing_if = "Option::is_none")]
-    pub parts: Option<Vec<::models::CollectionPart>>,
+    pub parts: Option<Vec<crate::models::CollectionPart>>,
 }
 
 impl CollectionObject {

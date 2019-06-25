@@ -18,7 +18,7 @@ pub struct Translations {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "translations", skip_serializing_if = "Option::is_none")]
-    pub translations: Option<Vec<::models::TranslationsTranslations>>,
+    pub translations: Option<Vec<crate::models::TranslationsTranslations>>,
 }
 
 impl Translations {

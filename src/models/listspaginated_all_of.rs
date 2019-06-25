@@ -16,7 +16,7 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ListspaginatedAllOf {
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<::models::ListObject>>,
+    pub results: Option<Vec<crate::models::ListObject>>,
 }
 
 impl ListspaginatedAllOf {

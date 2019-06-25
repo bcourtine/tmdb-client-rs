@@ -28,11 +28,11 @@ impl CreditsApiClient {
 }
 
 pub trait CreditsApi {
-    fn get_credit_details(&self, credit_id: &str) -> Result<::models::Credit, Error>;
+    fn get_credit_details(&self, credit_id: &str) -> Result<crate::models::Credit, Error>;
 }
 
 impl CreditsApi for CreditsApiClient {
-    fn get_credit_details(&self, credit_id: &str) -> Result<::models::Credit, Error> {
+    fn get_credit_details(&self, credit_id: &str) -> Result<crate::models::Credit, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

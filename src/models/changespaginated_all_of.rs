@@ -16,7 +16,7 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ChangespaginatedAllOf {
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<::models::ChangesObject>>,
+    pub results: Option<Vec<crate::models::ChangesObject>>,
 }
 
 impl ChangespaginatedAllOf {

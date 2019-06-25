@@ -18,7 +18,7 @@ pub struct ReleaseDatesList {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<::models::ReleasedateslistResults>>,
+    pub results: Option<Vec<crate::models::ReleasedateslistResults>>,
 }
 
 impl ReleaseDatesList {
