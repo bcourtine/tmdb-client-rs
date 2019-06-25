@@ -73,100 +73,99 @@ impl APIClient {
         APIClient::new_with_api_key(api_key)
     }
 
-    pub fn account_api(&self) -> &crate::apis::AccountApi{
+    pub fn account_api(&self) -> &crate::apis::AccountApi {
         self.account_api.as_ref()
     }
 
-    pub fn authentication_api(&self) -> &crate::apis::AuthenticationApi{
+    pub fn authentication_api(&self) -> &crate::apis::AuthenticationApi {
         self.authentication_api.as_ref()
     }
 
-    pub fn certifications_api(&self) -> &crate::apis::CertificationsApi{
+    pub fn certifications_api(&self) -> &crate::apis::CertificationsApi {
         self.certifications_api.as_ref()
     }
 
-    pub fn changes_api(&self) -> &crate::apis::ChangesApi{
+    pub fn changes_api(&self) -> &crate::apis::ChangesApi {
         self.changes_api.as_ref()
     }
 
-    pub fn collections_api(&self) -> &crate::apis::CollectionsApi{
+    pub fn collections_api(&self) -> &crate::apis::CollectionsApi {
         self.collections_api.as_ref()
     }
 
-    pub fn companies_api(&self) -> &crate::apis::CompaniesApi{
+    pub fn companies_api(&self) -> &crate::apis::CompaniesApi {
         self.companies_api.as_ref()
     }
 
-    pub fn configuration_api(&self) -> &crate::apis::ConfigurationApi{
+    pub fn configuration_api(&self) -> &crate::apis::ConfigurationApi {
         self.configuration_api.as_ref()
     }
 
-    pub fn credits_api(&self) -> &crate::apis::CreditsApi{
+    pub fn credits_api(&self) -> &crate::apis::CreditsApi {
         self.credits_api.as_ref()
     }
 
-    pub fn discover_api(&self) -> &crate::apis::DiscoverApi{
+    pub fn discover_api(&self) -> &crate::apis::DiscoverApi {
         self.discover_api.as_ref()
     }
 
-    pub fn find_api(&self) -> &crate::apis::FindApi{
+    pub fn find_api(&self) -> &crate::apis::FindApi {
         self.find_api.as_ref()
     }
 
-    pub fn genres_api(&self) -> &crate::apis::GenresApi{
+    pub fn genres_api(&self) -> &crate::apis::GenresApi {
         self.genres_api.as_ref()
     }
 
-    pub fn guest_sessions_api(&self) -> &crate::apis::GuestSessionsApi{
+    pub fn guest_sessions_api(&self) -> &crate::apis::GuestSessionsApi {
         self.guest_sessions_api.as_ref()
     }
 
-    pub fn jobs_api(&self) -> &crate::apis::JobsApi{
+    pub fn jobs_api(&self) -> &crate::apis::JobsApi {
         self.jobs_api.as_ref()
     }
 
-    pub fn keywords_api(&self) -> &crate::apis::KeywordsApi{
+    pub fn keywords_api(&self) -> &crate::apis::KeywordsApi {
         self.keywords_api.as_ref()
     }
 
-    pub fn lists_api(&self) -> &crate::apis::ListsApi{
+    pub fn lists_api(&self) -> &crate::apis::ListsApi {
         self.lists_api.as_ref()
     }
 
-    pub fn movies_api(&self) -> &crate::apis::MoviesApi{
+    pub fn movies_api(&self) -> &crate::apis::MoviesApi {
         self.movies_api.as_ref()
     }
 
-    pub fn networks_api(&self) -> &crate::apis::NetworksApi{
+    pub fn networks_api(&self) -> &crate::apis::NetworksApi {
         self.networks_api.as_ref()
     }
 
-    pub fn people_api(&self) -> &crate::apis::PeopleApi{
+    pub fn people_api(&self) -> &crate::apis::PeopleApi {
         self.people_api.as_ref()
     }
 
-    pub fn reviews_api(&self) -> &crate::apis::ReviewsApi{
+    pub fn reviews_api(&self) -> &crate::apis::ReviewsApi {
         self.reviews_api.as_ref()
     }
 
-    pub fn search_api(&self) -> &crate::apis::SearchApi{
+    pub fn search_api(&self) -> &crate::apis::SearchApi {
         self.search_api.as_ref()
     }
 
-    pub fn tv_api(&self) -> &crate::apis::TVApi{
+    pub fn tv_api(&self) -> &crate::apis::TVApi {
         self.tv_api.as_ref()
     }
 
-    pub fn tv_episodes_api(&self) -> &crate::apis::TVEpisodesApi{
+    pub fn tv_episodes_api(&self) -> &crate::apis::TVEpisodesApi {
         self.tv_episodes_api.as_ref()
     }
 
-    pub fn tv_seasons_api(&self) -> &crate::apis::TVSeasonsApi{
+    pub fn tv_seasons_api(&self) -> &crate::apis::TVSeasonsApi {
         self.tv_seasons_api.as_ref()
     }
 
-    pub fn timezones_api(&self) -> &crate::apis::TimezonesApi{
+    pub fn timezones_api(&self) -> &crate::apis::TimezonesApi {
         self.timezones_api.as_ref()
     }
-
 }
