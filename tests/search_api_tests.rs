@@ -5,7 +5,7 @@ use tmdb_client::apis::client::APIClient;
 fn search_movie_should_give_results() {
     let client = APIClient::new_from_env();
     let result = client.search_api().get_search_movie_paginated("Captain Marvel", Some(2019), None, None, None, None, None);
-    let movies_paginated = result.unwrap();
+    let movies_paginated = result.expect("Error querying movie search API for 'Captain Marvel'");
     assert!(movies_paginated.total_results.unwrap() >= 1);
 }
 
@@ -13,6 +13,6 @@ fn search_movie_should_give_results() {
 fn search_person_should_give_results() {
     let client = APIClient::new_from_env();
     let result = client.search_api().get_search_person_paginated("Julia Roberts", Some("fr-FR"), Some(1), Some(true), Some("FR"));
-    let persons_paginated = result.unwrap();
+    let persons_paginated = result.expect("Error querying person search API for 'Julia Roberts'");
     assert!(persons_paginated.total_results.unwrap() >= 1);
 }

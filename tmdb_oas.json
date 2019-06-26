@@ -4923,7 +4923,7 @@
                                 "jobs": [
                                     {
                                         "department": "Writing",
-                                        "job_list": [
+                                        "jobs": [
                                             "Screenplay"
                                         ]
                                     }
@@ -27273,7 +27273,7 @@
                             "department": {
                                 "type": "string"
                             },
-                            "job_list": {
+                            "jobs": {
                                 "type": "array",
                                 "items": {
                                     "type": "string"

@@ -13,8 +13,8 @@ use serde_json::Value;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct JobsJobs {
-    #[serde(rename = "job_list", skip_serializing_if = "Option::is_none")]
-    pub job_list: Option<Vec<String>>,
+    #[serde(rename = "jobs", skip_serializing_if = "Option::is_none")]
+    pub jobs: Option<Vec<String>>,
     #[serde(rename = "department", skip_serializing_if = "Option::is_none")]
     pub department: Option<String>,
 }
@@ -22,7 +22,7 @@ pub struct JobsJobs {
 impl JobsJobs {
     pub fn new() -> JobsJobs {
         JobsJobs {
-            job_list: None,
+            jobs: None,
             department: None,
         }
     }
