@@ -27535,6 +27535,15 @@
                 },
                 "vote_count": {
                     "type": "integer"
+                },
+                "credits": {
+                    "$ref": "#/definitions/credits"
+                },
+                "videos": {
+                    "$ref": "#/definitions/videos-list"
+                },
+                "images": {
+                    "$ref": "#/definitions/images"
                 }
             }
         },

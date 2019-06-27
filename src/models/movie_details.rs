@@ -15,7 +15,7 @@ pub struct MovieDetails {
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
     pub backdrop_path: Option<serde_json::Value>,
     #[serde(rename = "budget", skip_serializing_if = "Option::is_none")]
-    pub budget: Option<i32>,
+    pub budget: Option<i64>,
     #[serde(rename = "genres", skip_serializing_if = "Option::is_none")]
     pub genres: Option<Vec<crate::models::Genre>>,
     #[serde(rename = "homepage", skip_serializing_if = "Option::is_none")]
@@ -47,7 +47,7 @@ pub struct MovieDetails {
     #[serde(rename = "release_date", skip_serializing_if = "Option::is_none")]
     pub release_date: Option<String>,
     #[serde(rename = "revenue", skip_serializing_if = "Option::is_none")]
-    pub revenue: Option<i32>,
+    pub revenue: Option<i64>,
     #[serde(rename = "runtime", skip_serializing_if = "Option::is_none")]
     pub runtime: Option<i32>,
     #[serde(rename = "spoken_languages", skip_serializing_if = "Option::is_none")]
@@ -64,6 +64,12 @@ pub struct MovieDetails {
     pub vote_average: Option<f32>,
     #[serde(rename = "vote_count", skip_serializing_if = "Option::is_none")]
     pub vote_count: Option<i32>,
+    #[serde(rename = "credits", skip_serializing_if = "Option::is_none")]
+    pub credits: Option<crate::models::Credits>,
+    #[serde(rename = "videos", skip_serializing_if = "Option::is_none")]
+    pub videos: Option<crate::models::VideosList>,
+    #[serde(rename = "images", skip_serializing_if = "Option::is_none")]
+    pub images: Option<crate::models::Images>,
 }
 
 impl MovieDetails {
@@ -93,6 +99,9 @@ impl MovieDetails {
             video: None,
             vote_average: None,
             vote_count: None,
+            credits: None,
+            videos: None,
+            images: None,
         }
     }
 }

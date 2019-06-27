@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adult** | **bool** |  | [optional] 
-**backdrop_path** | [***Value**](.md) |  | [optional] 
+**backdrop_path** | [**Value**](.md) |  | [optional]
 **budget** | **i32** |  | [optional] 
 **genres** | [**Vec<::models::Genre>**](genre.md) |  | [optional] 
 **homepage** | **String** |  | [optional] 
@@ -27,7 +27,10 @@ Name | Type | Description | Notes
 **title** | **String** |  | [optional] 
 **video** | **bool** |  | [optional] 
 **vote_average** | **f32** |  | [optional] 
-**vote_count** | **i32** |  | [optional] 
+**vote_count** | **i32** |  | [optional]
+**credits** | [**::models::Credits**](Credits.md) |  | [optional]
+**videos** | [**::models::VideosList**](VideosList.md) |  | [optional]
+**images** | [**::models::Images**](Images.md) |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
