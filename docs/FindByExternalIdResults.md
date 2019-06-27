@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**movie_results** | [**Vec<::models::MovieObject>**](movie-object.md) |  | [optional] 
+**movie_results** | [**Vec<::models::MovieObject>**](MovieObject.md) |  | [optional] 
 **person_results** | [**Vec<::models::PersonObject>**](person-object.md) |  | [optional] 
 **tv_results** | [**Vec<::models::TvObject>**](tv-object.md) |  | [optional] 
 **tv_episode_results** | **Vec<String>** |  | [optional] 

@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Credits**](credits.md)
+[**::models::Credits**](Credits.md)
 
 ### Authorization
 
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Images**](images.md)
+[**::models::Images**](Images.md)
 
 ### Authorization
 
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Translations**](translations.md)
+[**::models::Translations**](Translations.md)
 
 ### Authorization
 

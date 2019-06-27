@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rated** | [***::models::EpisoderatinglistRated**](episoderatinglist_rated.md) |  | [optional] 
+**rated** | [***::models::EpisoderatinglistRated**](EpisoderatinglistRated.md) |  | [optional]
 **episode_number** | **i32** |  | [optional] 
 **id** | **i32** |  | [optional] 
 

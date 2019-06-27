@@ -25,7 +25,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Network**](network.md)
+[**::models::Network**](Network.md)
 
 ### Authorization
 

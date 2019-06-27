@@ -21,7 +21,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**::models::Jobs**](jobs.md)
+[**::models::Jobs**](Jobs.md)
 
 ### Authorization
 

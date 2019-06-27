@@ -22,7 +22,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**::models::Certifications**](certifications.md)
+[**::models::Certifications**](Certifications.md)
 
 ### Authorization
 
@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**::models::Certifications**](certifications.md)
+[**::models::Certifications**](Certifications.md)
 
 ### Authorization
 

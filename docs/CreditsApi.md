@@ -25,7 +25,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Credit**](credit.md)
+[**::models::Credit**](Credit.md)
 
 ### Authorization
 

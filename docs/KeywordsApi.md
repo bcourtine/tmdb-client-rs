@@ -24,7 +24,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Keyword**](keyword.md)
+[**::models::Keyword**](Keyword.md)
 
 ### Authorization
 

@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonCredits**](person-credits.md)
+[**::models::PersonCredits**](person-Credits.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonCredits**](person-credits.md)
+[**::models::PersonCredits**](person-Credits.md)
 
 ### Authorization
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonCredits**](person-credits.md)
+[**::models::PersonCredits**](person-Credits.md)
 
 ### Authorization
 

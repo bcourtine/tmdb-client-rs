@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**logo_path** | [***Value**](.md) |  | [optional] 
+**logo_path** | **serde_json::Value** |  | [optional]
 **name** | **String** |  | [optional] 
 **id** | **i32** |  | [optional] 
 

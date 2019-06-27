@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **character** | **String** |  | [optional] 
-**seasons** | [**Vec<::models::CreditMediaSeasons>**](credit_media_seasons.md) |  | [optional] 
+**seasons** | [**Vec<::models::CreditMediaSeasons>**](CreditMediaSeasons.md) |  | [optional]
 **original_name** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **id** | **i32** |  | [optional] 

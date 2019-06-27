@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**profile_path** | [***Value**](.md) |  | [optional] 
+**profile_path** | **serde_json::Value** |  | [optional]
 **adult** | **bool** |  | [optional] 
 **id** | **i32** |  | [optional] 
 **known_for** | [**Vec<Value>**](Value.md) |  | [optional] 

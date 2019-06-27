@@ -33,7 +33,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Configuration**](configuration.md)
+[**::models::Configuration**](Configuration.md)
 
 ### Authorization
 

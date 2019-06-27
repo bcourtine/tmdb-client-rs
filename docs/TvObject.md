@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**poster_path** | [***Value**](.md) |  | [optional] 
+**poster_path** | **serde_json::Value** |  | [optional]
 **popularity** | **f32** |  | [optional] 
 **id** | **i32** |  | [optional] 
-**backdrop_path** | [***Value**](.md) |  | [optional] 
+**backdrop_path** | **serde_json::Value** |  | [optional]
 **vote_average** | **f32** |  | [optional] 
 **overview** | **String** |  | [optional] 
 **first_air_date** | **String** |  | [optional] 

@@ -23,7 +23,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Review**](review.md)
+[**::models::Review**](Review.md)
 
 ### Authorization
 

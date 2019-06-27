@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **id** | **i32** |  | [optional] 
 **job** | **String** |  | [optional] 
 **original_title** | **String** |  | [optional] 
-**poster_path** | [***Value**](.md) |  | [optional] 
+**poster_path** | **serde_json::Value** |  | [optional]
 **release_date** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
 **media_type** | **String** |  | [optional] 

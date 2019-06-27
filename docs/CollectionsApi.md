@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Images**](images.md)
+[**::models::Images**](Images.md)
 
 ### Authorization
 
