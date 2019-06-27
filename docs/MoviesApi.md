@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::AccountStates**](account-states.md)
+[**::models::AccountStates**](AccountStates.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::AlternativeTitlesList**](alternative-titles-list.md)
+[**::models::AlternativeTitlesList**](AlternativeTitlesList.md)
 
 ### Authorization
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ChangeDetails**](change-details.md)
+[**::models::ChangeDetails**](ChangeDetails.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MovieDetails**](movie-details.md)
+[**::models::MovieDetails**](MovieDetails.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::KeywordsList**](keywords-list.md)
+[**::models::KeywordsList**](KeywordsList.md)
 
 ### Authorization
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MovieDetails**](movie-details.md)
+[**::models::MovieDetails**](MovieDetails.md)
 
 ### Authorization
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ListsPaginated**](lists-paginated.md)
+[**::models::ListsPaginated**](ListsPaginated.md)
 
 ### Authorization
 
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MoviePaginated**](movie-paginated.md)
+[**::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MoviePaginated**](movie-paginated.md)
+[**::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MoviePaginated**](movie-paginated.md)
+[**::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ReleaseDatesList**](release-dates-list.md)
+[**::models::ReleaseDatesList**](ReleaseDatesList.md)
 
 ### Authorization
 
@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ReviewsPaginated**](reviews-paginated.md)
+[**::models::ReviewsPaginated**](ReviewsPaginated.md)
 
 ### Authorization
 
@@ -674,7 +674,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MoviePaginated**](movie-paginated.md)
+[**::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MoviePaginated**](movie-paginated.md)
+[**::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -797,7 +797,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MoviePaginated**](movie-paginated.md)
+[**::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -839,7 +839,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::VideosList**](videos-list.md)
+[**::models::VideosList**](VideosList.md)
 
 ### Authorization
 
@@ -896,4 +896,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

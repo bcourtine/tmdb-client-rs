@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ListDetails**](list-details.md)
+[**::models::ListDetails**](ListDetails.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ItemStatus**](item-status.md)
+[**::models::ItemStatus**](ItemStatus.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ListStatusResponse**](list-status-response.md)
+[**::models::ListStatusResponse**](ListStatusResponse.md)
 
 ### Authorization
 
@@ -250,4 +250,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

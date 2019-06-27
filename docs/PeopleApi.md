@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ChangeDetails**](change-details.md)
+[**::models::ChangeDetails**](ChangeDetails.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonCredits**](person-Credits.md)
+[**::models::PersonCredits**](Person-Credits.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonDetails**](person-details.md)
+[**::models::PersonDetails**](PersonDetails.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonExternalIds**](person-external-ids.md)
+[**::models::PersonExternalIds**](PersonExternalIds.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonImagesList**](person-images-list.md)
+[**::models::PersonImagesList**](PersonImagesList.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonDetails**](person-details.md)
+[**::models::PersonDetails**](PersonDetails.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonCredits**](person-Credits.md)
+[**::models::PersonCredits**](Person-Credits.md)
 
 ### Authorization
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonPopularPaginated**](person-popular-paginated.md)
+[**::models::PersonPopularPaginated**](PersonPopularPaginated.md)
 
 ### Authorization
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonTaggedImagesPaginated**](person-tagged-images-paginated.md)
+[**::models::PersonTaggedImagesPaginated**](PersonTaggedImagesPaginated.md)
 
 ### Authorization
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonCredits**](person-Credits.md)
+[**::models::PersonCredits**](Person-Credits.md)
 
 ### Authorization
 
@@ -417,4 +417,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

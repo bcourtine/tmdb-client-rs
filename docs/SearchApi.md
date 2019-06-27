@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::SearchCollectionResultsPaginated**](search-collection-results-paginated.md)
+[**::models::SearchCollectionResultsPaginated**](SearchCollectionResultsPaginated.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::SearchCompanyResultsPaginated**](search-company-results-paginated.md)
+[**::models::SearchCompanyResultsPaginated**](SearchCompanyResultsPaginated.md)
 
 ### Authorization
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::SearchKeywordResultsPaginated**](search-keyword-results-paginated.md)
+[**::models::SearchKeywordResultsPaginated**](SearchKeywordResultsPaginated.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MoviePaginated**](movie-paginated.md)
+[**::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::SearchMultiResultsPaginated**](search-multi-results-paginated.md)
+[**::models::SearchMultiResultsPaginated**](SearchMultiResultsPaginated.md)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::SearchPersonResultsPaginated**](search-person-results-paginated.md)
+[**::models::SearchPersonResultsPaginated**](SearchPersonResultsPaginated.md)
 
 ### Authorization
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvPaginated**](tv-paginated.md)
+[**::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -313,4 +313,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

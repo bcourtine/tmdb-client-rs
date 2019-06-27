@@ -25,12 +25,11 @@ Name | Type | Description | Notes
 **popularity** | **f32** |  | [optional] 
 **poster_path** | **serde_json::Value** |  | [optional]
 **production_companies** | [**Vec<::models::Company>**](Company.md) |  | [optional] 
-**seasons** | [**Vec<::models::SeasonObject>**](season-object.md) |  | [optional] 
+**seasons** | [**Vec<::models::SeasonObject>**](SeasonObject.md) |  | [optional] 
 **status** | **String** |  | [optional] 
 **_type** | **String** |  | [optional] 
 **vote_average** | **f32** |  | [optional] 
 **vote_count** | **i32** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

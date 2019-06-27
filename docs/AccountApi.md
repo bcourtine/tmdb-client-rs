@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MoviePaginated**](movie-paginated.md)
+[**::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvPaginated**](tv-paginated.md)
+[**::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MoviePaginated**](movie-paginated.md)
+[**::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvEpisodesPaginated**](tv-episodes-paginated.md)
+[**::models::TvEpisodesPaginated**](TvEpisodesPaginated.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvPaginated**](tv-paginated.md)
+[**::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MoviePaginated**](movie-paginated.md)
+[**::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvPaginated**](tv-paginated.md)
+[**::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::AccountDetails**](account-details.md)
+[**::models::AccountDetails**](AccountDetails.md)
 
 ### Authorization
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ListsPaginated**](lists-paginated.md)
+[**::models::ListsPaginated**](ListsPaginated.md)
 
 ### Authorization
 
@@ -489,4 +489,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

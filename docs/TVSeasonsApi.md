@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::EpisodeRatingList**](episode-rating-list.md)
+[**::models::EpisodeRatingList**](EpisodeRatingList.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ChangeDetails**](change-details.md)
+[**::models::ChangeDetails**](ChangeDetails.md)
 
 ### Authorization
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::SeasonDetails**](season-details.md)
+[**::models::SeasonDetails**](SeasonDetails.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MovieTvExternalIds**](movie-tv-external-ids.md)
+[**::models::MovieTvExternalIds**](MovieTvExternalIds.md)
 
 ### Authorization
 
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::VideosList**](videos-list.md)
+[**::models::VideosList**](VideosList.md)
 
 ### Authorization
 
@@ -316,4 +316,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

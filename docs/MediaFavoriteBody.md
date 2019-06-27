@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**media_type** | [***::models::MediaType**](media-type.md) |  |
+**media_type** | [***::models::MediaType**](MediaType.md) |  |
 **media_id** | **i32** |  |
 **favorite** | **bool** |  |
 

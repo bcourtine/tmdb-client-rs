@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::AccountStates**](account-states.md)
+[**::models::AccountStates**](AccountStates.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvPaginated**](tv-paginated.md)
+[**::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::AlternativeTitlesList**](alternative-titles-list.md)
+[**::models::AlternativeTitlesList**](AlternativeTitlesList.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::ChangeDetails**](change-details.md)
+[**::models::ChangeDetails**](ChangeDetails.md)
 
 ### Authorization
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::RatingsList**](ratings-list.md)
+[**::models::RatingsList**](RatingsList.md)
 
 ### Authorization
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvDetails**](tv-details.md)
+[**::models::TvDetails**](TvDetails.md)
 
 ### Authorization
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MovieTvExternalIds**](movie-tv-external-ids.md)
+[**::models::MovieTvExternalIds**](MovieTvExternalIds.md)
 
 ### Authorization
 
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::KeywordsList**](keywords-list.md)
+[**::models::KeywordsList**](KeywordsList.md)
 
 ### Authorization
 
@@ -500,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvDetails**](tv-details.md)
+[**::models::TvDetails**](TvDetails.md)
 
 ### Authorization
 
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvPaginated**](tv-paginated.md)
+[**::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvPaginated**](tv-paginated.md)
+[**::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -622,7 +622,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvPaginated**](tv-paginated.md)
+[**::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvPaginated**](tv-paginated.md)
+[**::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::TvPaginated**](tv-paginated.md)
+[**::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -786,7 +786,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::VideosList**](videos-list.md)
+[**::models::VideosList**](VideosList.md)
 
 ### Authorization
 
@@ -843,4 +843,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
