@@ -5,8 +5,8 @@ authors = ["Benoît Courtine <benoit.courtine@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/bcourtine/tmdb-client-rs"
-documentation = "https://docs.rs/crate/tmdb-client"
-homepage = "https://crates.io/crates/tmdb-client"
+documentation = "https://docs.rs/crate/tmdb_client"
+homepage = "https://crates.io/crates/tmdb_client"
 description = """
 Rust client for The Movie Database (TMDB) API.
 """
