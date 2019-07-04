@@ -27,7 +27,7 @@ pub struct ListDetails {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
-    pub poster_path: Option<serde_json::Value>,
+    pub poster_path: Option<String>,
 }
 
 impl ListDetails {

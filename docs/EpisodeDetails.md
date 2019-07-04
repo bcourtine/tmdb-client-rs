@@ -10,9 +10,10 @@ Name | Type | Description | Notes
 **guest_stars** | [**Vec<::models::GuestStar>**](GuestStar.md) |  | [optional]
 **name** | **String** |  | [optional] 
 **overview** | **String** |  | [optional] 
-**id** | **i32** |  | [optional] 
+**id** | **i32** |  | [optional]
+**production_code** | **String** |  | [optional]
 **season_number** | **i32** |  | [optional] 
-**still_path** | **serde_json::Value** |  | [optional]
+**still_path** | **String** |  | [optional]
 **vote_average** | **f32** |  | [optional] 
 **vote_count** | **i32** |  | [optional] 
 

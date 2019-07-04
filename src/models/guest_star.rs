@@ -21,7 +21,7 @@ pub struct GuestStar {
     #[serde(rename = "order", skip_serializing_if = "Option::is_none")]
     pub order: Option<i32>,
     #[serde(rename = "profile_path", skip_serializing_if = "Option::is_none")]
-    pub profile_path: Option<serde_json::Value>,
+    pub profile_path: Option<String>,
 }
 
 impl GuestStar {

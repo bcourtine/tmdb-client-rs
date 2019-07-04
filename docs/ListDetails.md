@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **item_count** | **i32** |  | [optional] 
 **iso_639_1** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**poster_path** | **serde_json::Value** |  | [optional]
+**poster_path** | **String** |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

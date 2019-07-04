@@ -13,7 +13,9 @@ pub struct MovieDetails {
     #[serde(rename = "adult", skip_serializing_if = "Option::is_none")]
     pub adult: Option<bool>,
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
-    pub backdrop_path: Option<serde_json::Value>,
+    pub backdrop_path: Option<String>,
+    #[serde(rename = "belongs_to_collection", skip_serializing_if = "Option::is_none")]
+    pub belongs_to_collection: Option<serde_json::Value>,
     #[serde(rename = "budget", skip_serializing_if = "Option::is_none")]
     pub budget: Option<i64>,
     #[serde(rename = "genres", skip_serializing_if = "Option::is_none")]
@@ -33,7 +35,7 @@ pub struct MovieDetails {
     #[serde(rename = "popularity", skip_serializing_if = "Option::is_none")]
     pub popularity: Option<f32>,
     #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
-    pub poster_path: Option<serde_json::Value>,
+    pub poster_path: Option<String>,
     #[serde(
         rename = "production_companies",
         skip_serializing_if = "Option::is_none"
@@ -77,6 +79,7 @@ impl MovieDetails {
         MovieDetails {
             adult: None,
             backdrop_path: None,
+            belongs_to_collection: None,
             budget: None,
             genres: None,
             homepage: None,

@@ -11,13 +11,13 @@
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct TvObject {
     #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
-    pub poster_path: Option<serde_json::Value>,
+    pub poster_path: Option<String>,
     #[serde(rename = "popularity", skip_serializing_if = "Option::is_none")]
     pub popularity: Option<f32>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
-    pub backdrop_path: Option<serde_json::Value>,
+    pub backdrop_path: Option<String>,
     #[serde(rename = "vote_average", skip_serializing_if = "Option::is_none")]
     pub vote_average: Option<f32>,
     #[serde(rename = "overview", skip_serializing_if = "Option::is_none")]

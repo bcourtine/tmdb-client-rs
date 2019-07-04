@@ -17,7 +17,7 @@ pub struct SearchpersonresultspaginatedAllOfResults {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "profile_path", skip_serializing_if = "Option::is_none")]
-    pub profile_path: Option<serde_json::Value>,
+    pub profile_path: Option<String>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "adult", skip_serializing_if = "Option::is_none")]

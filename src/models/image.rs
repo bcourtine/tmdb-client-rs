@@ -16,6 +16,8 @@ pub struct Image {
     pub file_path: Option<String>,
     #[serde(rename = "height", skip_serializing_if = "Option::is_none")]
     pub height: Option<i32>,
+    #[serde(rename = "iso_639_1", skip_serializing_if = "Option::is_none")]
+    pub iso_639_1: Option<String>,
     #[serde(rename = "vote_average", skip_serializing_if = "Option::is_none")]
     pub vote_average: Option<f32>,
     #[serde(rename = "vote_count", skip_serializing_if = "Option::is_none")]
@@ -30,6 +32,7 @@ impl Image {
             aspect_ratio: None,
             file_path: None,
             height: None,
+            iso_639_1: None,
             vote_average: None,
             vote_count: None,
             width: None,

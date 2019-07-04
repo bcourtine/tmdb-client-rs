@@ -21,7 +21,7 @@ pub struct Crew {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "profile_path", skip_serializing_if = "Option::is_none")]
-    pub profile_path: Option<serde_json::Value>,
+    pub profile_path: Option<String>,
 }
 
 impl Crew {

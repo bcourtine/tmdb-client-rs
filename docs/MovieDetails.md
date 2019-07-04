@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adult** | **bool** |  | [optional] 
-**backdrop_path** | **serde_json::Value** |  | [optional]
+**backdrop_path** | **String** |  | [optional]
+**belongs_to_collection** | **serde_json::Value** |  | [optional]
 **budget** | **i32** |  | [optional] 
 **genres** | [**Vec<::models::Genre>**](Genre.md) |  | [optional] 
 **homepage** | **String** |  | [optional] 
@@ -15,7 +16,7 @@ Name | Type | Description | Notes
 **original_title** | **String** |  | [optional] 
 **overview** | **String** |  | [optional] 
 **popularity** | **f32** |  | [optional] 
-**poster_path** | **serde_json::Value** |  | [optional]
+**poster_path** | **String** |  | [optional]
 **production_companies** | [**Vec<::models::Company>**](Company.md) |  | [optional] 
 **production_countries** | [**Vec<::models::MoviedetailsProductionCountries>**](MoviedetailsProductionCountries.md) |  | [optional]
 **release_date** | **String** |  | [optional]

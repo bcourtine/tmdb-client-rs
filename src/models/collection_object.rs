@@ -16,6 +16,8 @@ pub struct CollectionObject {
     pub name: Option<String>,
     #[serde(rename = "overview", skip_serializing_if = "Option::is_none")]
     pub overview: Option<String>,
+    #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
+    pub poster_path: Option<String>,
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
     pub backdrop_path: Option<String>,
     #[serde(rename = "parts", skip_serializing_if = "Option::is_none")]
@@ -28,6 +30,7 @@ impl CollectionObject {
             id: None,
             name: None,
             overview: None,
+            poster_path: None,
             backdrop_path: None,
             parts: None,
         }

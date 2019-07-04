@@ -11,13 +11,13 @@
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct SearchcollectionresultspaginatedAllOfResults {
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
-    pub backdrop_path: Option<serde_json::Value>,
+    pub backdrop_path: Option<String>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
-    pub poster_path: Option<serde_json::Value>,
+    pub poster_path: Option<String>,
 }
 
 impl SearchcollectionresultspaginatedAllOfResults {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**poster_path** | **serde_json::Value** |  | [optional]
+**poster_path** | **String** |  | [optional]
 **adult** | **bool** |  | [optional] 
 **overview** | **String** |  | [optional] 
 **release_date** | **String** |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **original_title** | **String** |  | [optional] 
 **original_language** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
-**backdrop_path** | **serde_json::Value** |  | [optional]
+**backdrop_path** | **String** |  | [optional]
 **popularity** | **f32** |  | [optional] 
 **vote_count** | **i32** |  | [optional] 
 **video** | **bool** |  | [optional] 

@@ -11,7 +11,7 @@
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct MovieObject {
     #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
-    pub poster_path: Option<serde_json::Value>,
+    pub poster_path: Option<String>,
     #[serde(rename = "adult", skip_serializing_if = "Option::is_none")]
     pub adult: Option<bool>,
     #[serde(rename = "overview", skip_serializing_if = "Option::is_none")]
@@ -29,7 +29,7 @@ pub struct MovieObject {
     #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
-    pub backdrop_path: Option<serde_json::Value>,
+    pub backdrop_path: Option<String>,
     #[serde(rename = "popularity", skip_serializing_if = "Option::is_none")]
     pub popularity: Option<f32>,
     #[serde(rename = "vote_count", skip_serializing_if = "Option::is_none")]

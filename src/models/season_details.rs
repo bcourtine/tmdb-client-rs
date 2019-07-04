@@ -23,7 +23,7 @@ pub struct SeasonDetails {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
-    pub poster_path: Option<serde_json::Value>,
+    pub poster_path: Option<String>,
     #[serde(rename = "season_number", skip_serializing_if = "Option::is_none")]
     pub season_number: Option<i32>,
 }

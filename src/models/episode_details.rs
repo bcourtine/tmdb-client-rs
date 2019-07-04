@@ -24,10 +24,12 @@ pub struct EpisodeDetails {
     pub overview: Option<String>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
+    #[serde(rename = "production_code", skip_serializing_if = "Option::is_none")]
+    pub production_code: Option<String>,
     #[serde(rename = "season_number", skip_serializing_if = "Option::is_none")]
     pub season_number: Option<i32>,
     #[serde(rename = "still_path", skip_serializing_if = "Option::is_none")]
-    pub still_path: Option<serde_json::Value>,
+    pub still_path: Option<String>,
     #[serde(rename = "vote_average", skip_serializing_if = "Option::is_none")]
     pub vote_average: Option<f32>,
     #[serde(rename = "vote_count", skip_serializing_if = "Option::is_none")]
@@ -44,6 +46,7 @@ impl EpisodeDetails {
             name: None,
             overview: None,
             id: None,
+            production_code: None,
             season_number: None,
             still_path: None,
             vote_average: None,

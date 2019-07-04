@@ -26479,10 +26479,8 @@
         },
         "image-path": {
             "title": "Image Path",
-            "type": [
-                "string",
-                "null"
-            ]
+            "type": "string",
+            "pattern": "^/[A-Za-z0-9]+\\.[A-Za-z0-9]+"
         },
         "token-response-with-expiration": {
             "type": "object",
@@ -26771,10 +26769,7 @@
                     "type": "integer"
                 },
                 "adult": {
-                    "type": [
-                        "boolean",
-                        "null"
-                    ]
+                    "type": "boolean"
                 }
             }
         },
@@ -26947,7 +26942,7 @@
                     "type": "integer"
                 },
                 "still_path": {
-                    "type": "null"
+                    "type": "string"
                 },
                 "show_id": {
                     "type": "integer"
@@ -26976,7 +26971,7 @@
                     "type": "string"
                 },
                 "poster_path": {
-                    "type": "null"
+                    "$ref": "#/definitions/image-path"
                 },
                 "backdrop_path": {
                     "type": "string"
@@ -26996,7 +26991,7 @@
                     "type": "boolean"
                 },
                 "backdrop_path": {
-                    "type": "null"
+                    "$ref": "#/definitions/image-path"
                 },
                 "genre_ids": {
                     "type": "array",
@@ -27072,10 +27067,7 @@
                     "type": "integer"
                 },
                 "iso_639_1": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "vote_average": {
                     "type": "number"
@@ -27092,10 +27084,7 @@
             "type": "object",
             "properties": {
                 "description": {
-                    "type": [
-                        "null",
-                        "string"
-                    ]
+                    "type": "string"
                 },
                 "headquarters": {
                     "type": "string"
@@ -27107,13 +27096,16 @@
                     "type": "integer"
                 },
                 "logo_path": {
-                    "type": "null"
+                    "type": "string"
                 },
                 "name": {
                     "type": "string"
                 },
+                "origin_country": {
+                    "type": "string"
+                },
                 "parent_company": {
-                    "type": "null"
+                    "$ref": "#/definitions/company"
                 }
             }
         },
@@ -27433,10 +27425,7 @@
                     "$ref": "#/definitions/image-path"
                 },
                 "belongs_to_collection": {
-                    "type": [
-                        "null",
-                        "object"
-                    ]
+                    "type": "object"
                 },
                 "budget": {
                     "type": "integer"
@@ -28049,10 +28038,7 @@
                     "type": "integer"
                 },
                 "first_air_date": {
-                    "type": [
-                        "null",
-                        "string"
-                    ]
+                    "type": "string"
                 },
                 "name": {
                     "type": "string"
@@ -28066,40 +28052,25 @@
             "type": "object",
             "properties": {
                 "imdb_id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "facebook_id": {
-                    "type": [
-                        "null",
-                        "string"
-                    ]
+                    "type": "string"
                 },
                 "freebase_mid": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "freebase_id": {
-                    "type": [
-                        "null",
-                        "string"
-                    ]
+                    "type": "string"
                 },
                 "tvrage_id": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
+                    "type": "integer"
                 },
                 "twitter_id": {
-                    "type": [
-                        "null",
-                        "string"
-                    ]
+                    "type": "string"
+                },
+                "instagram_id": {
+                    "type": "string"
                 },
                 "id": {
                     "type": "integer"
@@ -28506,6 +28477,9 @@
                 },
                 "id": {
                     "type": "integer"
+                },
+                "logo_path": {
+                    "type": "string"
                 }
             }
         },
@@ -28555,28 +28529,16 @@
             "type": "object",
             "properties": {
                 "imdb_id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "freebase_mid": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "freebase_id": {
-                    "type": [
-                        "null",
-                        "string"
-                    ]
+                    "type": "string"
                 },
                 "tvrage_id": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
+                    "type": "integer"
                 },
                 "id": {
                     "type": "integer"
@@ -28649,10 +28611,7 @@
                     "type": "integer"
                 },
                 "production_code": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "season_number": {
                     "type": "integer"

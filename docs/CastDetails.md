@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **credit_id** | **String** |  | [optional] 
 **id** | **i32** |  | [optional] 
 **original_title** | **String** |  | [optional] 
-**poster_path** | **serde_json::Value** |  | [optional]
+**poster_path** | **String** |  | [optional]
 **release_date** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
 **media_type** | **String** |  | [optional] 

@@ -23,7 +23,7 @@ pub struct CrewDetails {
     #[serde(rename = "original_title", skip_serializing_if = "Option::is_none")]
     pub original_title: Option<String>,
     #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
-    pub poster_path: Option<serde_json::Value>,
+    pub poster_path: Option<String>,
     #[serde(rename = "release_date", skip_serializing_if = "Option::is_none")]
     pub release_date: Option<String>,
     #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
@@ -32,6 +32,8 @@ pub struct CrewDetails {
     pub media_type: Option<String>,
     #[serde(rename = "episode_count", skip_serializing_if = "Option::is_none")]
     pub episode_count: Option<i32>,
+    #[serde(rename = "first_air_date", skip_serializing_if = "Option::is_none")]
+    pub first_air_date: Option<String>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "original_name", skip_serializing_if = "Option::is_none")]
@@ -52,6 +54,7 @@ impl CrewDetails {
             title: None,
             media_type: None,
             episode_count: None,
+            first_air_date: None,
             name: None,
             original_name: None,
         }

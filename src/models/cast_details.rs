@@ -21,7 +21,7 @@ pub struct CastDetails {
     #[serde(rename = "original_title", skip_serializing_if = "Option::is_none")]
     pub original_title: Option<String>,
     #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
-    pub poster_path: Option<serde_json::Value>,
+    pub poster_path: Option<String>,
     #[serde(rename = "release_date", skip_serializing_if = "Option::is_none")]
     pub release_date: Option<String>,
     #[serde(rename = "title", skip_serializing_if = "Option::is_none")]

@@ -12,10 +12,33 @@
 pub struct PersonExternalIds {
     #[serde(rename = "id")]
     pub id: i32,
+    #[serde(rename = "imdb_id")]
+    pub imdb_id: Option<String>,
+    #[serde(rename = "facebook_id")]
+    pub facebook_id: Option<String>,
+    #[serde(rename = "freebase_mid")]
+    pub freebase_mid: Option<String>,
+    #[serde(rename = "freebase_id")]
+    pub freebase_id: Option<String>,
+    #[serde(rename = "tvrage_id")]
+    pub tvrage_id: Option<i32>,
+    #[serde(rename = "twitter_id")]
+    pub twitter_id: Option<String>,
+    #[serde(rename = "instagram_id")]
+    pub instagram_id: Option<String>,
 }
 
 impl PersonExternalIds {
     pub fn new(id: i32) -> PersonExternalIds {
-        PersonExternalIds { id: id }
+        PersonExternalIds {
+            id,
+            imdb_id: None,
+            facebook_id: None,
+            freebase_mid: None,
+            freebase_id: None,
+            tvrage_id: None,
+            twitter_id: None,
+            instagram_id: None,
+        }
     }
 }

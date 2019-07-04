@@ -12,6 +12,8 @@
 pub struct CollectionPart {
     #[serde(rename = "adult", skip_serializing_if = "Option::is_none")]
     pub adult: Option<bool>,
+    #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
+    pub backdrop_path: Option<String>,
     #[serde(rename = "genre_ids", skip_serializing_if = "Option::is_none")]
     pub genre_ids: Option<Vec<i32>>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
@@ -42,6 +44,7 @@ impl CollectionPart {
     pub fn new() -> CollectionPart {
         CollectionPart {
             adult: None,
+            backdrop_path: None,
             genre_ids: None,
             id: None,
             original_language: None,

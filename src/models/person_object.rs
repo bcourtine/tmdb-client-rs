@@ -11,7 +11,7 @@
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct PersonObject {
     #[serde(rename = "profile_path", skip_serializing_if = "Option::is_none")]
-    pub profile_path: Option<serde_json::Value>,
+    pub profile_path: Option<String>,
     #[serde(rename = "adult", skip_serializing_if = "Option::is_none")]
     pub adult: Option<bool>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]

@@ -14,6 +14,8 @@ pub struct Company {
     pub name: Option<String>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
+    #[serde(rename = "logo_path", skip_serializing_if = "Option::is_none")]
+    pub logo_path: Option<String>,
 }
 
 impl Company {
@@ -21,6 +23,7 @@ impl Company {
         Company {
             name: None,
             id: None,
+            logo_path: None,
         }
     }
 }

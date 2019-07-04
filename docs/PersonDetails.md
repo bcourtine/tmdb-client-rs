@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **place_of_birth** | **String** |  | [optional] 
 **popularity** | **f32** |  | [optional] 
-**profile_path** | **serde_json::Value** |  | [optional]
+**profile_path** | **String** |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

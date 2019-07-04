@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**adult** | **bool** |  | [optional] 
+**adult** | **bool** |  | [optional]
+**backdrop_path** | **String** |  | [optional]
 **genre_ids** | **Vec<i32>** |  | [optional] 
 **id** | **i32** |  | [optional] 
 **original_language** | **String** |  | [optional] 

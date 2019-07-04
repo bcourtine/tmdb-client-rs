@@ -12,10 +12,15 @@
 pub struct ChangesObject {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
+    #[serde(rename = "adult", skip_serializing_if = "Option::is_none")]
+    pub adult: Option<bool>,
 }
 
 impl ChangesObject {
     pub fn new() -> ChangesObject {
-        ChangesObject { id: None }
+        ChangesObject {
+            id: None,
+            adult: None,
+        }
     }
 }

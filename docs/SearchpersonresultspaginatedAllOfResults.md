@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **known_for** | [**Vec<Value>**](Value.md) |  | [optional] 
 **popularity** | **f32** |  | [optional] 
 **name** | **String** |  | [optional] 
-**profile_path** | **serde_json::Value** |  | [optional]
+**profile_path** | **String** |  | [optional]
 **id** | **i32** |  | [optional] 
 **adult** | **bool** |  | [optional] 
 

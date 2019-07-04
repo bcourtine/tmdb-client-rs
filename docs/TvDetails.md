@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backdrop_path** | **serde_json::Value** |  | [optional]
+**backdrop_path** | **String** |  | [optional]
 **created_by** | [**Vec<::models::Creator>**](Creator.md) |  | [optional]
 **episode_run_time** | **Vec<i32>** |  | [optional] 
 **first_air_date** | **String** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **original_name** | **String** |  | [optional] 
 **overview** | **String** |  | [optional] 
 **popularity** | **f32** |  | [optional] 
-**poster_path** | **serde_json::Value** |  | [optional]
+**poster_path** | **String** |  | [optional]
 **production_companies** | [**Vec<::models::Company>**](Company.md) |  | [optional] 
 **seasons** | [**Vec<::models::SeasonObject>**](SeasonObject.md) |  | [optional] 
 **status** | **String** |  | [optional] 

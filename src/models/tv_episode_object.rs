@@ -22,6 +22,8 @@ pub struct TvEpisodeObject {
     pub id: Option<i32>,
     #[serde(rename = "season_number", skip_serializing_if = "Option::is_none")]
     pub season_number: Option<i32>,
+    #[serde(rename = "still_path", skip_serializing_if = "Option::is_none")]
+    pub still_path: Option<String>,
     #[serde(rename = "show_id", skip_serializing_if = "Option::is_none")]
     pub show_id: Option<i32>,
     #[serde(rename = "vote_average", skip_serializing_if = "Option::is_none")]
@@ -41,6 +43,7 @@ impl TvEpisodeObject {
             name: None,
             id: None,
             season_number: None,
+            still_path: None,
             show_id: None,
             vote_average: None,
             vote_count: None,

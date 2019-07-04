@@ -11,7 +11,7 @@
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct TvDetails {
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
-    pub backdrop_path: Option<serde_json::Value>,
+    pub backdrop_path: Option<String>,
     #[serde(rename = "created_by", skip_serializing_if = "Option::is_none")]
     pub created_by: Option<Vec<crate::models::Creator>>,
     #[serde(rename = "episode_run_time", skip_serializing_if = "Option::is_none")]
@@ -49,7 +49,7 @@ pub struct TvDetails {
     #[serde(rename = "popularity", skip_serializing_if = "Option::is_none")]
     pub popularity: Option<f32>,
     #[serde(rename = "poster_path", skip_serializing_if = "Option::is_none")]
-    pub poster_path: Option<serde_json::Value>,
+    pub poster_path: Option<String>,
     #[serde(
         rename = "production_companies",
         skip_serializing_if = "Option::is_none"

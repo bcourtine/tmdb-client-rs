@@ -11,7 +11,7 @@
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct SearchcompanyresultspaginatedAllOfResults {
     #[serde(rename = "logo_path", skip_serializing_if = "Option::is_none")]
-    pub logo_path: Option<serde_json::Value>,
+    pub logo_path: Option<String>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
