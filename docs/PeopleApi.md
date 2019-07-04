@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ## get_person_popular_paginated
 
-> ::models::PersonPopularPaginated get_person_popular_paginated(ctx, optional)
+> ::models::PersonPaginated get_person_popular_paginated(ctx, optional)
 Get Popular
 
 Get the list of popular people on TMDb. This list updates daily.
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonPopularPaginated**](PersonPopularPaginated.md)
+[**::models::PersonPaginated**](PersonPaginated.md)
 
 ### Authorization
 

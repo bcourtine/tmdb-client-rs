@@ -40,7 +40,7 @@ pub struct MovieDetails {
         rename = "production_companies",
         skip_serializing_if = "Option::is_none"
     )]
-    pub production_companies: Option<Vec<crate::models::Company>>,
+    pub production_companies: Option<Vec<crate::models::CompanyObject>>,
     #[serde(
         rename = "production_countries",
         skip_serializing_if = "Option::is_none"

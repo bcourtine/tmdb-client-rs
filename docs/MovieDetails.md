@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **overview** | **String** |  | [optional] 
 **popularity** | **f32** |  | [optional] 
 **poster_path** | **String** |  | [optional]
-**production_companies** | [**Vec<::models::Company>**](Company.md) |  | [optional] 
+**production_companies** | [**Vec<::models::CompanyObject>**](CompanyObject.md) |  | [optional]
 **production_countries** | [**Vec<::models::MoviedetailsProductionCountries>**](MoviedetailsProductionCountries.md) |  | [optional]
 **release_date** | **String** |  | [optional]
 **revenue** | **i32** |  | [optional] 

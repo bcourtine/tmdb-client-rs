@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **overview** | **String** |  | [optional] 
 **popularity** | **f32** |  | [optional] 
 **poster_path** | **String** |  | [optional]
-**production_companies** | [**Vec<::models::Company>**](Company.md) |  | [optional] 
+**production_companies** | [**Vec<::models::CompanyObject>**](CompanyObject.md) |  | [optional]
 **seasons** | [**Vec<::models::SeasonObject>**](SeasonObject.md) |  | [optional] 
 **status** | **String** |  | [optional] 
 **_type** | **String** |  | [optional] 

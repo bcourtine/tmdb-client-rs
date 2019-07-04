@@ -70,7 +70,7 @@ pub trait PeopleApi {
         &self,
         language: Option<&str>,
         page: Option<i32>,
-    ) -> Result<crate::models::PersonPopularPaginated, Error>;
+    ) -> Result<crate::models::PersonPaginated, Error>;
     fn get_person_tagged_images_paginated(
         &self,
         person_id: i32,
@@ -348,7 +348,7 @@ impl PeopleApi for PeopleApiClient {
         &self,
         language: Option<&str>,
         page: Option<i32>,
-    ) -> Result<crate::models::PersonPopularPaginated, Error> {
+    ) -> Result<crate::models::PersonPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

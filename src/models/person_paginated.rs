@@ -9,7 +9,7 @@
  */
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct SearchKeywordResultsPaginated {
+pub struct PersonPaginated {
     #[serde(rename = "page", skip_serializing_if = "Option::is_none")]
     pub page: Option<i32>,
     #[serde(rename = "total_pages", skip_serializing_if = "Option::is_none")]
@@ -17,12 +17,12 @@ pub struct SearchKeywordResultsPaginated {
     #[serde(rename = "total_results", skip_serializing_if = "Option::is_none")]
     pub total_results: Option<i32>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<crate::models::CreditPerson>>,
+    pub results: Option<Vec<crate::models::PersonObject>>,
 }
 
-impl SearchKeywordResultsPaginated {
-    pub fn new() -> SearchKeywordResultsPaginated {
-        SearchKeywordResultsPaginated {
+impl PersonPaginated {
+    pub fn new() -> PersonPaginated {
+        PersonPaginated {
             page: None,
             total_pages: None,
             total_results: None,

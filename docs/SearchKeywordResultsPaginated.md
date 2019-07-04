@@ -1,4 +1,4 @@
-# SearchKeywordResultsPaginated
+# KeywordPaginated
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# PersonPopularPaginated
+# PersonPaginated
 
 ## Properties
 

@@ -10171,7 +10171,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/person-popular-paginated"
+                            "$ref": "#/definitions/person-paginated"
                         },
                         "examples": {
                             "application/json": {
@@ -11712,7 +11712,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/search-company-results-paginated"
+                            "$ref": "#/definitions/company-paginated"
                         },
                         "examples": {
                             "application/json": {
@@ -11781,7 +11781,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/search-collection-results-paginated"
+                            "$ref": "#/definitions/collection-paginated"
                         },
                         "examples": {
                             "application/json": {
@@ -11833,7 +11833,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/search-keyword-results-paginated"
+                            "$ref": "#/definitions/keyword-paginated"
                         },
                         "examples": {
                             "application/json": {
@@ -13057,7 +13057,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/search-person-results-paginated"
+                            "$ref": "#/definitions/person-paginated"
                         },
                         "examples": {
                             "application/json": {
@@ -27276,6 +27276,24 @@
                 }
             }
         },
+        "keyword-paginated": {
+            "allOf": [
+                {
+                  "$ref": "#/definitions/trait:paginated"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "results": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/definitions/keyword"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
         "keywords-list": {
             "type": "object",
             "properties": {
@@ -28146,7 +28164,7 @@
                 }
             ]
         },
-        "person-popular-paginated": {
+        "person-paginated": {
             "allOf": [
                 {
                     "$ref": "#/definitions/trait:paginated"
@@ -28193,7 +28211,7 @@
                 }
             }
         },
-        "search-company-results-paginated": {
+        "company-paginated": {
             "allOf": [
                 {
                     "$ref": "#/definitions/trait:paginated"
@@ -28204,25 +28222,14 @@
                         "results": {
                             "type": "array",
                             "items": {
-                                "type": "object",
-                                "properties": {
-                                    "id": {
-                                        "type": "integer"
-                                    },
-                                    "logo_path": {
-                                        "$ref": "#/definitions/image-path"
-                                    },
-                                    "name": {
-                                        "type": "string"
-                                    }
-                                }
+                                "$ref": "#/definitions/company-object"
                             }
                         }
                     }
                 }
             ]
         },
-        "search-collection-results-paginated": {
+        "collection-paginated": {
             "allOf": [
                 {
                     "$ref": "#/definitions/trait:paginated"
@@ -28233,21 +28240,7 @@
                         "results": {
                             "type": "array",
                             "items": {
-                                "type": "object",
-                                "properties": {
-                                    "id": {
-                                        "type": "integer"
-                                    },
-                                    "backdrop_path": {
-                                        "$ref": "#/definitions/image-path"
-                                    },
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "poster_path": {
-                                        "$ref": "#/definitions/image-path"
-                                    }
-                                }
+                                "$ref": "#/definitions/collection-object"
                             }
                         }
                     }
@@ -28302,54 +28295,6 @@
                                         "$ref": "#/definitions/person-object-with-media-type"
                                     }
                                 ]
-                            }
-                        }
-                    }
-                }
-            ]
-        },
-        "search-person-results-paginated": {
-            "allOf": [
-                {
-                    "$ref": "#/definitions/trait:paginated"
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "results": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "profile_path": {
-                                        "$ref": "#/definitions/image-path"
-                                    },
-                                    "adult": {
-                                        "type": "boolean"
-                                    },
-                                    "id": {
-                                        "type": "integer"
-                                    },
-                                    "known_for": {
-                                        "type": "array",
-                                        "items": {
-                                            "oneOf": [
-                                                {
-                                                    "$ref": "#/definitions/movie-object-with-media-type"
-                                                },
-                                                {
-                                                    "$ref": "#/definitions/tv-object-with-media-type"
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "popularity": {
-                                        "type": "number"
-                                    }
-                                }
                             }
                         }
                     }
@@ -28469,7 +28414,7 @@
                 }
             }
         },
-        "company": {
+        "company-object": {
             "type": "object",
             "properties": {
                 "name": {

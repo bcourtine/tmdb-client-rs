@@ -9,7 +9,7 @@
  */
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct Company {
+pub struct CompanyObject {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
@@ -18,9 +18,9 @@ pub struct Company {
     pub logo_path: Option<String>,
 }
 
-impl Company {
-    pub fn new() -> Company {
-        Company {
+impl CompanyObject {
+    pub fn new() -> CompanyObject {
+        CompanyObject {
             name: None,
             id: None,
             logo_path: None,

@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::SearchCollectionResultsPaginated**](SearchCollectionResultsPaginated.md)
+[**::models::CollectionPaginated**](CollectionPaginated.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ## get_search_company_paginated
 
-> ::models::SearchCompanyResultsPaginated get_search_company_paginated(ctx, query, optional)
+> ::models::CompanyPaginated get_search_company_paginated(ctx, query, optional)
 Search Companies
 
 Search for companies.
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::SearchCompanyResultsPaginated**](SearchCompanyResultsPaginated.md)
+[**::models::CompanyPaginated**](CompanyPaginated.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ## get_search_keyword_paginated
 
-> ::models::SearchKeywordResultsPaginated get_search_keyword_paginated(ctx, query, optional)
+> ::models::KeywordPaginated get_search_keyword_paginated(ctx, query, optional)
 Search Keywords
 
 Search for keywords.
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::SearchKeywordResultsPaginated**](SearchKeywordResultsPaginated.md)
+[**::models::KeywordPaginated**](KeywordPaginated.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ## get_search_person_paginated
 
-> ::models::SearchPersonResultsPaginated get_search_person_paginated(ctx, query, optional)
+> ::models::PersonPaginated get_search_person_paginated(ctx, query, optional)
 Search People
 
 Search for people.
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::SearchPersonResultsPaginated**](SearchPersonResultsPaginated.md)
+[**::models::PersonPaginated**](PersonPaginated.md)
 
 ### Authorization
 

@@ -34,17 +34,17 @@ pub trait SearchApi {
         query: &str,
         language: Option<&str>,
         page: Option<i32>,
-    ) -> Result<crate::models::SearchCollectionResultsPaginated, Error>;
+    ) -> Result<crate::models::CollectionPaginated, Error>;
     fn get_search_company_paginated(
         &self,
         query: &str,
         page: Option<i32>,
-    ) -> Result<crate::models::SearchCompanyResultsPaginated, Error>;
+    ) -> Result<crate::models::CompanyPaginated, Error>;
     fn get_search_keyword_paginated(
         &self,
         query: &str,
         page: Option<i32>,
-    ) -> Result<crate::models::SearchKeywordResultsPaginated, Error>;
+    ) -> Result<crate::models::KeywordPaginated, Error>;
     fn get_search_movie_paginated(
         &self,
         query: &str,
@@ -70,7 +70,7 @@ pub trait SearchApi {
         page: Option<i32>,
         include_adult: Option<bool>,
         region: Option<&str>,
-    ) -> Result<crate::models::SearchPersonResultsPaginated, Error>;
+    ) -> Result<crate::models::PersonPaginated, Error>;
     fn get_search_tv_paginated(
         &self,
         query: &str,
@@ -86,7 +86,7 @@ impl SearchApi for SearchApiClient {
         query: &str,
         language: Option<&str>,
         page: Option<i32>,
-    ) -> Result<crate::models::SearchCollectionResultsPaginated, Error> {
+    ) -> Result<crate::models::CollectionPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -122,7 +122,7 @@ impl SearchApi for SearchApiClient {
         &self,
         query: &str,
         page: Option<i32>,
-    ) -> Result<crate::models::SearchCompanyResultsPaginated, Error> {
+    ) -> Result<crate::models::CompanyPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -155,7 +155,7 @@ impl SearchApi for SearchApiClient {
         &self,
         query: &str,
         page: Option<i32>,
-    ) -> Result<crate::models::SearchKeywordResultsPaginated, Error> {
+    ) -> Result<crate::models::KeywordPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 
@@ -289,7 +289,7 @@ impl SearchApi for SearchApiClient {
         page: Option<i32>,
         include_adult: Option<bool>,
         region: Option<&str>,
-    ) -> Result<crate::models::SearchPersonResultsPaginated, Error> {
+    ) -> Result<crate::models::PersonPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let client = &configuration.client;
 

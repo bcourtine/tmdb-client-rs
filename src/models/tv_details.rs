@@ -54,7 +54,7 @@ pub struct TvDetails {
         rename = "production_companies",
         skip_serializing_if = "Option::is_none"
     )]
-    pub production_companies: Option<Vec<crate::models::Company>>,
+    pub production_companies: Option<Vec<crate::models::CompanyObject>>,
     #[serde(rename = "seasons", skip_serializing_if = "Option::is_none")]
     pub seasons: Option<Vec<crate::models::SeasonObject>>,
     #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
