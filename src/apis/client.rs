@@ -1,3 +1,4 @@
+use std::env;
 use std::rc::Rc;
 
 use super::configuration::Configuration;
@@ -65,7 +66,7 @@ impl APIClient {
     }
 
     pub fn new_from_env() -> APIClient {
-        let api_key = env!("TMDB_API_KEY");
+        let api_key = env::var("TMDB_API_KEY").expect("Missing TMDB_API_KEY env var");
         APIClient::new_with_api_key(api_key)
     }
 
