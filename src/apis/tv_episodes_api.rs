@@ -109,7 +109,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         session_id: Option<&str>,
     ) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating",
@@ -148,7 +148,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::ChangeDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/tv/episode/{episode_id}/changes",
@@ -188,7 +188,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         session_id: Option<&str>,
     ) -> Result<crate::models::EpisodeRatingList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/episode/{episode_number}/account_states",
@@ -225,7 +225,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         episode_number: i32,
     ) -> Result<crate::models::Credits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits",
@@ -258,7 +258,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         append_to_response: Option<&str>,
     ) -> Result<crate::models::EpisodeDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/episode/{episode_number}",
@@ -295,7 +295,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         episode_number: i32,
     ) -> Result<crate::models::MovieTvExternalIds, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/episode/{episode_number}/external_ids",
@@ -326,7 +326,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         episode_number: i32,
     ) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images",
@@ -358,7 +358,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::VideosList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/episode/{episode_number}/videos",
@@ -396,7 +396,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         body: Option<crate::models::ValueBody>,
     ) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating",

@@ -114,7 +114,7 @@ impl AccountApi for AccountApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/account/{account_id}/favorite/movies",
@@ -151,7 +151,7 @@ impl AccountApi for AccountApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/account/{account_id}/favorite/tv",
@@ -188,7 +188,7 @@ impl AccountApi for AccountApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/account/{account_id}/rated/movies",
@@ -225,7 +225,7 @@ impl AccountApi for AccountApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::TvEpisodesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/account/{account_id}/rated/tv/episodes",
@@ -262,7 +262,7 @@ impl AccountApi for AccountApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/account/{account_id}/rated/tv",
@@ -299,7 +299,7 @@ impl AccountApi for AccountApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/account/{account_id}/watchlist/movies",
@@ -336,7 +336,7 @@ impl AccountApi for AccountApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/account/{account_id}/watchlist/tv",
@@ -370,7 +370,7 @@ impl AccountApi for AccountApiClient {
         session_id: &str,
     ) -> Result<crate::models::AccountDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/account", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -397,7 +397,7 @@ impl AccountApi for AccountApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::ListsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/account/{account_id}/lists",
@@ -434,7 +434,7 @@ impl AccountApi for AccountApiClient {
         body: Option<crate::models::MediaFavoriteBody>,
     ) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/account/{account_id}/favorite",
@@ -467,7 +467,7 @@ impl AccountApi for AccountApiClient {
         body: Option<crate::models::MediaWatchlistBody>,
     ) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/account/{account_id}/watchlist",

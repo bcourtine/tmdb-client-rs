@@ -35,7 +35,7 @@ pub trait CertificationsApi {
 impl CertificationsApi for CertificationsApiClient {
     fn get_movie_certifications_list(&self) -> Result<crate::models::Certifications, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/certification/movie/list", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -55,7 +55,7 @@ impl CertificationsApi for CertificationsApiClient {
 
     fn get_tv_certifications_list(&self) -> Result<crate::models::Certifications, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/certification/tv/list", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());

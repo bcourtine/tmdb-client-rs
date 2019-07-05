@@ -34,7 +34,7 @@ pub trait ReviewsApi {
 impl ReviewsApi for ReviewsApiClient {
     fn get_review_details(&self, review_id: &str) -> Result<crate::models::Review, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/review/{review_id}",

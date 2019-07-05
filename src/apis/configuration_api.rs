@@ -45,7 +45,7 @@ impl ConfigurationApi for ConfigurationApiClient {
         api_key: Option<&str>,
     ) -> Result<crate::models::Configuration, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/configuration", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -68,7 +68,7 @@ impl ConfigurationApi for ConfigurationApiClient {
 
     fn get_timezones_list(&self) -> Result<Vec<serde_json::Value>, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/configuration/timezones", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -88,7 +88,7 @@ impl ConfigurationApi for ConfigurationApiClient {
 
     fn get_jobs_list(&self) -> Result<crate::models::Jobs, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/configuration/jobs", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());

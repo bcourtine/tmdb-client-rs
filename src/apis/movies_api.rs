@@ -163,7 +163,7 @@ impl MoviesApi for MoviesApiClient {
         session_id: Option<&str>,
     ) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/rating",
@@ -199,7 +199,7 @@ impl MoviesApi for MoviesApiClient {
         guest_session_id: Option<&str>,
     ) -> Result<crate::models::AccountStates, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/account_states",
@@ -233,7 +233,7 @@ impl MoviesApi for MoviesApiClient {
         country: Option<&str>,
     ) -> Result<crate::models::AlternativeTitlesList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/alternative_titles",
@@ -266,7 +266,7 @@ impl MoviesApi for MoviesApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::ChangeDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/changes",
@@ -299,7 +299,7 @@ impl MoviesApi for MoviesApiClient {
 
     fn get_movie_credits(&self, movie_id: i32) -> Result<crate::models::Credits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/credits",
@@ -328,7 +328,7 @@ impl MoviesApi for MoviesApiClient {
         append_to_response: Option<&str>,
     ) -> Result<crate::models::MovieDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}",
@@ -363,7 +363,7 @@ impl MoviesApi for MoviesApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/images",
@@ -397,7 +397,7 @@ impl MoviesApi for MoviesApiClient {
         api_key: Option<&str>,
     ) -> Result<crate::models::KeywordsList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/keywords",
@@ -427,7 +427,7 @@ impl MoviesApi for MoviesApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::MovieDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/movie/latest", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -456,7 +456,7 @@ impl MoviesApi for MoviesApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::ListsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/lists",
@@ -494,7 +494,7 @@ impl MoviesApi for MoviesApiClient {
         region: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/movie/now_playing", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -528,7 +528,7 @@ impl MoviesApi for MoviesApiClient {
         region: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/movie/popular", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -563,7 +563,7 @@ impl MoviesApi for MoviesApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/recommendations",
@@ -600,7 +600,7 @@ impl MoviesApi for MoviesApiClient {
         api_key: Option<&str>,
     ) -> Result<crate::models::ReleaseDatesList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/release_dates",
@@ -633,7 +633,7 @@ impl MoviesApi for MoviesApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::ReviewsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/reviews",
@@ -672,7 +672,7 @@ impl MoviesApi for MoviesApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/similar",
@@ -710,7 +710,7 @@ impl MoviesApi for MoviesApiClient {
         region: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/movie/top_rated", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -743,7 +743,7 @@ impl MoviesApi for MoviesApiClient {
         api_key: Option<&str>,
     ) -> Result<crate::models::Translations, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/translations",
@@ -775,7 +775,7 @@ impl MoviesApi for MoviesApiClient {
         region: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/movie/upcoming", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -809,7 +809,7 @@ impl MoviesApi for MoviesApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::VideosList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/videos",
@@ -846,7 +846,7 @@ impl MoviesApi for MoviesApiClient {
         body: Option<crate::models::ValueBody>,
     ) -> Result<crate::models::InlineResponse401, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/movie/{movie_id}/rating",

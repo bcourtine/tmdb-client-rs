@@ -48,7 +48,7 @@ impl CollectionsApi for CollectionsApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::CollectionObject, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/collection/{collection_id}",
@@ -79,7 +79,7 @@ impl CollectionsApi for CollectionsApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/collection/{collection_id}/images",

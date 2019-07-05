@@ -40,7 +40,7 @@ pub trait CompaniesApi {
 impl CompaniesApi for CompaniesApiClient {
     fn get_company_details(&self, company_id: i32) -> Result<crate::models::CompanyDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/company/{company_id}",
@@ -68,7 +68,7 @@ impl CompaniesApi for CompaniesApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/company/{company_id}/movies",

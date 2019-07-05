@@ -34,7 +34,7 @@ pub trait NetworksApi {
 impl NetworksApi for NetworksApiClient {
     fn get_network_details(&self, network_id: i32) -> Result<crate::models::Network, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let client = &configuration.client;
+        let mut client = configuration.rate_limit_client();
 
         let uri_str = format!(
             "{}/network/{network_id}",
