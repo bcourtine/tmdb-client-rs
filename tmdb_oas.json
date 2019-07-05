@@ -3556,47 +3556,56 @@
                         "examples": {
                             "application/json": [
                                 {
-                                    "AD": [
+                                    "iso_3166_1": "AD",
+                                    "zones": [
                                         "Europe/Andorra"
                                     ]
                                 },
                                 {
-                                    "AE": [
+                                    "iso_3166_1": "AE",
+                                    "zones": [
                                         "Asia/Dubai"
                                     ]
                                 },
                                 {
-                                    "AF": [
+                                    "iso_3166_1": "AF",
+                                    "zones": [
                                         "Asia/Kabul"
                                     ]
                                 },
                                 {
-                                    "AG": [
+                                    "iso_3166_1": "AG",
+                                    "zones": [
                                         "America/Antigua"
                                     ]
                                 },
                                 {
-                                    "AI": [
+                                    "iso_3166_1": "AI",
+                                    "zones": [
                                         "America/Anguilla"
                                     ]
                                 },
                                 {
-                                    "AL": [
+                                    "iso_3166_1": "AL",
+                                    "zones": [
                                         "Europe/Tirane"
                                     ]
                                 },
                                 {
-                                    "AM": [
+                                    "iso_3166_1": "AM",
+                                    "zones": [
                                         "Asia/Yerevan"
                                     ]
                                 },
                                 {
-                                    "AO": [
+                                    "iso_3166_1": "AO",
+                                    "zones": [
                                         "Africa/Luanda"
                                     ]
                                 },
                                 {
-                                    "AQ": [
+                                    "iso_3166_1": "AQ",
+                                    "zones": [
                                         "Antarctica/McMurdo",
                                         "Antarctica/Rothera",
                                         "Antarctica/Palmer",
@@ -3610,7 +3619,8 @@
                                     ]
                                 },
                                 {
-                                    "AR": [
+                                    "iso_3166_1": "AR",
+                                    "zones": [
                                         "America/Argentina/Buenos_Aires",
                                         "America/Argentina/Cordoba",
                                         "America/Argentina/Salta",
@@ -3626,17 +3636,20 @@
                                     ]
                                 },
                                 {
-                                    "AS": [
+                                    "iso_3166_1": "AS",
+                                    "zones": [
                                         "Pacific/Pago_Pago"
                                     ]
                                 },
                                 {
-                                    "AT": [
+                                    "iso_3166_1": "AT",
+                                    "zones": [
                                         "Europe/Vienna"
                                     ]
                                 },
                                 {
-                                    "AU": [
+                                    "iso_3166_1": "AU",
+                                    "zones": [
                                         "Australia/Lord_Howe",
                                         "Antarctica/Macquarie",
                                         "Australia/Hobart",
@@ -3653,92 +3666,110 @@
                                     ]
                                 },
                                 {
-                                    "AW": [
+                                    "iso_3166_1": "AW",
+                                    "zones": [
                                         "America/Aruba"
                                     ]
                                 },
                                 {
-                                    "AX": [
+                                    "iso_3166_1": "AX",
+                                    "zones": [
                                         "Europe/Mariehamn"
                                     ]
                                 },
                                 {
-                                    "AZ": [
+                                    "iso_3166_1": "AZ",
+                                    "zones": [
                                         "Asia/Baku"
                                     ]
                                 },
                                 {
-                                    "BA": [
+                                    "iso_3166_1": "BA",
+                                    "zones": [
                                         "Europe/Sarajevo"
                                     ]
                                 },
                                 {
-                                    "BB": [
+                                    "iso_3166_1": "BB",
+                                    "zones": [
                                         "America/Barbados"
                                     ]
                                 },
                                 {
-                                    "BD": [
+                                    "iso_3166_1": "BD",
+                                    "zones": [
                                         "Asia/Dhaka"
                                     ]
                                 },
                                 {
-                                    "BE": [
+                                    "iso_3166_1": "BE",
+                                    "zones": [
                                         "Europe/Brussels"
                                     ]
                                 },
                                 {
-                                    "BF": [
+                                    "iso_3166_1": "BF",
+                                    "zones": [
                                         "Africa/Ouagadougou"
                                     ]
                                 },
                                 {
-                                    "BG": [
+                                    "iso_3166_1": "BG",
+                                    "zones": [
                                         "Europe/Sofia"
                                     ]
                                 },
                                 {
-                                    "BH": [
+                                    "iso_3166_1": "BH",
+                                    "zones": [
                                         "Asia/Bahrain"
                                     ]
                                 },
                                 {
-                                    "BI": [
+                                    "iso_3166_1": "BI",
+                                    "zones": [
                                         "Africa/Bujumbura"
                                     ]
                                 },
                                 {
-                                    "BJ": [
+                                    "iso_3166_1": "BJ",
+                                    "zones": [
                                         "Africa/Porto-Novo"
                                     ]
                                 },
                                 {
-                                    "BL": [
+                                    "iso_3166_1": "BL",
+                                    "zones": [
                                         "America/St_Barthelemy"
                                     ]
                                 },
                                 {
-                                    "BM": [
+                                    "iso_3166_1": "BM",
+                                    "zones": [
                                         "Atlantic/Bermuda"
                                     ]
                                 },
                                 {
-                                    "BN": [
+                                    "iso_3166_1": "BN",
+                                    "zones": [
                                         "Asia/Brunei"
                                     ]
                                 },
                                 {
-                                    "BO": [
+                                    "iso_3166_1": "BO",
+                                    "zones": [
                                         "America/La_Paz"
                                     ]
                                 },
                                 {
-                                    "BQ": [
+                                    "iso_3166_1": "BQ",
+                                    "zones": [
                                         "America/Kralendijk"
                                     ]
                                 },
                                 {
-                                    "BR": [
+                                    "iso_3166_1": "BR",
+                                    "zones": [
                                         "America/Noronha",
                                         "America/Belem",
                                         "America/Fortaleza",
@@ -3758,35 +3789,42 @@
                                     ]
                                 },
                                 {
-                                    "BS": [
+                                    "iso_3166_1": "BS",
+                                    "zones": [
                                         "America/Nassau"
                                     ]
                                 },
                                 {
-                                    "BT": [
+                                    "iso_3166_1": "BT",
+                                    "zones": [
                                         "Asia/Thimphu"
                                     ]
                                 },
                                 {
-                                    "BV": []
+                                    "iso_3166_1": "BV",
+                                    "zones": []
                                 },
                                 {
-                                    "BW": [
+                                    "iso_3166_1": "BW",
+                                    "zones": [
                                         "Africa/Gaborone"
                                     ]
                                 },
                                 {
-                                    "BY": [
+                                    "iso_3166_1": "BY",
+                                    "zones": [
                                         "Europe/Minsk"
                                     ]
                                 },
                                 {
-                                    "BZ": [
+                                    "iso_3166_1": "BZ",
+                                    "zones": [
                                         "America/Belize"
                                     ]
                                 },
                                 {
-                                    "CA": [
+                                    "iso_3166_1": "CA",
+                                    "zones": [
                                         "America/St_Johns",
                                         "America/Halifax",
                                         "America/Glace_Bay",
@@ -3817,241 +3855,287 @@
                                     ]
                                 },
                                 {
-                                    "CC": [
+                                    "iso_3166_1": "CC",
+                                    "zones": [
                                         "Indian/Cocos"
                                     ]
                                 },
                                 {
-                                    "CD": [
+                                    "iso_3166_1": "CD",
+                                    "zones": [
                                         "Africa/Kinshasa",
                                         "Africa/Lubumbashi"
                                     ]
                                 },
                                 {
-                                    "CF": [
+                                    "iso_3166_1": "CF",
+                                    "zones": [
                                         "Africa/Bangui"
                                     ]
                                 },
                                 {
-                                    "CG": [
+                                    "iso_3166_1": "CG",
+                                    "zones": [
                                         "Africa/Brazzaville"
                                     ]
                                 },
                                 {
-                                    "CH": [
+                                    "iso_3166_1": "CH",
+                                    "zones": [
                                         "Europe/Zurich"
                                     ]
                                 },
                                 {
-                                    "CI": [
+                                    "iso_3166_1": "CI",
+                                    "zones": [
                                         "Africa/Abidjan"
                                     ]
                                 },
                                 {
-                                    "CK": [
+                                    "iso_3166_1": "CK",
+                                    "zones": [
                                         "Pacific/Rarotonga"
                                     ]
                                 },
                                 {
-                                    "CL": [
+                                    "iso_3166_1": "CL",
+                                    "zones": [
                                         "America/Santiago",
                                         "Pacific/Easter"
                                     ]
                                 },
                                 {
-                                    "CM": [
+                                    "iso_3166_1": "CM",
+                                    "zones": [
                                         "Africa/Douala"
                                     ]
                                 },
                                 {
-                                    "CN": [
+                                    "iso_3166_1": "CN",
+                                    "zones": [
                                         "Asia/Shanghai",
                                         "Asia/Urumqi"
                                     ]
                                 },
                                 {
-                                    "CO": [
+                                    "iso_3166_1": "CO",
+                                    "zones": [
                                         "America/Bogota"
                                     ]
                                 },
                                 {
-                                    "CR": [
+                                    "iso_3166_1": "CR",
+                                    "zones": [
                                         "America/Costa_Rica"
                                     ]
                                 },
                                 {
-                                    "CU": [
+                                    "iso_3166_1": "CU",
+                                    "zones": [
                                         "America/Havana"
                                     ]
                                 },
                                 {
-                                    "CV": [
+                                    "iso_3166_1": "CV",
+                                    "zones": [
                                         "Atlantic/Cape_Verde"
                                     ]
                                 },
                                 {
-                                    "CW": [
+                                    "iso_3166_1": "CW",
+                                    "zones": [
                                         "America/Curacao"
                                     ]
                                 },
                                 {
-                                    "CX": [
+                                    "iso_3166_1": "CX",
+                                    "zones": [
                                         "Indian/Christmas"
                                     ]
                                 },
                                 {
-                                    "CY": [
+                                    "iso_3166_1": "CY",
+                                    "zones": [
                                         "Asia/Nicosia"
                                     ]
                                 },
                                 {
-                                    "CZ": [
+                                    "iso_3166_1": "CZ",
+                                    "zones": [
                                         "Europe/Prague"
                                     ]
                                 },
                                 {
-                                    "DE": [
+                                    "iso_3166_1": "DE",
+                                    "zones": [
                                         "Europe/Berlin",
                                         "Europe/Busingen"
                                     ]
                                 },
                                 {
-                                    "DJ": [
+                                    "iso_3166_1": "DJ",
+                                    "zones": [
                                         "Africa/Djibouti"
                                     ]
                                 },
                                 {
-                                    "DK": [
+                                    "iso_3166_1": "DK",
+                                    "zones": [
                                         "Europe/Copenhagen"
                                     ]
                                 },
                                 {
-                                    "DM": [
+                                    "iso_3166_1": "DM",
+                                    "zones": [
                                         "America/Dominica"
                                     ]
                                 },
                                 {
-                                    "DO": [
+                                    "iso_3166_1": "DO",
+                                    "zones": [
                                         "America/Santo_Domingo"
                                     ]
                                 },
                                 {
-                                    "DZ": [
+                                    "iso_3166_1": "DZ",
+                                    "zones": [
                                         "Africa/Algiers"
                                     ]
                                 },
                                 {
-                                    "EC": [
+                                    "iso_3166_1": "EC",
+                                    "zones": [
                                         "America/Guayaquil",
                                         "Pacific/Galapagos"
                                     ]
                                 },
                                 {
-                                    "EE": [
+                                    "iso_3166_1": "EE",
+                                    "zones": [
                                         "Europe/Tallinn"
                                     ]
                                 },
                                 {
-                                    "EG": [
+                                    "iso_3166_1": "EG",
+                                    "zones": [
                                         "Africa/Cairo"
                                     ]
                                 },
                                 {
-                                    "EH": [
+                                    "iso_3166_1": "EH",
+                                    "zones": [
                                         "Africa/El_Aaiun"
                                     ]
                                 },
                                 {
-                                    "ER": [
+                                    "iso_3166_1": "ER",
+                                    "zones": [
                                         "Africa/Asmara"
                                     ]
                                 },
                                 {
-                                    "ES": [
+                                    "iso_3166_1": "ES",
+                                    "zones": [
                                         "Europe/Madrid",
                                         "Africa/Ceuta",
                                         "Atlantic/Canary"
                                     ]
                                 },
                                 {
-                                    "ET": [
+                                    "iso_3166_1": "ET",
+                                    "zones": [
                                         "Africa/Addis_Ababa"
                                     ]
                                 },
                                 {
-                                    "FI": [
+                                    "iso_3166_1": "FI",
+                                    "zones": [
                                         "Europe/Helsinki"
                                     ]
                                 },
                                 {
-                                    "FJ": [
+                                    "iso_3166_1": "FJ",
+                                    "zones": [
                                         "Pacific/Fiji"
                                     ]
                                 },
                                 {
-                                    "FK": [
+                                    "iso_3166_1": "FK",
+                                    "zones": [
                                         "Atlantic/Stanley"
                                     ]
                                 },
                                 {
-                                    "FM": [
+                                    "iso_3166_1": "FM",
+                                    "zones": [
                                         "Pacific/Chuuk",
                                         "Pacific/Pohnpei",
                                         "Pacific/Kosrae"
                                     ]
                                 },
                                 {
-                                    "FO": [
+                                    "iso_3166_1": "FO",
+                                    "zones": [
                                         "Atlantic/Faroe"
                                     ]
                                 },
                                 {
-                                    "FR": [
+                                    "iso_3166_1": "FR",
+                                    "zones": [
                                         "Europe/Paris"
                                     ]
                                 },
                                 {
-                                    "GA": [
+                                    "iso_3166_1": "GA",
+                                    "zones": [
                                         "Africa/Libreville"
                                     ]
                                 },
                                 {
-                                    "GB": [
+                                    "iso_3166_1": "GB",
+                                    "zones": [
                                         "Europe/London"
                                     ]
                                 },
                                 {
-                                    "GD": [
+                                    "iso_3166_1": "GD",
+                                    "zones": [
                                         "America/Grenada"
                                     ]
                                 },
                                 {
-                                    "GE": [
+                                    "iso_3166_1": "GE",
+                                    "zones": [
                                         "Asia/Tbilisi"
                                     ]
                                 },
                                 {
-                                    "GF": [
+                                    "iso_3166_1": "GF",
+                                    "zones": [
                                         "America/Cayenne"
                                     ]
                                 },
                                 {
-                                    "GG": [
+                                    "iso_3166_1": "GG",
+                                    "zones": [
                                         "Europe/Guernsey"
                                     ]
                                 },
                                 {
-                                    "GH": [
+                                    "iso_3166_1": "GH",
+                                    "zones": [
                                         "Africa/Accra"
                                     ]
                                 },
                                 {
-                                    "GI": [
+                                    "iso_3166_1": "GI",
+                                    "zones": [
                                         "Europe/Gibraltar"
                                     ]
                                 },
                                 {
-                                    "GL": [
+                                    "iso_3166_1": "GL",
+                                    "zones": [
                                         "America/Godthab",
                                         "America/Danmarkshavn",
                                         "America/Scoresbysund",
@@ -4059,85 +4143,102 @@
                                     ]
                                 },
                                 {
-                                    "GM": [
+                                    "iso_3166_1": "GM",
+                                    "zones": [
                                         "Africa/Banjul"
                                     ]
                                 },
                                 {
-                                    "GN": [
+                                    "iso_3166_1": "GN",
+                                    "zones": [
                                         "Africa/Conakry"
                                     ]
                                 },
                                 {
-                                    "GP": [
+                                    "iso_3166_1": "GP",
+                                    "zones": [
                                         "America/Guadeloupe"
                                     ]
                                 },
                                 {
-                                    "GQ": [
+                                    "iso_3166_1": "GQ",
+                                    "zones": [
                                         "Africa/Malabo"
                                     ]
                                 },
                                 {
-                                    "GR": [
+                                    "iso_3166_1": "GR",
+                                    "zones": [
                                         "Europe/Athens"
                                     ]
                                 },
                                 {
-                                    "GS": [
+                                    "iso_3166_1": "GS",
+                                    "zones": [
                                         "Atlantic/South_Georgia"
                                     ]
                                 },
                                 {
-                                    "GT": [
+                                    "iso_3166_1": "GT",
+                                    "zones": [
                                         "America/Guatemala"
                                     ]
                                 },
                                 {
-                                    "GU": [
+                                    "iso_3166_1": "GU",
+                                    "zones": [
                                         "Pacific/Guam"
                                     ]
                                 },
                                 {
-                                    "GW": [
+                                    "iso_3166_1": "GW",
+                                    "zones": [
                                         "Africa/Bissau"
                                     ]
                                 },
                                 {
-                                    "GY": [
+                                    "iso_3166_1": "GY",
+                                    "zones": [
                                         "America/Guyana"
                                     ]
                                 },
                                 {
-                                    "HK": [
+                                    "iso_3166_1": "HK",
+                                    "zones": [
                                         "Asia/Hong_Kong"
                                     ]
                                 },
                                 {
-                                    "HM": []
+                                    "iso_3166_1": "HM",
+                                    "zones": []
                                 },
                                 {
-                                    "HN": [
+                                    "iso_3166_1": "HN",
+                                    "zones": [
                                         "America/Tegucigalpa"
                                     ]
                                 },
                                 {
-                                    "HR": [
+                                    "iso_3166_1": "HR",
+                                    "zones": [
                                         "Europe/Zagreb"
                                     ]
                                 },
                                 {
-                                    "HT": [
+                                    "iso_3166_1": "HT",
+                                    "zones": [
                                         "America/Port-au-Prince"
                                     ]
                                 },
                                 {
-                                    "HU": [
+                                    "iso_3166_1": "HU",
+                                    "zones": [
                                         "Europe/Budapest"
                                     ]
                                 },
                                 {
-                                    "ID": [
+                                    "iso_3166_1": "ID",
+                                    "zones": [
                                         "Asia/Jakarta",
                                         "Asia/Pontianak",
                                         "Asia/Makassar",
@@ -4145,124 +4246,148 @@
                                     ]
                                 },
                                 {
-                                    "IE": [
+                                    "iso_3166_1": "IE",
+                                    "zones": [
                                         "Europe/Dublin"
                                     ]
                                 },
                                 {
-                                    "IL": [
+                                    "iso_3166_1": "IL",
+                                    "zones": [
                                         "Asia/Jerusalem"
                                     ]
                                 },
                                 {
-                                    "IM": [
+                                    "iso_3166_1": "IM",
+                                    "zones": [
                                         "Europe/Isle_of_Man"
                                     ]
                                 },
                                 {
-                                    "IN": [
+                                    "iso_3166_1": "IN",
+                                    "zones": [
                                         "Asia/Kolkata"
                                     ]
                                 },
                                 {
-                                    "IO": [
+                                    "iso_3166_1": "IO",
+                                    "zones": [
                                         "Indian/Chagos"
                                     ]
                                 },
                                 {
-                                    "IQ": [
+                                    "iso_3166_1": "IQ",
+                                    "zones": [
                                         "Asia/Baghdad"
                                     ]
                                 },
                                 {
-                                    "IR": [
+                                    "iso_3166_1": "IR",
+                                    "zones": [
                                         "Asia/Tehran"
                                     ]
                                 },
                                 {
-                                    "IS": [
+                                    "iso_3166_1": "IS",
+                                    "zones": [
                                         "Atlantic/Reykjavik"
                                     ]
                                 },
                                 {
-                                    "IT": [
+                                    "iso_3166_1": "IT",
+                                    "zones": [
                                         "Europe/Rome"
                                     ]
                                 },
                                 {
-                                    "JE": [
+                                    "iso_3166_1": "JE",
+                                    "zones": [
                                         "Europe/Jersey"
                                     ]
                                 },
                                 {
-                                    "JM": [
+                                    "iso_3166_1": "JM",
+                                    "zones": [
                                         "America/Jamaica"
                                     ]
                                 },
                                 {
-                                    "JO": [
+                                    "iso_3166_1": "JO",
+                                    "zones": [
                                         "Asia/Amman"
                                     ]
                                 },
                                 {
-                                    "JP": [
+                                    "iso_3166_1": "JP",
+                                    "zones": [
                                         "Asia/Tokyo"
                                     ]
                                 },
                                 {
-                                    "KE": [
+                                    "iso_3166_1": "KE",
+                                    "zones": [
                                         "Africa/Nairobi"
                                     ]
                                 },
                                 {
-                                    "KG": [
+                                    "iso_3166_1": "KG",
+                                    "zones": [
                                         "Asia/Bishkek"
                                     ]
                                 },
                                 {
-                                    "KH": [
+                                    "iso_3166_1": "KH",
+                                    "zones": [
                                         "Asia/Phnom_Penh"
                                     ]
                                 },
                                 {
-                                    "KI": [
+                                    "iso_3166_1": "KI",
+                                    "zones": [
                                         "Pacific/Tarawa",
                                         "Pacific/Enderbury",
                                         "Pacific/Kiritimati"
                                     ]
                                 },
                                 {
-                                    "KM": [
+                                    "iso_3166_1": "KM",
+                                    "zones": [
                                         "Indian/Comoro"
                                     ]
                                 },
                                 {
-                                    "KN": [
+                                    "iso_3166_1": "KN",
+                                    "zones": [
                                         "America/St_Kitts"
                                     ]
                                 },
                                 {
-                                    "KP": [
+                                    "iso_3166_1": "KP",
+                                    "zones": [
                                         "Asia/Pyongyang"
                                     ]
                                 },
                                 {
-                                    "KR": [
+                                    "iso_3166_1": "KR",
+                                    "zones": [
                                         "Asia/Seoul"
                                     ]
                                 },
                                 {
-                                    "KW": [
+                                    "iso_3166_1": "KW",
+                                    "zones": [
                                         "Asia/Kuwait"
                                     ]
                                 },
                                 {
-                                    "KY": [
+                                    "iso_3166_1": "KY",
+                                    "zones": [
                                         "America/Cayman"
                                     ]
                                 },
                                 {
-                                    "KZ": [
+                                    "iso_3166_1": "KZ",
+                                    "zones": [
                                         "Asia/Almaty",
                                         "Asia/Qyzylorda",
                                         "Asia/Aqtobe",
@@ -4271,165 +4396,197 @@
                                     ]
                                 },
                                 {
-                                    "LA": [
+                                    "iso_3166_1": "LA",
+                                    "zones": [
                                         "Asia/Vientiane"
                                     ]
                                 },
                                 {
-                                    "LB": [
+                                    "iso_3166_1": "LB",
+                                    "zones": [
                                         "Asia/Beirut"
                                     ]
                                 },
                                 {
-                                    "LC": [
+                                    "iso_3166_1": "LC",
+                                    "zones": [
                                         "America/St_Lucia"
                                     ]
                                 },
                                 {
-                                    "LI": [
+                                    "iso_3166_1": "LI",
+                                    "zones": [
                                         "Europe/Vaduz"
                                     ]
                                 },
                                 {
-                                    "LK": [
+                                    "iso_3166_1": "LK",
+                                    "zones": [
                                         "Asia/Colombo"
                                     ]
                                 },
                                 {
-                                    "LR": [
+                                    "iso_3166_1": "LR",
+                                    "zones": [
                                         "Africa/Monrovia"
                                     ]
                                 },
                                 {
-                                    "LS": [
+                                    "iso_3166_1": "LS",
+                                    "zones": [
                                         "Africa/Maseru"
                                     ]
                                 },
                                 {
-                                    "LT": [
+                                    "iso_3166_1": "LT",
+                                    "zones": [
                                         "Europe/Vilnius"
                                     ]
                                 },
                                 {
-                                    "LU": [
+                                    "iso_3166_1": "LU",
+                                    "zones": [
                                         "Europe/Luxembourg"
                                     ]
                                 },
                                 {
-                                    "LV": [
+                                    "iso_3166_1": "LV",
+                                    "zones": [
                                         "Europe/Riga"
                                     ]
                                 },
                                 {
-                                    "LY": [
+                                    "iso_3166_1": "LY",
+                                    "zones": [
                                         "Africa/Tripoli"
                                     ]
                                 },
                                 {
-                                    "MA": [
+                                    "iso_3166_1": "MA",
+                                    "zones": [
                                         "Africa/Casablanca"
                                     ]
                                 },
                                 {
-                                    "MC": [
+                                    "iso_3166_1": "MC",
+                                    "zones": [
                                         "Europe/Monaco"
                                     ]
                                 },
                                 {
-                                    "MD": [
+                                    "iso_3166_1": "MD",
+                                    "zones": [
                                         "Europe/Chisinau"
                                     ]
                                 },
                                 {
-                                    "ME": [
+                                    "iso_3166_1": "ME",
+                                    "zones": [
                                         "Europe/Podgorica"
                                     ]
                                 },
                                 {
-                                    "MF": [
+                                    "iso_3166_1": "MF",
+                                    "zones": [
                                         "America/Marigot"
                                     ]
                                 },
                                 {
-                                    "MG": [
+                                    "iso_3166_1": "MG",
+                                    "zones": [
                                         "Indian/Antananarivo"
                                     ]
                                 },
                                 {
-                                    "MH": [
+                                    "iso_3166_1": "MH",
+                                    "zones": [
                                         "Pacific/Majuro",
                                         "Pacific/Kwajalein"
                                     ]
                                 },
                                 {
-                                    "MK": [
+                                    "iso_3166_1": "MK",
+                                    "zones": [
                                         "Europe/Skopje"
                                     ]
                                 },
                                 {
-                                    "ML": [
+                                    "iso_3166_1": "ML",
+                                    "zones": [
                                         "Africa/Bamako"
                                     ]
                                 },
                                 {
-                                    "MM": [
+                                    "iso_3166_1": "MM",
+                                    "zones": [
                                         "Asia/Rangoon"
                                     ]
                                 },
                                 {
-                                    "MN": [
+                                    "iso_3166_1": "MN",
+                                    "zones": [
                                         "Asia/Ulaanbaatar",
                                         "Asia/Hovd",
                                         "Asia/Choibalsan"
                                     ]
                                 },
                                 {
-                                    "MO": [
+                                    "iso_3166_1": "MO",
+                                    "zones": [
                                         "Asia/Macau"
                                     ]
                                 },
                                 {
-                                    "MP": [
+                                    "iso_3166_1": "MP",
+                                    "zones": [
                                         "Pacific/Saipan"
                                     ]
                                 },
                                 {
-                                    "MQ": [
+                                    "iso_3166_1": "MQ",
+                                    "zones": [
                                         "America/Martinique"
                                     ]
                                 },
                                 {
-                                    "MR": [
+                                    "iso_3166_1": "MR",
+                                    "zones": [
                                         "Africa/Nouakchott"
                                     ]
                                 },
                                 {
-                                    "MS": [
+                                    "iso_3166_1": "MS",
+                                    "zones": [
                                         "America/Montserrat"
                                     ]
                                 },
                                 {
-                                    "MT": [
+                                    "iso_3166_1": "MT",
+                                    "zones": [
                                         "Europe/Malta"
                                     ]
                                 },
                                 {
-                                    "MU": [
+                                    "iso_3166_1": "MU",
+                                    "zones": [
                                         "Indian/Mauritius"
                                     ]
                                 },
                                 {
-                                    "MV": [
+                                    "iso_3166_1": "MV",
+                                    "zones": [
                                         "Indian/Maldives"
                                     ]
                                 },
                                 {
-                                    "MW": [
+                                    "iso_3166_1": "MW",
+                                    "zones": [
                                         "Africa/Blantyre"
                                     ]
                                 },
                                 {
-                                    "MX": [
+                                    "iso_3166_1": "MX",
+                                    "zones": [
                                         "America/Mexico_City",
                                         "America/Cancun",
                                         "America/Merida",
@@ -4445,180 +4602,214 @@
                                     ]
                                 },
                                 {
-                                    "MY": [
+                                    "iso_3166_1": "MY",
+                                    "zones": [
                                         "Asia/Kuala_Lumpur",
                                         "Asia/Kuching"
                                     ]
                                 },
                                 {
-                                    "MZ": [
+                                    "iso_3166_1": "MZ",
+                                    "zones": [
                                         "Africa/Maputo"
                                     ]
                                 },
                                 {
-                                    "NA": [
+                                    "iso_3166_1": "NA",
+                                    "zones": [
                                         "Africa/Windhoek"
                                     ]
                                 },
                                 {
-                                    "NC": [
+                                    "iso_3166_1": "NC",
+                                    "zones": [
                                         "Pacific/Noumea"
                                     ]
                                 },
                                 {
-                                    "NE": [
+                                    "iso_3166_1": "NE",
+                                    "zones": [
                                         "Africa/Niamey"
                                     ]
                                 },
                                 {
-                                    "NF": [
+                                    "iso_3166_1": "NF",
+                                    "zones": [
                                         "Pacific/Norfolk"
                                     ]
                                 },
                                 {
-                                    "NG": [
+                                    "iso_3166_1": "NG",
+                                    "zones": [
                                         "Africa/Lagos"
                                     ]
                                 },
                                 {
-                                    "NI": [
+                                    "iso_3166_1": "NI",
+                                    "zones": [
                                         "America/Managua"
                                     ]
                                 },
                                 {
-                                    "NL": [
+                                    "iso_3166_1": "NL",
+                                    "zones": [
                                         "Europe/Amsterdam"
                                     ]
                                 },
                                 {
-                                    "NO": [
+                                    "iso_3166_1": "NO",
+                                    "zones": [
                                         "Europe/Oslo"
                                     ]
                                 },
                                 {
-                                    "NP": [
+                                    "iso_3166_1": "NP",
+                                    "zones": [
                                         "Asia/Kathmandu"
                                     ]
                                 },
                                 {
-                                    "NR": [
+                                    "iso_3166_1": "NR",
+                                    "zones": [
                                         "Pacific/Nauru"
                                     ]
                                 },
                                 {
-                                    "NU": [
+                                    "iso_3166_1": "NU",
+                                    "zones": [
                                         "Pacific/Niue"
                                     ]
                                 },
                                 {
-                                    "NZ": [
+                                    "iso_3166_1": "NZ",
+                                    "zones": [
                                         "Pacific/Auckland",
                                         "Pacific/Chatham"
                                     ]
                                 },
                                 {
-                                    "OM": [
+                                    "iso_3166_1": "OM",
+                                    "zones": [
                                         "Asia/Muscat"
                                     ]
                                 },
                                 {
-                                    "PA": [
+                                    "iso_3166_1": "PA",
+                                    "zones": [
                                         "America/Panama"
                                     ]
                                 },
                                 {
-                                    "PE": [
+                                    "iso_3166_1": "PE",
+                                    "zones": [
                                         "America/Lima"
                                     ]
                                 },
                                 {
-                                    "PF": [
+                                    "iso_3166_1": "PF",
+                                    "zones": [
                                         "Pacific/Tahiti",
                                         "Pacific/Marquesas",
                                         "Pacific/Gambier"
                                     ]
                                 },
                                 {
-                                    "PG": [
+                                    "iso_3166_1": "PG",
+                                    "zones": [
                                         "Pacific/Port_Moresby",
                                         "Pacific/Bougainville"
                                     ]
                                 },
                                 {
-                                    "PH": [
+                                    "iso_3166_1": "PH",
+                                    "zones": [
                                         "Asia/Manila"
                                     ]
                                 },
                                 {
-                                    "PK": [
+                                    "iso_3166_1": "PK",
+                                    "zones": [
                                         "Asia/Karachi"
                                     ]
                                 },
                                 {
-                                    "PL": [
+                                    "iso_3166_1": "PL",
+                                    "zones": [
                                         "Europe/Warsaw"
                                     ]
                                 },
                                 {
-                                    "PM": [
+                                    "iso_3166_1": "PM",
+                                    "zones": [
                                         "America/Miquelon"
                                     ]
                                 },
                                 {
-                                    "PN": [
+                                    "iso_3166_1": "PN",
+                                    "zones": [
                                         "Pacific/Pitcairn"
                                     ]
                                 },
                                 {
-                                    "PR": [
+                                    "iso_3166_1": "PR",
+                                    "zones": [
                                         "America/Puerto_Rico"
                                     ]
                                 },
                                 {
-                                    "PS": [
+                                    "iso_3166_1": "PS",
+                                    "zones": [
                                         "Asia/Gaza",
                                         "Asia/Hebron"
                                     ]
                                 },
                                 {
-                                    "PT": [
+                                    "iso_3166_1": "PT",
+                                    "zones": [
                                         "Europe/Lisbon",
                                         "Atlantic/Madeira",
                                         "Atlantic/Azores"
                                     ]
                                 },
                                 {
-                                    "PW": [
+                                    "iso_3166_1": "PW",
+                                    "zones": [
                                         "Pacific/Palau"
                                     ]
                                 },
                                 {
-                                    "PY": [
+                                    "iso_3166_1": "PY",
+                                    "zones": [
                                         "America/Asuncion"
                                     ]
                                 },
                                 {
-                                    "QA": [
+                                    "iso_3166_1": "QA",
+                                    "zones": [
                                         "Asia/Qatar"
                                     ]
                                 },
                                 {
-                                    "RE": [
+                                    "iso_3166_1": "RE",
+                                    "zones": [
                                         "Indian/Reunion"
                                     ]
                                 },
                                 {
-                                    "RO": [
+                                    "iso_3166_1": "RO",
+                                    "zones": [
                                         "Europe/Bucharest"
                                     ]
                                 },
                                 {
-                                    "RS": [
+                                    "iso_3166_1": "RS",
+                                    "zones": [
                                         "Europe/Belgrade"
                                     ]
                                 },
                                 {
-                                    "RU": [
+                                    "iso_3166_1": "RU",
+                                    "zones": [
                                         "Europe/Kaliningrad",
                                         "Europe/Moscow",
                                         "Europe/Simferopol",
@@ -4643,216 +4834,258 @@
                                     ]
                                 },
                                 {
-                                    "RW": [
+                                    "iso_3166_1": "RW",
+                                    "zones": [
                                         "Africa/Kigali"
                                     ]
                                 },
                                 {
-                                    "SA": [
+                                    "iso_3166_1": "SA",
+                                    "zones": [
                                         "Asia/Riyadh"
                                     ]
                                 },
                                 {
-                                    "SB": [
+                                    "iso_3166_1": "SB",
+                                    "zones": [
                                         "Pacific/Guadalcanal"
                                     ]
                                 },
                                 {
-                                    "SC": [
+                                    "iso_3166_1": "SC",
+                                    "zones": [
                                         "Indian/Mahe"
                                     ]
                                 },
                                 {
-                                    "SD": [
+                                    "iso_3166_1": "SD",
+                                    "zones": [
                                         "Africa/Khartoum"
                                     ]
                                 },
                                 {
-                                    "SE": [
+                                    "iso_3166_1": "SE",
+                                    "zones": [
                                         "Europe/Stockholm"
                                     ]
                                 },
                                 {
-                                    "SG": [
+                                    "iso_3166_1": "SG",
+                                    "zones": [
                                         "Asia/Singapore"
                                     ]
                                 },
                                 {
-                                    "SH": [
+                                    "iso_3166_1": "SH",
+                                    "zones": [
                                         "Atlantic/St_Helena"
                                     ]
                                 },
                                 {
-                                    "SI": [
+                                    "iso_3166_1": "SI",
+                                    "zones": [
                                         "Europe/Ljubljana"
                                     ]
                                 },
                                 {
-                                    "SJ": [
+                                    "iso_3166_1": "SJ",
+                                    "zones": [
                                         "Arctic/Longyearbyen"
                                     ]
                                 },
                                 {
-                                    "SK": [
+                                    "iso_3166_1": "SK",
+                                    "zones": [
                                         "Europe/Bratislava"
                                     ]
                                 },
                                 {
-                                    "SL": [
+                                    "iso_3166_1": "SL",
+                                    "zones": [
                                         "Africa/Freetown"
                                     ]
                                 },
                                 {
-                                    "SM": [
+                                    "iso_3166_1": "SM",
+                                    "zones": [
                                         "Europe/San_Marino"
                                     ]
                                 },
                                 {
-                                    "SN": [
+                                    "iso_3166_1": "SN",
+                                    "zones": [
                                         "Africa/Dakar"
                                     ]
                                 },
                                 {
-                                    "SO": [
+                                    "iso_3166_1": "SO",
+                                    "zones": [
                                         "Africa/Mogadishu"
                                     ]
                                 },
                                 {
-                                    "SR": [
+                                    "iso_3166_1": "SR",
+                                    "zones": [
                                         "America/Paramaribo"
                                     ]
                                 },
                                 {
-                                    "SS": [
+                                    "iso_3166_1": "SS",
+                                    "zones": [
                                         "Africa/Juba"
                                     ]
                                 },
                                 {
-                                    "ST": [
+                                    "iso_3166_1": "ST",
+                                    "zones": [
                                         "Africa/Sao_Tome"
                                     ]
                                 },
                                 {
-                                    "SV": [
+                                    "iso_3166_1": "SV",
+                                    "zones": [
                                         "America/El_Salvador"
                                     ]
                                 },
                                 {
-                                    "SX": [
+                                    "iso_3166_1": "SX",
+                                    "zones": [
                                         "America/Lower_Princes"
                                     ]
                                 },
                                 {
-                                    "SY": [
+                                    "iso_3166_1": "SY",
+                                    "zones": [
                                         "Asia/Damascus"
                                     ]
                                 },
                                 {
-                                    "SZ": [
+                                    "iso_3166_1": "SZ",
+                                    "zones": [
                                         "Africa/Mbabane"
                                     ]
                                 },
                                 {
-                                    "TC": [
+                                    "iso_3166_1": "TC",
+                                    "zones": [
                                         "America/Grand_Turk"
                                     ]
                                 },
                                 {
-                                    "TD": [
+                                    "iso_3166_1": "TD",
+                                    "zones": [
                                         "Africa/Ndjamena"
                                     ]
                                 },
                                 {
-                                    "TF": [
+                                    "iso_3166_1": "TF",
+                                    "zones": [
                                         "Indian/Kerguelen"
                                     ]
                                 },
                                 {
-                                    "TG": [
+                                    "iso_3166_1": "TG",
+                                    "zones": [
                                         "Africa/Lome"
                                     ]
                                 },
                                 {
-                                    "TH": [
+                                    "iso_3166_1": "TH",
+                                    "zones": [
                                         "Asia/Bangkok"
                                     ]
                                 },
                                 {
-                                    "TJ": [
+                                    "iso_3166_1": "TJ",
+                                    "zones": [
                                         "Asia/Dushanbe"
                                     ]
                                 },
                                 {
-                                    "TK": [
+                                    "iso_3166_1": "TK",
+                                    "zones": [
                                         "Pacific/Fakaofo"
                                     ]
                                 },
                                 {
-                                    "TL": [
+                                    "iso_3166_1": "TL",
+                                    "zones": [
                                         "Asia/Dili"
                                     ]
                                 },
                                 {
-                                    "TM": [
+                                    "iso_3166_1": "TM",
+                                    "zones": [
                                         "Asia/Ashgabat"
                                     ]
                                 },
                                 {
-                                    "TN": [
+                                    "iso_3166_1": "TN",
+                                    "zones": [
                                         "Africa/Tunis"
                                     ]
                                 },
                                 {
-                                    "TO": [
+                                    "iso_3166_1": "TO",
+                                    "zones": [
                                         "Pacific/Tongatapu"
                                     ]
                                 },
                                 {
-                                    "TR": [
+                                    "iso_3166_1": "TR",
+                                    "zones": [
                                         "Europe/Istanbul"
                                     ]
                                 },
                                 {
-                                    "TT": [
+                                    "iso_3166_1": "TT",
+                                    "zones": [
                                         "America/Port_of_Spain"
                                     ]
                                 },
                                 {
-                                    "TV": [
+                                    "iso_3166_1": "TV",
+                                    "zones": [
                                         "Pacific/Funafuti"
                                     ]
                                 },
                                 {
-                                    "TW": [
+                                    "iso_3166_1": "TW",
+                                    "zones": [
                                         "Asia/Taipei"
                                     ]
                                 },
                                 {
-                                    "TZ": [
+                                    "iso_3166_1": "TZ",
+                                    "zones": [
                                         "Africa/Dar_es_Salaam"
                                     ]
                                 },
                                 {
-                                    "UA": [
+                                    "iso_3166_1": "UA",
+                                    "zones": [
                                         "Europe/Kiev",
                                         "Europe/Uzhgorod",
                                         "Europe/Zaporozhye"
                                     ]
                                 },
                                 {
-                                    "UG": [
+                                    "iso_3166_1": "UG",
+                                    "zones": [
                                         "Africa/Kampala"
                                     ]
                                 },
                                 {
-                                    "UM": [
+                                    "iso_3166_1": "UM",
+                                    "zones": [
                                         "Pacific/Johnston",
                                         "Pacific/Midway",
                                         "Pacific/Wake"
                                     ]
                                 },
                                 {
-                                    "US": [
+                                    "iso_3166_1": "US",
+                                    "zones": [
                                         "America/New_York",
                                         "America/Detroit",
                                         "America/Kentucky/Louisville",
@@ -4885,83 +5118,99 @@
                                     ]
                                 },
                                 {
-                                    "UY": [
+                                    "iso_3166_1": "UY",
+                                    "zones": [
                                         "America/Montevideo"
                                     ]
                                 },
                                 {
-                                    "UZ": [
+                                    "iso_3166_1": "UZ",
+                                    "zones": [
                                         "Asia/Samarkand",
                                         "Asia/Tashkent"
                                     ]
                                 },
                                 {
-                                    "VA": [
+                                    "iso_3166_1": "VA",
+                                    "zones": [
                                         "Europe/Vatican"
                                     ]
                                 },
                                 {
-                                    "VC": [
+                                    "iso_3166_1": "VC",
+                                    "zones": [
                                         "America/St_Vincent"
                                     ]
                                 },
                                 {
-                                    "VE": [
+                                    "iso_3166_1": "VE",
+                                    "zones": [
                                         "America/Caracas"
                                     ]
                                 },
                                 {
-                                    "VG": [
+                                    "iso_3166_1": "VG",
+                                    "zones": [
                                         "America/Tortola"
                                     ]
                                 },
                                 {
-                                    "VI": [
+                                    "iso_3166_1": "VI",
+                                    "zones": [
                                         "America/St_Thomas"
                                     ]
                                 },
                                 {
-                                    "VN": [
+                                    "iso_3166_1": "VN",
+                                    "zones": [
                                         "Asia/Ho_Chi_Minh"
                                     ]
                                 },
                                 {
-                                    "VU": [
+                                    "iso_3166_1": "VU",
+                                    "zones": [
                                         "Pacific/Efate"
                                     ]
                                 },
                                 {
-                                    "WF": [
+                                    "iso_3166_1": "WF",
+                                    "zones": [
                                         "Pacific/Wallis"
                                     ]
                                 },
                                 {
-                                    "WS": [
+                                    "iso_3166_1": "WS",
+                                    "zones": [
                                         "Pacific/Apia"
                                     ]
                                 },
                                 {
-                                    "YE": [
+                                    "iso_3166_1": "YE",
+                                    "zones": [
                                         "Asia/Aden"
                                     ]
                                 },
                                 {
-                                    "YT": [
+                                    "iso_3166_1": "YT",
+                                    "zones": [
                                         "Indian/Mayotte"
                                     ]
                                 },
                                 {
-                                    "ZA": [
+                                    "iso_3166_1": "ZA",
+                                    "zones": [
                                         "Africa/Johannesburg"
                                     ]
                                 },
                                 {
-                                    "ZM": [
+                                    "iso_3166_1": "ZM",
+                                    "zones": [
                                         "Africa/Lusaka"
                                     ]
                                 },
                                 {
-                                    "ZW": [
+                                    "iso_3166_1": "ZW",
+                                    "zones": [
                                         "Africa/Harare"
                                     ]
                                 }
@@ -27109,7 +27358,7 @@
                     "type": "string"
                 },
                 "parent_company": {
-                    "$ref": "#/definitions/company"
+                    "$ref": "#/definitions/company-object"
                 }
             }
         },
@@ -27480,7 +27729,7 @@
                 "production_companies": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/company"
+                        "$ref": "#/definitions/company-object"
                     }
                 },
                 "production_countries": {
@@ -28282,13 +28531,13 @@
                             "items": {
                                 "oneOf": [
                                     {
-                                        "$ref": "#/definitions/movie-object-with-media-type"
+                                        "$ref": "#/definitions/movie-object"
                                     },
                                     {
-                                        "$ref": "#/definitions/tv-object-with-media-type"
+                                        "$ref": "#/definitions/tv-object"
                                     },
                                     {
-                                        "$ref": "#/definitions/person-object-with-media-type"
+                                        "$ref": "#/definitions/person-object"
                                     }
                                 ]
                             }
@@ -28395,7 +28644,7 @@
                 "production_companies": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/company"
+                        "$ref": "#/definitions/company-object"
                     }
                 },
                 "seasons": {
