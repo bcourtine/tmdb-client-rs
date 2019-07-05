@@ -33,6 +33,10 @@ pub trait ConfigurationApi {
         &self,
         api_key: Option<&str>,
     ) -> Result<crate::models::Configuration, Error>;
+
+    fn get_timezones_list(&self) -> Result<Vec<serde_json::Value>, Error>;
+
+    fn get_jobs_list(&self) -> Result<crate::models::Jobs, Error>;
 }
 
 impl ConfigurationApi for ConfigurationApiClient {
@@ -49,6 +53,56 @@ impl ConfigurationApi for ConfigurationApiClient {
         if let Some(ref s) = api_key {
             req_builder = req_builder.query(&[("api_key", &s.to_string())]);
         }
+        if let Some(ref apikey) = configuration.api_key {
+            let key = apikey.key.clone();
+            let val = match apikey.prefix {
+                Some(ref prefix) => format!("{} {}", prefix, key),
+                None => key,
+            };
+            req_builder = req_builder.query(&[("api_key", val)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn get_timezones_list(&self) -> Result<Vec<serde_json::Value>, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let client = &configuration.client;
+
+        let uri_str = format!("{}/configuration/timezones", configuration.base_path);
+        let mut req_builder = client.get(uri_str.as_str());
+
+        if let Some(ref apikey) = configuration.api_key {
+            let key = apikey.key.clone();
+            let val = match apikey.prefix {
+                Some(ref prefix) => format!("{} {}", prefix, key),
+                None => key,
+            };
+            req_builder = req_builder.query(&[("api_key", val)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn get_jobs_list(&self) -> Result<crate::models::Jobs, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let client = &configuration.client;
+
+        let uri_str = format!("{}/configuration/jobs", configuration.base_path);
+        let mut req_builder = client.get(uri_str.as_str());
+
         if let Some(ref apikey) = configuration.api_key {
             let key = apikey.key.clone();
             let val = match apikey.prefix {

@@ -68,6 +68,8 @@ Class | Method | HTTP request | Description
 *CompaniesApi* | [**get_company_details**](docs/CompaniesApi.md#get_company_details) | **get** /company/{company_id} | Get Details
 *CompaniesApi* | [**get_company_movies_paginated**](docs/CompaniesApi.md#get_company_movies_paginated) | **get** /company/{company_id}/movies | Get Movies
 *ConfigurationApi* | [**get_configuration**](docs/ConfigurationApi.md#get_configuration) | **get** /configuration | Get API Configuration
+*ConfigurationApi* | [**get_timezones_list**](docs/ConfigurationApi.md#get_timezones_list) | **get** /configuration/timezones | Get Timezones
+*ConfigurationApi* | [**get_jobs_list**](docs/JobsApi.md#get_jobs_list) | **get** /configuration/jobs | Get Jobs
 *CreditsApi* | [**get_credit_details**](docs/CreditsApi.md#get_credit_details) | **get** /credit/{credit_id} | Get Details
 *DiscoverApi* | [**get_discover_movie_paginated**](docs/DiscoverApi.md#get_discover_movie_paginated) | **get** /discover/movie | Movie Discover
 *DiscoverApi* | [**get_discover_tv_paginated**](docs/DiscoverApi.md#get_discover_tv_paginated) | **get** /discover/tv | TV Discover
@@ -78,7 +80,6 @@ Class | Method | HTTP request | Description
 *GuestSessionsApi* | [**get_guest_session_rated_movies_paginated**](docs/GuestSessionsApi.md#get_guest_session_rated_movies_paginated) | **get** /guest_session/{guest_session_id}/rated/movies | Get Rated Movies
 *GuestSessionsApi* | [**get_guest_session_rated_tv_episodes_paginated**](docs/GuestSessionsApi.md#get_guest_session_rated_tv_episodes_paginated) | **get** /guest_session/{guest_session_id}/rated/tv/episodes | Get Rated TV Episodes
 *GuestSessionsApi* | [**get_guest_session_rated_tv_paginated**](docs/GuestSessionsApi.md#get_guest_session_rated_tv_paginated) | **get** /guest_session/{guest_session_id}/rated/tv | Get Rated TV Shows
-*JobsApi* | [**get_jobs_list**](docs/JobsApi.md#get_jobs_list) | **get** /job/list | Get Jobs
 *KeywordsApi* | [**get_keyword_details**](docs/KeywordsApi.md#get_keyword_details) | **get** /keyword/{keyword_id} | Get Details
 *KeywordsApi* | [**get_movies_by_keyword_paginated**](docs/KeywordsApi.md#get_movies_by_keyword_paginated) | **get** /keyword/{keyword_id}/movies | Get Movies
 *ListsApi* | [**get_list_details**](docs/ListsApi.md#get_list_details) | **get** /list/{list_id} | Get Details
@@ -163,7 +164,6 @@ Class | Method | HTTP request | Description
 *TVSeasonsApi* | [**get_tv_season_external_ids**](docs/TVSeasonsApi.md#get_tv_season_external_ids) | **get** /tv/{tv_id}/season/{season_number}/external_ids | Get External IDs
 *TVSeasonsApi* | [**get_tv_season_images**](docs/TVSeasonsApi.md#get_tv_season_images) | **get** /tv/{tv_id}/season/{season_number}/images | Get Images
 *TVSeasonsApi* | [**get_tv_season_videos**](docs/TVSeasonsApi.md#get_tv_season_videos) | **get** /tv/{tv_id}/season/{season_number}/videos | Get Videos
-*TimezonesApi* | [**get_timezones_list**](docs/TimezonesApi.md#get_timezones_list) | **get** /timezones/list | Get List
 
 
 ## Documentation For Models

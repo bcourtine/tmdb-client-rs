@@ -56,8 +56,6 @@ mod genres_api;
 pub use self::genres_api::{GenresApi, GenresApiClient};
 mod guest_sessions_api;
 pub use self::guest_sessions_api::{GuestSessionsApi, GuestSessionsApiClient};
-mod jobs_api;
-pub use self::jobs_api::{JobsApi, JobsApiClient};
 mod keywords_api;
 pub use self::keywords_api::{KeywordsApi, KeywordsApiClient};
 mod lists_api;
@@ -78,8 +76,6 @@ mod tv_episodes_api;
 pub use self::tv_episodes_api::{TVEpisodesApi, TVEpisodesApiClient};
 mod tv_seasons_api;
 pub use self::tv_seasons_api::{TVSeasonsApi, TVSeasonsApiClient};
-mod timezones_api;
-pub use self::timezones_api::{TimezonesApi, TimezonesApiClient};
 
 pub mod client;
 pub mod configuration;

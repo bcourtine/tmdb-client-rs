@@ -16,7 +16,6 @@ pub struct APIClient {
     find_api: Box<crate::apis::FindApi>,
     genres_api: Box<crate::apis::GenresApi>,
     guest_sessions_api: Box<crate::apis::GuestSessionsApi>,
-    jobs_api: Box<crate::apis::JobsApi>,
     keywords_api: Box<crate::apis::KeywordsApi>,
     lists_api: Box<crate::apis::ListsApi>,
     movies_api: Box<crate::apis::MoviesApi>,
@@ -27,7 +26,6 @@ pub struct APIClient {
     tv_api: Box<crate::apis::TVApi>,
     tv_episodes_api: Box<crate::apis::TVEpisodesApi>,
     tv_seasons_api: Box<crate::apis::TVSeasonsApi>,
-    timezones_api: Box<crate::apis::TimezonesApi>,
 }
 
 impl APIClient {
@@ -48,7 +46,6 @@ impl APIClient {
             find_api: Box::new(crate::apis::FindApiClient::new(rc.clone())),
             genres_api: Box::new(crate::apis::GenresApiClient::new(rc.clone())),
             guest_sessions_api: Box::new(crate::apis::GuestSessionsApiClient::new(rc.clone())),
-            jobs_api: Box::new(crate::apis::JobsApiClient::new(rc.clone())),
             keywords_api: Box::new(crate::apis::KeywordsApiClient::new(rc.clone())),
             lists_api: Box::new(crate::apis::ListsApiClient::new(rc.clone())),
             movies_api: Box::new(crate::apis::MoviesApiClient::new(rc.clone())),
@@ -59,7 +56,6 @@ impl APIClient {
             tv_api: Box::new(crate::apis::TVApiClient::new(rc.clone())),
             tv_episodes_api: Box::new(crate::apis::TVEpisodesApiClient::new(rc.clone())),
             tv_seasons_api: Box::new(crate::apis::TVSeasonsApiClient::new(rc.clone())),
-            timezones_api: Box::new(crate::apis::TimezonesApiClient::new(rc.clone())),
         }
     }
 
@@ -121,10 +117,6 @@ impl APIClient {
         self.guest_sessions_api.as_ref()
     }
 
-    pub fn jobs_api(&self) -> &crate::apis::JobsApi {
-        self.jobs_api.as_ref()
-    }
-
     pub fn keywords_api(&self) -> &crate::apis::KeywordsApi {
         self.keywords_api.as_ref()
     }
@@ -163,9 +155,5 @@ impl APIClient {
 
     pub fn tv_seasons_api(&self) -> &crate::apis::TVSeasonsApi {
         self.tv_seasons_api.as_ref()
-    }
-
-    pub fn timezones_api(&self) -> &crate::apis::TimezonesApi {
-        self.timezones_api.as_ref()
     }
 }
