@@ -9,18 +9,18 @@
  */
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct JobsJobs {
-    #[serde(rename = "jobs", skip_serializing_if = "Option::is_none")]
-    pub jobs: Option<Vec<String>>,
-    #[serde(rename = "department", skip_serializing_if = "Option::is_none")]
-    pub department: Option<String>,
+pub struct Timezones {
+    #[serde(rename = "zones", skip_serializing_if = "Option::is_none")]
+    pub zones: Option<Vec<String>>,
+    #[serde(rename = "iso_3166_1", skip_serializing_if = "Option::is_none")]
+    pub iso_3166_1: Option<String>,
 }
 
-impl JobsJobs {
-    pub fn new() -> JobsJobs {
-        JobsJobs {
-            jobs: None,
-            department: None,
+impl Timezones {
+    pub fn new() -> Timezones {
+        Timezones {
+            zones: None,
+            iso_3166_1: None,
         }
     }
 }

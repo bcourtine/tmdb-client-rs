@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ## get_timezones_list
 
-> Vec<Value> get_timezones_list(ctx, )
+> Vec<::models::Timezones> get_timezones_list(ctx, )
 Get List
 
 Get the list of supported timezones on TMDb.
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Vec<Value>**](Value.md)
+[**Vec<::models::Timezones>**](Timezones.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ This endpoint does not need any parameter.
 
 ## get_jobs_list
 
-> ::models::Jobs get_jobs_list(ctx, )
+> Vec<::models::Jobs> get_jobs_list(ctx, )
 Get Jobs
 
 The the list of official jobs that are used on TMDb.
@@ -88,7 +88,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**::models::Jobs**](Jobs.md)
+[**Vec<::models::Jobs>**](Jobs.md)
 
 ### Authorization
 

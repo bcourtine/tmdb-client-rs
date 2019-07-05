@@ -11,11 +11,16 @@
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Jobs {
     #[serde(rename = "jobs", skip_serializing_if = "Option::is_none")]
-    pub jobs: Option<Vec<crate::models::JobsJobs>>,
+    pub jobs: Option<Vec<String>>,
+    #[serde(rename = "department", skip_serializing_if = "Option::is_none")]
+    pub department: Option<String>,
 }
 
 impl Jobs {
     pub fn new() -> Jobs {
-        Jobs { jobs: None }
+        Jobs {
+            jobs: None,
+            department: None,
+        }
     }
 }

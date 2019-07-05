@@ -3548,7 +3548,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/timezones"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/timezones"
+                            }
                         },
                         "examples": {
                             "application/json": [
@@ -4991,19 +4994,20 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/jobs"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/jobs"
+                            }
                         },
                         "examples": {
-                            "application/json": {
-                                "jobs": [
-                                    {
-                                        "department": "Writing",
-                                        "jobs": [
-                                            "Screenplay"
-                                        ]
-                                    }
-                                ]
-                            }
+                            "application/json": [
+                                {
+                                    "department": "Writing",
+                                    "jobs": [
+                                        "Screenplay"
+                                    ]
+                                }
+                            ]
                         }
                     },
                     "401": {
@@ -27257,21 +27261,13 @@
         "jobs": {
             "type": "object",
             "properties": {
+                "department": {
+                    "type": "string"
+                },
                 "jobs": {
                     "type": "array",
                     "items": {
-                        "type": "object",
-                        "properties": {
-                            "department": {
-                                "type": "string"
-                            },
-                            "jobs": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "type": "string"
                     }
                 }
             }
@@ -28302,9 +28298,17 @@
             ]
         },
         "timezones": {
-            "type": "array",
-            "items": {
-                "type": "object"
+            "type": "object",
+            "properties": {
+                "iso_3166_1": {
+                    "type": "string"
+                },
+                "zones": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
             }
         },
         "tv-details": {

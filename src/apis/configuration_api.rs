@@ -34,9 +34,9 @@ pub trait ConfigurationApi {
         api_key: Option<&str>,
     ) -> Result<crate::models::Configuration, Error>;
 
-    fn get_timezones_list(&self) -> Result<Vec<serde_json::Value>, Error>;
+    fn get_timezones_list(&self) -> Result<Vec<crate::models::Timezones>, Error>;
 
-    fn get_jobs_list(&self) -> Result<crate::models::Jobs, Error>;
+    fn get_jobs_list(&self) -> Result<Vec<crate::models::Jobs>, Error>;
 }
 
 impl ConfigurationApi for ConfigurationApiClient {
@@ -66,7 +66,7 @@ impl ConfigurationApi for ConfigurationApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_timezones_list(&self) -> Result<Vec<serde_json::Value>, Error> {
+    fn get_timezones_list(&self) -> Result<Vec<crate::models::Timezones>, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
@@ -86,7 +86,7 @@ impl ConfigurationApi for ConfigurationApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_jobs_list(&self) -> Result<crate::models::Jobs, Error> {
+    fn get_jobs_list(&self) -> Result<Vec<crate::models::Jobs>, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
