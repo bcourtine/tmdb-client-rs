@@ -65,12 +65,7 @@ impl ChangesApi for ChangesApiClient {
             req_builder = req_builder.query(&[("end_date", &s.to_string())]);
         }
         if let Some(ref apikey) = configuration.api_key {
-            let key = apikey.key.clone();
-            let val = match apikey.prefix {
-                Some(ref prefix) => format!("{} {}", prefix, key),
-                None => key,
-            };
-            req_builder = req_builder.query(&[("api_key", val)]);
+            req_builder = req_builder.query(&[("api_key", apikey)]);
         }
         if let Some(ref user_agent) = configuration.user_agent {
             req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -100,12 +95,7 @@ impl ChangesApi for ChangesApiClient {
             req_builder = req_builder.query(&[("end_date", &s.to_string())]);
         }
         if let Some(ref apikey) = configuration.api_key {
-            let key = apikey.key.clone();
-            let val = match apikey.prefix {
-                Some(ref prefix) => format!("{} {}", prefix, key),
-                None => key,
-            };
-            req_builder = req_builder.query(&[("api_key", val)]);
+            req_builder = req_builder.query(&[("api_key", apikey)]);
         }
         if let Some(ref user_agent) = configuration.user_agent {
             req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -135,12 +125,7 @@ impl ChangesApi for ChangesApiClient {
             req_builder = req_builder.query(&[("end_date", &s.to_string())]);
         }
         if let Some(ref apikey) = configuration.api_key {
-            let key = apikey.key.clone();
-            let val = match apikey.prefix {
-                Some(ref prefix) => format!("{} {}", prefix, key),
-                None => key,
-            };
-            req_builder = req_builder.query(&[("api_key", val)]);
+            req_builder = req_builder.query(&[("api_key", apikey)]);
         }
         if let Some(ref user_agent) = configuration.user_agent {
             req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());

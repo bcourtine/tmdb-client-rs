@@ -87,12 +87,7 @@ impl ListsApi for ListsApiClient {
             req_builder = req_builder.query(&[("language", &s.to_string())]);
         }
         if let Some(ref apikey) = configuration.api_key {
-            let key = apikey.key.clone();
-            let val = match apikey.prefix {
-                Some(ref prefix) => format!("{} {}", prefix, key),
-                None => key,
-            };
-            req_builder = req_builder.query(&[("api_key", val)]);
+            req_builder = req_builder.query(&[("api_key", apikey)]);
         }
         if let Some(ref user_agent) = configuration.user_agent {
             req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -121,12 +116,7 @@ impl ListsApi for ListsApiClient {
 
         req_builder = req_builder.query(&[("movie_id", &movie_id.to_string())]);
         if let Some(ref apikey) = configuration.api_key {
-            let key = apikey.key.clone();
-            let val = match apikey.prefix {
-                Some(ref prefix) => format!("{} {}", prefix, key),
-                None => key,
-            };
-            req_builder = req_builder.query(&[("api_key", val)]);
+            req_builder = req_builder.query(&[("api_key", apikey)]);
         }
         if let Some(ref user_agent) = configuration.user_agent {
             req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -152,12 +142,7 @@ impl ListsApi for ListsApiClient {
 
         req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
         if let Some(ref apikey) = configuration.api_key {
-            let key = apikey.key.clone();
-            let val = match apikey.prefix {
-                Some(ref prefix) => format!("{} {}", prefix, key),
-                None => key,
-            };
-            req_builder = req_builder.query(&[("api_key", val)]);
+            req_builder = req_builder.query(&[("api_key", apikey)]);
         }
         if let Some(ref user_agent) = configuration.user_agent {
             req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -190,12 +175,7 @@ impl ListsApi for ListsApiClient {
 
         req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
         if let Some(ref apikey) = configuration.api_key {
-            let key = apikey.key.clone();
-            let val = match apikey.prefix {
-                Some(ref prefix) => format!("{} {}", prefix, key),
-                None => key,
-            };
-            req_builder = req_builder.query(&[("api_key", val)]);
+            req_builder = req_builder.query(&[("api_key", apikey)]);
         }
         if let Some(ref user_agent) = configuration.user_agent {
             req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -228,12 +208,7 @@ impl ListsApi for ListsApiClient {
         req_builder = req_builder.query(&[("confirm", &confirm.to_string())]);
         req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
         if let Some(ref apikey) = configuration.api_key {
-            let key = apikey.key.clone();
-            let val = match apikey.prefix {
-                Some(ref prefix) => format!("{} {}", prefix, key),
-                None => key,
-            };
-            req_builder = req_builder.query(&[("api_key", val)]);
+            req_builder = req_builder.query(&[("api_key", apikey)]);
         }
         if let Some(ref user_agent) = configuration.user_agent {
             req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -264,12 +239,7 @@ impl ListsApi for ListsApiClient {
 
         req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
         if let Some(ref apikey) = configuration.api_key {
-            let key = apikey.key.clone();
-            let val = match apikey.prefix {
-                Some(ref prefix) => format!("{} {}", prefix, key),
-                None => key,
-            };
-            req_builder = req_builder.query(&[("api_key", val)]);
+            req_builder = req_builder.query(&[("api_key", apikey)]);
         }
         if let Some(ref user_agent) = configuration.user_agent {
             req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
