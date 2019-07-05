@@ -37,6 +37,27 @@ fn search_movie() -> Result<MoviePaginated, Error> {
 }
 ```
 
+## Missing APIs implementation
+
+* [AuthenticationApi: Create Session (from v4 access token)](https://developers.themoviedb.org/3/authentication/create-session-from-v4-access-token)
+* [AuthenticationApi: Delete Session](https://developers.themoviedb.org/3/authentication/delete-session)
+* [CollectionsApi: Get Translations](https://developers.themoviedb.org/3/collections/get-collection-translations)
+* [CompaniesApi: Get Images](https://developers.themoviedb.org/3/companies/get-company-images)
+* [ConfigurationApi: Get Countries](https://developers.themoviedb.org/3/configuration/get-countries)
+* [ConfigurationApi: Get Languages](https://developers.themoviedb.org/3/configuration/get-languages)
+* [ConfigurationApi: Get Primary Translations](https://developers.themoviedb.org/3/configuration/get-primary-translations) 
+* [ListsApi: Delete List](https://developers.themoviedb.org/3/lists/delete-list)
+* [MoviesApi: Get External IDs](https://developers.themoviedb.org/3/movies/get-movie-external-ids)
+* [NetworksApi: Get Alternative Names](https://developers.themoviedb.org/3/networks/get-network-alternative-names)  
+* [NetworksApi: Get Images](https://developers.themoviedb.org/3/networks/get-network-images)    
+* [TrendingApi: Get Trending](https://developers.themoviedb.org/3/trending/get-trending)
+* [PeopleApi: Get Translations](https://developers.themoviedb.org/3/people/get-person-translations)
+* [PVApi: Get Episode Groups](https://developers.themoviedb.org/3/tv/get-tv-episode-groups)
+* [PVApi: Get Screened Theatrically](https://developers.themoviedb.org/3/tv/get-screened-theatrically)
+* [TVEpisodesApi: Get Translations](https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-translations)
+* [TVEpisodeGroupsApi: Get Details](https://developers.themoviedb.org/3/tv-episode-groups/get-tv-episode-group-details)
+
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://api.themoviedb.org/3*
