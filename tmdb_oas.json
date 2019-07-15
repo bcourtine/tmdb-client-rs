@@ -11128,6 +11128,9 @@
                 },
                 "images": {
                     "$ref": "#/definitions/images"
+                },
+                "release_dates": {
+                    "$ref": "#/definitions/release-dates-list"
                 }
             }
         },

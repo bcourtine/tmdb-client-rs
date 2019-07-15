@@ -72,6 +72,8 @@ pub struct MovieDetails {
     pub videos: Option<crate::models::VideosList>,
     #[serde(rename = "images", skip_serializing_if = "Option::is_none")]
     pub images: Option<crate::models::Images>,
+    #[serde(rename = "release_dates", skip_serializing_if = "Option::is_none")]
+    pub release_dates: Option<crate::models::ReleaseDatesList>,
 }
 
 impl MovieDetails {
@@ -105,6 +107,7 @@ impl MovieDetails {
             credits: None,
             videos: None,
             images: None,
+            release_dates: None,
         }
     }
 }
