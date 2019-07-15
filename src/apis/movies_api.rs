@@ -127,11 +127,11 @@ pub trait MoviesApi {
         page: Option<i32>,
         region: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error>;
-    fn get_movie_translations_list(
+    fn get_movie_translations(
         &self,
         movie_id: i32,
         api_key: Option<&str>,
-    ) -> Result<crate::models::Translations, Error>;
+    ) -> Result<crate::models::TranslationsList, Error>;
     fn get_movie_upcoming_paginated(
         &self,
         language: Option<&str>,
@@ -737,11 +737,11 @@ impl MoviesApi for MoviesApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_movie_translations_list(
+    fn get_movie_translations(
         &self,
         movie_id: i32,
         api_key: Option<&str>,
-    ) -> Result<crate::models::Translations, Error> {
+    ) -> Result<crate::models::TranslationsList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 

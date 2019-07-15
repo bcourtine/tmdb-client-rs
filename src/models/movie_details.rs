@@ -45,7 +45,7 @@ pub struct MovieDetails {
         rename = "production_countries",
         skip_serializing_if = "Option::is_none"
     )]
-    pub production_countries: Option<Vec<crate::models::MoviedetailsProductionCountries>>,
+    pub production_countries: Option<Vec<crate::models::Translation>>,
     #[serde(rename = "release_date", skip_serializing_if = "Option::is_none")]
     pub release_date: Option<String>,
     #[serde(rename = "revenue", skip_serializing_if = "Option::is_none")]
@@ -53,7 +53,7 @@ pub struct MovieDetails {
     #[serde(rename = "runtime", skip_serializing_if = "Option::is_none")]
     pub runtime: Option<i32>,
     #[serde(rename = "spoken_languages", skip_serializing_if = "Option::is_none")]
-    pub spoken_languages: Option<Vec<crate::models::MoviedetailsSpokenLanguages>>,
+    pub spoken_languages: Option<Vec<crate::models::Translation>>,
     #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
     #[serde(rename = "tagline", skip_serializing_if = "Option::is_none")]

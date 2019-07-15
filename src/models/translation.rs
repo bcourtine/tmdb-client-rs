@@ -9,18 +9,24 @@
  */
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct MoviedetailsProductionCountries {
+pub struct Translation {
     #[serde(rename = "iso_3166_1", skip_serializing_if = "Option::is_none")]
     pub iso_3166_1: Option<String>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
+    #[serde(rename = "iso_639_1", skip_serializing_if = "Option::is_none")]
+    pub iso_639_1: Option<String>,
+    #[serde(rename = "english_name", skip_serializing_if = "Option::is_none")]
+    pub english_name: Option<String>,
 }
 
-impl MoviedetailsProductionCountries {
-    pub fn new() -> MoviedetailsProductionCountries {
-        MoviedetailsProductionCountries {
+impl Translation {
+    pub fn new() -> Translation {
+        Translation {
             iso_3166_1: None,
             name: None,
+            iso_639_1: None,
+            english_name: None,
         }
     }
 }

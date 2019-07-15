@@ -118,11 +118,11 @@ pub trait TVApi {
         language: Option<&str>,
         page: Option<i32>,
     ) -> Result<crate::models::TvPaginated, Error>;
-    fn get_tv_translations_list(
+    fn get_tv_translations(
         &self,
         tv_id: i32,
         language: Option<&str>,
-    ) -> Result<crate::models::Translations, Error>;
+    ) -> Result<crate::models::TranslationsList, Error>;
     fn get_tv_videos_list(
         &self,
         tv_id: i32,
@@ -680,11 +680,11 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_tv_translations_list(
+    fn get_tv_translations(
         &self,
         tv_id: i32,
         language: Option<&str>,
-    ) -> Result<crate::models::Translations, Error> {
+    ) -> Result<crate::models::TranslationsList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 

@@ -729,9 +729,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## get_movie_translations_list
+## get_movie_translations
 
-> ::models::Translations get_movie_translations_list(ctx, movie_id, optional)
+> ::models::Translations get_movie_translations(ctx, movie_id, optional)
 Get Translations
 
 Get a list of translations that have been created for a movie.
@@ -756,7 +756,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Translations**](Translations.md)
+[**::models::Translations**](TranslationsList.md)
 
 ### Authorization
 

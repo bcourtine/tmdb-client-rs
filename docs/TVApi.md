@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::Translations**](Translations.md)
+[**::models::Translations**](TranslationsList.md)
 
 ### Authorization
 
