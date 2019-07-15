@@ -37,6 +37,12 @@ pub trait ConfigurationApi {
     fn get_timezones_list(&self) -> Result<Vec<crate::models::Timezones>, Error>;
 
     fn get_jobs_list(&self) -> Result<Vec<crate::models::Jobs>, Error>;
+
+    fn get_countries_list(&self) -> Result<Vec<crate::models::Translation>, Error>;
+
+    fn get_languages_list(&self) -> Result<Vec<crate::models::Translation>, Error>;
+
+    fn get_primary_translations_list(&self) -> Result<Vec<String>, Error>;
 }
 
 impl ConfigurationApi for ConfigurationApiClient {
@@ -91,6 +97,66 @@ impl ConfigurationApi for ConfigurationApiClient {
         let mut client = configuration.rate_limit_client();
 
         let uri_str = format!("{}/configuration/jobs", configuration.base_path);
+        let mut req_builder = client.get(uri_str.as_str());
+
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn get_countries_list(&self) -> Result<Vec<crate::models::Translation>, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!("{}/configuration/countries", configuration.base_path);
+        let mut req_builder = client.get(uri_str.as_str());
+
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn get_languages_list(&self) -> Result<Vec<crate::models::Translation>, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!("{}/configuration/languages", configuration.base_path);
+        let mut req_builder = client.get(uri_str.as_str());
+
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn get_primary_translations_list(&self) -> Result<Vec<String>, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!("{}/configuration/primary_translations", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
 
         if let Some(ref apikey) = configuration.api_key {

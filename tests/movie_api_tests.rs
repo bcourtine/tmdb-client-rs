@@ -13,6 +13,7 @@ fn movie_by_id_should_give_results() {
     assert!(movie.credits.is_none());
     assert!(movie.videos.is_none());
     assert!(movie.images.is_none());
+    assert!(movie.release_dates.is_none());
 }
 
 #[test]
@@ -21,7 +22,7 @@ fn appends_to_movie_by_id_should_be_valuated() {
     let result = client.movies_api().get_movie_details(
         19995,
         None,
-        Some("credits,videos,images")
+        Some("credits,videos,images,release_dates")
     );
     let movie = result.expect("Error querying movie 19995 (Avatar)");
 
@@ -31,4 +32,5 @@ fn appends_to_movie_by_id_should_be_valuated() {
     assert!(movie.credits.is_some());
     assert!(movie.videos.is_some());
     assert!(movie.images.is_some());
+    assert!(movie.release_dates.is_some());
 }

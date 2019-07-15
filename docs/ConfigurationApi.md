@@ -7,7 +7,9 @@ Method | HTTP request | Description
 [**get_configuration**](ConfigurationApi.md#get_configuration) | **get** /configuration | Get API Configuration
 [**get_timezones_list**](ConfigurationApi.md#get_timezones_list) | **get** /configuration/timezones | Get Timezones
 [**get_jobs_list**](ConfigurationApi.md#get_jobs_list) | **get** /configuration/jobs | Get Jobs
-
+[**get_countries_list**](ConfigurationApi.md#get_countries_list) | **get** /configuration/countries | Get Countries
+[**get_languages_list**](ConfigurationApi.md#get_languages_list) | **get** /configuration/languages | Get Languages
+[**get_primary_translations_list**](ConfigurationApi.md#get_primary_translations_list) | **get** /configuration/primary_translations | Get Primary Translations
 
 ## get_configuration
 
@@ -89,6 +91,90 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Vec<::models::Jobs>**](Jobs.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+
+## get_countries_list
+
+> Vec<::models::Translation> get_countries_list(ctx, )
+Get Countries
+
+Get the list of countries (ISO 3166-1 tags) used throughout TMDb.
+
+### Required Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Vec<::models::Translation>**](Translation.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+
+## get_languages_list
+
+> Vec<::models::Jobs> get_languages_list(ctx, )
+Get Languages
+
+Get the list of languages (ISO 639-1 tags) used throughout TMDb.
+
+### Required Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Vec<::models::Translation>**](Translation.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+
+## get_primary_translations_list
+
+> Vec<String> get_primary_translations_list(ctx, )
+Get Primary Translations
+
+Get a list of the officially supported translations on TMDb.
+
+### Required Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Vec<String>**
 
 ### Authorization
 

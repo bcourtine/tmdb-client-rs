@@ -42,10 +42,7 @@ fn search_movie() -> Result<MoviePaginated, Error> {
 * [AuthenticationApi: Create Session (from v4 access token)](https://developers.themoviedb.org/3/authentication/create-session-from-v4-access-token)
 * [AuthenticationApi: Delete Session](https://developers.themoviedb.org/3/authentication/delete-session)
 * [CollectionsApi: Get Translations](https://developers.themoviedb.org/3/collections/get-collection-translations)
-* [CompaniesApi: Get Images](https://developers.themoviedb.org/3/companies/get-company-images)
-* [ConfigurationApi: Get Countries](https://developers.themoviedb.org/3/configuration/get-countries)
-* [ConfigurationApi: Get Languages](https://developers.themoviedb.org/3/configuration/get-languages)
-* [ConfigurationApi: Get Primary Translations](https://developers.themoviedb.org/3/configuration/get-primary-translations) 
+* [CompaniesApi: Get Images](https://developers.themoviedb.org/3/companies/get-company-images) 
 * [ListsApi: Delete List](https://developers.themoviedb.org/3/lists/delete-list)
 * [MoviesApi: Get External IDs](https://developers.themoviedb.org/3/movies/get-movie-external-ids)
 * [NetworksApi: Get Alternative Names](https://developers.themoviedb.org/3/networks/get-network-alternative-names)  
@@ -90,6 +87,9 @@ Class | Method | HTTP request | Description
 *ConfigurationApi* | [**get_configuration**](docs/ConfigurationApi.md#get_configuration) | **get** /configuration | Get API Configuration
 *ConfigurationApi* | [**get_timezones_list**](docs/ConfigurationApi.md#get_timezones_list) | **get** /configuration/timezones | Get Timezones
 *ConfigurationApi* | [**get_jobs_list**](docs/JobsApi.md#get_jobs_list) | **get** /configuration/jobs | Get Jobs
+*ConfigurationApi* | [**get_countries_list**](docs/ConfigurationApi.md#get_countries_list) | **get** /configuration/countries | Get Countries
+*ConfigurationApi* | [**get_languages_list**](docs/ConfigurationApi.md#get_languages_list) | **get** /configuration/languages | Get Languages
+*ConfigurationApi* | [**get_primary_translations_list**](docs/ConfigurationApi.md#get_primary_translations_list) | **get** /configuration/primary_translations | Get Primary Translations
 *CreditsApi* | [**get_credit_details**](docs/CreditsApi.md#get_credit_details) | **get** /credit/{credit_id} | Get Details
 *DiscoverApi* | [**get_discover_movie_paginated**](docs/DiscoverApi.md#get_discover_movie_paginated) | **get** /discover/movie | Movie Discover
 *DiscoverApi* | [**get_discover_tv_paginated**](docs/DiscoverApi.md#get_discover_tv_paginated) | **get** /discover/tv | TV Discover

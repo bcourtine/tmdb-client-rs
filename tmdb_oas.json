@@ -1875,6 +1875,141 @@
                 ]
             }
         },
+        "/configuration/countries": {
+            "get": {
+                "operationId": "get-countries-list",
+                "summary": "Get Countries",
+                "tags": [
+                    "Configuration"
+                ],
+                "description": "Get the list of countries (ISO 3166-1 tags) used throughout TMDb.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/translation"
+                            }
+                        },
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "iso_3166_1": "FR",
+                                    "english_name": "France"
+                                },
+                                {
+                                    "iso_3166_1": "GA",
+                                    "english_name": "Gabon"
+                                },
+                                {
+                                    "iso_3166_1": "GB",
+                                    "english_name": "United Kingdom"
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/trait:standardErrors:401"
+                    },
+                    "404": {
+                        "$ref": "#/responses/trait:standardErrors:404"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/configuration/languages": {
+            "get": {
+                "operationId": "get-languages-list",
+                "summary": "Get Languages",
+                "tags": [
+                    "Configuration"
+                ],
+                "description": "Get the list of languages (ISO 639-1 tags) used throughout TMDb.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/translation"
+                            }
+                        },
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "iso_639_1": "xx",
+                                    "english_name": "No Language",
+                                    "name": "No Language"
+                                },
+                                {
+                                    "iso_639_1": "fr",
+                                    "english_name": "French",
+                                    "name": "Français"
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/trait:standardErrors:401"
+                    },
+                    "404": {
+                        "$ref": "#/responses/trait:standardErrors:404"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/configuration/primary_translations": {
+            "get": {
+                "operationId": "get-primary-translations-list",
+                "summary": "Get primary translations",
+                "tags": [
+                    "Configuration"
+                ],
+                "description": "Get a list of the officially supported translations on TMDb.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "examples": {
+                            "application/json": [
+                                "fi-FI",
+                                "fr-CA",
+                                "fr-FR",
+                                "gl-ES",
+                                "he-IL"
+                            ]
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/trait:standardErrors:401"
+                    },
+                    "404": {
+                        "$ref": "#/responses/trait:standardErrors:404"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/credit/{credit_id}": {
             "parameters": [
                 {
