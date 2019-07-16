@@ -277,6 +277,7 @@ Class | Method | HTTP request | Description
  - [TokenResponseWithExpiration](docs/TokenResponseWithExpiration.md)
  - [TranslationsList](docs/TranslationsList.md)
  - [Translation](docs/Translation.md)
+ - [TranslationData](docs/TranslationData.md)
  - [TvDetails](docs/TvDetails.md)
  - [TvEpisodeObject](docs/TvEpisodeObject.md)
  - [TvEpisodesPaginated](docs/TvEpisodesPaginated.md)

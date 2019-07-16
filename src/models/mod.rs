@@ -178,6 +178,8 @@ mod translations_list;
 pub use self::translations_list::TranslationsList;
 mod translation;
 pub use self::translation::Translation;
+mod translation_data;
+pub use self::translation_data::TranslationData;
 mod tv_details;
 pub use self::tv_details::TvDetails;
 mod tv_episode_object;

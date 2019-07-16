@@ -1492,6 +1492,99 @@
                 ]
             }
         },
+        "/collection/{collection_id}/translations": {
+            "parameters": [
+                {
+                    "name": "collection_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-collection-translations-list",
+                "summary": "Get Translations",
+                "tags": [
+                    "Collections"
+                ],
+                "description": "Get the list translations for a collection by id.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/translations-list"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "id": 645,
+                                "translations": [
+                                    {
+                                        "iso_3166_1": "US",
+                                        "iso_639_1": "en",
+                                        "name": "English",
+                                        "english_name": "English",
+                                        "data": {
+                                            "title": "",
+                                            "overview": "The James Bond film series is a British series of spy films based on the fictional character of MI6 agent James Bond, codename \"007\". With all of the action, adventure, gadgetry & film scores that Bond is famous for.  (We do not consider the 1954 release of Casino Royale for this series because it was actually a television episode and not a theatrical film.)",
+                                            "homepage": "http://www.007.com/"
+                                        }
+                                    },
+                                    {
+                                        "iso_3166_1": "MX",
+                                        "iso_639_1": "es",
+                                        "name": "Español",
+                                        "english_name": "Spanish",
+                                        "data": {
+                                            "title": "",
+                                            "overview": "",
+                                            "homepage": ""
+                                        }
+                                    },
+                                    {
+                                        "iso_3166_1": "FR",
+                                        "iso_639_1": "fr",
+                                        "name": "Français",
+                                        "english_name": "French",
+                                        "data": {
+                                            "title": "James Bond - Saga",
+                                            "overview": "James Bond, agent 007, autorisé à tuer, est le héros de la plus longue saga cinématographique de tous les temps, au succès sans égal. Armé de son Walther PPK, accompagné des plus jolies filles de la terre et opposé aux plus cyniques des méchants, il a poursuivi le mal aux quatre coins du monde, survécu à la guerre froide et à la Chute du mur de Berlin.",
+                                            "homepage": "http://www.007.com"
+                                        }
+                                    },
+                                    {
+                                        "iso_3166_1": "TW",
+                                        "iso_639_1": "zh",
+                                        "name": "普通话",
+                                        "english_name": "Mandarin",
+                                        "data": {
+                                            "title": "007詹姆士龐德 系列",
+                                            "overview": "",
+                                            "homepage": ""
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/trait:standardErrors:401"
+                    },
+                    "404": {
+                        "$ref": "#/responses/trait:standardErrors:404"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/company/{company_id}": {
             "parameters": [
                 {
@@ -4106,13 +4199,29 @@
                         },
                         "examples": {
                             "application/json": {
-                                "id": 550,
+                                "id": 54321,
                                 "translations": [
                                     {
-                                        "iso_639_1": "ar",
-                                        "iso_3166_1": "AR",
-                                        "name": "العربية",
-                                        "english_name": "Arabic"
+                                        "iso_3166_1": "US",
+                                        "iso_639_1": "en",
+                                        "name": "English",
+                                        "english_name": "English",
+                                        "data": {
+                                            "title": "Blind Fist of Bruce",
+                                            "overview": "The incomparable martial arts expert, Bruce Li, stars as a wealthy hero who defends his village from the assaults of ill-wishers.",
+                                            "homepage": ""
+                                        }
+                                    },
+                                    {
+                                        "iso_3166_1": "DE",
+                                        "iso_639_1": "de",
+                                        "name": "Deutsch",
+                                        "english_name": "German",
+                                        "data": {
+                                            "title": "Wir sind die größten Knochenbrecher",
+                                            "overview": "",
+                                            "homepage": ""
+                                        }
                                     }
                                 ]
                             }
@@ -5589,6 +5698,73 @@
                                 ],
                                 "total_pages": 5,
                                 "total_results": 94
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/trait:standardErrors:401"
+                    },
+                    "404": {
+                        "$ref": "#/responses/trait:standardErrors:404"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/person/{person_id}/translations": {
+            "parameters": [
+                {
+                    "name": "person_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-person-translations-list",
+                "summary": "Get Translations",
+                "tags": [
+                    "People"
+                ],
+                "description": "Get a list of translations that have been created for a person.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/translations-list"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "translations": [
+                                    {
+                                        "iso_639_1": "en",
+                                        "iso_3166_1": "US",
+                                        "name": "English",
+                                        "data": {
+                                            "biography": "An American actress. She began her television career with several guest appearances on television shows such as Saved By The Bell: The New Class, Days of our Lives, and California Dreams. She is known for her recurring role as Danni Sullivan on NBC comedy drama series Scrubs. Her screen debut came in A Return to Salem's Lot (1987), followed by the hit films The Big Lebowski (1998), Urban Legend (1998), and American Pie (1999). She has since portrayed supporting as well as lead roles in several films, including Dr. T & the Women (2000), Josie and the Pussycats (2001), National Lampoon's Van Wilder (2002), My Boss's Daughter (2003), and Alone in the Dark (2005).\n\nDescription above from the Wikipedia article Tara Reid, licensed under CC-BY-SA, full list of contributors on Wikipedia."
+                                        },
+                                        "english_name": "en"
+                                    },
+                                    {
+                                        "iso_639_1": "de",
+                                        "iso_3166_1": "DE",
+                                        "name": "Deutsch",
+                                        "data": {
+                                            "biography": ""
+                                        },
+                                        "english_name": "de"
+                                    }
+                                ],
+                                "id": 1234
                             }
                         }
                     },
@@ -7768,27 +7944,29 @@
                         },
                         "examples": {
                             "application/json": {
-                                "id": 1399,
+                                "id": 12345,
                                 "translations": [
                                     {
-                                        "iso_639_1": "bs",
-                                        "name": "Bosanski",
-                                        "english_name": "Bosnian"
+                                        "iso_3166_1": "US",
+                                        "iso_639_1": "en",
+                                        "name": "English",
+                                        "english_name": "English",
+                                        "data": {
+                                            "name": "",
+                                            "overview": "Van der Valk is a British television series that was produced by Thames Television for the ITV network. It starred Barry Foster in the title role as Dutch detective Commissaris \"Piet\" van der Valk. Based on the characters and atmosphere of the novels of Nicolas Freeling, the first series was shown in 1972.",
+                                            "homepage": ""
+                                        }
                                     },
                                     {
-                                        "iso_639_1": "fa",
-                                        "name": "فارسی",
-                                        "english_name": "Persian"
-                                    },
-                                    {
-                                        "iso_639_1": "fr",
-                                        "name": "Français",
-                                        "english_name": "French"
-                                    },
-                                    {
-                                        "iso_639_1": "ar",
-                                        "name": "العربية",
-                                        "english_name": "Arabic"
+                                        "iso_3166_1": "DE",
+                                        "iso_639_1": "de",
+                                        "name": "Deutsch",
+                                        "english_name": "German",
+                                        "data": {
+                                            "name": "Van der Valk",
+                                            "overview": "Van der Valk ist eine britische Fernseh-Krimiserie ",
+                                            "homepage": ""
+                                        }
                                     }
                                 ]
                             }
@@ -9727,6 +9905,82 @@
                 ]
             }
         },
+        "/tv/{tv_id}/season/{season_number}/episode/{episode_number}/translations": {
+            "parameters": [
+                {
+                    "name": "tv_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                },
+                {
+                    "name": "season_number",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                },
+                {
+                    "name": "episode_number",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-tv-season-episode-translations-list",
+                "summary": "Get Translations",
+                "tags": [
+                    "TV Episodes"
+                ],
+                "description": "Get the translation data for an episode.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/translations-list"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "id": 479529,
+                                "translations": [
+                                    {
+                                        "iso_3166_1": "DE",
+                                        "iso_639_1": "de",
+                                        "name": "Deutsch",
+                                        "english_name": "German",
+                                        "data": {
+                                            "name": "",
+                                            "overview": ""
+                                        }
+                                    },
+                                    {
+                                        "iso_3166_1": "US",
+                                        "iso_639_1": "en",
+                                        "name": "English",
+                                        "english_name": "English",
+                                        "data": {
+                                            "name": "One Herring's Not Enough",
+                                            "overview": "When a man confesses to the double murder of his wife and her lover it seems an open and shut case; but as one part after another of the man's story doesn't check out, van der Valk realizes he is dealing with something far more complicated."
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/trait:standardErrors:401"
+                    },
+                    "404": {
+                        "$ref": "#/responses/trait:standardErrors:404"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating": {
             "parameters": [
                 {
@@ -11557,6 +11811,26 @@
                     "type": "string"
                 },
                 "english_name": {
+                    "type": "string"
+                },
+                "data": {
+                    "$ref": "#/definitions/translation-data"
+                }
+            }
+        },
+        "translation-data": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "overview": {
+                    "type": "string"
+                },
+                "homepage": {
                     "type": "string"
                 }
             }

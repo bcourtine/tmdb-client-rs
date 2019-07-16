@@ -18,6 +18,8 @@ pub struct Translation {
     pub iso_639_1: Option<String>,
     #[serde(rename = "english_name", skip_serializing_if = "Option::is_none")]
     pub english_name: Option<String>,
+    #[serde(rename = "data", skip_serializing_if = "Option::is_none")]
+    pub data: Option<crate::models::TranslationData>,
 }
 
 impl Translation {
@@ -27,6 +29,7 @@ impl Translation {
             name: None,
             iso_639_1: None,
             english_name: None,
+            data: None,
         }
     }
 }
