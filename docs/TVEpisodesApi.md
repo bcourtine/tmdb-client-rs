@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_tv_season_episode_details**](TVEpisodesApi.md#get_tv_season_episode_details) | **get** /tv/{tv_id}/season/{season_number}/episode/{episode_number} | Get Details
 [**get_tv_season_episode_external_ids**](TVEpisodesApi.md#get_tv_season_episode_external_ids) | **get** /tv/{tv_id}/season/{season_number}/episode/{episode_number}/external_ids | Get TV Episode External IDs
 [**get_tv_season_episode_images**](TVEpisodesApi.md#get_tv_season_episode_images) | **get** /tv/{tv_id}/season/{season_number}/episode/{episode_number}/images | Get Images
+[**get_tv_season_episode_translations_list**](TVEpisodesApi.md#get_tv_season_episode_translations) | **get** /tv/{tv_id}/season/{season_number}/episode/{episode_number}/translations | Get Translations
 [**get_tv_season_episode_videos_list**](TVEpisodesApi.md#get_tv_season_episode_videos_list) | **get** /tv/{tv_id}/season/{season_number}/episode/{episode_number}/videos | Get  Videos
 [**post_tv_season_episode_rating**](TVEpisodesApi.md#post_tv_season_episode_rating) | **post** /tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating | Rate TV Episode
 
@@ -285,6 +286,38 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**::models::Images**](Images.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_tv_season_episode_translations_list
+
+> ::models::TranslationsList get_tv_season_episode_translations_list(tv_id, season_number, episode_number)
+Get Translations
+
+Get the translation data for an episode.
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tv_id** | **i32**|  | 
+ **season_number** | **i32**|  | 
+ **episode_number** | **i32**|  | 
+
+### Return type
+
+[**::models::TranslationsList**](TranslationsList.md)
 
 ### Authorization
 

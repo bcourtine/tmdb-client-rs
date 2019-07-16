@@ -77,6 +77,11 @@ pub trait PeopleApi {
         language: Option<&str>,
         page: Option<i32>,
     ) -> Result<crate::models::PersonTaggedImagesPaginated, Error>;
+    fn get_person_translations_list(
+        &self,
+        person_id: i32,
+        language: Option<&str>,
+    ) -> Result<crate::models::TranslationsList, Error>;
     fn get_person_tv_credits(
         &self,
         person_id: i32,
@@ -360,6 +365,37 @@ impl PeopleApi for PeopleApiClient {
         }
         if let Some(ref s) = page {
             req_builder = req_builder.query(&[("page", &s.to_string())]);
+        }
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn get_person_translations_list(
+        &self,
+        person_id: i32,
+        language: Option<&str>,
+    ) -> Result<crate::models::TranslationsList, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!(
+            "{}/person/{person_id}/translations",
+            configuration.base_path,
+            person_id = person_id
+        );
+        let mut req_builder = client.get(uri_str.as_str());
+
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
         }
         if let Some(ref apikey) = configuration.api_key {
             req_builder = req_builder.query(&[("api_key", apikey)]);

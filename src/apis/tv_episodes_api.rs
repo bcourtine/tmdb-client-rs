@@ -79,6 +79,12 @@ pub trait TVEpisodesApi {
         season_number: i32,
         episode_number: i32,
     ) -> Result<crate::models::Images, Error>;
+    fn get_tv_season_episode_translations_list(
+        &self,
+        tv_id: i32,
+        season_number: i32,
+        episode_number: i32,
+    ) -> Result<crate::models::TranslationsList, Error>;
     fn get_tv_season_episode_videos_list(
         &self,
         tv_id: i32,
@@ -330,6 +336,37 @@ impl TVEpisodesApi for TVEpisodesApiClient {
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images",
+            configuration.base_path,
+            tv_id = tv_id,
+            season_number = season_number,
+            episode_number = episode_number
+        );
+        let mut req_builder = client.get(uri_str.as_str());
+
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn get_tv_season_episode_translations_list(
+        &self,
+        tv_id: i32,
+        season_number: i32,
+        episode_number: i32,
+    ) -> Result<crate::models::TranslationsList, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!(
+            "{}/tv/{tv_id}/season/{season_number}/episode/{episode_number}/translations",
             configuration.base_path,
             tv_id = tv_id,
             season_number = season_number,

@@ -41,17 +41,14 @@ fn search_movie() -> Result<MoviePaginated, Error> {
 
 * [AuthenticationApi: Create Session (from v4 access token)](https://developers.themoviedb.org/3/authentication/create-session-from-v4-access-token)
 * [AuthenticationApi: Delete Session](https://developers.themoviedb.org/3/authentication/delete-session)
-* [CollectionsApi: Get Translations](https://developers.themoviedb.org/3/collections/get-collection-translations)
 * [CompaniesApi: Get Images](https://developers.themoviedb.org/3/companies/get-company-images) 
 * [ListsApi: Delete List](https://developers.themoviedb.org/3/lists/delete-list)
 * [MoviesApi: Get External IDs](https://developers.themoviedb.org/3/movies/get-movie-external-ids)
 * [NetworksApi: Get Alternative Names](https://developers.themoviedb.org/3/networks/get-network-alternative-names)  
 * [NetworksApi: Get Images](https://developers.themoviedb.org/3/networks/get-network-images)    
 * [TrendingApi: Get Trending](https://developers.themoviedb.org/3/trending/get-trending)
-* [PeopleApi: Get Translations](https://developers.themoviedb.org/3/people/get-person-translations)
 * [PVApi: Get Episode Groups](https://developers.themoviedb.org/3/tv/get-tv-episode-groups)
 * [PVApi: Get Screened Theatrically](https://developers.themoviedb.org/3/tv/get-screened-theatrically)
-* [TVEpisodesApi: Get Translations](https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-translations)
 * [TVEpisodeGroupsApi: Get Details](https://developers.themoviedb.org/3/tv-episode-groups/get-tv-episode-group-details)
 
 ## Documentation for API Endpoints
@@ -82,6 +79,7 @@ Class | Method | HTTP request | Description
 *ChangesApi* | [**get_tv_changes_paginated**](docs/ChangesApi.md#get_tv_changes_paginated) | **get** /tv/changes | Get TV Change List
 *CollectionsApi* | [**get_collection_details**](docs/CollectionsApi.md#get_collection_details) | **get** /collection/{collection_id} | Get Details
 *CollectionsApi* | [**get_collection_images_list**](docs/CollectionsApi.md#get_collection_images_list) | **get** /collection/{collection_id}/images | Get Images
+*CollectionsApi* | [**get_collection_translations_list**](docs/CollectionsApi.md#get_collection_translations_list) | **get** /collection/{collection_id}/translations | Get Translations
 *CompaniesApi* | [**get_company_details**](docs/CompaniesApi.md#get_company_details) | **get** /company/{company_id} | Get Details
 *CompaniesApi* | [**get_company_movies_paginated**](docs/CompaniesApi.md#get_company_movies_paginated) | **get** /company/{company_id}/movies | Get Movies
 *ConfigurationApi* | [**get_configuration**](docs/ConfigurationApi.md#get_configuration) | **get** /configuration | Get API Configuration
@@ -139,6 +137,7 @@ Class | Method | HTTP request | Description
 *PeopleApi* | [**get_person_movie_credits**](docs/PeopleApi.md#get_person_movie_credits) | **get** /person/{person_id}/movie_credits | Get Movie Credits
 *PeopleApi* | [**get_person_popular_paginated**](docs/PeopleApi.md#get_person_popular_paginated) | **get** /person/popular | Get Popular
 *PeopleApi* | [**get_person_tagged_images_paginated**](docs/PeopleApi.md#get_person_tagged_images_paginated) | **get** /person/{person_id}/tagged_images | Get Tagged Images
+*PeopleApi* | [**get_person_translations_list**](docs/PeopleApi.md#get_person_translations_list) | **get** /person/{person_id}/translations | Get Translations
 *PeopleApi* | [**get_person_tv_credits**](docs/PeopleApi.md#get_person_tv_credits) | **get** /person/{person_id}/tv_credits | Get TV Credits
 *ReviewsApi* | [**get_review_details**](docs/ReviewsApi.md#get_review_details) | **get** /review/{review_id} | Get Details
 *SearchApi* | [**get_search_collection_paginated**](docs/SearchApi.md#get_search_collection_paginated) | **get** /search/collection | Search Collections
@@ -175,6 +174,7 @@ Class | Method | HTTP request | Description
 *TVEpisodesApi* | [**get_tv_season_episode_details**](docs/TVEpisodesApi.md#get_tv_season_episode_details) | **get** /tv/{tv_id}/season/{season_number}/episode/{episode_number} | Get Details
 *TVEpisodesApi* | [**get_tv_season_episode_external_ids**](docs/TVEpisodesApi.md#get_tv_season_episode_external_ids) | **get** /tv/{tv_id}/season/{season_number}/episode/{episode_number}/external_ids | Get TV Episode External IDs
 *TVEpisodesApi* | [**get_tv_season_episode_images**](docs/TVEpisodesApi.md#get_tv_season_episode_images) | **get** /tv/{tv_id}/season/{season_number}/episode/{episode_number}/images | Get Images
+*TVEpisodesApi* | [**get_tv_season_episode_translations_list**](docs/TVEpisodesApi.md#get_tv_season_episode_translations_list) | **get** /tv/{tv_id}/season/{season_number}/episode/{episode_number}/translations | Get Translations
 *TVEpisodesApi* | [**get_tv_season_episode_videos_list**](docs/TVEpisodesApi.md#get_tv_season_episode_videos_list) | **get** /tv/{tv_id}/season/{season_number}/episode/{episode_number}/videos | Get  Videos
 *TVEpisodesApi* | [**post_tv_season_episode_rating**](docs/TVEpisodesApi.md#post_tv_season_episode_rating) | **post** /tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating | Rate TV Episode
 *TVSeasonsApi* | [**get_tv_season_account_states**](docs/TVSeasonsApi.md#get_tv_season_account_states) | **get** /tv/{tv_id}/season/{season_number}/account_states | Get Account States

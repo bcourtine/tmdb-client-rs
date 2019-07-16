@@ -39,6 +39,11 @@ pub trait CollectionsApi {
         collection_id: i32,
         language: Option<&str>,
     ) -> Result<crate::models::Images, Error>;
+    fn get_collection_translations_list(
+        &self,
+        collection_id: i32,
+        language: Option<&str>,
+    ) -> Result<crate::models::TranslationsList, Error>;
 }
 
 impl CollectionsApi for CollectionsApiClient {
@@ -83,6 +88,37 @@ impl CollectionsApi for CollectionsApiClient {
 
         let uri_str = format!(
             "{}/collection/{collection_id}/images",
+            configuration.base_path,
+            collection_id = collection_id
+        );
+        let mut req_builder = client.get(uri_str.as_str());
+
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn get_collection_translations_list(
+        &self,
+        collection_id: i32,
+        language: Option<&str>,
+    ) -> Result<crate::models::TranslationsList, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!(
+            "{}/collection/{collection_id}/translations",
             configuration.base_path,
             collection_id = collection_id
         );

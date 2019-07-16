@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_collection_details**](CollectionsApi.md#get_collection_details) | **get** /collection/{collection_id} | Get Details
 [**get_collection_images_list**](CollectionsApi.md#get_collection_images_list) | **get** /collection/{collection_id}/images | Get Images
+[**get_collection_translations_list**](CollectionsApi.md#get_collection_translations_list) | **get** /collection/{collection_id}/translations | Get Translations
 
 
 
@@ -78,6 +79,41 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**::models::Images**](Images.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_collection_translations_list
+
+> ::models::TranslationsList get_collection_translations_list(ctx, collection_id, language)
+Get Translations
+
+Get the translations for a collection by id.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **collection_id** | **i32**|  | 
+
+### Optional Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+
+### Return type
+
+[**::models::TranslationsList**](TranslationsList.md)
 
 ### Authorization
 

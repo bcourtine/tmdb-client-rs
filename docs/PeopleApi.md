@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_person_movie_credits**](PeopleApi.md#get_person_movie_credits) | **get** /person/{person_id}/movie_credits | Get Movie Credits
 [**get_person_popular_paginated**](PeopleApi.md#get_person_popular_paginated) | **get** /person/popular | Get Popular
 [**get_person_tagged_images_paginated**](PeopleApi.md#get_person_tagged_images_paginated) | **get** /person/{person_id}/tagged_images | Get Tagged Images
+[**get_person_translations_list**](PeopleApi.md#get_person_translations_list) | **get** /person/{person_id}/translations | Get Translations
 [**get_person_tv_credits**](PeopleApi.md#get_person_tv_credits) | **get** /person/{person_id}/tv_credits | Get TV Credits
 
 
@@ -365,6 +366,44 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**::models::PersonTaggedImagesPaginated**](PersonTaggedImagesPaginated.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_person_translations_list
+
+> ::models::TranslationsList get_person_translations_list(ctx, person_id, language)
+Get Translations
+
+Get a list of translations that have been created for a person.
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **person_id** | **i32**|  | 
+
+### Optional Parameters
+
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+
+### Return type
+
+[**::models::TranslationsList**](TranslationsList.md)
 
 ### Authorization
 
