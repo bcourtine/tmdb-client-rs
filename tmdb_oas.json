@@ -11504,6 +11504,9 @@
                 },
                 "release_dates": {
                     "$ref": "#/definitions/release-dates-list"
+                },
+                "translations": {
+                    "$ref": "#/definitions/translations-list"
                 }
             }
         },

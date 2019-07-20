@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **videos** | [**::models::VideosList**](VideosList.md) |  | [optional]
 **images** | [**::models::Images**](Images.md) |  | [optional]
 **release_dates** | [**::models::ReleaseDatesList**](ReleaseDatesList.md) |  | [optional]
+**translations** | [**::models::TranslationsList**](TranslationsList.md) |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
