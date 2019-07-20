@@ -24,6 +24,8 @@ pub struct Image {
     pub vote_count: Option<i32>,
     #[serde(rename = "width", skip_serializing_if = "Option::is_none")]
     pub width: Option<i32>,
+    #[serde(rename = "file_type", skip_serializing_if = "Option::is_none")]
+    pub file_type: Option<String>,
 }
 
 impl Image {
@@ -36,6 +38,7 @@ impl Image {
             vote_average: None,
             vote_count: None,
             width: None,
+            file_type: None,
         }
     }
 }

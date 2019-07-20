@@ -41,14 +41,13 @@ fn search_movie() -> Result<MoviePaginated, Error> {
 
 * [AuthenticationApi: Create Session (from v4 access token)](https://developers.themoviedb.org/3/authentication/create-session-from-v4-access-token)
 * [AuthenticationApi: Delete Session](https://developers.themoviedb.org/3/authentication/delete-session)
-* [CompaniesApi: Get Images](https://developers.themoviedb.org/3/companies/get-company-images) 
 * [ListsApi: Delete List](https://developers.themoviedb.org/3/lists/delete-list)
 * [MoviesApi: Get External IDs](https://developers.themoviedb.org/3/movies/get-movie-external-ids)
 * [NetworksApi: Get Alternative Names](https://developers.themoviedb.org/3/networks/get-network-alternative-names)  
 * [NetworksApi: Get Images](https://developers.themoviedb.org/3/networks/get-network-images)    
 * [TrendingApi: Get Trending](https://developers.themoviedb.org/3/trending/get-trending)
-* [PVApi: Get Episode Groups](https://developers.themoviedb.org/3/tv/get-tv-episode-groups)
-* [PVApi: Get Screened Theatrically](https://developers.themoviedb.org/3/tv/get-screened-theatrically)
+* [TVApi: Get Episode Groups](https://developers.themoviedb.org/3/tv/get-tv-episode-groups)
+* [TVApi: Get Screened Theatrically](https://developers.themoviedb.org/3/tv/get-screened-theatrically)
 * [TVEpisodeGroupsApi: Get Details](https://developers.themoviedb.org/3/tv-episode-groups/get-tv-episode-group-details)
 
 ## Documentation for API Endpoints
@@ -82,6 +81,7 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**get_collection_translations_list**](docs/CollectionsApi.md#get_collection_translations_list) | **get** /collection/{collection_id}/translations | Get Translations
 *CompaniesApi* | [**get_company_details**](docs/CompaniesApi.md#get_company_details) | **get** /company/{company_id} | Get Details
 *CompaniesApi* | [**get_company_movies_paginated**](docs/CompaniesApi.md#get_company_movies_paginated) | **get** /company/{company_id}/movies | Get Movies
+*CompaniesApi* | [**get_company_images**](docs/CompaniesApi.md#get_company_images) | **get** /company/{company_id}/images | Get Images
 *ConfigurationApi* | [**get_configuration**](docs/ConfigurationApi.md#get_configuration) | **get** /configuration | Get API Configuration
 *ConfigurationApi* | [**get_timezones_list**](docs/ConfigurationApi.md#get_timezones_list) | **get** /configuration/timezones | Get Timezones
 *ConfigurationApi* | [**get_jobs_list**](docs/JobsApi.md#get_jobs_list) | **get** /configuration/jobs | Get Jobs

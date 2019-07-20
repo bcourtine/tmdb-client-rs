@@ -1703,6 +1703,60 @@
                 ]
             }
         },
+        "/company/{company_id}/images": {
+            "parameters": [
+                {
+                    "name": "company_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-company-images",
+                "summary": "Get Images",
+                "tags": [
+                    "Companies"
+                ],
+                "description": "Get company logos by id.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/images"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "id": 670,
+                                "logos": [
+                                    {
+                                        "aspect_ratio": 1.35,
+                                        "file_path": "/rRGi5UkwvdOPSfr5Xf42RZUsYgd.png",
+                                        "height": 240,
+                                        "id": "5aa58f900e0a26075d02b913",
+                                        "file_type": ".svg",
+                                        "vote_average": 0,
+                                        "vote_count": 0,
+                                        "width": 324
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/trait:standardErrors:401"
+                    },
+                    "404": {
+                        "$ref": "#/responses/trait:standardErrors:404"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/configuration": {
             "get": {
                 "operationId": "get-configuration",
@@ -11025,6 +11079,12 @@
                     "items": {
                         "$ref": "#/definitions/image"
                     }
+                },
+                "logos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/image"
+                    }
                 }
             }
         },
@@ -11051,6 +11111,9 @@
                 },
                 "width": {
                     "type": "integer"
+                },
+                "file_type": {
+                    "type": "string"
                 }
             }
         },
