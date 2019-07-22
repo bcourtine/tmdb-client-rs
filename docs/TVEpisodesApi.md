@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ## get_tv_season_episode_external_ids
 
-> ::models::MovieTvExternalIds get_tv_season_episode_external_ids(ctx, tv_id, season_number, episode_number)
+> ::models::ExternalIds get_tv_season_episode_external_ids(ctx, tv_id, season_number, episode_number)
 Get TV Episode External IDs
 
 Get the external ids for a TV episode. We currently support the following external sources.  | **External Sources** | | -------------------- | | IMDB ID              | | Freebase MID         | | Freebase ID          | | TVDB ID              | | TVRage ID            |
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::MovieTvExternalIds**](MovieTvExternalIds.md)
+[**::models::ExternalIds**](ExternalIds.md)
 
 ### Authorization
 

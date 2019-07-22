@@ -34,3 +34,14 @@ fn appends_to_movie_by_id_should_be_valuated() {
     assert!(movie.images.is_some());
     assert!(movie.release_dates.is_some());
 }
+
+
+#[test]
+fn movie_external_ids_should_be_valuated() {
+    let client = APIClient::new_from_env();
+    let result = client.movies_api().get_movie_external_ids(19995);
+    let external_ids = result.expect("Error querying movie 19995 (Avatar)");
+
+    assert_eq!(external_ids.id, 19995);
+    assert!(external_ids.imdb_id.is_some());
+}

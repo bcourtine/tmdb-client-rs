@@ -4004,6 +4004,52 @@
                 ]
             }
         },
+        "/movie/{movie_id}/external_ids": {
+            "parameters": [
+                {
+                    "name": "movie_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-movie-external-ids",
+                "summary": "Get External IDs",
+                "tags": [
+                    "Movies"
+                ],
+                "description": "Get the external ids for a movie.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/external-ids"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "id": 54321,
+                                "imdb_id": "tt0082706",
+                                "facebook_id": null,
+                                "instagram_id": null,
+                                "twitter_id": null
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/movie/{movie_id}/images": {
             "parameters": [
                 {
@@ -5584,7 +5630,7 @@
                 }
             ],
             "get": {
-                "operationId": "get-person-external-ids",
+                "operationId": "get-external-ids",
                 "summary": "Get External IDs",
                 "tags": [
                     "People"
@@ -5599,7 +5645,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/person-external-ids"
+                            "$ref": "#/definitions/external-ids"
                         },
                         "examples": {
                             "application/json": {
@@ -5647,7 +5693,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/person-images-list"
+                            "$ref": "#/definitions/images"
                         },
                         "examples": {
                             "application/json": {
@@ -7645,7 +7691,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/movie-tv-external-ids"
+                            "$ref": "#/definitions/external-ids"
                         },
                         "examples": {
                             "application/json": {
@@ -9226,7 +9272,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/movie-tv-external-ids"
+                            "$ref": "#/definitions/external-ids"
                         },
                         "examples": {
                             "application/json": {
@@ -9887,7 +9933,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/movie-tv-external-ids"
+                            "$ref": "#/definitions/external-ids"
                         },
                         "examples": {
                             "application/json": {
@@ -11081,6 +11127,12 @@
                     "items": {
                         "$ref": "#/definitions/image"
                     }
+                },
+                "profiles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/image"
+                    }
                 }
             }
         },
@@ -12104,7 +12156,7 @@
                 }
             }
         },
-        "person-external-ids": {
+        "external-ids": {
             "type": "object",
             "properties": {
                 "imdb_id": {
@@ -12135,20 +12187,6 @@
             "required": [
                 "id"
             ]
-        },
-        "person-images-list": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "integer"
-                },
-                "profiles": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/image"
-                    }
-                }
-            }
         },
         "person-tagged-images-paginated": {
             "allOf": [
@@ -12515,29 +12553,6 @@
                     "type": "integer"
                 }
             }
-        },
-        "movie-tv-external-ids": {
-            "type": "object",
-            "properties": {
-                "imdb_id": {
-                    "type": "string"
-                },
-                "freebase_mid": {
-                    "type": "string"
-                },
-                "freebase_id": {
-                    "type": "string"
-                },
-                "tvrage_id": {
-                    "type": "integer"
-                },
-                "id": {
-                    "type": "integer"
-                }
-            },
-            "required": [
-                "id"
-            ]
         },
         "season-details": {
             "type": "object",

@@ -9,7 +9,7 @@
  */
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct PersonExternalIds {
+pub struct ExternalIds {
     #[serde(rename = "id")]
     pub id: i32,
     #[serde(rename = "imdb_id")]
@@ -28,9 +28,9 @@ pub struct PersonExternalIds {
     pub instagram_id: Option<String>,
 }
 
-impl PersonExternalIds {
-    pub fn new(id: i32) -> PersonExternalIds {
-        PersonExternalIds {
+impl ExternalIds {
+    pub fn new(id: i32) -> ExternalIds {
+        ExternalIds {
             id,
             imdb_id: None,
             facebook_id: None,

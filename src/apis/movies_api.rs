@@ -55,6 +55,7 @@ pub trait MoviesApi {
         page: Option<i32>,
     ) -> Result<crate::models::ChangeDetails, Error>;
     fn get_movie_credits(&self, movie_id: i32) -> Result<crate::models::Credits, Error>;
+    fn get_movie_external_ids(&self, movie_id: i32) -> Result<crate::models::ExternalIds, Error>;
     fn get_movie_details(
         &self,
         movie_id: i32,
@@ -303,6 +304,30 @@ impl MoviesApi for MoviesApiClient {
 
         let uri_str = format!(
             "{}/movie/{movie_id}/credits",
+            configuration.base_path,
+            movie_id = movie_id
+        );
+        let mut req_builder = client.get(uri_str.as_str());
+
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn get_movie_external_ids(&self, movie_id: i32) -> Result<crate::models::ExternalIds, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!(
+            "{}/movie/{movie_id}/external_ids",
             configuration.base_path,
             movie_id = movie_id
         );

@@ -41,7 +41,6 @@ fn search_movie() -> Result<MoviePaginated, Error> {
 
 * [AuthenticationApi: Create Session (from v4 access token)](https://developers.themoviedb.org/3/authentication/create-session-from-v4-access-token)
 * [AuthenticationApi: Delete Session](https://developers.themoviedb.org/3/authentication/delete-session)
-* [MoviesApi: Get External IDs](https://developers.themoviedb.org/3/movies/get-movie-external-ids)
 * [NetworksApi: Get Alternative Names](https://developers.themoviedb.org/3/networks/get-network-alternative-names)  
 * [NetworksApi: Get Images](https://developers.themoviedb.org/3/networks/get-network-images)    
 * [TrendingApi: Get Trending](https://developers.themoviedb.org/3/trending/get-trending)
@@ -111,6 +110,7 @@ Class | Method | HTTP request | Description
 *MoviesApi* | [**get_movie_alternative_titles_list**](docs/MoviesApi.md#get_movie_alternative_titles_list) | **get** /movie/{movie_id}/alternative_titles | Get Alternative Titles
 *MoviesApi* | [**get_movie_changes_list**](docs/MoviesApi.md#get_movie_changes_list) | **get** /movie/{movie_id}/changes | Get Changes
 *MoviesApi* | [**get_movie_credits**](docs/MoviesApi.md#get_movie_credits) | **get** /movie/{movie_id}/credits | Get Credits
+*MoviesApi* | [**get_movie_external_ids**](docs/MoviesApi.md#get_movie_external_ids) | **get** /movie/{movie_id}/external_ids | Get External IDs
 *MoviesApi* | [**get_movie_details**](docs/MoviesApi.md#get_movie_details) | **get** /movie/{movie_id} | Get Details
 *MoviesApi* | [**get_movie_images**](docs/MoviesApi.md#get_movie_images) | **get** /movie/{movie_id}/images | Get Images
 *MoviesApi* | [**get_movie_keywords_list**](docs/MoviesApi.md#get_movie_keywords_list) | **get** /movie/{movie_id}/keywords | Get Keywords
@@ -223,6 +223,7 @@ Class | Method | HTTP request | Description
  - [EpisodeRatingList](docs/EpisodeRatingList.md)
  - [EpisoderatinglistRated](docs/EpisoderatinglistRated.md)
  - [EpisoderatinglistResults](docs/EpisoderatinglistResults.md)
+ - [ExternalIds](docs/ExternalIds.md)
  - [FindByExternalIdResults](docs/FindByExternalIdResults.md)
  - [Genre](docs/Genre.md)
  - [GenresList](docs/GenresList.md)
@@ -249,13 +250,10 @@ Class | Method | HTTP request | Description
  - [MovieDetails](docs/MovieDetails.md)
  - [MovieObject](docs/MovieObject.md)
  - [MoviePaginated](docs/MoviePaginated.md)
- - [MovieTvExternalIds](docs/MovieTvExternalIds.md)
  - [MovieobjectDates](docs/MovieobjectDates.md)
  - [Network](docs/Network.md)
  - [PersonCredits](docs/PersonCredits.md)
  - [PersonDetails](docs/PersonDetails.md)
- - [PersonExternalIds](docs/PersonExternalIds.md)
- - [PersonImagesList](docs/PersonImagesList.md)
  - [PersonObject](docs/PersonObject.md)
  - [PersonPaginated](docs/PersonPaginated.md)
  - [PersonTaggedImagesPaginated](docs/PersonTaggedImagesPaginated.md)

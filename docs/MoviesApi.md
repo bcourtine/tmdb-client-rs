@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_movie_alternative_titles_list**](MoviesApi.md#get_movie_alternative_titles_list) | **get** /movie/{movie_id}/alternative_titles | Get Alternative Titles
 [**get_movie_changes_list**](MoviesApi.md#get_movie_changes_list) | **get** /movie/{movie_id}/changes | Get Changes
 [**get_movie_credits**](MoviesApi.md#get_movie_credits) | **get** /movie/{movie_id}/credits | Get Credits
+[**get_movie_external_ids**](MoviesApi.md#get_movie_external_ids) | **get** /movie/{movie_id}/external_ids | Get External IDs
 [**get_movie_details**](MoviesApi.md#get_movie_details) | **get** /movie/{movie_id} | Get Details
 [**get_movie_images**](MoviesApi.md#get_movie_images) | **get** /movie/{movie_id}/images | Get Images
 [**get_movie_keywords_list**](MoviesApi.md#get_movie_keywords_list) | **get** /movie/{movie_id}/keywords | Get Keywords
@@ -216,6 +217,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**::models::Credits**](Credits.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_movie_external_ids
+
+> ::models::ExternalIds get_movie_external_ids(movie_id)
+Get External IDs
+
+Get a movie external IDs.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **movie_id** | **i32**|  | 
+
+### Return type
+
+[**::models::ExternalIds**](ExternalIds.md)
 
 ### Authorization
 

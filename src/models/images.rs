@@ -18,6 +18,8 @@ pub struct Images {
     pub posters: Option<Vec<crate::models::Image>>,
     #[serde(rename = "logos", skip_serializing_if = "Option::is_none")]
     pub logos: Option<Vec<crate::models::Image>>,
+    #[serde(rename = "profiles", skip_serializing_if = "Option::is_none")]
+    pub profiles: Option<Vec<crate::models::Image>>,
 }
 
 impl Images {
@@ -27,6 +29,7 @@ impl Images {
             backdrops: None,
             posters: None,
             logos: None,
+            profiles: None,
         }
     }
 }

@@ -80,7 +80,7 @@ pub trait TVApi {
         &self,
         tv_id: i32,
         language: Option<&str>,
-    ) -> Result<crate::models::MovieTvExternalIds, Error>;
+    ) -> Result<crate::models::ExternalIds, Error>;
     fn get_tv_images(
         &self,
         tv_id: i32,
@@ -412,7 +412,7 @@ impl TVApi for TVApiClient {
         &self,
         tv_id: i32,
         language: Option<&str>,
-    ) -> Result<crate::models::MovieTvExternalIds, Error> {
+    ) -> Result<crate::models::ExternalIds, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 

@@ -62,7 +62,7 @@ pub trait TVSeasonsApi {
         tv_id: i32,
         season_number: i32,
         language: Option<&str>,
-    ) -> Result<crate::models::MovieTvExternalIds, Error>;
+    ) -> Result<crate::models::ExternalIds, Error>;
     fn get_tv_season_images(
         &self,
         tv_id: i32,
@@ -233,7 +233,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         tv_id: i32,
         season_number: i32,
         language: Option<&str>,
-    ) -> Result<crate::models::MovieTvExternalIds, Error> {
+    ) -> Result<crate::models::ExternalIds, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 

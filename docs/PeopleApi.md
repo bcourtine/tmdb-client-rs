@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**get_person_combined_credits**](PeopleApi.md#get_person_combined_credits) | **get** /person/{person_id}/combined_credits | Get Combined Credits
 [**get_person_details**](PeopleApi.md#get_person_details) | **get** /person/{person_id} | Get Details
 [**get_person_external_ids**](PeopleApi.md#get_person_external_ids) | **get** /person/{person_id}/external_ids | Get External IDs
-[**get_person_images_list**](PeopleApi.md#get_person_images_list) | **get** /person/{person_id}/images | Get Images
+[**get_person_images**](PeopleApi.md#get_person_images) | **get** /person/{person_id}/images | Get Images
 [**get_person_latest_details**](PeopleApi.md#get_person_latest_details) | **get** /person/latest | Get Latest
 [**get_person_movie_credits**](PeopleApi.md#get_person_movie_credits) | **get** /person/{person_id}/movie_credits | Get Movie Credits
 [**get_person_popular_paginated**](PeopleApi.md#get_person_popular_paginated) | **get** /person/popular | Get Popular
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ## get_person_external_ids
 
-> ::models::PersonExternalIds get_person_external_ids(ctx, person_id, optional)
+> ::models::ExternalIds get_person_external_ids(ctx, person_id, optional)
 Get External IDs
 
 Get the external ids for a person. We currently support the following external sources.  | **External Sources** | | ------------     | | IMDB ID          | | Facebook         | | Freebase MID     | | Freebase ID      | | Instagram        | | TVRage ID        | | Twitter          |
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonExternalIds**](PersonExternalIds.md)
+[**::models::ExternalIds**](ExternalIds.md)
 
 ### Authorization
 
@@ -186,9 +186,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## get_person_images_list
+## get_person_images
 
-> ::models::PersonImagesList get_person_images_list(ctx, person_id)
+> ::models::Images get_person_images(ctx, person_id)
 Get Images
 
 Get the images for a person.
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::PersonImagesList**](PersonImagesList.md)
+[**::models::Images**](Images.md)
 
 ### Authorization
 

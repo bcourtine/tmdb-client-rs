@@ -52,11 +52,11 @@ pub trait PeopleApi {
         &self,
         person_id: i32,
         language: Option<&str>,
-    ) -> Result<crate::models::PersonExternalIds, Error>;
-    fn get_person_images_list(
+    ) -> Result<crate::models::ExternalIds, Error>;
+    fn get_person_images(
         &self,
         person_id: i32,
-    ) -> Result<crate::models::PersonImagesList, Error>;
+    ) -> Result<crate::models::Images, Error>;
     fn get_person_latest_details(
         &self,
         language: Option<&str>,
@@ -203,7 +203,7 @@ impl PeopleApi for PeopleApiClient {
         &self,
         person_id: i32,
         language: Option<&str>,
-    ) -> Result<crate::models::PersonExternalIds, Error> {
+    ) -> Result<crate::models::ExternalIds, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
@@ -230,10 +230,10 @@ impl PeopleApi for PeopleApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
-    fn get_person_images_list(
+    fn get_person_images(
         &self,
         person_id: i32,
-    ) -> Result<crate::models::PersonImagesList, Error> {
+    ) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
