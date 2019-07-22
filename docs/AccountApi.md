@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ## post_account_favorite
 
-> ::models::InlineResponse401 post_account_favorite(ctx, account_id, session_id, content_type, optional)
+> ::models::StatusCodeMsgResponse post_account_favorite(ctx, account_id, session_id, content_type, optional)
 Mark as Favorite
 
 This method allows you to mark a movie or TV show as a favorite item.
@@ -432,7 +432,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::InlineResponse401**](inline_response_401.md)
+[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
 
 ### Authorization
 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 
 ## post_account_watchlist
 
-> ::models::InlineResponse401 post_account_watchlist(ctx, account_id, content_type, session_id, optional)
+> ::models::StatusCodeMsgResponse post_account_watchlist(ctx, account_id, content_type, session_id, optional)
 Add to Watchlist
 
 Add a movie or TV show to your watchlist.
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::InlineResponse401**](inline_response_401.md)
+[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
 
 ### Authorization
 

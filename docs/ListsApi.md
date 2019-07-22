@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ## post_list_add_item
 
-> ::models::InlineResponse401 post_list_add_item(ctx, list_id, content_type, session_id, optional)
+> ::models::StatusCodeMsgResponse post_list_add_item(ctx, list_id, content_type, session_id, optional)
 Add Movie
 
 Add a movie to a list.
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::InlineResponse401**](inline_response_401.md)
+[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ## post_list_clear
 
-> ::models::InlineResponse401 post_list_clear(ctx, list_id, confirm, session_id)
+> ::models::StatusCodeMsgResponse post_list_clear(ctx, list_id, confirm, session_id)
 Clear List
 
 Clear all of the items from a list.
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::InlineResponse401**](inline_response_401.md)
+[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
 
 ### Authorization
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ## post_list_remove_item
 
-> ::models::InlineResponse401 post_list_remove_item(ctx, list_id, content_type, session_id, optional)
+> ::models::StatusCodeMsgResponse post_list_remove_item(ctx, list_id, content_type, session_id, optional)
 Remove Movie
 
 Remove a movie from a list.
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::InlineResponse401**](inline_response_401.md)
+[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ## delete_list
 
-> ::models::InlineResponse401 delete_list(list_id, session_id)
+> ::models::StatusCodeMsgResponse delete_list(list_id, session_id)
 Delete List
 
 Delete a list.
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::InlineResponse401**](InlineResponse401.md)
+[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
 
 ### Authorization
 

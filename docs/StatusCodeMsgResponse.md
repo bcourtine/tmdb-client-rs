@@ -1,4 +1,4 @@
-# InlineResponse401
+# StatusCodeMsgResponse
 
 ## Properties
 

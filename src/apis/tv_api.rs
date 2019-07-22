@@ -35,7 +35,7 @@ pub trait TVApi {
         content_type: &str,
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
-    ) -> Result<crate::models::InlineResponse401, Error>;
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
     fn get_tv_account_states(
         &self,
         tv_id: i32,
@@ -135,7 +135,7 @@ pub trait TVApi {
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
         body: Option<crate::models::ValueBody>,
-    ) -> Result<crate::models::InlineResponse401, Error>;
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
 }
 
 impl TVApi for TVApiClient {
@@ -145,7 +145,7 @@ impl TVApi for TVApiClient {
         content_type: &str,
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
-    ) -> Result<crate::models::InlineResponse401, Error> {
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
@@ -749,7 +749,7 @@ impl TVApi for TVApiClient {
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
         body: Option<crate::models::ValueBody>,
-    ) -> Result<crate::models::InlineResponse401, Error> {
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 

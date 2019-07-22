@@ -235,7 +235,7 @@ Class | Method | HTTP request | Description
  - [ListBody](docs/ListBody.md)
  - [MediaIdBody](docs/MediaIdBody.md)
  - [ValueBody](docs/ValueBody.md)
- - [InlineResponse401](docs/InlineResponse401.md)
+ - [StatusCodeMsgResponse](docs/StatusCodeMsgResponse.md)
  - [ItemStatus](docs/ItemStatus.md)
  - [Jobs](docs/Jobs.md)
  - [Keyword](docs/Keyword.md)

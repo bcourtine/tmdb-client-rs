@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 ## delete_tv_rating
 
-> ::models::InlineResponse401 delete_tv_rating(ctx, tv_id, content_type, optional)
+> ::models::StatusCodeMsgResponse delete_tv_rating(ctx, tv_id, content_type, optional)
 Delete Rating
 
 Remove your rating for a TV show.  A valid session or guest session ID is required. You can read more about how this works [here](#docTextSection:NSZtgz7zptsiLYxXZ).
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::InlineResponse401**](inline_response_401.md)
+[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
 
 ### Authorization
 
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
 
 ## post_tv_rating
 
-> ::models::InlineResponse401 post_tv_rating(ctx, tv_id, content_type, optional)
+> ::models::StatusCodeMsgResponse post_tv_rating(ctx, tv_id, content_type, optional)
 Rate TV Show
 
 Rate a TV show.  A valid session or guest session ID is required. You can read more about how this works [here](#docTextSection:NSZtgz7zptsiLYxXZ).
@@ -831,7 +831,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::InlineResponse401**](inline_response_401.md)
+[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
 
 ### Authorization
 

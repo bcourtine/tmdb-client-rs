@@ -58,10 +58,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -127,10 +127,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -202,10 +202,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -278,10 +278,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -323,13 +323,13 @@
                 ],
                 "responses": {
                     "201": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -402,10 +402,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -479,10 +479,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -549,10 +549,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -624,10 +624,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -700,10 +700,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -745,13 +745,13 @@
                 ],
                 "responses": {
                     "201": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -784,10 +784,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -839,10 +839,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -882,10 +882,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -918,10 +918,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1039,10 +1039,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1165,10 +1165,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1223,10 +1223,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1281,10 +1281,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1339,10 +1339,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1410,10 +1410,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1479,10 +1479,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1572,10 +1572,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1620,10 +1620,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1690,10 +1690,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1744,10 +1744,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -1967,10 +1967,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2009,10 +2009,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2057,10 +2057,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2103,10 +2103,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2144,10 +2144,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2208,10 +2208,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2524,10 +2524,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2717,10 +2717,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2800,10 +2800,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2848,10 +2848,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2892,10 +2892,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -2968,10 +2968,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3041,10 +3041,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3116,10 +3116,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3182,10 +3182,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3224,10 +3224,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3297,10 +3297,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3372,10 +3372,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3400,7 +3400,7 @@
                     "201": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                            "$ref": "#/responses/StatusCodeMsgResponse"
                         },
                         "examples": {
                             "application/json": {
@@ -3410,10 +3410,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3462,10 +3462,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3513,10 +3513,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3558,13 +3558,13 @@
                 ],
                 "responses": {
                     "201": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3606,13 +3606,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3651,13 +3651,13 @@
                 ],
                 "responses": {
                     "201": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3748,10 +3748,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3806,10 +3806,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3861,10 +3861,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3928,10 +3928,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -3991,10 +3991,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4065,10 +4065,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4120,10 +4120,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4183,10 +4183,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4247,10 +4247,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4320,10 +4320,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4397,10 +4397,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4474,10 +4474,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4540,10 +4540,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4620,10 +4620,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4668,13 +4668,13 @@
                 ],
                 "responses": {
                     "201": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:sessionErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4703,10 +4703,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:sessionErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4771,10 +4771,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4863,10 +4863,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -4951,10 +4951,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5038,10 +5038,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5128,10 +5128,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5171,10 +5171,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5233,10 +5233,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5327,10 +5327,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5441,10 +5441,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5561,10 +5561,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5614,10 +5614,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5676,10 +5676,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5794,10 +5794,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5861,10 +5861,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5933,10 +5933,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -5984,10 +5984,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -6131,10 +6131,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -6179,10 +6179,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -6245,10 +6245,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -6300,10 +6300,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -6358,10 +6358,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -6461,10 +6461,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -6675,10 +6675,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -6834,10 +6834,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -6909,10 +6909,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7092,10 +7092,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7150,10 +7150,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:sessionErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7215,10 +7215,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7435,10 +7435,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7508,10 +7508,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7607,10 +7607,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7659,10 +7659,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7746,10 +7746,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7802,10 +7802,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7898,10 +7898,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -7994,10 +7994,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8065,10 +8065,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8144,10 +8144,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8192,13 +8192,13 @@
                 ],
                 "responses": {
                     "201": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:sessionErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8227,10 +8227,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:sessionErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8319,10 +8319,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8403,10 +8403,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8489,10 +8489,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8575,10 +8575,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8663,10 +8663,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8855,10 +8855,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -8999,10 +8999,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9077,10 +9077,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:sessionErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9182,10 +9182,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9239,10 +9239,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9321,10 +9321,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9406,10 +9406,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9529,10 +9529,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9637,10 +9637,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9702,10 +9702,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:sessionErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9842,10 +9842,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9901,10 +9901,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -9984,10 +9984,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -10060,10 +10060,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -10120,13 +10120,13 @@
                 ],
                 "responses": {
                     "201": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:sessionErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -10155,10 +10155,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
-                        "$ref": "#/responses/trait:sessionErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -10226,10 +10226,10 @@
                         }
                     },
                     "401": {
-                        "$ref": "#/responses/trait:standardErrors:401"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "404": {
-                        "$ref": "#/responses/trait:standardErrors:404"
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
                 "security": [
@@ -10457,49 +10457,7 @@
         }
     },
     "responses": {
-        "trait:sessionErrors:401": {
-            "description": "",
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "status_code": {
-                        "type": "integer"
-                    },
-                    "status_message": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "trait:standardErrors:401": {
-            "description": "",
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "status_message": {
-                        "type": "string"
-                    },
-                    "status_code": {
-                        "type": "integer"
-                    }
-                }
-            }
-        },
-        "trait:standardErrors:404": {
-            "description": "",
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "status_message": {
-                        "type": "string"
-                    },
-                    "status_code": {
-                        "type": "integer"
-                    }
-                }
-            }
-        },
-        "trait:standardResponses:2xxStatus": {
+        "StatusCodeMsgResponse": {
             "description": "",
             "schema": {
                 "type": "object",
@@ -10514,7 +10472,7 @@
             },
             "examples": {
                 "application/json": {
-                    "status_code": 12,
+                    "status_code": 200,
                     "status_message": "The item/record was updated successfully."
                 }
             }

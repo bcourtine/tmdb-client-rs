@@ -95,14 +95,14 @@ pub trait AccountApi {
         session_id: &str,
         content_type: &str,
         body: Option<crate::models::MediaFavoriteBody>,
-    ) -> Result<crate::models::InlineResponse401, Error>;
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
     fn post_account_watchlist(
         &self,
         account_id: i32,
         content_type: &str,
         session_id: &str,
         body: Option<crate::models::MediaWatchlistBody>,
-    ) -> Result<crate::models::InlineResponse401, Error>;
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
 }
 
 impl AccountApi for AccountApiClient {
@@ -432,7 +432,7 @@ impl AccountApi for AccountApiClient {
         session_id: &str,
         content_type: &str,
         body: Option<crate::models::MediaFavoriteBody>,
-    ) -> Result<crate::models::InlineResponse401, Error> {
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
@@ -465,7 +465,7 @@ impl AccountApi for AccountApiClient {
         content_type: &str,
         session_id: &str,
         body: Option<crate::models::MediaWatchlistBody>,
-    ) -> Result<crate::models::InlineResponse401, Error> {
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 

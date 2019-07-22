@@ -37,7 +37,7 @@ pub trait TVEpisodesApi {
         content_type: &str,
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
-    ) -> Result<crate::models::InlineResponse401, Error>;
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
     fn get_tv_episode_changes(
         &self,
         episode_id: i32,
@@ -101,7 +101,7 @@ pub trait TVEpisodesApi {
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
         body: Option<crate::models::ValueBody>,
-    ) -> Result<crate::models::InlineResponse401, Error>;
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
 }
 
 impl TVEpisodesApi for TVEpisodesApiClient {
@@ -113,7 +113,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         content_type: &str,
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
-    ) -> Result<crate::models::InlineResponse401, Error> {
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
@@ -431,7 +431,7 @@ impl TVEpisodesApi for TVEpisodesApiClient {
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
         body: Option<crate::models::ValueBody>,
-    ) -> Result<crate::models::InlineResponse401, Error> {
+    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 

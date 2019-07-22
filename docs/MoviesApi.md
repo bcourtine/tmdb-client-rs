@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## delete_movie_rating
 
-> ::models::InlineResponse401 delete_movie_rating(ctx, movie_id, content_type, optional)
+> ::models::StatusCodeMsgResponse delete_movie_rating(ctx, movie_id, content_type, optional)
 Delete Rating
 
 Remove your rating for a movie.  A valid session or guest session ID is required. You can read more about how this works [here](#docTextSection:NSZtgz7zptsiLYxXZ).
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::InlineResponse401**](inline_response_401.md)
+[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
 
 ### Authorization
 
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
 
 ## post_movie_rating
 
-> ::models::InlineResponse401 post_movie_rating(ctx, movie_id, content_type, optional)
+> ::models::StatusCodeMsgResponse post_movie_rating(ctx, movie_id, content_type, optional)
 Rate Movie
 
 Rate a movie.  A valid session or guest session ID is required. You can read more about how this works [here](#docTextSection:NSZtgz7zptsiLYxXZ).
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**::models::InlineResponse401**](inline_response_401.md)
+[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
 
 ### Authorization
 
