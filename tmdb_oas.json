@@ -5230,6 +5230,115 @@
                 ]
             }
         },
+        "/network/{network_id}/alternative_names": {
+            "parameters": [
+                {
+                    "name": "network_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-network-alternative-names-list",
+                "summary": "Get Alternative Names",
+                "tags": [
+                    "Networks"
+                ],
+                "description": "Get the alternative names of a network.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/alternative-names-list"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "id": 1,
+                                "results": [
+                                    {
+                                        "name": "Fuji Television",
+                                        "type": ""
+                                    },
+                                    {
+                                        "name": "Fuji Terebijon",
+                                        "type": "rōmaji"
+                                    },
+                                    {
+                                        "name": "フジテレビ",
+                                        "type": ""
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/network/{network_id}/images": {
+            "parameters": [
+                {
+                    "name": "network_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-network-images",
+                "summary": "Get Images",
+                "tags": [
+                    "Networks"
+                ],
+                "description": "Get the TV network logos by id.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/images"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "id": 1,
+                                "logos": [
+                                    {
+                                        "aspect_ratio": 1.024096385542169,
+                                        "file_path": "/yS5UJjsSdZXML0YikWTYYHLPKhQ.png",
+                                        "height": 249,
+                                        "id": "5a7ee3cbc3a36818ac0097b1",
+                                        "file_type": ".svg",
+                                        "vote_average": 0,
+                                        "vote_count": 0,
+                                        "width": 255
+                                    }
+                                ]
+                            }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/person/{person_id}": {
             "parameters": [
                 {
@@ -11656,6 +11765,31 @@
                                 "type": "string"
                             },
                             "title": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "alternative-names-list": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "name": {
                                 "type": "string"
                             }
                         }

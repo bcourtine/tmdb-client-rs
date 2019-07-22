@@ -40,9 +40,7 @@ fn search_movie() -> Result<MoviePaginated, Error> {
 ## Missing APIs implementation
 
 * [AuthenticationApi: Create Session (from v4 access token)](https://developers.themoviedb.org/3/authentication/create-session-from-v4-access-token)
-* [AuthenticationApi: Delete Session](https://developers.themoviedb.org/3/authentication/delete-session)
-* [NetworksApi: Get Alternative Names](https://developers.themoviedb.org/3/networks/get-network-alternative-names)  
-* [NetworksApi: Get Images](https://developers.themoviedb.org/3/networks/get-network-images)    
+* [AuthenticationApi: Delete Session](https://developers.themoviedb.org/3/authentication/delete-session)    
 * [TrendingApi: Get Trending](https://developers.themoviedb.org/3/trending/get-trending)
 * [TVApi: Get Episode Groups](https://developers.themoviedb.org/3/tv/get-tv-episode-groups)
 * [TVApi: Get Screened Theatrically](https://developers.themoviedb.org/3/tv/get-screened-theatrically)
