@@ -3383,6 +3383,44 @@
                         "api_key": []
                     }
                 ]
+            },
+            "delete": {
+                "operationId": "delete-list",
+                "summary": "Delete List",
+                "tags": [
+                    "Lists"
+                ],
+                "description": "Delete a list.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:session:session_id"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/responses/trait:standardResponses:2xxStatus"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "status_message": "The list was deleted successfully.",
+                                "status_code": 201
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/trait:standardErrors:401"
+                    },
+                    "404": {
+                        "$ref": "#/responses/trait:standardErrors:404"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
             }
         },
         "/list/{list_id}/item_status": {

@@ -41,7 +41,6 @@ fn search_movie() -> Result<MoviePaginated, Error> {
 
 * [AuthenticationApi: Create Session (from v4 access token)](https://developers.themoviedb.org/3/authentication/create-session-from-v4-access-token)
 * [AuthenticationApi: Delete Session](https://developers.themoviedb.org/3/authentication/delete-session)
-* [ListsApi: Delete List](https://developers.themoviedb.org/3/lists/delete-list)
 * [MoviesApi: Get External IDs](https://developers.themoviedb.org/3/movies/get-movie-external-ids)
 * [NetworksApi: Get Alternative Names](https://developers.themoviedb.org/3/networks/get-network-alternative-names)  
 * [NetworksApi: Get Images](https://developers.themoviedb.org/3/networks/get-network-images)    
@@ -106,6 +105,7 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**post_list_add_item**](docs/ListsApi.md#post_list_add_item) | **post** /list/{list_id}/add_item | Add Movie
 *ListsApi* | [**post_list_clear**](docs/ListsApi.md#post_list_clear) | **post** /list/{list_id}/clear | Clear List
 *ListsApi* | [**post_list_remove_item**](docs/ListsApi.md#post_list_remove_item) | **post** /list/{list_id}/remove_item | Remove Movie
+*ListsApi* | [**delete_list**](docs/ListsApi.md#delete_list) | **delete** /list/{list_id} | Delete List
 *MoviesApi* | [**delete_movie_rating**](docs/MoviesApi.md#delete_movie_rating) | **delete** /movie/{movie_id}/rating | Delete Rating
 *MoviesApi* | [**get_movie_account_states**](docs/MoviesApi.md#get_movie_account_states) | **get** /movie/{movie_id}/account_states | Get Account States
 *MoviesApi* | [**get_movie_alternative_titles_list**](docs/MoviesApi.md#get_movie_alternative_titles_list) | **get** /movie/{movie_id}/alternative_titles | Get Alternative Titles

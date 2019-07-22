@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**post_list_add_item**](ListsApi.md#post_list_add_item) | **post** /list/{list_id}/add_item | Add Movie
 [**post_list_clear**](ListsApi.md#post_list_clear) | **post** /list/{list_id}/clear | Clear List
 [**post_list_remove_item**](ListsApi.md#post_list_remove_item) | **post** /list/{list_id}/remove_item | Remove Movie
+[**delete_list**](ListsApi.md#delete_list) | **delete** /list/{list_id} | Delete List
 
 
 
@@ -234,11 +235,41 @@ Name | Type | Description  | Notes
  **list_id** | **String**|  | 
  **content_type** | **String**|  | [default to application/json;charset=utf-8]
  **session_id** | **String**|  | 
- **body** | [**InlineObject4**](InlineObject4.md)|  | 
+ **body** | [**MediaIdBody**](MediaIdBody.md)|  | 
 
 ### Return type
 
 [**::models::InlineResponse401**](inline_response_401.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## delete_list
+
+> ::models::InlineResponse401 delete_list(list_id, session_id)
+Delete List
+
+Delete a list.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list_id** | **String**|  | 
+ **session_id** | **String**|  | 
+
+### Return type
+
+[**::models::InlineResponse401**](InlineResponse401.md)
 
 ### Authorization
 

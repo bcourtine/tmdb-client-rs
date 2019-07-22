@@ -65,6 +65,11 @@ pub trait ListsApi {
         session_id: &str,
         body: Option<crate::models::MediaIdBody>,
     ) -> Result<crate::models::InlineResponse401, Error>;
+    fn delete_list(
+        &self,
+        list_id: &str,
+        session_id: &str,
+    ) -> Result<crate::models::InlineResponse401, Error>;
 }
 
 impl ListsApi for ListsApiClient {
@@ -246,6 +251,35 @@ impl ListsApi for ListsApiClient {
         }
         req_builder = req_builder.header("Content-Type", content_type.to_string());
         req_builder = req_builder.json(&body);
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn delete_list(
+        &self,
+        list_id: &str,
+        session_id: &str,
+    ) -> Result<crate::models::InlineResponse401, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!(
+            "{}/list/{list_id}",
+            configuration.base_path,
+            list_id = urlencode(list_id)
+        );
+        let mut req_builder = client.delete(uri_str.as_str());
+
+        req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
 
         // send request
         let req = req_builder.build()?;
