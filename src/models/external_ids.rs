@@ -11,7 +11,7 @@
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct ExternalIds {
     #[serde(rename = "id")]
-    pub id: i32,
+    pub id: Option<i32>,
     #[serde(rename = "imdb_id")]
     pub imdb_id: Option<String>,
     #[serde(rename = "facebook_id")]
@@ -31,7 +31,7 @@ pub struct ExternalIds {
 impl ExternalIds {
     pub fn new(id: i32) -> ExternalIds {
         ExternalIds {
-            id,
+            id: Some(id),
             imdb_id: None,
             facebook_id: None,
             freebase_mid: None,

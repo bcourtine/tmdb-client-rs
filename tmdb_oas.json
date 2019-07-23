@@ -11727,6 +11727,15 @@
                 },
                 "translations": {
                     "$ref": "#/definitions/translations-list"
+                },
+                "keywords": {
+                    "$ref": "#/definitions/keywords-list"
+                },
+                "reviews": {
+                    "$ref": "#/definitions/reviews-paginated"
+                },
+                "external_ids": {
+                    "$ref": "#/definitions/external-ids"
                 }
             }
         },

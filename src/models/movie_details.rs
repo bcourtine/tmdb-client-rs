@@ -66,6 +66,7 @@ pub struct MovieDetails {
     pub vote_average: Option<f32>,
     #[serde(rename = "vote_count", skip_serializing_if = "Option::is_none")]
     pub vote_count: Option<i32>,
+    // "append-to" options
     #[serde(rename = "credits", skip_serializing_if = "Option::is_none")]
     pub credits: Option<crate::models::Credits>,
     #[serde(rename = "videos", skip_serializing_if = "Option::is_none")]
@@ -76,6 +77,12 @@ pub struct MovieDetails {
     pub release_dates: Option<crate::models::ReleaseDatesList>,
     #[serde(rename = "translations", skip_serializing_if = "Option::is_none")]
     pub translations: Option<crate::models::TranslationsList>,
+    #[serde(rename = "keywords", skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<crate::models::KeywordsList>,
+    #[serde(rename = "reviews", skip_serializing_if = "Option::is_none")]
+    pub reviews: Option<crate::models::ReviewsPaginated>,
+    #[serde(rename = "external_ids", skip_serializing_if = "Option::is_none")]
+    pub external_ids: Option<crate::models::ExternalIds>,
 }
 
 impl MovieDetails {
@@ -111,6 +118,9 @@ impl MovieDetails {
             images: None,
             release_dates: None,
             translations: None,
+            keywords: None,
+            reviews: None,
+            external_ids: None,
         }
     }
 }
