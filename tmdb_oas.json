@@ -3398,16 +3398,7 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/responses/StatusCodeMsgResponse"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "status_message": "The list was deleted successfully.",
-                                "status_code": 201
-                            }
-                        }
+                        "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
                         "$ref": "#/responses/StatusCodeMsgResponse"
@@ -5324,6 +5315,7 @@
                                     }
                                 ]
                             }
+                        }
                     },
                     "401": {
                         "$ref": "#/responses/StatusCodeMsgResponse"
@@ -6275,7 +6267,8 @@
                                                 "vote_count": 181,
                                                 "video": false,
                                                 "vote_average": 6.15
-                                            }                                        ],
+                                            }
+                                        ],
                                         "name": "Shu Qi",
                                         "popularity": 35.790232
                                     }
@@ -11465,7 +11458,7 @@
         "keyword-paginated": {
             "allOf": [
                 {
-                  "$ref": "#/definitions/trait:paginated"
+                    "$ref": "#/definitions/trait:paginated"
                 },
                 {
                     "type": "object",
@@ -11473,7 +11466,7 @@
                         "results": {
                             "type": "array",
                             "items": {
-                              "$ref": "#/definitions/keyword"
+                                "$ref": "#/definitions/keyword"
                             }
                         }
                     }
@@ -11508,7 +11501,6 @@
         "list-details": {
             "type": "object",
             "properties": {
-
                 "created_by": {
                     "type": "string"
                 },
@@ -12326,10 +12318,7 @@
                 "id": {
                     "type": "integer"
                 }
-            },
-            "required": [
-                "id"
-            ]
+            }
         },
         "person-tagged-images-paginated": {
             "allOf": [
@@ -12460,32 +12449,6 @@
                             "type": "array",
                             "items": {
                                 "$ref": "#/definitions/collection-object"
-                            }
-                        }
-                    }
-                }
-            ]
-        },
-        "search-keyword-results-paginated": {
-            "allOf": [
-                {
-                    "$ref": "#/definitions/trait:paginated"
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "results": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "id": {
-                                        "type": "integer"
-                                    },
-                                    "name": {
-                                        "type": "string"
-                                    }
-                                }
                             }
                         }
                     }
@@ -12833,13 +12796,13 @@
                 "tv_episode_results": {
                     "type": "array",
                     "items": {
-                        "type": "#/definitions/tv-episode-object"
+                        "$ref": "#/definitions/tv-episode-object"
                     }
                 },
                 "tv_season_results": {
                     "type": "array",
                     "items": {
-                        "type": "#/definitions/season-object"
+                        "$ref": "#/definitions/season-object"
                     }
                 }
             }
