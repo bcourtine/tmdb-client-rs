@@ -24,6 +24,7 @@ pub struct APIClient {
     people_api: Box<crate::apis::PeopleApi>,
     reviews_api: Box<crate::apis::ReviewsApi>,
     search_api: Box<crate::apis::SearchApi>,
+    trending_api: Box<crate::apis::TrendingApi>,
     tv_api: Box<crate::apis::TVApi>,
     tv_episodes_api: Box<crate::apis::TVEpisodesApi>,
     tv_seasons_api: Box<crate::apis::TVSeasonsApi>,
@@ -54,6 +55,7 @@ impl APIClient {
             people_api: Box::new(crate::apis::PeopleApiClient::new(rc.clone())),
             reviews_api: Box::new(crate::apis::ReviewsApiClient::new(rc.clone())),
             search_api: Box::new(crate::apis::SearchApiClient::new(rc.clone())),
+            trending_api: Box::new(crate::apis::TrendingApiClient::new(rc.clone())),
             tv_api: Box::new(crate::apis::TVApiClient::new(rc.clone())),
             tv_episodes_api: Box::new(crate::apis::TVEpisodesApiClient::new(rc.clone())),
             tv_seasons_api: Box::new(crate::apis::TVSeasonsApiClient::new(rc.clone())),
@@ -144,6 +146,10 @@ impl APIClient {
 
     pub fn search_api(&self) -> &crate::apis::SearchApi {
         self.search_api.as_ref()
+    }
+
+    pub fn trending_api(&self) -> &crate::apis::TrendingApi {
+        self.trending_api.as_ref()
     }
 
     pub fn tv_api(&self) -> &crate::apis::TVApi {

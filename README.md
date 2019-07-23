@@ -40,8 +40,7 @@ fn search_movie() -> Result<MoviePaginated, Error> {
 ## Missing APIs implementation
 
 * [AuthenticationApi: Create Session (from v4 access token)](https://developers.themoviedb.org/3/authentication/create-session-from-v4-access-token)
-* [AuthenticationApi: Delete Session](https://developers.themoviedb.org/3/authentication/delete-session)    
-* [TrendingApi: Get Trending](https://developers.themoviedb.org/3/trending/get-trending)
+* [AuthenticationApi: Delete Session](https://developers.themoviedb.org/3/authentication/delete-session)
 * [TVApi: Get Episode Groups](https://developers.themoviedb.org/3/tv/get-tv-episode-groups)
 * [TVApi: Get Screened Theatrically](https://developers.themoviedb.org/3/tv/get-screened-theatrically)
 * [TVEpisodeGroupsApi: Get Details](https://developers.themoviedb.org/3/tv-episode-groups/get-tv-episode-group-details)
@@ -147,6 +146,7 @@ Class | Method | HTTP request | Description
 *SearchApi* | [**get_search_multi_paginated**](docs/SearchApi.md#get_search_multi_paginated) | **get** /search/multi | Multi Search
 *SearchApi* | [**get_search_person_paginated**](docs/SearchApi.md#get_search_person_paginated) | **get** /search/person | Search People
 *SearchApi* | [**get_search_tv_paginated**](docs/SearchApi.md#get_search_tv_paginated) | **get** /search/tv | Search TV Shows
+*TrendingApi* | [**get_trending_paginated**](docs/TrendingApi.md#get_trending_paginated) | **get** /trending/{media_type}/{time_window} | Get Trending
 *TVApi* | [**delete_tv_rating**](docs/TVApi.md#delete_tv_rating) | **delete** /tv/{tv_id}/rating | Delete Rating
 *TVApi* | [**get_tv_account_states**](docs/TVApi.md#get_tv_account_states) | **get** /tv/{tv_id}/account_states | Get Account States
 *TVApi* | [**get_tv_airing_today_paginated**](docs/TVApi.md#get_tv_airing_today_paginated) | **get** /tv/airing_today | Get TV Airing Today
@@ -273,6 +273,7 @@ Class | Method | HTTP request | Description
  - [SessionResponse](docs/SessionResponse.md)
  - [StatusCodeMessage](docs/StatusCodeMessage.md)
  - [TaggedImage](docs/TaggedImage.md)
+ - [TimeWindow](docs/TimeWindow.md)
  - [Timezones](docs/Timezones.md)
  - [TokenResponse](docs/TokenResponse.md)
  - [TokenResponseWithExpiration](docs/TokenResponseWithExpiration.md)

@@ -1,4 +1,4 @@
-# \CertificationsApi
+# CertificationsApi
 
 All URIs are relative to *https://api.themoviedb.org/3*
 

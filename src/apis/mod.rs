@@ -70,6 +70,8 @@ mod reviews_api;
 pub use self::reviews_api::{ReviewsApi, ReviewsApiClient};
 mod search_api;
 pub use self::search_api::{SearchApi, SearchApiClient};
+mod trending_api;
+pub use self::trending_api::{TrendingApi, TrendingApiClient};
 mod tv_api;
 pub use self::tv_api::{TVApi, TVApiClient};
 mod tv_episodes_api;

@@ -10,18 +10,14 @@
 
 ///
 #[derive(Debug, Serialize, Deserialize, Clone)]
-pub enum MediaType {
-    #[serde(rename = "all")]
-    All,
-    #[serde(rename = "movie")]
-    Movie,
-    #[serde(rename = "tv")]
-    Tv,
-    #[serde(rename = "person")]
-    Person,
+pub enum TimeWindow {
+    #[serde(rename = "day")]
+    Day,
+    #[serde(rename = "week")]
+    Week,
 }
 
-impl std::fmt::Display for MediaType {
+impl std::fmt::Display for TimeWindow {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         write!(f, "{:?}", self)
     }

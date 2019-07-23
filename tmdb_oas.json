@@ -1178,180 +1178,6 @@
                 ]
             }
         },
-        "/movie/changes": {
-            "get": {
-                "operationId": "get-movie-changes-paginated",
-                "summary": "Get Movie Change List",
-                "tags": [
-                    "Changes"
-                ],
-                "description": "Get  a list of all of the movie ids that have been changed in the past 24 hours.\n\nYou can query it for up to 14 days worth of changed IDs at a time with the `start_date` and `end_date` query parameters. 100 items are returned per page.",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:startDateParam:start_date"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:endDateParam:end_date"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/changes-paginated"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "results": [
-                                    {
-                                        "id": 412683,
-                                        "adult": false
-                                    },
-                                    {
-                                        "id": 412685,
-                                        "adult": false
-                                    },
-                                    {
-                                        "id": 75258,
-                                        "adult": false
-                                    }
-                                ],
-                                "page": 1,
-                                "total_pages": 10,
-                                "total_results": 952
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/tv/changes": {
-            "get": {
-                "operationId": "get-tv-changes-paginated",
-                "summary": "Get TV Change List",
-                "tags": [
-                    "Changes"
-                ],
-                "description": "Get a list of all of the TV show ids that have been changed in the past 24 hours.\n\nYou can query it for up to 14 days worth of changed IDs at a time with the `start_date` and `end_date` query parameters. 100 items are returned per page.",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:startDateParam:start_date"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:endDateParam:end_date"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/changes-paginated"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "results": [
-                                    {
-                                        "id": 67563,
-                                        "adult": false
-                                    },
-                                    {
-                                        "id": 55169,
-                                        "adult": false
-                                    },
-                                    {
-                                        "id": 63279,
-                                        "adult": false
-                                    }
-                                ],
-                                "page": 1,
-                                "total_pages": 2,
-                                "total_results": 122
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/person/changes": {
-            "get": {
-                "operationId": "get-person-changes-paginated",
-                "summary": "Get Person Change List",
-                "tags": [
-                    "Changes"
-                ],
-                "description": "Get a list of all of the person ids that have been changed in the past 24 hours.\n\nYou can query it for up to 14 days worth of changed IDs at a time with the `start_date` and `end_date` query parameters. 100 items are returned per page.",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:startDateParam:start_date"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:endDateParam:end_date"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/changes-paginated"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "results": [
-                                    {
-                                        "id": 1670120,
-                                        "adult": false
-                                    },
-                                    {
-                                        "id": 1670121,
-                                        "adult": false
-                                    },
-                                    {
-                                        "id": 1670122,
-                                        "adult": false
-                                    }
-                                ],
-                                "page": 1,
-                                "total_pages": 7,
-                                "total_results": 620
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
         "/collection/{collection_id}": {
             "parameters": [
                 {
@@ -1633,6 +1459,60 @@
                 ]
             }
         },
+        "/company/{company_id}/images": {
+            "parameters": [
+                {
+                    "name": "company_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-company-images",
+                "summary": "Get Images",
+                "tags": [
+                    "Companies"
+                ],
+                "description": "Get company logos by id.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/images"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "id": 670,
+                                "logos": [
+                                    {
+                                        "aspect_ratio": 1.35,
+                                        "file_path": "/rRGi5UkwvdOPSfr5Xf42RZUsYgd.png",
+                                        "height": 240,
+                                        "id": "5aa58f900e0a26075d02b913",
+                                        "file_type": ".svg",
+                                        "vote_average": 0,
+                                        "vote_count": 0,
+                                        "width": 324
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/company/{company_id}/movies": {
             "parameters": [
                 {
@@ -1686,60 +1566,6 @@
                                 ],
                                 "total_pages": 3,
                                 "total_results": 53
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/company/{company_id}/images": {
-            "parameters": [
-                {
-                    "name": "company_id",
-                    "in": "path",
-                    "required": true,
-                    "type": "integer"
-                }
-            ],
-            "get": {
-                "operationId": "get-company-images",
-                "summary": "Get Images",
-                "tags": [
-                    "Companies"
-                ],
-                "description": "Get company logos by id.",
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/images"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "id": 670,
-                                "logos": [
-                                    {
-                                        "aspect_ratio": 1.35,
-                                        "file_path": "/rRGi5UkwvdOPSfr5Xf42RZUsYgd.png",
-                                        "height": 240,
-                                        "id": "5aa58f900e0a26075d02b913",
-                                        "file_type": ".svg",
-                                        "vote_average": 0,
-                                        "vote_count": 0,
-                                        "width": 324
-                                    }
-                                ]
                             }
                         }
                     },
@@ -3310,6 +3136,57 @@
                 ]
             }
         },
+        "/list": {
+            "post": {
+                "operationId": "post-list",
+                "summary": "Create List",
+                "tags": [
+                    "Lists"
+                ],
+                "description": "Create a list.",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:listBody"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:jsonContentType:Content-Type"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:session:session_id"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/list-status-response"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "status_message": "The item/record was created successfully.",
+                                "success": true,
+                                "status_code": 1,
+                                "list_id": 5861
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/list/{list_id}": {
             "parameters": [
                 {
@@ -3449,57 +3326,6 @@
                             "application/json": {
                                 "id": "50941077760ee35e1500000c",
                                 "item_present": true
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/list": {
-            "post": {
-                "operationId": "post-list",
-                "summary": "Create List",
-                "tags": [
-                    "Lists"
-                ],
-                "description": "Create a list.",
-                "consumes": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:listBody"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:jsonContentType:Content-Type"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:session:session_id"
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/list-status-response"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "status_message": "The item/record was created successfully.",
-                                "success": true,
-                                "status_code": 1,
-                                "list_id": 5861
                             }
                         }
                     },
@@ -4743,6 +4569,64 @@
                         "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/movie/changes": {
+            "get": {
+                "operationId": "get-movie-changes-paginated",
+                "summary": "Get Movie Change List",
+                "tags": [
+                    "Changes"
+                ],
+                "description": "Get  a list of all of the movie ids that have been changed in the past 24 hours.\n\nYou can query it for up to 14 days worth of changed IDs at a time with the `start_date` and `end_date` query parameters. 100 items are returned per page.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:startDateParam:start_date"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:endDateParam:end_date"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/changes-paginated"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "results": [
+                                    {
+                                        "id": 412683,
+                                        "adult": false
+                                    },
+                                    {
+                                        "id": 412685,
+                                        "adult": false
+                                    },
+                                    {
+                                        "id": 75258,
+                                        "adult": false
+                                    }
+                                ],
+                                "page": 1,
+                                "total_pages": 10,
+                                "total_results": 952
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
                         "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
@@ -6093,6 +5977,64 @@
                 ]
             }
         },
+        "/person/changes": {
+            "get": {
+                "operationId": "get-person-changes-paginated",
+                "summary": "Get Person Change List",
+                "tags": [
+                    "Changes"
+                ],
+                "description": "Get a list of all of the person ids that have been changed in the past 24 hours.\n\nYou can query it for up to 14 days worth of changed IDs at a time with the `start_date` and `end_date` query parameters. 100 items are returned per page.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:startDateParam:start_date"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:endDateParam:end_date"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/changes-paginated"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "results": [
+                                    {
+                                        "id": 1670120,
+                                        "adult": false
+                                    },
+                                    {
+                                        "id": 1670121,
+                                        "adult": false
+                                    },
+                                    {
+                                        "id": 1670122,
+                                        "adult": false
+                                    }
+                                ],
+                                "page": 1,
+                                "total_pages": 7,
+                                "total_results": 620
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/person/latest": {
             "get": {
                 "operationId": "get-person-latest-details",
@@ -7052,6 +6994,106 @@
                                     }
                                 ],
                                 "total_results": 1,
+                                "total_pages": 1
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/trending/{media_type}/{time_window}": {
+            "parameters": [
+                {
+                    "name": "media_type",
+                    "in": "path",
+                    "required": true,
+                    "type": "string",
+                    "enum": [
+                        "all",
+                        "movie",
+                        "tv",
+                        "person"
+                    ]
+                },
+                {
+                    "name": "time_window",
+                    "in": "path",
+                    "required": true,
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week"
+                    ]
+                }
+            ],
+            "get": {
+                "operationId": "get-trending-paginated",
+                "summary": "Get Trending",
+                "tags": [
+                    "Trending"
+                ],
+                "description": "Get the daily or weekly trending items. The daily trending list tracks items over the period of a day while items have a 24 hour half life. The weekly list tracks items over a 7 day period, with a 7 day half life.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/search-multi-results-paginated"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "page": 1,
+                                "results": [
+                                    {
+                                        "poster_path": "/cezWGskPY5x7GaglTTRN4Fugfb8.jpg",
+                                        "adult": false,
+                                        "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+                                        "release_date": "2012-04-25",
+                                        "genre_ids": [
+                                            878,
+                                            28,
+                                            12
+                                        ],
+                                        "id": 24428,
+                                        "original_title": "The Avengers",
+                                        "original_language": "en",
+                                        "title": "The Avengers",
+                                        "backdrop_path": "/hbn46fQaRmlpBuUrEiFqv0GDL6Y.jpg",
+                                        "popularity": 7.353212,
+                                        "vote_count": 8503,
+                                        "video": false,
+                                        "vote_average": 7.33
+                                    },
+                                    {
+                                        "poster_path": "/7cJGRajXMU2aYdTbElIl6FtzOl2.jpg",
+                                        "adult": false,
+                                        "overview": "British Ministry agent John Steed, under direction from \"Mother\", investigates a diabolical plot by arch-villain Sir August de Wynter to rule the world with his weather control machine. Steed investigates the beautiful Doctor Mrs. Emma Peel, the only suspect, but simultaneously falls for her and joins forces with her to combat Sir August.",
+                                        "release_date": "1998-08-13",
+                                        "genre_ids": [
+                                            53
+                                        ],
+                                        "id": 9320,
+                                        "original_title": "The Avengers",
+                                        "original_language": "en",
+                                        "title": "The Avengers",
+                                        "backdrop_path": "/8YW4rwWQgC2JRlBcpStMNUko13k.jpg",
+                                        "popularity": 2.270454,
+                                        "vote_count": 111,
+                                        "video": false,
+                                        "vote_average": 4.7
+                                    }
+                                ],
+                                "total_results": 14,
                                 "total_pages": 1
                             }
                         }
@@ -8388,442 +8430,6 @@
                 ]
             }
         },
-        "/tv/latest": {
-            "get": {
-                "operationId": "get-tv-latest-details",
-                "summary": "Get Latest",
-                "tags": [
-                    "TV"
-                ],
-                "description": "Get the most newly created TV show. This is a live response and will continuously change.",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:languageParam:language"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/tv-details"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "backdrop_path": null,
-                                "created_by": [],
-                                "episode_run_time": [
-                                    30
-                                ],
-                                "first_air_date": "2016-08-23",
-                                "genres": [
-                                    {
-                                        "id": 35,
-                                        "name": "Comedy"
-                                    },
-                                    {
-                                        "id": 10764,
-                                        "name": "Reality"
-                                    }
-                                ],
-                                "homepage": "http://www.trutv.com/shows/you-can-do-better",
-                                "id": 67625,
-                                "in_production": true,
-                                "languages": [
-                                    "en"
-                                ],
-                                "last_air_date": "2016-08-30",
-                                "name": "You Can Do Better",
-                                "networks": [
-                                    {
-                                        "id": 364,
-                                        "name": "truTV"
-                                    }
-                                ],
-                                "number_of_episodes": 1,
-                                "number_of_seasons": 1,
-                                "origin_country": [
-                                    "US"
-                                ],
-                                "original_language": "en",
-                                "original_name": "You Can Do Better",
-                                "overview": null,
-                                "popularity": 0,
-                                "poster_path": null,
-                                "production_companies": [],
-                                "seasons": [
-                                    {
-                                        "air_date": "2016-08-23",
-                                        "episode_count": 2,
-                                        "id": 79695,
-                                        "poster_path": null,
-                                        "season_number": 1
-                                    }
-                                ],
-                                "status": "Returning Series",
-                                "type": "Reality",
-                                "vote_average": 10,
-                                "vote_count": 1
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/tv/airing_today": {
-            "get": {
-                "operationId": "get-tv-airing-today-paginated",
-                "summary": "Get TV Airing Today",
-                "tags": [
-                    "TV"
-                ],
-                "description": "Get a list of TV shows that are airing today. This query is purely day based as we do not currently support airing times.\n\nYou can specify a [timezone](endpoint:KQ4CDdEoWKJYLkrhS) to offset the day calculation. Without a specified timezone, this query defaults to EST (Eastern Time UTC-05:00).",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:languageParam:language"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:pageParam:page"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/tv-paginated"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "page": 1,
-                                "results": [
-                                    {
-                                        "poster_path": "/zra8NrzxaEeunRWJmUm3HZOL4sd.jpg",
-                                        "popularity": 11.520271,
-                                        "id": 67419,
-                                        "backdrop_path": "/b0BckgEovxYLBbIk5xXyWYQpmlT.jpg",
-                                        "vote_average": 1.39,
-                                        "overview": "The early life of Queen Victoria, from her accession to the throne at the tender age of 18 through to her courtship and marriage to Prince Albert. Victoria went on to rule for 63 years, and was the longest-serving monarch until she was overtaken by Elizabeth II on 9th September 2016. Rufus Sewell was Victoria’s first prime minister; the two immediately connected and their intimate friendship became a popular source of gossip that threatened to destabilise the Government – angering both Tory and Whigs alike.",
-                                        "first_air_date": "2016-08-28",
-                                        "origin_country": [
-                                            "GB"
-                                        ],
-                                        "genre_ids": [
-                                            18
-                                        ],
-                                        "original_language": "en",
-                                        "vote_count": 9,
-                                        "name": "Victoria",
-                                        "original_name": "Victoria"
-                                    },
-                                    {
-                                        "poster_path": "/sdB3AQqUsgjrDb7qTBqYOp6VwAG.jpg",
-                                        "popularity": 9.699399,
-                                        "id": 66433,
-                                        "backdrop_path": null,
-                                        "vote_average": 9,
-                                        "overview": "Scarlet Heart: Ryeo is the remake of Chinese drama Bu Bu Jing Xin that stars IU as a woman who gets time-warped back to the Goryeo dynasty, and becomes involved with a very large family of princes, some of whom are vying for the throne, or her affections, or both.",
-                                        "first_air_date": "2016-08-29",
-                                        "origin_country": [
-                                            "KR"
-                                        ],
-                                        "genre_ids": [
-                                            18
-                                        ],
-                                        "original_language": "ko",
-                                        "vote_count": 2,
-                                        "name": "Moon Lovers: Scarlet Heart Ryeo",
-                                        "original_name": "달의 연인-보보경심 려"
-                                    }
-                                ],
-                                "total_results": 43,
-                                "total_pages": 3
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/tv/on_the_air": {
-            "get": {
-                "operationId": "get-tv-on-the-air-paginated",
-                "summary": "Get TV On The Air",
-                "tags": [
-                    "TV"
-                ],
-                "description": "Get a list of shows that are currently on the air.\n\nThis query looks for any TV show that has an episode with an air date in the next 7 days.",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:languageParam:language"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:pageParam:page"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/tv-paginated"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "page": 1,
-                                "results": [
-                                    {
-                                        "poster_path": "/vC324sdfcS313vh9QXwijLIHPJp.jpg",
-                                        "popularity": 47.432451,
-                                        "id": 31917,
-                                        "backdrop_path": "/rQGBjWNveVeF8f2PGRtS85w9o9r.jpg",
-                                        "vote_average": 5.04,
-                                        "overview": "Based on the Pretty Little Liars series of young adult novels by Sara Shepard, the series follows the lives of four girls — Spencer, Hanna, Aria, and Emily — whose clique falls apart after the disappearance of their queen bee, Alison. One year later, they begin receiving messages from someone using the name \"A\" who threatens to expose their secrets — including long-hidden ones they thought only Alison knew.",
-                                        "first_air_date": "2010-06-08",
-                                        "origin_country": [
-                                            "US"
-                                        ],
-                                        "genre_ids": [
-                                            18,
-                                            9648
-                                        ],
-                                        "original_language": "en",
-                                        "vote_count": 133,
-                                        "name": "Pretty Little Liars",
-                                        "original_name": "Pretty Little Liars"
-                                    },
-                                    {
-                                        "poster_path": "/esN3gWb1P091xExLddD2nh4zmi3.jpg",
-                                        "popularity": 37.882356,
-                                        "id": 62560,
-                                        "backdrop_path": "/v8Y9yurHuI7MujWQMd8iL3Gy4B5.jpg",
-                                        "vote_average": 7.5,
-                                        "overview": "A contemporary and culturally resonant drama about a young programmer, Elliot, who suffers from a debilitating anti-social disorder and decides that he can only connect to people by hacking them. He wields his skills as a weapon to protect the people that he cares about. Elliot will find himself in the intersection between a cybersecurity firm he works for and the underworld organizations that are recruiting him to bring down corporate America.",
-                                        "first_air_date": "2015-05-27",
-                                        "origin_country": [
-                                            "US"
-                                        ],
-                                        "genre_ids": [
-                                            80,
-                                            18
-                                        ],
-                                        "original_language": "en",
-                                        "vote_count": 287,
-                                        "name": "Mr. Robot",
-                                        "original_name": "Mr. Robot"
-                                    }
-                                ],
-                                "total_results": 192,
-                                "total_pages": 10
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/tv/popular": {
-            "get": {
-                "operationId": "get-tv-popular-paginated",
-                "summary": "Get Popular",
-                "tags": [
-                    "TV"
-                ],
-                "description": "Get a list of the current popular TV shows on TMDb. This list updates daily.",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:languageParam:language"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:pageParam:page"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/tv-paginated"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "page": 1,
-                                "results": [
-                                    {
-                                        "poster_path": "/vC324sdfcS313vh9QXwijLIHPJp.jpg",
-                                        "popularity": 47.432451,
-                                        "id": 31917,
-                                        "backdrop_path": "/rQGBjWNveVeF8f2PGRtS85w9o9r.jpg",
-                                        "vote_average": 5.04,
-                                        "overview": "Based on the Pretty Little Liars series of young adult novels by Sara Shepard, the series follows the lives of four girls — Spencer, Hanna, Aria, and Emily — whose clique falls apart after the disappearance of their queen bee, Alison. One year later, they begin receiving messages from someone using the name \"A\" who threatens to expose their secrets — including long-hidden ones they thought only Alison knew.",
-                                        "first_air_date": "2010-06-08",
-                                        "origin_country": [
-                                            "US"
-                                        ],
-                                        "genre_ids": [
-                                            18,
-                                            9648
-                                        ],
-                                        "original_language": "en",
-                                        "vote_count": 133,
-                                        "name": "Pretty Little Liars",
-                                        "original_name": "Pretty Little Liars"
-                                    },
-                                    {
-                                        "poster_path": "/esN3gWb1P091xExLddD2nh4zmi3.jpg",
-                                        "popularity": 37.882356,
-                                        "id": 62560,
-                                        "backdrop_path": "/v8Y9yurHuI7MujWQMd8iL3Gy4B5.jpg",
-                                        "vote_average": 7.5,
-                                        "overview": "A contemporary and culturally resonant drama about a young programmer, Elliot, who suffers from a debilitating anti-social disorder and decides that he can only connect to people by hacking them. He wields his skills as a weapon to protect the people that he cares about. Elliot will find himself in the intersection between a cybersecurity firm he works for and the underworld organizations that are recruiting him to bring down corporate America.",
-                                        "first_air_date": "2015-05-27",
-                                        "origin_country": [
-                                            "US"
-                                        ],
-                                        "genre_ids": [
-                                            80,
-                                            18
-                                        ],
-                                        "original_language": "en",
-                                        "vote_count": 287,
-                                        "name": "Mr. Robot",
-                                        "original_name": "Mr. Robot"
-                                    }
-                                ],
-                                "total_results": 20000,
-                                "total_pages": 1000
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/tv/top_rated": {
-            "get": {
-                "operationId": "get-tv-top-rated-paginated",
-                "summary": "Get Top Rated",
-                "tags": [
-                    "TV"
-                ],
-                "description": "Get a list of the top rated TV shows on TMDb.",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:languageParam:language"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:pageParam:page"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/tv-paginated"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "page": 1,
-                                "results": [
-                                    {
-                                        "poster_path": "/tfdiVvJkYMbUOXDWibPjzu5dY6S.jpg",
-                                        "popularity": 1.722162,
-                                        "id": 604,
-                                        "backdrop_path": "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg",
-                                        "vote_average": 8.17,
-                                        "overview": "Teen Titans is an American animated television series based on the DC Comics characters of the same name, primarily the run of stories by Marv Wolfman and George Pérez in the early-1980s The New Teen Titans comic book series. The show was created by Glen Murakami, developed by David Slack, and produced by Warner Bros. Animation. It premiered on Cartoon Network on July 19, 2003 with the episode \"Divide and Conquer\" and the final episode \"Things Change\" aired on January 16, 2006, with the film Teen Titans: Trouble in Tokyo serving as the series finale. A comic book series, Teen Titans Go!, was based on the TV series. On June 8, 2012, it was announced that the series would be revived as Teen Titans Go! in April 23, 2013 and air on the DC Nation block.IT now airs on the Boomerang channel. ",
-                                        "first_air_date": "2003-07-19",
-                                        "origin_country": [
-                                            "US"
-                                        ],
-                                        "genre_ids": [
-                                            16,
-                                            10759
-                                        ],
-                                        "original_language": "en",
-                                        "vote_count": 12,
-                                        "name": "Teen Titans",
-                                        "original_name": "Teen Titans"
-                                    },
-                                    {
-                                        "poster_path": "/utOLkQhxuhwN3PN0UEPnfhJnkrf.jpg",
-                                        "popularity": 1.530522,
-                                        "id": 2085,
-                                        "backdrop_path": "/mzpeRh7Wu9mP3s9EdsbNMaGsykP.jpg",
-                                        "vote_average": 8.16,
-                                        "overview": "Courage the Cowardly Dog is an American comedy horror animated television series created by John R. Dilworth for Cartoon Network. Its central plot revolves around a somewhat anthropomorphic pink/purple dog named Courage who lives with his owners, Muriel and Eustace Bagge, an elderly, married farming couple in the \"Middle of Nowhere\". Courage and his owners are frequently thrown into bizarre misadventures, often involving the paranormal/supernatural and various villains. The show is known for its surreal, often disquieting humor and bizarre plot twists. The series combines elements of comedy horror, science fantasy, and drama.\n\nThe program originated from a short on Cartoon Network's animation showcase series created by Hanna-Barbera president Fred Seibert, \"What a Cartoon!\" titled \"The Chicken from Outer Space\". The segment was nominated for an Academy Award in 1996, and Cartoon Network commissioned a series based on the short. The series, which premiered on November 12, 1999, ran for four seasons, ending on November 22, 2002 with a total of 52 episodes produced. The series was the sixth and final series to be spun off from World Premiere Toons, and it was the eighth series to fall under the Cartoon Cartoons label.",
-                                        "first_air_date": "1999-11-12",
-                                        "origin_country": [
-                                            "US"
-                                        ],
-                                        "genre_ids": [
-                                            10765,
-                                            16,
-                                            9648,
-                                            35
-                                        ],
-                                        "original_language": "en",
-                                        "vote_count": 19,
-                                        "name": "Coraje, El Perro Cobarde",
-                                        "original_name": "Coraje, El Perro Cobarde"
-                                    }
-                                ],
-                                "total_results": 747,
-                                "total_pages": 38
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
         "/tv/{tv_id}/season/{season_number}": {
             "parameters": [
                 {
@@ -8999,150 +8605,6 @@
                                 "id": 3624,
                                 "poster_path": "/olJ6ivXxCMq3cfujo1IRw30OrsQ.jpg",
                                 "season_number": 1
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/tv/season/{season_id}/changes": {
-            "parameters": [
-                {
-                    "name": "season_id",
-                    "in": "path",
-                    "required": true,
-                    "type": "integer"
-                }
-            ],
-            "get": {
-                "operationId": "get-tv-season-changes",
-                "summary": "Get  Changes",
-                "tags": [
-                    "TV Seasons"
-                ],
-                "description": "Get the changes for a TV season. By default only the last 24 hours are returned.\n\nYou can query up to 14 days in a single query by using the `start_date` and `end_date` query parameters.",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:startDateParam:start_date"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:endDateParam:end_date"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:pageParam:page"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/change-details"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "changes": [
-                                    {
-                                        "key": "episode",
-                                        "items": [
-                                            {
-                                                "id": "5717c8c69251414cfd00250f",
-                                                "action": "updated",
-                                                "time": "2016-04-20 18:21:58 UTC",
-                                                "value": {
-                                                    "episode_id": 63056,
-                                                    "episode_number": 1
-                                                }
-                                            },
-                                            {
-                                                "id": "5717c90dc3a3686cb7001dd5",
-                                                "action": "updated",
-                                                "time": "2016-04-20 18:23:09 UTC",
-                                                "value": {
-                                                    "episode_id": 63057,
-                                                    "episode_number": 2
-                                                }
-                                            },
-                                            {
-                                                "id": "5717c917c3a3686c83001bb4",
-                                                "action": "updated",
-                                                "time": "2016-04-20 18:23:19 UTC",
-                                                "value": {
-                                                    "episode_id": 63058,
-                                                    "episode_number": 3
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "key": "air_date",
-                                        "items": [
-                                            {
-                                                "id": "5717cfefc3a3686c83001cb1",
-                                                "action": "updated",
-                                                "time": "2016-04-20 18:52:31 UTC",
-                                                "value": "2011-04-16",
-                                                "original_value": "2011-04-17"
-                                            },
-                                            {
-                                                "id": "5717cffa9251413d3000345d",
-                                                "action": "updated",
-                                                "time": "2016-04-20 18:52:42 UTC",
-                                                "value": "2011-04-16",
-                                                "original_value": "2011-04-17"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "key": "name",
-                                        "items": [
-                                            {
-                                                "id": "5717cfefc3a3686c83001cb2",
-                                                "action": "added",
-                                                "time": "2016-04-20 18:52:31 UTC",
-                                                "iso_639_1": "pt",
-                                                "value": "Season 1"
-                                            },
-                                            {
-                                                "id": "5717cffa9251413d3000345e",
-                                                "action": "deleted",
-                                                "time": "2016-04-20 18:52:42 UTC",
-                                                "iso_639_1": "pt",
-                                                "original_value": "Season 1"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "key": "overview",
-                                        "items": [
-                                            {
-                                                "id": "5717cfefc3a3686c83001cb3",
-                                                "action": "added",
-                                                "time": "2016-04-20 18:52:31 UTC",
-                                                "iso_639_1": "pt",
-                                                "value": "A nobre Casa Stark, liderada pelo lorde Eddard Stark se vê em meio de um esquema de traição ao rei Robert Baratheon quando a mão do rei, Jon Arryn, morre misteriosamente."
-                                            },
-                                            {
-                                                "id": "571f26aac3a368352f001db4",
-                                                "action": "updated",
-                                                "time": "2016-04-26 08:28:26 UTC",
-                                                "iso_639_1": "zh",
-                                                "value": "本剧第一季内容主要聚焦于冰与火之歌系列小说第一部《权力的游戏》。\n\n故事从维斯特洛大陆边境处发现远古传说中早已灭绝的生物开始，预示着危险即将到来。而这片大陆的临冬城主暨北境统领艾德史塔克家族也迎来了老友兼国王劳勃·拜拉席恩的来访。国王希望艾德·史塔克（肖恩·宾 Sean Bean 饰）能担任首相一职，对抗企图夺取铁王座的叛军。危情一触即发，整个王国看似平和的表面下却是波涛暗涌。权高位重的拜拉席恩家族、勇敢善良的史塔克家族、企图谋取王位的坦格利安家族、有着不可告人秘密的兰尼斯特家族。这些家族各怀鬼胎，国王的意外身亡，使国家马上陷入无尽的战乱之中。",
-                                                "original_value": "本剧第一季内容主要聚焦于冰与火之歌系列小说第一部《权力的游戏》。\n\n故事从维斯特洛大陆边境处发现远古传说中早已灭绝的生物开始，预示着危险即将到来。而这片大陆的临冬城主暨北境统领艾德史塔克家族也迎来了老友兼国王劳勃·拜拉席恩的来访。国王希望艾德·史塔克（肖恩·宾 Sean Bean 饰）能担任首相一职，对抗企图夺取铁王座的叛军。危情一触即发，整个王国看似平和的表面下却是波涛暗涌。权高位重的拜拉席恩家族、勇敢善良的史塔克家族、企图谋取王位的坦格利安家族、有着不可告人秘密的兰尼斯特家族。这些家族各怀鬼胎，国王的意外身亡，使国家马上陷入无尽的战乱之中……"
-                                            }
-                                        ]
-                                    }
-                                ]
                             }
                         }
                     },
@@ -9673,114 +9135,6 @@
                                 "still_path": "/wrGWeW4WKxnaeA8sxJb2T9O6ryo.jpg",
                                 "vote_average": 7.11904761904762,
                                 "vote_count": 21
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    },
-                    "404": {
-                        "$ref": "#/responses/StatusCodeMsgResponse"
-                    }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/tv/episode/{episode_id}/changes": {
-            "parameters": [
-                {
-                    "name": "episode_id",
-                    "in": "path",
-                    "required": true,
-                    "type": "integer"
-                }
-            ],
-            "get": {
-                "operationId": "get-tv-episode-changes",
-                "summary": "Get Changes",
-                "tags": [
-                    "TV Episodes"
-                ],
-                "description": "Get the changes for a TV episode. By default only the last 24 hours are returned.\n\nYou can query up to 14 days in a single query by using the `start_date` and `end_date` query parameters.",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/trait:startDateParam:start_date"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:endDateParam:end_date"
-                    },
-                    {
-                        "$ref": "#/parameters/trait:pageParam:page"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/change-details"
-                        },
-                        "examples": {
-                            "application/json": {
-                                "changes": [
-                                    {
-                                        "key": "production_code",
-                                        "items": [
-                                            {
-                                                "id": "54bd9ed7c3a3686c6b00da66",
-                                                "action": "added",
-                                                "time": "2015-01-20 00:18:31 UTC",
-                                                "value": "101"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "key": "overview",
-                                        "items": [
-                                            {
-                                                "id": "54bd9ed7c3a3686c6b00da67",
-                                                "action": "updated",
-                                                "time": "2015-01-20 00:18:31 UTC",
-                                                "iso_639_1": "fr",
-                                                "value": "Sur le continent de Westeros, un jeune patrouilleur de la Garde de Nuit, chargée de veiller sur le Mur, est condamné à mort pour désertion par Eddard Stark, seigneur de Winterfell et Gardien du Nord. Mais de sombres nouvelles arrivent de Port-Réal, la capitale des Sept Couronnes : Jon Arryn, ami intime d'Eddard et Main du roi Robert Baratheon, vient de mourir. Le roi Robert et sa cour entreprennent alors un voyage vers Winterfell, pour gratifier son ami Eddard de la charge de Main du roi. Pendant ce temps, les descendants des rois Targaryen en exil, renversés par Robert, fomentent leur retour en Westeros par un jeu d'alliance avec les Dothrakis, une tribu de guerriers nomades.\nAlors qu'à Winterfell les festivités vont bon train durant le séjour du roi, Brandon, l'un des fils d'Eddard Stark, fait une découverte qui lui attire les foudres de la famille royale…",
-                                                "original_value": "Sur le continent de Westeros, un jeune patrouilleur de la Garde de Nuit, chargée de veiller sur le Mur, est condamné à mort pour désertion par Eddard Stark, seigneur de Winterfell et Gardien du Nord. Mais de sombres nouvelles arrivent de Port-Réal, la capitale des Sept Couronnes : Jon Arryn, ami intime d'Eddard et Main du roi Robert Baratheon, vient de mourir. Le roi Robert et sa cour entreprennent alors un voyage vers Winterfell, pour gratifier son ami Eddard de la charge de Main du roi. Pendant ce temps, les descendants des rois Targaryen en exil, renversés par Robert, fomentent leur retour en Westeros par un jeu d'alliance avec les Dothrakis, une tribu de guerriers nomades.\n\nAlors qu'à Winterfell les festivités vont bon train durant le séjour du roi, Brandon, l'un des fils d'Eddard Stark, fait une découverte qui lui attire les foudres de la famille royale..."
-                                            },
-                                            {
-                                                "id": "54c53255c3a36814210141d0",
-                                                "action": "added",
-                                                "time": "2015-01-25 18:13:41 UTC",
-                                                "iso_639_1": "es",
-                                                "value": "Ned Stark, Señor de Invernalia se entera de que su mentor, Jon Arryn, ha muerto y por esto el Rey Robert se dirige hacia el norte para ofrecerle ser la Mano del Rey. Al otro lado del Mar en Pentos, Viserys Targaryen planea casar a su hermana Daenerys con el lider de los guerreros de la tribu Dothraki, Khal Drogo con el objetivo de forjar una alianza que le permita reclamar el trono."
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "key": "tvrage_id",
-                                        "items": [
-                                            {
-                                                "id": "54bd9ed89251416e9b005079",
-                                                "action": "added",
-                                                "time": "2015-01-20 00:18:32 UTC",
-                                                "value": "1065008299"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "key": "name",
-                                        "items": [
-                                            {
-                                                "id": "54c53255c3a36814210141cf",
-                                                "action": "added",
-                                                "time": "2015-01-25 18:13:41 UTC",
-                                                "iso_639_1": "es",
-                                                "value": "Se acerca el invierno"
-                                            }
-                                        ]
-                                    }
-                                ]
                             }
                         }
                     },
@@ -10370,6 +9724,752 @@
                                         "type": "Clip"
                                     }
                                 ]
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/tv/airing_today": {
+            "get": {
+                "operationId": "get-tv-airing-today-paginated",
+                "summary": "Get TV Airing Today",
+                "tags": [
+                    "TV"
+                ],
+                "description": "Get a list of TV shows that are airing today. This query is purely day based as we do not currently support airing times.\n\nYou can specify a [timezone](endpoint:KQ4CDdEoWKJYLkrhS) to offset the day calculation. Without a specified timezone, this query defaults to EST (Eastern Time UTC-05:00).",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:pageParam:page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/tv-paginated"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "page": 1,
+                                "results": [
+                                    {
+                                        "poster_path": "/zra8NrzxaEeunRWJmUm3HZOL4sd.jpg",
+                                        "popularity": 11.520271,
+                                        "id": 67419,
+                                        "backdrop_path": "/b0BckgEovxYLBbIk5xXyWYQpmlT.jpg",
+                                        "vote_average": 1.39,
+                                        "overview": "The early life of Queen Victoria, from her accession to the throne at the tender age of 18 through to her courtship and marriage to Prince Albert. Victoria went on to rule for 63 years, and was the longest-serving monarch until she was overtaken by Elizabeth II on 9th September 2016. Rufus Sewell was Victoria’s first prime minister; the two immediately connected and their intimate friendship became a popular source of gossip that threatened to destabilise the Government – angering both Tory and Whigs alike.",
+                                        "first_air_date": "2016-08-28",
+                                        "origin_country": [
+                                            "GB"
+                                        ],
+                                        "genre_ids": [
+                                            18
+                                        ],
+                                        "original_language": "en",
+                                        "vote_count": 9,
+                                        "name": "Victoria",
+                                        "original_name": "Victoria"
+                                    },
+                                    {
+                                        "poster_path": "/sdB3AQqUsgjrDb7qTBqYOp6VwAG.jpg",
+                                        "popularity": 9.699399,
+                                        "id": 66433,
+                                        "backdrop_path": null,
+                                        "vote_average": 9,
+                                        "overview": "Scarlet Heart: Ryeo is the remake of Chinese drama Bu Bu Jing Xin that stars IU as a woman who gets time-warped back to the Goryeo dynasty, and becomes involved with a very large family of princes, some of whom are vying for the throne, or her affections, or both.",
+                                        "first_air_date": "2016-08-29",
+                                        "origin_country": [
+                                            "KR"
+                                        ],
+                                        "genre_ids": [
+                                            18
+                                        ],
+                                        "original_language": "ko",
+                                        "vote_count": 2,
+                                        "name": "Moon Lovers: Scarlet Heart Ryeo",
+                                        "original_name": "달의 연인-보보경심 려"
+                                    }
+                                ],
+                                "total_results": 43,
+                                "total_pages": 3
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/tv/changes": {
+            "get": {
+                "operationId": "get-tv-changes-paginated",
+                "summary": "Get TV Change List",
+                "tags": [
+                    "Changes"
+                ],
+                "description": "Get a list of all of the TV show ids that have been changed in the past 24 hours.\n\nYou can query it for up to 14 days worth of changed IDs at a time with the `start_date` and `end_date` query parameters. 100 items are returned per page.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:startDateParam:start_date"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:endDateParam:end_date"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/changes-paginated"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "results": [
+                                    {
+                                        "id": 67563,
+                                        "adult": false
+                                    },
+                                    {
+                                        "id": 55169,
+                                        "adult": false
+                                    },
+                                    {
+                                        "id": 63279,
+                                        "adult": false
+                                    }
+                                ],
+                                "page": 1,
+                                "total_pages": 2,
+                                "total_results": 122
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/tv/episode/{episode_id}/changes": {
+            "parameters": [
+                {
+                    "name": "episode_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-tv-episode-changes",
+                "summary": "Get Changes",
+                "tags": [
+                    "TV Episodes"
+                ],
+                "description": "Get the changes for a TV episode. By default only the last 24 hours are returned.\n\nYou can query up to 14 days in a single query by using the `start_date` and `end_date` query parameters.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:startDateParam:start_date"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:endDateParam:end_date"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:pageParam:page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/change-details"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "changes": [
+                                    {
+                                        "key": "production_code",
+                                        "items": [
+                                            {
+                                                "id": "54bd9ed7c3a3686c6b00da66",
+                                                "action": "added",
+                                                "time": "2015-01-20 00:18:31 UTC",
+                                                "value": "101"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "key": "overview",
+                                        "items": [
+                                            {
+                                                "id": "54bd9ed7c3a3686c6b00da67",
+                                                "action": "updated",
+                                                "time": "2015-01-20 00:18:31 UTC",
+                                                "iso_639_1": "fr",
+                                                "value": "Sur le continent de Westeros, un jeune patrouilleur de la Garde de Nuit, chargée de veiller sur le Mur, est condamné à mort pour désertion par Eddard Stark, seigneur de Winterfell et Gardien du Nord. Mais de sombres nouvelles arrivent de Port-Réal, la capitale des Sept Couronnes : Jon Arryn, ami intime d'Eddard et Main du roi Robert Baratheon, vient de mourir. Le roi Robert et sa cour entreprennent alors un voyage vers Winterfell, pour gratifier son ami Eddard de la charge de Main du roi. Pendant ce temps, les descendants des rois Targaryen en exil, renversés par Robert, fomentent leur retour en Westeros par un jeu d'alliance avec les Dothrakis, une tribu de guerriers nomades.\nAlors qu'à Winterfell les festivités vont bon train durant le séjour du roi, Brandon, l'un des fils d'Eddard Stark, fait une découverte qui lui attire les foudres de la famille royale…",
+                                                "original_value": "Sur le continent de Westeros, un jeune patrouilleur de la Garde de Nuit, chargée de veiller sur le Mur, est condamné à mort pour désertion par Eddard Stark, seigneur de Winterfell et Gardien du Nord. Mais de sombres nouvelles arrivent de Port-Réal, la capitale des Sept Couronnes : Jon Arryn, ami intime d'Eddard et Main du roi Robert Baratheon, vient de mourir. Le roi Robert et sa cour entreprennent alors un voyage vers Winterfell, pour gratifier son ami Eddard de la charge de Main du roi. Pendant ce temps, les descendants des rois Targaryen en exil, renversés par Robert, fomentent leur retour en Westeros par un jeu d'alliance avec les Dothrakis, une tribu de guerriers nomades.\n\nAlors qu'à Winterfell les festivités vont bon train durant le séjour du roi, Brandon, l'un des fils d'Eddard Stark, fait une découverte qui lui attire les foudres de la famille royale..."
+                                            },
+                                            {
+                                                "id": "54c53255c3a36814210141d0",
+                                                "action": "added",
+                                                "time": "2015-01-25 18:13:41 UTC",
+                                                "iso_639_1": "es",
+                                                "value": "Ned Stark, Señor de Invernalia se entera de que su mentor, Jon Arryn, ha muerto y por esto el Rey Robert se dirige hacia el norte para ofrecerle ser la Mano del Rey. Al otro lado del Mar en Pentos, Viserys Targaryen planea casar a su hermana Daenerys con el lider de los guerreros de la tribu Dothraki, Khal Drogo con el objetivo de forjar una alianza que le permita reclamar el trono."
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "key": "tvrage_id",
+                                        "items": [
+                                            {
+                                                "id": "54bd9ed89251416e9b005079",
+                                                "action": "added",
+                                                "time": "2015-01-20 00:18:32 UTC",
+                                                "value": "1065008299"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "key": "name",
+                                        "items": [
+                                            {
+                                                "id": "54c53255c3a36814210141cf",
+                                                "action": "added",
+                                                "time": "2015-01-25 18:13:41 UTC",
+                                                "iso_639_1": "es",
+                                                "value": "Se acerca el invierno"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/tv/latest": {
+            "get": {
+                "operationId": "get-tv-latest-details",
+                "summary": "Get Latest",
+                "tags": [
+                    "TV"
+                ],
+                "description": "Get the most newly created TV show. This is a live response and will continuously change.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/tv-details"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "backdrop_path": null,
+                                "created_by": [],
+                                "episode_run_time": [
+                                    30
+                                ],
+                                "first_air_date": "2016-08-23",
+                                "genres": [
+                                    {
+                                        "id": 35,
+                                        "name": "Comedy"
+                                    },
+                                    {
+                                        "id": 10764,
+                                        "name": "Reality"
+                                    }
+                                ],
+                                "homepage": "http://www.trutv.com/shows/you-can-do-better",
+                                "id": 67625,
+                                "in_production": true,
+                                "languages": [
+                                    "en"
+                                ],
+                                "last_air_date": "2016-08-30",
+                                "name": "You Can Do Better",
+                                "networks": [
+                                    {
+                                        "id": 364,
+                                        "name": "truTV"
+                                    }
+                                ],
+                                "number_of_episodes": 1,
+                                "number_of_seasons": 1,
+                                "origin_country": [
+                                    "US"
+                                ],
+                                "original_language": "en",
+                                "original_name": "You Can Do Better",
+                                "overview": null,
+                                "popularity": 0,
+                                "poster_path": null,
+                                "production_companies": [],
+                                "seasons": [
+                                    {
+                                        "air_date": "2016-08-23",
+                                        "episode_count": 2,
+                                        "id": 79695,
+                                        "poster_path": null,
+                                        "season_number": 1
+                                    }
+                                ],
+                                "status": "Returning Series",
+                                "type": "Reality",
+                                "vote_average": 10,
+                                "vote_count": 1
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/tv/popular": {
+            "get": {
+                "operationId": "get-tv-popular-paginated",
+                "summary": "Get Popular",
+                "tags": [
+                    "TV"
+                ],
+                "description": "Get a list of the current popular TV shows on TMDb. This list updates daily.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:pageParam:page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/tv-paginated"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "page": 1,
+                                "results": [
+                                    {
+                                        "poster_path": "/vC324sdfcS313vh9QXwijLIHPJp.jpg",
+                                        "popularity": 47.432451,
+                                        "id": 31917,
+                                        "backdrop_path": "/rQGBjWNveVeF8f2PGRtS85w9o9r.jpg",
+                                        "vote_average": 5.04,
+                                        "overview": "Based on the Pretty Little Liars series of young adult novels by Sara Shepard, the series follows the lives of four girls — Spencer, Hanna, Aria, and Emily — whose clique falls apart after the disappearance of their queen bee, Alison. One year later, they begin receiving messages from someone using the name \"A\" who threatens to expose their secrets — including long-hidden ones they thought only Alison knew.",
+                                        "first_air_date": "2010-06-08",
+                                        "origin_country": [
+                                            "US"
+                                        ],
+                                        "genre_ids": [
+                                            18,
+                                            9648
+                                        ],
+                                        "original_language": "en",
+                                        "vote_count": 133,
+                                        "name": "Pretty Little Liars",
+                                        "original_name": "Pretty Little Liars"
+                                    },
+                                    {
+                                        "poster_path": "/esN3gWb1P091xExLddD2nh4zmi3.jpg",
+                                        "popularity": 37.882356,
+                                        "id": 62560,
+                                        "backdrop_path": "/v8Y9yurHuI7MujWQMd8iL3Gy4B5.jpg",
+                                        "vote_average": 7.5,
+                                        "overview": "A contemporary and culturally resonant drama about a young programmer, Elliot, who suffers from a debilitating anti-social disorder and decides that he can only connect to people by hacking them. He wields his skills as a weapon to protect the people that he cares about. Elliot will find himself in the intersection between a cybersecurity firm he works for and the underworld organizations that are recruiting him to bring down corporate America.",
+                                        "first_air_date": "2015-05-27",
+                                        "origin_country": [
+                                            "US"
+                                        ],
+                                        "genre_ids": [
+                                            80,
+                                            18
+                                        ],
+                                        "original_language": "en",
+                                        "vote_count": 287,
+                                        "name": "Mr. Robot",
+                                        "original_name": "Mr. Robot"
+                                    }
+                                ],
+                                "total_results": 20000,
+                                "total_pages": 1000
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/tv/on_the_air": {
+            "get": {
+                "operationId": "get-tv-on-the-air-paginated",
+                "summary": "Get TV On The Air",
+                "tags": [
+                    "TV"
+                ],
+                "description": "Get a list of shows that are currently on the air.\n\nThis query looks for any TV show that has an episode with an air date in the next 7 days.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:pageParam:page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/tv-paginated"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "page": 1,
+                                "results": [
+                                    {
+                                        "poster_path": "/vC324sdfcS313vh9QXwijLIHPJp.jpg",
+                                        "popularity": 47.432451,
+                                        "id": 31917,
+                                        "backdrop_path": "/rQGBjWNveVeF8f2PGRtS85w9o9r.jpg",
+                                        "vote_average": 5.04,
+                                        "overview": "Based on the Pretty Little Liars series of young adult novels by Sara Shepard, the series follows the lives of four girls — Spencer, Hanna, Aria, and Emily — whose clique falls apart after the disappearance of their queen bee, Alison. One year later, they begin receiving messages from someone using the name \"A\" who threatens to expose their secrets — including long-hidden ones they thought only Alison knew.",
+                                        "first_air_date": "2010-06-08",
+                                        "origin_country": [
+                                            "US"
+                                        ],
+                                        "genre_ids": [
+                                            18,
+                                            9648
+                                        ],
+                                        "original_language": "en",
+                                        "vote_count": 133,
+                                        "name": "Pretty Little Liars",
+                                        "original_name": "Pretty Little Liars"
+                                    },
+                                    {
+                                        "poster_path": "/esN3gWb1P091xExLddD2nh4zmi3.jpg",
+                                        "popularity": 37.882356,
+                                        "id": 62560,
+                                        "backdrop_path": "/v8Y9yurHuI7MujWQMd8iL3Gy4B5.jpg",
+                                        "vote_average": 7.5,
+                                        "overview": "A contemporary and culturally resonant drama about a young programmer, Elliot, who suffers from a debilitating anti-social disorder and decides that he can only connect to people by hacking them. He wields his skills as a weapon to protect the people that he cares about. Elliot will find himself in the intersection between a cybersecurity firm he works for and the underworld organizations that are recruiting him to bring down corporate America.",
+                                        "first_air_date": "2015-05-27",
+                                        "origin_country": [
+                                            "US"
+                                        ],
+                                        "genre_ids": [
+                                            80,
+                                            18
+                                        ],
+                                        "original_language": "en",
+                                        "vote_count": 287,
+                                        "name": "Mr. Robot",
+                                        "original_name": "Mr. Robot"
+                                    }
+                                ],
+                                "total_results": 192,
+                                "total_pages": 10
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/tv/season/{season_id}/changes": {
+            "parameters": [
+                {
+                    "name": "season_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-tv-season-changes",
+                "summary": "Get  Changes",
+                "tags": [
+                    "TV Seasons"
+                ],
+                "description": "Get the changes for a TV season. By default only the last 24 hours are returned.\n\nYou can query up to 14 days in a single query by using the `start_date` and `end_date` query parameters.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:startDateParam:start_date"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:endDateParam:end_date"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:pageParam:page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/change-details"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "changes": [
+                                    {
+                                        "key": "episode",
+                                        "items": [
+                                            {
+                                                "id": "5717c8c69251414cfd00250f",
+                                                "action": "updated",
+                                                "time": "2016-04-20 18:21:58 UTC",
+                                                "value": {
+                                                    "episode_id": 63056,
+                                                    "episode_number": 1
+                                                }
+                                            },
+                                            {
+                                                "id": "5717c90dc3a3686cb7001dd5",
+                                                "action": "updated",
+                                                "time": "2016-04-20 18:23:09 UTC",
+                                                "value": {
+                                                    "episode_id": 63057,
+                                                    "episode_number": 2
+                                                }
+                                            },
+                                            {
+                                                "id": "5717c917c3a3686c83001bb4",
+                                                "action": "updated",
+                                                "time": "2016-04-20 18:23:19 UTC",
+                                                "value": {
+                                                    "episode_id": 63058,
+                                                    "episode_number": 3
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "key": "air_date",
+                                        "items": [
+                                            {
+                                                "id": "5717cfefc3a3686c83001cb1",
+                                                "action": "updated",
+                                                "time": "2016-04-20 18:52:31 UTC",
+                                                "value": "2011-04-16",
+                                                "original_value": "2011-04-17"
+                                            },
+                                            {
+                                                "id": "5717cffa9251413d3000345d",
+                                                "action": "updated",
+                                                "time": "2016-04-20 18:52:42 UTC",
+                                                "value": "2011-04-16",
+                                                "original_value": "2011-04-17"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "key": "name",
+                                        "items": [
+                                            {
+                                                "id": "5717cfefc3a3686c83001cb2",
+                                                "action": "added",
+                                                "time": "2016-04-20 18:52:31 UTC",
+                                                "iso_639_1": "pt",
+                                                "value": "Season 1"
+                                            },
+                                            {
+                                                "id": "5717cffa9251413d3000345e",
+                                                "action": "deleted",
+                                                "time": "2016-04-20 18:52:42 UTC",
+                                                "iso_639_1": "pt",
+                                                "original_value": "Season 1"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "key": "overview",
+                                        "items": [
+                                            {
+                                                "id": "5717cfefc3a3686c83001cb3",
+                                                "action": "added",
+                                                "time": "2016-04-20 18:52:31 UTC",
+                                                "iso_639_1": "pt",
+                                                "value": "A nobre Casa Stark, liderada pelo lorde Eddard Stark se vê em meio de um esquema de traição ao rei Robert Baratheon quando a mão do rei, Jon Arryn, morre misteriosamente."
+                                            },
+                                            {
+                                                "id": "571f26aac3a368352f001db4",
+                                                "action": "updated",
+                                                "time": "2016-04-26 08:28:26 UTC",
+                                                "iso_639_1": "zh",
+                                                "value": "本剧第一季内容主要聚焦于冰与火之歌系列小说第一部《权力的游戏》。\n\n故事从维斯特洛大陆边境处发现远古传说中早已灭绝的生物开始，预示着危险即将到来。而这片大陆的临冬城主暨北境统领艾德史塔克家族也迎来了老友兼国王劳勃·拜拉席恩的来访。国王希望艾德·史塔克（肖恩·宾 Sean Bean 饰）能担任首相一职，对抗企图夺取铁王座的叛军。危情一触即发，整个王国看似平和的表面下却是波涛暗涌。权高位重的拜拉席恩家族、勇敢善良的史塔克家族、企图谋取王位的坦格利安家族、有着不可告人秘密的兰尼斯特家族。这些家族各怀鬼胎，国王的意外身亡，使国家马上陷入无尽的战乱之中。",
+                                                "original_value": "本剧第一季内容主要聚焦于冰与火之歌系列小说第一部《权力的游戏》。\n\n故事从维斯特洛大陆边境处发现远古传说中早已灭绝的生物开始，预示着危险即将到来。而这片大陆的临冬城主暨北境统领艾德史塔克家族也迎来了老友兼国王劳勃·拜拉席恩的来访。国王希望艾德·史塔克（肖恩·宾 Sean Bean 饰）能担任首相一职，对抗企图夺取铁王座的叛军。危情一触即发，整个王国看似平和的表面下却是波涛暗涌。权高位重的拜拉席恩家族、勇敢善良的史塔克家族、企图谋取王位的坦格利安家族、有着不可告人秘密的兰尼斯特家族。这些家族各怀鬼胎，国王的意外身亡，使国家马上陷入无尽的战乱之中……"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/tv/top_rated": {
+            "get": {
+                "operationId": "get-tv-top-rated-paginated",
+                "summary": "Get Top Rated",
+                "tags": [
+                    "TV"
+                ],
+                "description": "Get a list of the top rated TV shows on TMDb.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:pageParam:page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/tv-paginated"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "page": 1,
+                                "results": [
+                                    {
+                                        "poster_path": "/tfdiVvJkYMbUOXDWibPjzu5dY6S.jpg",
+                                        "popularity": 1.722162,
+                                        "id": 604,
+                                        "backdrop_path": "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg",
+                                        "vote_average": 8.17,
+                                        "overview": "Teen Titans is an American animated television series based on the DC Comics characters of the same name, primarily the run of stories by Marv Wolfman and George Pérez in the early-1980s The New Teen Titans comic book series. The show was created by Glen Murakami, developed by David Slack, and produced by Warner Bros. Animation. It premiered on Cartoon Network on July 19, 2003 with the episode \"Divide and Conquer\" and the final episode \"Things Change\" aired on January 16, 2006, with the film Teen Titans: Trouble in Tokyo serving as the series finale. A comic book series, Teen Titans Go!, was based on the TV series. On June 8, 2012, it was announced that the series would be revived as Teen Titans Go! in April 23, 2013 and air on the DC Nation block.IT now airs on the Boomerang channel. ",
+                                        "first_air_date": "2003-07-19",
+                                        "origin_country": [
+                                            "US"
+                                        ],
+                                        "genre_ids": [
+                                            16,
+                                            10759
+                                        ],
+                                        "original_language": "en",
+                                        "vote_count": 12,
+                                        "name": "Teen Titans",
+                                        "original_name": "Teen Titans"
+                                    },
+                                    {
+                                        "poster_path": "/utOLkQhxuhwN3PN0UEPnfhJnkrf.jpg",
+                                        "popularity": 1.530522,
+                                        "id": 2085,
+                                        "backdrop_path": "/mzpeRh7Wu9mP3s9EdsbNMaGsykP.jpg",
+                                        "vote_average": 8.16,
+                                        "overview": "Courage the Cowardly Dog is an American comedy horror animated television series created by John R. Dilworth for Cartoon Network. Its central plot revolves around a somewhat anthropomorphic pink/purple dog named Courage who lives with his owners, Muriel and Eustace Bagge, an elderly, married farming couple in the \"Middle of Nowhere\". Courage and his owners are frequently thrown into bizarre misadventures, often involving the paranormal/supernatural and various villains. The show is known for its surreal, often disquieting humor and bizarre plot twists. The series combines elements of comedy horror, science fantasy, and drama.\n\nThe program originated from a short on Cartoon Network's animation showcase series created by Hanna-Barbera president Fred Seibert, \"What a Cartoon!\" titled \"The Chicken from Outer Space\". The segment was nominated for an Academy Award in 1996, and Cartoon Network commissioned a series based on the short. The series, which premiered on November 12, 1999, ran for four seasons, ending on November 22, 2002 with a total of 52 episodes produced. The series was the sixth and final series to be spun off from World Premiere Toons, and it was the eighth series to fall under the Cartoon Cartoons label.",
+                                        "first_air_date": "1999-11-12",
+                                        "origin_country": [
+                                            "US"
+                                        ],
+                                        "genre_ids": [
+                                            10765,
+                                            16,
+                                            9648,
+                                            35
+                                        ],
+                                        "original_language": "en",
+                                        "vote_count": 19,
+                                        "name": "Coraje, El Perro Cobarde",
+                                        "original_name": "Coraje, El Perro Cobarde"
+                                    }
+                                ],
+                                "total_results": 747,
+                                "total_pages": 38
                             }
                         }
                     },

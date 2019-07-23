@@ -168,6 +168,8 @@ mod session_response;
 pub use self::session_response::SessionResponse;
 mod tagged_image;
 pub use self::tagged_image::TaggedImage;
+mod time_window;
+pub use self::time_window::TimeWindow;
 mod timezones;
 pub use self::timezones::Timezones;
 mod token_response;
