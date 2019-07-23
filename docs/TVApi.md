@@ -29,35 +29,24 @@ Method | HTTP request | Description
 
 ## delete_tv_rating
 
-> ::models::StatusCodeMsgResponse delete_tv_rating(ctx, tv_id, content_type, optional)
+> crate::models::StatusCodeMessage delete_tv_rating(tv_id, content_type, guest_session_id, session_id)
 Delete Rating
 
 Remove your rating for a TV show.  A valid session or guest session ID is required. You can read more about how this works [here](#docTextSection:NSZtgz7zptsiLYxXZ).
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
-  **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **guest_session_id** | **String**|  | 
- **session_id** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**content_type** | **String** |  | Required | [default to application/json;charset=utf-8]
+**guest_session_id** | **String** |  |  | 
+**session_id** | **String** |  |  | 
 
 ### Return type
 
-[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
+[**crate::models::StatusCodeMessage**](StatusCodeMessage.md)
 
 ### Authorization
 
@@ -73,34 +62,24 @@ Name | Type | Description  | Notes
 
 ## get_tv_account_states
 
-> ::models::AccountStates get_tv_account_states(ctx, tv_id, optional)
+> crate::models::AccountStates get_tv_account_states(tv_id, language, guest_session_id, session_id)
 Get Account States
 
 Grab the following account states for a session:  - TV show rating - If it belongs to your watchlist - If it belongs to your favourite list
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **guest_session_id** | **String**|  | 
- **session_id** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**guest_session_id** | **String** |  |  | 
+**session_id** | **String** |  |  | 
 
 ### Return type
 
-[**::models::AccountStates**](AccountStates.md)
+[**crate::models::AccountStates**](AccountStates.md)
 
 ### Authorization
 
@@ -116,31 +95,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_airing_today_paginated
 
-> ::models::TvPaginated get_tv_airing_today_paginated(ctx, optional)
+> crate::models::TvPaginated get_tv_airing_today_paginated(language, page)
 Get TV Airing Today
 
 Get a list of TV shows that are airing today. This query is purely day based as we do not currently support airing times.  You can specify a [timezone](endpoint:KQ4CDdEoWKJYLkrhS) to offset the day calculation. Without a specified timezone, this query defaults to EST (Eastern Time UTC-05:00).
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::TvPaginated**](TvPaginated.md)
+[**crate::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -156,32 +126,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_alternative_titles_list
 
-> ::models::AlternativeTitlesList get_tv_alternative_titles_list(ctx, tv_id, optional)
+> crate::models::AlternativeTitlesList get_tv_alternative_titles_list(tv_id, language)
 Get Alternative Titles
 
 Returns all of the alternative titles for a TV show.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::AlternativeTitlesList**](AlternativeTitlesList.md)
+[**crate::models::AlternativeTitlesList**](AlternativeTitlesList.md)
 
 ### Authorization
 
@@ -197,34 +157,24 @@ Name | Type | Description  | Notes
 
 ## get_tv_changes
 
-> ::models::ChangeDetails get_tv_changes(ctx, tv_id, optional)
+> crate::models::ChangeDetails get_tv_changes(tv_id, start_date, end_date, page)
 Get Changes
 
 Get the changes for a TV show. By default only the last 24 hours are returned.  You can query up to 14 days in a single query by using the `start_date` and `end_date` query parameters.  TV show changes are different than movie changes in that there are some edits on seasons and episodes that will create a change entry at the show level. These can be found under the season and episode keys. These keys will contain a `series_id` and `episode_id`. You can use the [season changes](#endpoint:ZqhtyQbJ4YXz8RSya) and [episode changes](#endpoint:FpqrhBzgf2RJv4bHC) methods to look these up individually.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **start_date** | **String**| Filter the results with a start date. | 
- **end_date** | **String**| Filter the results with a end date. | 
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**start_date** | **String** | Filter the results with a start date. |  | 
+**end_date** | **String** | Filter the results with a end date. |  | 
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::ChangeDetails**](ChangeDetails.md)
+[**crate::models::ChangeDetails**](ChangeDetails.md)
 
 ### Authorization
 
@@ -240,32 +190,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_content_ratings_list
 
-> ::models::RatingsList get_tv_content_ratings_list(ctx, tv_id, optional)
+> crate::models::RatingsList get_tv_content_ratings_list(tv_id, language)
 Get Content Ratings
 
 Get the list of content ratings (certifications) that have been added to a TV show.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::RatingsList**](RatingsList.md)
+[**crate::models::RatingsList**](RatingsList.md)
 
 ### Authorization
 
@@ -281,32 +221,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_credits
 
-> ::models::Credits get_tv_credits(ctx, tv_id, optional)
+> crate::models::Credits get_tv_credits(tv_id, language)
 Get Credits
 
 Get the credits (cast and crew) that have been added to a TV show.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::Credits**](Credits.md)
+[**crate::models::Credits**](Credits.md)
 
 ### Authorization
 
@@ -322,33 +252,23 @@ Name | Type | Description  | Notes
 
 ## get_tv_details
 
-> ::models::TvDetails get_tv_details(ctx, tv_id, optional)
+> crate::models::TvDetails get_tv_details(tv_id, language, append_to_response)
 Get Details
 
 Get the primary TV show details by id.  Supports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **append_to_response** | **String**| Append requests within the same namespace to the response. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**append_to_response** | **String** | Append requests within the same namespace to the response. |  | 
 
 ### Return type
 
-[**::models::TvDetails**](TvDetails.md)
+[**crate::models::TvDetails**](TvDetails.md)
 
 ### Authorization
 
@@ -364,32 +284,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_external_ids
 
-> ::models::ExternalIds get_tv_external_ids(ctx, tv_id, optional)
+> crate::models::ExternalIds get_tv_external_ids(tv_id, language)
 Get External IDs
 
 Get the external ids for a TV show. We currently support the following external sources.  | **External Sources** | | -------------------- | | IMDB ID              | | Freebase MID         | | Freebase ID          | | TVDB ID              | | TVRage ID            |
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::ExternalIds**](ExternalIds.md)
+[**crate::models::ExternalIds**](ExternalIds.md)
 
 ### Authorization
 
@@ -405,32 +315,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_images
 
-> ::models::Images get_tv_images(ctx, tv_id, optional)
+> crate::models::Images get_tv_images(tv_id, language)
 Get Images
 
 Get the images that belong to a TV show.  Querying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::Images**](Images.md)
+[**crate::models::Images**](Images.md)
 
 ### Authorization
 
@@ -446,22 +346,21 @@ Name | Type | Description  | Notes
 
 ## get_tv_keywords_list
 
-> ::models::KeywordsList get_tv_keywords_list(ctx, tv_id)
+> crate::models::KeywordsList get_tv_keywords_list(tv_id)
 Get Keywords
 
 Get the keywords that have been added to a TV show.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
 
 ### Return type
 
-[**::models::KeywordsList**](KeywordsList.md)
+[**crate::models::KeywordsList**](KeywordsList.md)
 
 ### Authorization
 
@@ -477,30 +376,21 @@ Name | Type | Description  | Notes
 
 ## get_tv_latest_details
 
-> ::models::TvDetails get_tv_latest_details(ctx, optional)
+> crate::models::TvDetails get_tv_latest_details(language)
 Get Latest
 
 Get the most newly created TV show. This is a live response and will continuously change.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::TvDetails**](TvDetails.md)
+[**crate::models::TvDetails**](TvDetails.md)
 
 ### Authorization
 
@@ -516,31 +406,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_on_the_air_paginated
 
-> ::models::TvPaginated get_tv_on_the_air_paginated(ctx, optional)
+> crate::models::TvPaginated get_tv_on_the_air_paginated(language, page)
 Get TV On The Air
 
 Get a list of shows that are currently on the air.  This query looks for any TV show that has an episode with an air date in the next 7 days.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::TvPaginated**](TvPaginated.md)
+[**crate::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -556,31 +437,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_popular_paginated
 
-> ::models::TvPaginated get_tv_popular_paginated(ctx, optional)
+> crate::models::TvPaginated get_tv_popular_paginated(language, page)
 Get Popular
 
 Get a list of the current popular TV shows on TMDb. This list updates daily.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::TvPaginated**](TvPaginated.md)
+[**crate::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -596,33 +468,23 @@ Name | Type | Description  | Notes
 
 ## get_tv_recommendations_paginated
 
-> ::models::TvPaginated get_tv_recommendations_paginated(ctx, tv_id, optional)
+> crate::models::TvPaginated get_tv_recommendations_paginated(tv_id, language, page)
 Get Recommendations
 
 Get the list of TV show recommendations for this item.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::TvPaginated**](TvPaginated.md)
+[**crate::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -638,33 +500,23 @@ Name | Type | Description  | Notes
 
 ## get_tv_similar_paginated
 
-> ::models::TvPaginated get_tv_similar_paginated(ctx, tv_id, optional)
+> crate::models::TvPaginated get_tv_similar_paginated(tv_id, language, page)
 Get Similar TV Shows
 
 Get a list of similar TV shows. These items are assembled by looking at keywords and genres.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::TvPaginated**](TvPaginated.md)
+[**crate::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -680,31 +532,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_top_rated_paginated
 
-> ::models::TvPaginated get_tv_top_rated_paginated(ctx, optional)
+> crate::models::TvPaginated get_tv_top_rated_paginated(language, page)
 Get Top Rated
 
 Get a list of the top rated TV shows on TMDb.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::TvPaginated**](TvPaginated.md)
+[**crate::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -720,32 +563,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_translations_list
 
-> ::models::Translations get_tv_translations_list(ctx, tv_id, optional)
+> crate::models::TranslationsList get_tv_translations_list(tv_id, language)
 Get Translations
 
 Get a list of the translations that exist for a TV show.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::Translations**](TranslationsList.md)
+[**crate::models::TranslationsList**](TranslationsList.md)
 
 ### Authorization
 
@@ -761,32 +594,22 @@ Name | Type | Description  | Notes
 
 ## get_tv_videos_list
 
-> ::models::VideosList get_tv_videos_list(ctx, tv_id, optional)
+> crate::models::VideosList get_tv_videos_list(tv_id, language)
 Get Videos
 
 Get the videos that have been added to a TV show.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::VideosList**](VideosList.md)
+[**crate::models::VideosList**](VideosList.md)
 
 ### Authorization
 
@@ -802,36 +625,25 @@ Name | Type | Description  | Notes
 
 ## post_tv_rating
 
-> ::models::StatusCodeMsgResponse post_tv_rating(ctx, tv_id, content_type, optional)
+> crate::models::StatusCodeMessage post_tv_rating(tv_id, content_type, guest_session_id, session_id, body)
 Rate TV Show
 
 Rate a TV show.  A valid session or guest session ID is required. You can read more about how this works [here](#docTextSection:NSZtgz7zptsiLYxXZ).
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
-  **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **guest_session_id** | **String**|  | 
- **session_id** | **String**|  | 
- **body** | [**InlineObject6**](InlineObject6.md)|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**content_type** | **String** |  | Required | [default to application/json;charset=utf-8]
+**guest_session_id** | **String** |  |  | 
+**session_id** | **String** |  |  | 
+**body** | [**ValueBody**](ValueBody.md) |  |  | 
 
 ### Return type
 
-[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
+[**crate::models::StatusCodeMessage**](StatusCodeMessage.md)
 
 ### Authorization
 
@@ -843,3 +655,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

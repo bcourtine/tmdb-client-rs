@@ -11,18 +11,18 @@ Method | HTTP request | Description
 
 ## get_movie_certifications_list
 
-> ::models::Certifications get_movie_certifications_list(ctx, )
+> crate::models::Certifications get_movie_certifications_list()
 Get Movie Certifications
 
 Get an up to date list of the officially supported movie certifications on TMDb.
 
-### Required Parameters
+### Parameters
 
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**::models::Certifications**](Certifications.md)
+[**crate::models::Certifications**](Certifications.md)
 
 ### Authorization
 
@@ -38,18 +38,18 @@ This endpoint does not need any parameter.
 
 ## get_tv_certifications_list
 
-> ::models::Certifications get_tv_certifications_list(ctx, )
+> crate::models::Certifications get_tv_certifications_list()
 Get TV Certifications
 
 Get an up to date list of the officially supported TV show certifications on TMDb.
 
-### Required Parameters
+### Parameters
 
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**::models::Certifications**](Certifications.md)
+[**crate::models::Certifications**](Certifications.md)
 
 ### Authorization
 
@@ -61,3 +61,4 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

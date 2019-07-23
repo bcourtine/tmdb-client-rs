@@ -12,33 +12,23 @@ Method | HTTP request | Description
 
 ## get_guest_session_rated_movies_paginated
 
-> ::models::MoviePaginated get_guest_session_rated_movies_paginated(ctx, guest_session_id, optional)
+> crate::models::MoviePaginated get_guest_session_rated_movies_paginated(guest_session_id, language, sort_by)
 Get Rated Movies
 
 Get the rated movies for a guest session.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **guest_session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **guest_session_id** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**guest_session_id** | **String** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -54,33 +44,23 @@ Name | Type | Description  | Notes
 
 ## get_guest_session_rated_tv_episodes_paginated
 
-> ::models::TvEpisodesPaginated get_guest_session_rated_tv_episodes_paginated(ctx, guest_session_id, optional)
+> crate::models::TvEpisodesPaginated get_guest_session_rated_tv_episodes_paginated(guest_session_id, language, sort_by)
 Get Rated TV Episodes
 
 Get the rated TV episodes for a guest session.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **guest_session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **guest_session_id** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**guest_session_id** | **String** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::TvEpisodesPaginated**](TvEpisodesPaginated.md)
+[**crate::models::TvEpisodesPaginated**](TvEpisodesPaginated.md)
 
 ### Authorization
 
@@ -96,33 +76,23 @@ Name | Type | Description  | Notes
 
 ## get_guest_session_rated_tv_paginated
 
-> ::models::TvPaginated get_guest_session_rated_tv_paginated(ctx, guest_session_id, optional)
+> crate::models::TvPaginated get_guest_session_rated_tv_paginated(guest_session_id, language, sort_by)
 Get Rated TV Shows
 
 Get the rated TV shows for a guest session.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **guest_session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **guest_session_id** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**guest_session_id** | **String** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::TvPaginated**](TvPaginated.md)
+[**crate::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -134,3 +104,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

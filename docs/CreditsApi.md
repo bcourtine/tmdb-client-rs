@@ -10,22 +10,21 @@ Method | HTTP request | Description
 
 ## get_credit_details
 
-> ::models::Credit get_credit_details(ctx, credit_id)
+> crate::models::Credit get_credit_details(credit_id)
 Get Details
 
 Get a movie or TV credit details by id.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **credit_id** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**credit_id** | **String** |  | Required | 
 
 ### Return type
 
-[**::models::Credit**](Credit.md)
+[**crate::models::Credit**](Credit.md)
 
 ### Authorization
 
@@ -37,3 +36,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

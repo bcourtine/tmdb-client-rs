@@ -9,8 +9,8 @@ Method | HTTP request | Description
 [**get_movie_alternative_titles_list**](MoviesApi.md#get_movie_alternative_titles_list) | **get** /movie/{movie_id}/alternative_titles | Get Alternative Titles
 [**get_movie_changes_list**](MoviesApi.md#get_movie_changes_list) | **get** /movie/{movie_id}/changes | Get Changes
 [**get_movie_credits**](MoviesApi.md#get_movie_credits) | **get** /movie/{movie_id}/credits | Get Credits
-[**get_movie_external_ids**](MoviesApi.md#get_movie_external_ids) | **get** /movie/{movie_id}/external_ids | Get External IDs
 [**get_movie_details**](MoviesApi.md#get_movie_details) | **get** /movie/{movie_id} | Get Details
+[**get_movie_external_ids**](MoviesApi.md#get_movie_external_ids) | **get** /movie/{movie_id}/external_ids | Get External IDs
 [**get_movie_images**](MoviesApi.md#get_movie_images) | **get** /movie/{movie_id}/images | Get Images
 [**get_movie_keywords_list**](MoviesApi.md#get_movie_keywords_list) | **get** /movie/{movie_id}/keywords | Get Keywords
 [**get_movie_latest_details**](MoviesApi.md#get_movie_latest_details) | **get** /movie/latest | Get Latest
@@ -31,35 +31,24 @@ Method | HTTP request | Description
 
 ## delete_movie_rating
 
-> ::models::StatusCodeMsgResponse delete_movie_rating(ctx, movie_id, content_type, optional)
+> crate::models::StatusCodeMessage delete_movie_rating(movie_id, content_type, guest_session_id, session_id)
 Delete Rating
 
 Remove your rating for a movie.  A valid session or guest session ID is required. You can read more about how this works [here](#docTextSection:NSZtgz7zptsiLYxXZ).
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
-  **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **guest_session_id** | **String**|  | 
- **session_id** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**content_type** | **String** |  | Required | [default to application/json;charset=utf-8]
+**guest_session_id** | **String** |  |  | 
+**session_id** | **String** |  |  | 
 
 ### Return type
 
-[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
+[**crate::models::StatusCodeMessage**](StatusCodeMessage.md)
 
 ### Authorization
 
@@ -75,33 +64,23 @@ Name | Type | Description  | Notes
 
 ## get_movie_account_states
 
-> ::models::AccountStates get_movie_account_states(ctx, movie_id, optional)
+> crate::models::AccountStates get_movie_account_states(movie_id, session_id, guest_session_id)
 Get Account States
 
 Grab the following account states for a session:  - Movie rating - If it belongs to your watchlist - If it belongs to your favourite list
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **String**|  | 
- **session_id** | **String**|  | 
- **guest_session_id** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **String** |  | Required | 
+**session_id** | **String** |  |  | 
+**guest_session_id** | **String** |  |  | 
 
 ### Return type
 
-[**::models::AccountStates**](AccountStates.md)
+[**crate::models::AccountStates**](AccountStates.md)
 
 ### Authorization
 
@@ -117,32 +96,22 @@ Name | Type | Description  | Notes
 
 ## get_movie_alternative_titles_list
 
-> ::models::AlternativeTitlesList get_movie_alternative_titles_list(ctx, movie_id, optional)
+> crate::models::AlternativeTitlesList get_movie_alternative_titles_list(movie_id, country)
 Get Alternative Titles
 
 Get all of the alternative titles for a movie.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **country** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**country** | **String** |  |  | 
 
 ### Return type
 
-[**::models::AlternativeTitlesList**](AlternativeTitlesList.md)
+[**crate::models::AlternativeTitlesList**](AlternativeTitlesList.md)
 
 ### Authorization
 
@@ -158,34 +127,24 @@ Name | Type | Description  | Notes
 
 ## get_movie_changes_list
 
-> ::models::ChangeDetails get_movie_changes_list(ctx, movie_id, optional)
+> crate::models::ChangeDetails get_movie_changes_list(movie_id, start_date, end_date, page)
 Get Changes
 
 Get the changes for a movie. By default only the last 24 hours are returned.  You can query up to 14 days in a single query by using the `start_date` and `end_date` query parameters.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **String**|  | 
- **start_date** | **String**| Filter the results with a start date. | 
- **end_date** | **String**| Filter the results with a end date. | 
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **String** |  | Required | 
+**start_date** | **String** | Filter the results with a start date. |  | 
+**end_date** | **String** | Filter the results with a end date. |  | 
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::ChangeDetails**](ChangeDetails.md)
+[**crate::models::ChangeDetails**](ChangeDetails.md)
 
 ### Authorization
 
@@ -201,51 +160,21 @@ Name | Type | Description  | Notes
 
 ## get_movie_credits
 
-> ::models::Credits get_movie_credits(ctx, movie_id)
+> crate::models::Credits get_movie_credits(movie_id)
 Get Credits
 
 Get the cast and crew for a movie.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
-
-### Return type
-
-[**::models::Credits**](Credits.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## get_movie_external_ids
-
-> ::models::ExternalIds get_movie_external_ids(movie_id)
-Get External IDs
-
-Get a movie external IDs.
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
 
 ### Return type
 
-[**::models::ExternalIds**](ExternalIds.md)
+[**crate::models::Credits**](Credits.md)
 
 ### Authorization
 
@@ -261,33 +190,53 @@ Name | Type | Description  | Notes
 
 ## get_movie_details
 
-> ::models::MovieDetails get_movie_details(ctx, movie_id, optional)
+> crate::models::MovieDetails get_movie_details(movie_id, language, append_to_response)
 Get Details
 
 Get the primary information about a movie.  Supports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **append_to_response** | **String**| Append requests within the same namespace to the response. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**append_to_response** | **String** | Append requests within the same namespace to the response. |  | 
 
 ### Return type
 
-[**::models::MovieDetails**](MovieDetails.md)
+[**crate::models::MovieDetails**](MovieDetails.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_movie_external_ids
+
+> crate::models::ExternalIds get_movie_external_ids(movie_id)
+Get External IDs
+
+Get the external ids for a movie.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+
+### Return type
+
+[**crate::models::ExternalIds**](ExternalIds.md)
 
 ### Authorization
 
@@ -303,33 +252,23 @@ Name | Type | Description  | Notes
 
 ## get_movie_images
 
-> ::models::Images get_movie_images(ctx, movie_id, optional)
+> crate::models::Images get_movie_images(movie_id, include_image_language, language)
 Get Images
 
 Get the images that belong to a movie.  Querying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **include_image_language** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**include_image_language** | **String** |  |  | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::Images**](Images.md)
+[**crate::models::Images**](Images.md)
 
 ### Authorization
 
@@ -345,32 +284,22 @@ Name | Type | Description  | Notes
 
 ## get_movie_keywords_list
 
-> ::models::KeywordsList get_movie_keywords_list(ctx, movie_id, optional)
+> crate::models::KeywordsList get_movie_keywords_list(movie_id, api_key)
 Get Keywords
 
 Get the keywords that have been added to a movie.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **api_key** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**api_key** | **String** |  |  | 
 
 ### Return type
 
-[**::models::KeywordsList**](KeywordsList.md)
+[**crate::models::KeywordsList**](KeywordsList.md)
 
 ### Authorization
 
@@ -386,30 +315,21 @@ Name | Type | Description  | Notes
 
 ## get_movie_latest_details
 
-> ::models::MovieDetails get_movie_latest_details(ctx, optional)
+> crate::models::MovieDetails get_movie_latest_details(language)
 Get Latest
 
 Get the most newly created movie. This is a live response and will continuously change.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::MovieDetails**](MovieDetails.md)
+[**crate::models::MovieDetails**](MovieDetails.md)
 
 ### Authorization
 
@@ -425,34 +345,24 @@ Name | Type | Description  | Notes
 
 ## get_movie_lists_paginated
 
-> ::models::ListsPaginated get_movie_lists_paginated(ctx, movie_id, optional)
+> crate::models::ListsPaginated get_movie_lists_paginated(movie_id, api_key, language, page)
 Get Lists
 
 Get a list of lists that this movie belongs to.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **api_key** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**api_key** | **String** |  |  | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::ListsPaginated**](ListsPaginated.md)
+[**crate::models::ListsPaginated**](ListsPaginated.md.md)
 
 ### Authorization
 
@@ -468,32 +378,23 @@ Name | Type | Description  | Notes
 
 ## get_movie_now_playing_paginated
 
-> ::models::MoviePaginated get_movie_now_playing_paginated(ctx, optional)
+> crate::models::MoviePaginated get_movie_now_playing_paginated(language, page, region)
 Get Now Playing
 
 Get a list of movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.  You can optionally specify a `region` prameter which will narrow the search to only look for theatrical release dates within the specified country.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
- **region** | **String**| Specify a ISO 3166-1 code to filter release dates. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
+**region** | **String** | Specify a ISO 3166-1 code to filter release dates. |  | 
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -509,32 +410,23 @@ Name | Type | Description  | Notes
 
 ## get_movie_popular_paginated
 
-> ::models::MoviePaginated get_movie_popular_paginated(ctx, optional)
+> crate::models::MoviePaginated get_movie_popular_paginated(language, page, region)
 Get Popular
 
 Get a list of the current popular movies on TMDb. This list updates daily.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
- **region** | **String**| Specify a ISO 3166-1 code to filter release dates. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
+**region** | **String** | Specify a ISO 3166-1 code to filter release dates. |  | 
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -550,34 +442,24 @@ Name | Type | Description  | Notes
 
 ## get_movie_recommendations_paginated
 
-> ::models::MoviePaginated get_movie_recommendations_paginated(ctx, movie_id, optional)
+> crate::models::MoviePaginated get_movie_recommendations_paginated(movie_id, api_key, language, page)
 Get Recommendations
 
 Get a list of recommended movies for a movie.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **api_key** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**api_key** | **String** |  |  | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -593,32 +475,22 @@ Name | Type | Description  | Notes
 
 ## get_movie_release_dates
 
-> ::models::ReleaseDatesList get_movie_release_dates(ctx, movie_id, optional)
+> crate::models::ReleaseDatesList get_movie_release_dates(movie_id, api_key)
 Get Release Dates
 
 Get the release date along with the certification for a movie.  Release dates support different types:  1. Premiere 2. Theatrical (limited) 3. Theatrical 4. Digital 5. Physical 6. TV
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **api_key** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**api_key** | **String** |  |  | 
 
 ### Return type
 
-[**::models::ReleaseDatesList**](ReleaseDatesList.md)
+[**crate::models::ReleaseDatesList**](ReleaseDatesList.md)
 
 ### Authorization
 
@@ -634,34 +506,24 @@ Name | Type | Description  | Notes
 
 ## get_movie_reviews_paginated
 
-> ::models::ReviewsPaginated get_movie_reviews_paginated(ctx, movie_id, optional)
+> crate::models::ReviewsPaginated get_movie_reviews_paginated(movie_id, api_key, language, page)
 Get Reviews
 
 Get the user reviews for a movie.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **api_key** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**api_key** | **String** |  |  | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::ReviewsPaginated**](ReviewsPaginated.md)
+[**crate::models::ReviewsPaginated**](ReviewsPaginated.md)
 
 ### Authorization
 
@@ -677,34 +539,24 @@ Name | Type | Description  | Notes
 
 ## get_movie_similar_paginated
 
-> ::models::MoviePaginated get_movie_similar_paginated(ctx, movie_id, optional)
+> crate::models::MoviePaginated get_movie_similar_paginated(movie_id, api_key, language, page)
 Get Similar Movies
 
 Get a list of similar movies. This is **not** the same as the \"Recommendation\" system you see on the website.  These items are assembled by looking at keywords and genres.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **api_key** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**api_key** | **String** |  |  | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -720,32 +572,23 @@ Name | Type | Description  | Notes
 
 ## get_movie_top_rated_paginated
 
-> ::models::MoviePaginated get_movie_top_rated_paginated(ctx, optional)
+> crate::models::MoviePaginated get_movie_top_rated_paginated(language, page, region)
 Get Top Rated
 
 Get the top rated movies on TMDb.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
- **region** | **String**| Specify a ISO 3166-1 code to filter release dates. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
+**region** | **String** | Specify a ISO 3166-1 code to filter release dates. |  | 
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -759,34 +602,24 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## get_movie_translations
+## get_movie_translations_list
 
-> ::models::Translations get_movie_translations(ctx, movie_id, optional)
+> crate::models::TranslationsList get_movie_translations_list(movie_id, api_key)
 Get Translations
 
 Get a list of translations that have been created for a movie.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **api_key** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**api_key** | **String** |  |  | 
 
 ### Return type
 
-[**::models::Translations**](TranslationsList.md)
+[**crate::models::TranslationsList**](TranslationsList.md)
 
 ### Authorization
 
@@ -802,32 +635,23 @@ Name | Type | Description  | Notes
 
 ## get_movie_upcoming_paginated
 
-> ::models::MoviePaginated get_movie_upcoming_paginated(ctx, optional)
+> crate::models::MoviePaginated get_movie_upcoming_paginated(language, page, region)
 Get Upcoming
 
 Get a list of upcoming movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.  You can optionally specify a `region` prameter which will narrow the search to only look for theatrical release dates within the specified country.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **page** | **i32**| Specify which page to query. | [default to 1]
- **region** | **String**| Specify a ISO 3166-1 code to filter release dates. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**page** | **i32** | Specify which page to query. |  | [default to 1]
+**region** | **String** | Specify a ISO 3166-1 code to filter release dates. |  | 
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -843,33 +667,23 @@ Name | Type | Description  | Notes
 
 ## get_movie_videos_list
 
-> ::models::VideosList get_movie_videos_list(ctx, movie_id, optional)
+> crate::models::VideosList get_movie_videos_list(movie_id, api_key, language)
 Get Videos
 
 Get the videos that have been added to a movie.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **String**|  | 
- **api_key** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **String** |  | Required | 
+**api_key** | **String** |  |  | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::VideosList**](VideosList.md)
+[**crate::models::VideosList**](VideosList.md)
 
 ### Authorization
 
@@ -885,36 +699,25 @@ Name | Type | Description  | Notes
 
 ## post_movie_rating
 
-> ::models::StatusCodeMsgResponse post_movie_rating(ctx, movie_id, content_type, optional)
+> crate::models::StatusCodeMessage post_movie_rating(movie_id, content_type, guest_session_id, session_id, body)
 Rate Movie
 
 Rate a movie.  A valid session or guest session ID is required. You can read more about how this works [here](#docTextSection:NSZtgz7zptsiLYxXZ).
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **movie_id** | **i32**|  | 
-  **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movie_id** | **i32**|  | 
- **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **guest_session_id** | **String**|  | 
- **session_id** | **String**|  | 
- **body** | [**ValueBody**](ValueBody.md)|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**movie_id** | **i32** |  | Required | 
+**content_type** | **String** |  | Required | [default to application/json;charset=utf-8]
+**guest_session_id** | **String** |  |  | 
+**session_id** | **String** |  |  | 
+**body** | [**ValueBody**](ValueBody.md) |  |  | 
 
 ### Return type
 
-[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
+[**crate::models::StatusCodeMessage**](StatusCodeMessage.md)
 
 ### Authorization
 
@@ -926,3 +729,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

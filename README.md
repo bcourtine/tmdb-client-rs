@@ -76,14 +76,14 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**get_collection_images_list**](docs/CollectionsApi.md#get_collection_images_list) | **get** /collection/{collection_id}/images | Get Images
 *CollectionsApi* | [**get_collection_translations_list**](docs/CollectionsApi.md#get_collection_translations_list) | **get** /collection/{collection_id}/translations | Get Translations
 *CompaniesApi* | [**get_company_details**](docs/CompaniesApi.md#get_company_details) | **get** /company/{company_id} | Get Details
-*CompaniesApi* | [**get_company_movies_paginated**](docs/CompaniesApi.md#get_company_movies_paginated) | **get** /company/{company_id}/movies | Get Movies
 *CompaniesApi* | [**get_company_images**](docs/CompaniesApi.md#get_company_images) | **get** /company/{company_id}/images | Get Images
+*CompaniesApi* | [**get_company_movies_paginated**](docs/CompaniesApi.md#get_company_movies_paginated) | **get** /company/{company_id}/movies | Get Movies
 *ConfigurationApi* | [**get_configuration**](docs/ConfigurationApi.md#get_configuration) | **get** /configuration | Get API Configuration
-*ConfigurationApi* | [**get_timezones_list**](docs/ConfigurationApi.md#get_timezones_list) | **get** /configuration/timezones | Get Timezones
-*ConfigurationApi* | [**get_jobs_list**](docs/JobsApi.md#get_jobs_list) | **get** /configuration/jobs | Get Jobs
 *ConfigurationApi* | [**get_countries_list**](docs/ConfigurationApi.md#get_countries_list) | **get** /configuration/countries | Get Countries
+*ConfigurationApi* | [**get_jobs_list**](docs/ConfigurationApi.md#get_jobs_list) | **get** /configuration/jobs | Get Jobs
 *ConfigurationApi* | [**get_languages_list**](docs/ConfigurationApi.md#get_languages_list) | **get** /configuration/languages | Get Languages
-*ConfigurationApi* | [**get_primary_translations_list**](docs/ConfigurationApi.md#get_primary_translations_list) | **get** /configuration/primary_translations | Get Primary Translations
+*ConfigurationApi* | [**get_primary_translations_list**](docs/ConfigurationApi.md#get_primary_translations_list) | **get** /configuration/primary_translations | Get primary translations
+*ConfigurationApi* | [**get_timezones_list**](docs/ConfigurationApi.md#get_timezones_list) | **get** /configuration/timezones | Get List
 *CreditsApi* | [**get_credit_details**](docs/CreditsApi.md#get_credit_details) | **get** /credit/{credit_id} | Get Details
 *DiscoverApi* | [**get_discover_movie_paginated**](docs/DiscoverApi.md#get_discover_movie_paginated) | **get** /discover/movie | Movie Discover
 *DiscoverApi* | [**get_discover_tv_paginated**](docs/DiscoverApi.md#get_discover_tv_paginated) | **get** /discover/tv | TV Discover
@@ -96,20 +96,20 @@ Class | Method | HTTP request | Description
 *GuestSessionsApi* | [**get_guest_session_rated_tv_paginated**](docs/GuestSessionsApi.md#get_guest_session_rated_tv_paginated) | **get** /guest_session/{guest_session_id}/rated/tv | Get Rated TV Shows
 *KeywordsApi* | [**get_keyword_details**](docs/KeywordsApi.md#get_keyword_details) | **get** /keyword/{keyword_id} | Get Details
 *KeywordsApi* | [**get_movies_by_keyword_paginated**](docs/KeywordsApi.md#get_movies_by_keyword_paginated) | **get** /keyword/{keyword_id}/movies | Get Movies
+*ListsApi* | [**delete_list**](docs/ListsApi.md#delete_list) | **delete** /list/{list_id} | Delete List
 *ListsApi* | [**get_list_details**](docs/ListsApi.md#get_list_details) | **get** /list/{list_id} | Get Details
 *ListsApi* | [**get_list_item_status**](docs/ListsApi.md#get_list_item_status) | **get** /list/{list_id}/item_status | Check Item Status
 *ListsApi* | [**post_list**](docs/ListsApi.md#post_list) | **post** /list | Create List
 *ListsApi* | [**post_list_add_item**](docs/ListsApi.md#post_list_add_item) | **post** /list/{list_id}/add_item | Add Movie
 *ListsApi* | [**post_list_clear**](docs/ListsApi.md#post_list_clear) | **post** /list/{list_id}/clear | Clear List
 *ListsApi* | [**post_list_remove_item**](docs/ListsApi.md#post_list_remove_item) | **post** /list/{list_id}/remove_item | Remove Movie
-*ListsApi* | [**delete_list**](docs/ListsApi.md#delete_list) | **delete** /list/{list_id} | Delete List
 *MoviesApi* | [**delete_movie_rating**](docs/MoviesApi.md#delete_movie_rating) | **delete** /movie/{movie_id}/rating | Delete Rating
 *MoviesApi* | [**get_movie_account_states**](docs/MoviesApi.md#get_movie_account_states) | **get** /movie/{movie_id}/account_states | Get Account States
 *MoviesApi* | [**get_movie_alternative_titles_list**](docs/MoviesApi.md#get_movie_alternative_titles_list) | **get** /movie/{movie_id}/alternative_titles | Get Alternative Titles
 *MoviesApi* | [**get_movie_changes_list**](docs/MoviesApi.md#get_movie_changes_list) | **get** /movie/{movie_id}/changes | Get Changes
 *MoviesApi* | [**get_movie_credits**](docs/MoviesApi.md#get_movie_credits) | **get** /movie/{movie_id}/credits | Get Credits
-*MoviesApi* | [**get_movie_external_ids**](docs/MoviesApi.md#get_movie_external_ids) | **get** /movie/{movie_id}/external_ids | Get External IDs
 *MoviesApi* | [**get_movie_details**](docs/MoviesApi.md#get_movie_details) | **get** /movie/{movie_id} | Get Details
+*MoviesApi* | [**get_movie_external_ids**](docs/MoviesApi.md#get_movie_external_ids) | **get** /movie/{movie_id}/external_ids | Get External IDs
 *MoviesApi* | [**get_movie_images**](docs/MoviesApi.md#get_movie_images) | **get** /movie/{movie_id}/images | Get Images
 *MoviesApi* | [**get_movie_keywords_list**](docs/MoviesApi.md#get_movie_keywords_list) | **get** /movie/{movie_id}/keywords | Get Keywords
 *MoviesApi* | [**get_movie_latest_details**](docs/MoviesApi.md#get_movie_latest_details) | **get** /movie/latest | Get Latest
@@ -125,11 +125,13 @@ Class | Method | HTTP request | Description
 *MoviesApi* | [**get_movie_upcoming_paginated**](docs/MoviesApi.md#get_movie_upcoming_paginated) | **get** /movie/upcoming | Get Upcoming
 *MoviesApi* | [**get_movie_videos_list**](docs/MoviesApi.md#get_movie_videos_list) | **get** /movie/{movie_id}/videos | Get Videos
 *MoviesApi* | [**post_movie_rating**](docs/MoviesApi.md#post_movie_rating) | **post** /movie/{movie_id}/rating | Rate Movie
+*NetworksApi* | [**get_network_alternative_names_list**](docs/NetworksApi.md#get_network_alternative_names_list) | **get** /network/{network_id}/alternative_names | Get Alternative Names
 *NetworksApi* | [**get_network_details**](docs/NetworksApi.md#get_network_details) | **get** /network/{network_id} | Get Details
+*NetworksApi* | [**get_network_images**](docs/NetworksApi.md#get_network_images) | **get** /network/{network_id}/images | Get Images
+*PeopleApi* | [**get_external_ids**](docs/PeopleApi.md#get_external_ids) | **get** /person/{person_id}/external_ids | Get External IDs
 *PeopleApi* | [**get_person_changes**](docs/PeopleApi.md#get_person_changes) | **get** /person/{person_id}/changes | Get Changes
 *PeopleApi* | [**get_person_combined_credits**](docs/PeopleApi.md#get_person_combined_credits) | **get** /person/{person_id}/combined_credits | Get Combined Credits
 *PeopleApi* | [**get_person_details**](docs/PeopleApi.md#get_person_details) | **get** /person/{person_id} | Get Details
-*PeopleApi* | [**get_person_external_ids**](docs/PeopleApi.md#get_person_external_ids) | **get** /person/{person_id}/external_ids | Get External IDs
 *PeopleApi* | [**get_person_images_list**](docs/PeopleApi.md#get_person_images_list) | **get** /person/{person_id}/images | Get Images
 *PeopleApi* | [**get_person_latest_details**](docs/PeopleApi.md#get_person_latest_details) | **get** /person/latest | Get Latest
 *PeopleApi* | [**get_person_movie_credits**](docs/PeopleApi.md#get_person_movie_credits) | **get** /person/{person_id}/movie_credits | Get Movie Credits
@@ -190,7 +192,9 @@ Class | Method | HTTP request | Description
  - [AccountStates](docs/AccountStates.md)
  - [AccountdetailsAvatar](docs/AccountdetailsAvatar.md)
  - [AccountdetailsAvatarGravatar](docs/AccountdetailsAvatarGravatar.md)
+ - [AlternativeNamesList](docs/AlternativeNamesList.md)
  - [AlternativeTitlesList](docs/AlternativeTitlesList.md)
+ - [AlternativenameslistResults](docs/AlternativenameslistResults.md)
  - [AlternativetitleslistTitles](docs/AlternativetitleslistTitles.md)
  - [Cast](docs/Cast.md)
  - [CastDetails](docs/CastDetails.md)
@@ -202,11 +206,13 @@ Class | Method | HTTP request | Description
  - [ChangedetailsItems](docs/ChangedetailsItems.md)
  - [ChangesObject](docs/ChangesObject.md)
  - [ChangesPaginated](docs/ChangesPaginated.md)
+ - [ChangespaginatedAllOf](docs/ChangespaginatedAllOf.md)
  - [CollectionObject](docs/CollectionObject.md)
  - [CollectionPaginated](docs/CollectionPaginated.md)
  - [CollectionPart](docs/CollectionPart.md)
- - [CompanyObject](docs/CompanyObject.md)
  - [CompanyDetails](docs/CompanyDetails.md)
+ - [CompanyObject](docs/CompanyObject.md)
+ - [CompanyPaginated](docs/CompanyPaginated.md)
  - [Configuration](docs/Configuration.md)
  - [ConfigurationImages](docs/ConfigurationImages.md)
  - [Creator](docs/Creator.md)
@@ -229,22 +235,20 @@ Class | Method | HTTP request | Description
  - [GuestStar](docs/GuestStar.md)
  - [Image](docs/Image.md)
  - [Images](docs/Images.md)
- - [MediaFavoriteBody](docs/MediaFavoriteBody.md)
- - [MediaWatchlistBody](docs/MediaWatchlistBody.md)
- - [ListBody](docs/ListBody.md)
- - [MediaIdBody](docs/MediaIdBody.md)
- - [ValueBody](docs/ValueBody.md)
- - [StatusCodeMsgResponse](docs/StatusCodeMsgResponse.md)
  - [ItemStatus](docs/ItemStatus.md)
  - [Jobs](docs/Jobs.md)
  - [Keyword](docs/Keyword.md)
- - [KeywordsList](docs/KeywordsList.md)
  - [KeywordPaginated](docs/KeywordPaginated.md)
+ - [KeywordsList](docs/KeywordsList.md)
+ - [ListBody](docs/ListBody.md)
  - [ListDetails](docs/ListDetails.md)
  - [ListObject](docs/ListObject.md)
  - [ListStatusResponse](docs/ListStatusResponse.md)
  - [ListsPaginated](docs/ListsPaginated.md)
+ - [MediaFavoriteBody](docs/MediaFavoriteBody.md)
+ - [MediaIdBody](docs/MediaIdBody.md)
  - [MediaType](docs/MediaType.md)
+ - [MediaWatchlistBody](docs/MediaWatchlistBody.md)
  - [MovieDetails](docs/MovieDetails.md)
  - [MovieObject](docs/MovieObject.md)
  - [MoviePaginated](docs/MoviePaginated.md)
@@ -267,18 +271,20 @@ Class | Method | HTTP request | Description
  - [SeasonDetails](docs/SeasonDetails.md)
  - [SeasonObject](docs/SeasonObject.md)
  - [SessionResponse](docs/SessionResponse.md)
+ - [StatusCodeMessage](docs/StatusCodeMessage.md)
  - [TaggedImage](docs/TaggedImage.md)
  - [Timezones](docs/Timezones.md)
  - [TokenResponse](docs/TokenResponse.md)
  - [TokenResponseWithExpiration](docs/TokenResponseWithExpiration.md)
- - [TranslationsList](docs/TranslationsList.md)
  - [Translation](docs/Translation.md)
  - [TranslationData](docs/TranslationData.md)
+ - [TranslationsList](docs/TranslationsList.md)
  - [TvDetails](docs/TvDetails.md)
  - [TvEpisodeObject](docs/TvEpisodeObject.md)
  - [TvEpisodesPaginated](docs/TvEpisodesPaginated.md)
  - [TvObject](docs/TvObject.md)
  - [TvPaginated](docs/TvPaginated.md)
+ - [ValueBody](docs/ValueBody.md)
  - [Video](docs/Video.md)
  - [VideosList](docs/VideosList.md)
 
@@ -288,3 +294,8 @@ To get access to the crate's generated documentation, use:
 ```
 cargo doc --open
 ```
+
+## Author
+
+
+

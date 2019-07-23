@@ -13,18 +13,18 @@ Method | HTTP request | Description
 
 ## get_new_authentication_guest_session
 
-> ::models::GuestSessionResponse get_new_authentication_guest_session(ctx, )
+> crate::models::GuestSessionResponse get_new_authentication_guest_session()
 Create Guest Session
 
 This method will let you create a new guest session. Guest sessions are a type of session that will let a user rate movies and TV shows but not require them to have a TMDb user account. More information about user authentication can be found [here](#docTextSection:NSZtgz7zptsiLYxXZ).  Please note, you should only generate a single guest session per user (or device) as you will be able to attach the ratings to a TMDb user account in the future. There is also IP limits in place so you should always make sure it's the end user doing the guest session actions.  If a guest session is not used for the first time within 24 hours, it will be automatically deleted.
 
-### Required Parameters
+### Parameters
 
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**::models::GuestSessionResponse**](GuestSessionResponse.md)
+[**crate::models::GuestSessionResponse**](GuestSessionResponse.md)
 
 ### Authorization
 
@@ -40,22 +40,21 @@ This endpoint does not need any parameter.
 
 ## get_new_authentication_session
 
-> ::models::SessionResponse get_new_authentication_session(ctx, request_token)
+> crate::models::SessionResponse get_new_authentication_session(request_token)
 Create Session
 
 You can use this method to create a fully valid session ID once a user has validated the request token. More information about how this works can be found [here](#docTextSection:NSZtgz7zptsiLYxXZ).
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **request_token** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**request_token** | **String** |  | Required | 
 
 ### Return type
 
-[**::models::SessionResponse**](SessionResponse.md)
+[**crate::models::SessionResponse**](SessionResponse.md)
 
 ### Authorization
 
@@ -71,18 +70,18 @@ Name | Type | Description  | Notes
 
 ## get_new_authentication_token
 
-> ::models::TokenResponseWithExpiration get_new_authentication_token(ctx, )
+> crate::models::TokenResponseWithExpiration get_new_authentication_token()
 Create Request Token
 
 Create a temporary request token that can be used to validate a TMDb user login. More details about how this works can be found [here](#docTextSection:NSZtgz7zptsiLYxXZ).
 
-### Required Parameters
+### Parameters
 
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**::models::TokenResponseWithExpiration**](TokenResponseWithExpiration.md)
+[**crate::models::TokenResponseWithExpiration**](TokenResponseWithExpiration.md)
 
 ### Authorization
 
@@ -98,24 +97,23 @@ This endpoint does not need any parameter.
 
 ## get_validate_authentication_token_with_login
 
-> ::models::TokenResponse get_validate_authentication_token_with_login(ctx, username, password, request_token)
+> crate::models::TokenResponse get_validate_authentication_token_with_login(username, password, request_token)
 Validate Request Token
 
 This method allows an application to validate a request token by entering a username and password.  #### Caution Please note, using this method is **strongly discouraged**. The preferred method of validating a request token is to have a user authenticate the request via the TMDb website. You can read about that method [here](#docTextSection:NSZtgz7zptsiLYxXZ).
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **username** | **String**|  | 
-  **password** | **String**|  | 
-  **request_token** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**username** | **String** |  | Required | 
+**password** | **String** |  | Required | 
+**request_token** | **String** |  | Required | 
 
 ### Return type
 
-[**::models::TokenResponse**](TokenResponse.md)
+[**crate::models::TokenResponse**](TokenResponse.md)
 
 ### Authorization
 
@@ -127,3 +125,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

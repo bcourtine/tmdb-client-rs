@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **credit_id** | **String** |  | [optional] 
 **id** | **i32** |  | [optional] 
 **original_title** | **String** |  | [optional] 
-**poster_path** | **String** |  | [optional]
+**poster_path** | **String** |  | [optional] 
 **release_date** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
 **media_type** | **String** |  | [optional] 
@@ -19,4 +19,5 @@ Name | Type | Description | Notes
 **original_name** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

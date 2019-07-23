@@ -12,32 +12,22 @@ Method | HTTP request | Description
 
 ## get_collection_details
 
-> ::models::CollectionObject get_collection_details(ctx, collection_id, optional)
+> crate::models::CollectionObject get_collection_details(collection_id, language)
 Get Details
 
 Get collection details by id.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **collection_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collection_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**collection_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::CollectionObject**](CollectionObject.md)
+[**crate::models::CollectionObject**](collectionObject.md)
 
 ### Authorization
 
@@ -53,32 +43,22 @@ Name | Type | Description  | Notes
 
 ## get_collection_images_list
 
-> ::models::Images get_collection_images_list(ctx, collection_id, optional)
+> crate::models::Images get_collection_images_list(collection_id, language)
 Get Images
 
 Get the images for a collection by id.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **collection_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collection_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**collection_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::Images**](Images.md)
+[**crate::models::Images**](Images.md)
 
 ### Authorization
 
@@ -94,26 +74,22 @@ Name | Type | Description  | Notes
 
 ## get_collection_translations_list
 
-> ::models::TranslationsList get_collection_translations_list(ctx, collection_id, language)
+> crate::models::TranslationsList get_collection_translations_list(collection_id, language)
 Get Translations
 
-Get the translations for a collection by id.
+Get the list translations for a collection by id.
 
-### Required Parameters
+### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collection_id** | **i32**|  | 
 
-### Optional Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**collection_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::TranslationsList**](TranslationsList.md)
+[**crate::models::TranslationsList**](TranslationsList.md)
 
 ### Authorization
 
@@ -125,3 +101,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**adult** | **bool** |  | [optional]
-**backdrop_path** | **String** |  | [optional]
+**adult** | **bool** |  | [optional] 
+**backdrop_path** | **String** |  | [optional] 
 **genre_ids** | **Vec<i32>** |  | [optional] 
 **id** | **i32** |  | [optional] 
 **original_language** | **String** |  | [optional] 
@@ -20,4 +20,5 @@ Name | Type | Description | Notes
 **vote_count** | **i32** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

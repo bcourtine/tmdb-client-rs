@@ -12,30 +12,21 @@ Method | HTTP request | Description
 
 ## get_all_movie_genres_list
 
-> ::models::GenresList get_all_movie_genres_list(ctx, optional)
+> crate::models::GenresList get_all_movie_genres_list(language)
 Get Movie List
 
 Get the list of official genres for movies.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** |  |  | 
 
 ### Return type
 
-[**::models::GenresList**](GenresList.md)
+[**crate::models::GenresList**](GenresList.md)
 
 ### Authorization
 
@@ -51,30 +42,21 @@ Name | Type | Description  | Notes
 
 ## get_all_tv_genres_list
 
-> ::models::GenresList get_all_tv_genres_list(ctx, optional)
+> crate::models::GenresList get_all_tv_genres_list(language)
 Get TV List
 
 Get the list of official genres for TV shows.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::GenresList**](GenresList.md)
+[**crate::models::GenresList**](GenresList.md)
 
 ### Authorization
 
@@ -90,34 +72,24 @@ Name | Type | Description  | Notes
 
 ## get_movies_by_genre_paginated
 
-> ::models::MoviePaginated get_movies_by_genre_paginated(ctx, genre_id, optional)
+> crate::models::MoviePaginated get_movies_by_genre_paginated(genre_id, language, include_adult, sort_by)
 Get Movies
 
 Get a list of movies by genre id.  We highly recommend using [movie discover](#endpoint:p5NyoR7dM842S8G9j) instead of this method as it is much more flexible.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **genre_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **genre_id** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **include_adult** | **bool**| Choose whether to inlcude adult (pornography) content in the results. | [default to false]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**genre_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**include_adult** | **bool** | Choose whether to inlcude adult (pornography) content in the results. |  | [default to false]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -129,3 +101,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

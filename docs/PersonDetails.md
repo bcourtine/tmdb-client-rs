@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adult** | **bool** |  | [optional] 
-**also_known_as** | [**Vec<Value>**](Value.md) |  | [optional] 
+**also_known_as** | [**Vec<serde_json::Value>**](serde_json::Value.md) |  | [optional] 
 **biography** | **String** |  | [optional] 
 **birthday** | **String** |  | [optional] 
 **deathday** | **String** |  | [optional] 
@@ -16,7 +16,8 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **place_of_birth** | **String** |  | [optional] 
 **popularity** | **f32** |  | [optional] 
-**profile_path** | **String** |  | [optional]
+**profile_path** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

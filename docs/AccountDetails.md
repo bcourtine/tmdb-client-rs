@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**avatar** | [***::models::AccountdetailsAvatar**](AccountdetailsAvatar.md) |  | [optional]
+**avatar** | [***crate::models::AccountdetailsAvatar**](accountdetails_avatar.md) |  | [optional] 
 **id** | **i32** |  | [optional] 
 **iso_639_1** | **String** |  | [optional] 
 **iso_3166_1** | **String** |  | [optional] 
@@ -13,4 +13,5 @@ Name | Type | Description | Notes
 **username** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

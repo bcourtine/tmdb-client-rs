@@ -16,36 +16,25 @@ Method | HTTP request | Description
 
 ## get_tv_season_account_states
 
-> ::models::EpisodeRatingList get_tv_season_account_states(ctx, tv_id, season_number, optional)
+> crate::models::EpisodeRatingList get_tv_season_account_states(tv_id, season_number, language, guest_session_id, session_id)
 Get Account States
 
 Returns all of the user ratings for the season's episodes.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
-  **season_number** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **season_number** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **guest_session_id** | **String**|  | 
- **session_id** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**season_number** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**guest_session_id** | **String** |  |  | 
+**session_id** | **String** |  |  | 
 
 ### Return type
 
-[**::models::EpisodeRatingList**](EpisodeRatingList.md)
+[**crate::models::EpisodeRatingList**](EpisodeRatingList.md)
 
 ### Authorization
 
@@ -61,34 +50,24 @@ Name | Type | Description  | Notes
 
 ## get_tv_season_changes
 
-> ::models::ChangeDetails get_tv_season_changes(ctx, season_id, optional)
+> crate::models::ChangeDetails get_tv_season_changes(season_id, start_date, end_date, page)
 Get  Changes
 
 Get the changes for a TV season. By default only the last 24 hours are returned.  You can query up to 14 days in a single query by using the `start_date` and `end_date` query parameters.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **season_id** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **season_id** | **i32**|  | 
- **start_date** | **String**| Filter the results with a start date. | 
- **end_date** | **String**| Filter the results with a end date. | 
- **page** | **i32**| Specify which page to query. | [default to 1]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**season_id** | **i32** |  | Required | 
+**start_date** | **String** | Filter the results with a start date. |  | 
+**end_date** | **String** | Filter the results with a end date. |  | 
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
-[**::models::ChangeDetails**](ChangeDetails.md)
+[**crate::models::ChangeDetails**](ChangeDetails.md)
 
 ### Authorization
 
@@ -104,34 +83,23 @@ Name | Type | Description  | Notes
 
 ## get_tv_season_credits
 
-> ::models::Credits get_tv_season_credits(ctx, tv_id, season_number, optional)
+> crate::models::Credits get_tv_season_credits(tv_id, season_number, language)
 Get Credits
 
 Get the credits for TV season.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
-  **season_number** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **season_number** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**season_number** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::Credits**](Credits.md)
+[**crate::models::Credits**](Credits.md)
 
 ### Authorization
 
@@ -147,35 +115,24 @@ Name | Type | Description  | Notes
 
 ## get_tv_season_details
 
-> ::models::SeasonDetails get_tv_season_details(ctx, tv_id, season_number, optional)
+> crate::models::SeasonDetails get_tv_season_details(tv_id, season_number, language, append_to_response)
 Get Details
 
 Get the TV season details by id.  Supports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
-  **season_number** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **season_number** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **append_to_response** | **String**| Append requests within the same namespace to the response. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**season_number** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**append_to_response** | **String** | Append requests within the same namespace to the response. |  | 
 
 ### Return type
 
-[**::models::SeasonDetails**](SeasonDetails.md)
+[**crate::models::SeasonDetails**](SeasonDetails.md)
 
 ### Authorization
 
@@ -191,34 +148,23 @@ Name | Type | Description  | Notes
 
 ## get_tv_season_external_ids
 
-> ::models::ExternalIds get_tv_season_external_ids(ctx, tv_id, season_number, optional)
+> crate::models::ExternalIds get_tv_season_external_ids(tv_id, season_number, language)
 Get External IDs
 
 Get the external ids for a TV season. We currently support the following external sources.  | **External Sources** | | -------------------- | | Freebase MID         | | Freebase ID          | | TVDB ID              | | TVRage ID            |
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
-  **season_number** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **season_number** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**season_number** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::ExternalIds**](ExternalIds.md)
+[**crate::models::ExternalIds**](ExternalIds.md)
 
 ### Authorization
 
@@ -234,34 +180,23 @@ Name | Type | Description  | Notes
 
 ## get_tv_season_images
 
-> ::models::Images get_tv_season_images(ctx, tv_id, season_number, optional)
+> crate::models::Images get_tv_season_images(tv_id, season_number, language)
 Get Images
 
 Get the images that belong to a TV season.  Querying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
-  **season_number** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **season_number** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**season_number** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::Images**](Images.md)
+[**crate::models::Images**](Images.md)
 
 ### Authorization
 
@@ -277,34 +212,23 @@ Name | Type | Description  | Notes
 
 ## get_tv_season_videos
 
-> ::models::VideosList get_tv_season_videos(ctx, tv_id, season_number, optional)
+> crate::models::VideosList get_tv_season_videos(tv_id, season_number, language)
 Get Videos
 
 Get the videos that have been added to a TV season.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **tv_id** | **i32**|  | 
-  **season_number** | **i32**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tv_id** | **i32**|  | 
- **season_number** | **i32**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**season_number** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::VideosList**](VideosList.md)
+[**crate::models::VideosList**](VideosList.md)
 
 ### Authorization
 
@@ -316,3 +240,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

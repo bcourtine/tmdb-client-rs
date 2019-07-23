@@ -20,35 +20,24 @@ Method | HTTP request | Description
 
 ## get_account_favorite_movies_paginated
 
-> ::models::MoviePaginated get_account_favorite_movies_paginated(ctx, account_id, session_id, optional)
+> crate::models::MoviePaginated get_account_favorite_movies_paginated(account_id, session_id, language, sort_by)
 Get Favorite Movies
 
 Get the list of your favorite movies.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **account_id** | **i32**|  | 
-  **session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **i32**|  | 
- **session_id** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **i32** |  | Required | 
+**session_id** | **String** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -64,35 +53,24 @@ Name | Type | Description  | Notes
 
 ## get_account_favorite_tv_paginated
 
-> ::models::TvPaginated get_account_favorite_tv_paginated(ctx, account_id, session_id, optional)
+> crate::models::TvPaginated get_account_favorite_tv_paginated(account_id, session_id, language, sort_by)
 Get Favorite TV Shows
 
 Get the list of your favorite TV shows.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **account_id** | **i32**|  | 
-  **session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **i32**|  | 
- **session_id** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **i32** |  | Required | 
+**session_id** | **String** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::TvPaginated**](TvPaginated.md)
+[**crate::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -108,35 +86,24 @@ Name | Type | Description  | Notes
 
 ## get_account_rated_movies_paginated
 
-> ::models::MoviePaginated get_account_rated_movies_paginated(ctx, account_id, session_id, optional)
+> crate::models::MoviePaginated get_account_rated_movies_paginated(account_id, session_id, language, sort_by)
 Get Rated Movies
 
 Get a list of all the movies you have rated.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **account_id** | **i32**|  | 
-  **session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **i32**|  | 
- **session_id** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **i32** |  | Required | 
+**session_id** | **String** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -152,35 +119,24 @@ Name | Type | Description  | Notes
 
 ## get_account_rated_tv_episodes_paginated
 
-> ::models::TvEpisodesPaginated get_account_rated_tv_episodes_paginated(ctx, account_id, session_id, optional)
+> crate::models::TvEpisodesPaginated get_account_rated_tv_episodes_paginated(account_id, session_id, language, sort_by)
 Get Rated TV Episodes
 
 Get a list of all the TV episodes you have rated.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **account_id** | **String**|  | 
-  **session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **String**|  | 
- **session_id** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **String** |  | Required | 
+**session_id** | **String** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::TvEpisodesPaginated**](TvEpisodesPaginated.md)
+[**crate::models::TvEpisodesPaginated**](TvEpisodesPaginated.md)
 
 ### Authorization
 
@@ -196,35 +152,24 @@ Name | Type | Description  | Notes
 
 ## get_account_rated_tv_paginated
 
-> ::models::TvPaginated get_account_rated_tv_paginated(ctx, account_id, session_id, optional)
+> crate::models::TvPaginated get_account_rated_tv_paginated(account_id, session_id, language, sort_by)
 Get Rated TV Shows
 
 Get a list of all the TV shows you have rated.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **account_id** | **i32**|  | 
-  **session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **i32**|  | 
- **session_id** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **i32** |  | Required | 
+**session_id** | **String** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::TvPaginated**](TvPaginated.md)
+[**crate::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -240,35 +185,24 @@ Name | Type | Description  | Notes
 
 ## get_account_watchlist_movies_paginated
 
-> ::models::MoviePaginated get_account_watchlist_movies_paginated(ctx, account_id, session_id, optional)
+> crate::models::MoviePaginated get_account_watchlist_movies_paginated(account_id, session_id, language, sort_by)
 Get Movie Watchlist
 
 Get a list of all the movies you have added to your watchlist.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **account_id** | **i32**|  | 
-  **session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **i32**|  | 
- **session_id** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **i32** |  | Required | 
+**session_id** | **String** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::MoviePaginated**](MoviePaginated.md)
+[**crate::models::MoviePaginated**](MoviePaginated.md)
 
 ### Authorization
 
@@ -284,35 +218,24 @@ Name | Type | Description  | Notes
 
 ## get_account_watchlist_tv_paginated
 
-> ::models::TvPaginated get_account_watchlist_tv_paginated(ctx, account_id, session_id, optional)
+> crate::models::TvPaginated get_account_watchlist_tv_paginated(account_id, session_id, language, sort_by)
 Get TV Show Watchlist
 
 Get a list of all the TV shows you have added to your watchlist.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **account_id** | **i32**|  | 
-  **session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **i32**|  | 
- **session_id** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
- **sort_by** | **String**| Sort the results. | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **i32** |  | Required | 
+**session_id** | **String** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+**sort_by** | **String** | Sort the results. |  | 
 
 ### Return type
 
-[**::models::TvPaginated**](TvPaginated.md)
+[**crate::models::TvPaginated**](TvPaginated.md)
 
 ### Authorization
 
@@ -328,22 +251,21 @@ Name | Type | Description  | Notes
 
 ## get_current_account_details
 
-> ::models::AccountDetails get_current_account_details(ctx, session_id)
+> crate::models::AccountDetails get_current_account_details(session_id)
 Get Details
 
 Get your account details.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **session_id** | **String**|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**session_id** | **String** |  | Required | 
 
 ### Return type
 
-[**::models::AccountDetails**](AccountDetails.md)
+[**crate::models::AccountDetails**](AccountDetails.md)
 
 ### Authorization
 
@@ -359,35 +281,24 @@ Name | Type | Description  | Notes
 
 ## get_current_account_lists_paginated
 
-> ::models::ListsPaginated get_current_account_lists_paginated(ctx, account_id, session_id, optional)
+> crate::models::ListsPaginated get_current_account_lists_paginated(account_id, session_id, api_key, language)
 Get Created Lists
 
 Get all of the lists created by an account. Will invlude private lists if you are the owner.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **account_id** | **i32**|  | 
-  **session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **i32**|  | 
- **session_id** | **String**|  | 
- **api_key** | **String**|  | 
- **language** | **String**| Pass a ISO 639-1 value to display translated data for the fields that support it. | [default to <<language>>]
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **i32** |  | Required | 
+**session_id** | **String** |  | Required | 
+**api_key** | **String** |  |  | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
-[**::models::ListsPaginated**](ListsPaginated.md)
+[**crate::models::ListsPaginated**](ListsPaginated.md.md)
 
 ### Authorization
 
@@ -403,36 +314,24 @@ Name | Type | Description  | Notes
 
 ## post_account_favorite
 
-> ::models::StatusCodeMsgResponse post_account_favorite(ctx, account_id, session_id, content_type, optional)
+> crate::models::StatusCodeMessage post_account_favorite(account_id, session_id, content_type, body)
 Mark as Favorite
 
 This method allows you to mark a movie or TV show as a favorite item.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **account_id** | **i32**|  | 
-  **session_id** | **String**|  | 
-  **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **i32**|  | 
- **session_id** | **String**|  | 
- **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **body** | [**InlineObject**](InlineObject.md)|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **i32** |  | Required | 
+**session_id** | **String** |  | Required | 
+**content_type** | **String** |  | Required | [default to application/json;charset=utf-8]
+**body** | [**MediaFavoriteBody**](MediaFavoriteBody.md) |  |  | 
 
 ### Return type
 
-[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
+[**crate::models::StatusCodeMessage**](StatusCodeMessage.md)
 
 ### Authorization
 
@@ -448,36 +347,24 @@ Name | Type | Description  | Notes
 
 ## post_account_watchlist
 
-> ::models::StatusCodeMsgResponse post_account_watchlist(ctx, account_id, content_type, session_id, optional)
+> crate::models::StatusCodeMessage post_account_watchlist(account_id, content_type, session_id, body)
 Add to Watchlist
 
 Add a movie or TV show to your watchlist.
 
-### Required Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **account_id** | **i32**|  | 
-  **content_type** | **String**|  | [default to application/json;charset=utf-8]
-  **session_id** | **String**|  | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **i32**|  | 
- **content_type** | **String**|  | [default to application/json;charset=utf-8]
- **session_id** | **String**|  | 
- **body** | [**MediaWatchlistBody**](MediaWatchlistBody.md)|  | 
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **i32** |  | Required | 
+**content_type** | **String** |  | Required | [default to application/json;charset=utf-8]
+**session_id** | **String** |  | Required | 
+**body** | [**MediaWatchlistBody**](MediaWatchlistBody.md) |  |  | 
 
 ### Return type
 
-[**::models::StatusCodeMsgResponse**](StatusCodeMsgResponse.md)
+[**crate::models::StatusCodeMessage**](StatusCodeMessage.md)
 
 ### Authorization
 
@@ -489,3 +376,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

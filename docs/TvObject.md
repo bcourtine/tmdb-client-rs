@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**poster_path** | **String** |  | [optional]
+**poster_path** | **String** |  | [optional] 
 **popularity** | **f32** |  | [optional] 
 **id** | **i32** |  | [optional] 
-**backdrop_path** | **String** |  | [optional]
+**backdrop_path** | **String** |  | [optional] 
 **vote_average** | **f32** |  | [optional] 
 **overview** | **String** |  | [optional] 
 **first_air_date** | **String** |  | [optional] 
@@ -21,4 +21,5 @@ Name | Type | Description | Notes
 **media_type** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

@@ -8,11 +8,12 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **favorite_count** | **i32** |  | [optional] 
 **id** | **String** |  | [optional] 
-**items** | [**Vec<::models::MovieObject>**](MovieObject.md) |  | [optional] 
+**items** | [**Vec<crate::models::MovieObject>**](MovieObject.md) |  | [optional] 
 **item_count** | **i32** |  | [optional] 
 **iso_639_1** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**poster_path** | **String** |  | [optional]
+**poster_path** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 
