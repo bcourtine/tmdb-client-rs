@@ -9,16 +9,16 @@
  */
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct StatusCodeMsgResponse {
+pub struct StatusCodeMessage {
     #[serde(rename = "status_message", skip_serializing_if = "Option::is_none")]
     pub status_message: Option<String>,
     #[serde(rename = "status_code", skip_serializing_if = "Option::is_none")]
     pub status_code: Option<i32>,
 }
 
-impl StatusCodeMsgResponse {
-    pub fn new() -> StatusCodeMsgResponse {
-        StatusCodeMsgResponse {
+impl StatusCodeMessage {
+    pub fn new() -> StatusCodeMessage {
+        StatusCodeMessage {
             status_message: None,
             status_code: None,
         }

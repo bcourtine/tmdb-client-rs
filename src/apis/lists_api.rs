@@ -51,25 +51,25 @@ pub trait ListsApi {
         content_type: &str,
         session_id: &str,
         body: Option<crate::models::MediaIdBody>,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
+    ) -> Result<crate::models::StatusCodeMessage, Error>;
     fn post_list_clear(
         &self,
         list_id: &str,
         confirm: bool,
         session_id: &str,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
+    ) -> Result<crate::models::StatusCodeMessage, Error>;
     fn post_list_remove_item(
         &self,
         list_id: &str,
         content_type: &str,
         session_id: &str,
         body: Option<crate::models::MediaIdBody>,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
+    ) -> Result<crate::models::StatusCodeMessage, Error>;
     fn delete_list(
         &self,
         list_id: &str,
         session_id: &str,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
+    ) -> Result<crate::models::StatusCodeMessage, Error>;
 }
 
 impl ListsApi for ListsApiClient {
@@ -167,7 +167,7 @@ impl ListsApi for ListsApiClient {
         content_type: &str,
         session_id: &str,
         body: Option<crate::models::MediaIdBody>,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
+    ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
@@ -199,7 +199,7 @@ impl ListsApi for ListsApiClient {
         list_id: &str,
         confirm: bool,
         session_id: &str,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
+    ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
@@ -231,7 +231,7 @@ impl ListsApi for ListsApiClient {
         content_type: &str,
         session_id: &str,
         body: Option<crate::models::MediaIdBody>,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
+    ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
@@ -262,7 +262,7 @@ impl ListsApi for ListsApiClient {
         &self,
         list_id: &str,
         session_id: &str,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
+    ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 

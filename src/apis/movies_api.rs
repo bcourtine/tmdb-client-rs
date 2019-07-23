@@ -35,7 +35,7 @@ pub trait MoviesApi {
         content_type: &str,
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
+    ) -> Result<crate::models::StatusCodeMessage, Error>;
     fn get_movie_account_states(
         &self,
         movie_id: &str,
@@ -152,7 +152,7 @@ pub trait MoviesApi {
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
         body: Option<crate::models::ValueBody>,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error>;
+    ) -> Result<crate::models::StatusCodeMessage, Error>;
 }
 
 impl MoviesApi for MoviesApiClient {
@@ -162,7 +162,7 @@ impl MoviesApi for MoviesApiClient {
         content_type: &str,
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
+    ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
@@ -869,7 +869,7 @@ impl MoviesApi for MoviesApiClient {
         guest_session_id: Option<&str>,
         session_id: Option<&str>,
         body: Option<crate::models::ValueBody>,
-    ) -> Result<crate::models::StatusCodeMsgResponse, Error> {
+    ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 

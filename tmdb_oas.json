@@ -10488,119 +10488,35 @@
             "name": "body",
             "in": "body",
             "schema": {
-                "type": "object",
-                "properties": {
-                    "media_type": {
-                        "$ref": "#/definitions/media-type"
-                    },
-                    "media_id": {
-                        "type": "integer"
-                    },
-                    "watchlist": {
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "media_type",
-                    "media_id",
-                    "watchlist"
-                ],
-                "example": {
-                    "media_type": "movie",
-                    "media_id": 11,
-                    "watchlist": true
-                }
+                "$ref": "#/definitions/media-watchlist-body"
             }
         },
         "trait:mediaFavoriteBody": {
             "name": "body",
             "in": "body",
             "schema": {
-                "type": "object",
-                "properties": {
-                    "media_type": {
-                        "$ref": "#/definitions/media-type"
-                    },
-                    "media_id": {
-                        "type": "integer"
-                    },
-                    "favorite": {
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "media_type",
-                    "media_id",
-                    "favorite"
-                ],
-                "example": {
-                    "media_type": "movie",
-                    "media_id": 550,
-                    "favorite": true
-                }
+                "$ref": "#/definitions/media-favorite-body"
             }
         },
         "trait:listBody": {
             "name": "body",
             "in": "body",
             "schema": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string"
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "language": {
-                        "type": "string"
-                    }
-                },
-                "example": {
-                    "name": "This is my awesome test list.",
-                    "description": "Just an awesome list dawg.",
-                    "language": "en"
-                }
+                "$ref": "#/definitions/list-body"
             }
         },
         "trait:mediaIdBody": {
             "name": "body",
             "in": "body",
             "schema": {
-                "type": "object",
-                "properties": {
-                    "media_id": {
-                        "type": "integer",
-                        "minimum": 1
-                    }
-                },
-                "required": [
-                    "media_id"
-                ],
-                "example": {
-                    "media_id": 18
-                }
+                "$ref": "#/definitions/media-id-body"
             }
         },
         "trait:ratingBody": {
             "name": "body",
             "in": "body",
             "schema": {
-                "type": "object",
-                "properties": {
-                    "value": {
-                        "type": "number",
-                        "minimum": 0.5,
-                        "maximum": 10,
-                        "description": "This is the value of the rating you want to submit. The value is expected to be between 0.5 and 10.0."
-                    }
-                },
-                "required": [
-                    "value"
-                ],
-                "example": {
-                    "value": 8.5
-                }
+                "$ref": "#/definitions/value-body"
             }
         }
     },
@@ -10608,15 +10524,7 @@
         "StatusCodeMsgResponse": {
             "description": "",
             "schema": {
-                "type": "object",
-                "properties": {
-                    "status_code": {
-                        "type": "integer"
-                    },
-                    "status_message": {
-                        "type": "string"
-                    }
-                }
+                "$ref": "#/definitions/status-code-message"
             },
             "examples": {
                 "application/json": {
@@ -10627,6 +10535,105 @@
         }
     },
     "definitions": {
+        "media-watchlist-body": {
+            "type": "object",
+            "properties": {
+                "media_type": {
+                    "$ref": "#/definitions/media-type"
+                },
+                "media_id": {
+                    "type": "integer"
+                },
+                "watchlist": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "media_type",
+                "media_id",
+                "watchlist"
+            ],
+            "example": {
+                "media_type": "movie",
+                "media_id": 11,
+                "watchlist": true
+            }
+        },
+        "media-favorite-body": {
+            "type": "object",
+            "properties": {
+                "media_type": {
+                    "$ref": "#/definitions/media-type"
+                },
+                "media_id": {
+                    "type": "integer"
+                },
+                "favorite": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "media_type",
+                "media_id",
+                "favorite"
+            ],
+            "example": {
+                "media_type": "movie",
+                "media_id": 550,
+                "favorite": true
+            }
+        },
+        "value-body": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "number",
+                    "minimum": 0.5,
+                    "maximum": 10,
+                    "description": "This is the value of the rating you want to submit. The value is expected to be between 0.5 and 10.0."
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "example": {
+                "value": 8.5
+            }
+        },
+        "media-id-body": {
+            "type": "object",
+            "properties": {
+                "media_id": {
+                    "type": "integer",
+                    "minimum": 1
+                }
+            },
+            "required": [
+                "media_id"
+            ],
+            "example": {
+                "media_id": 18
+            }
+        },
+        "list-body": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "name": "This is my awesome test list.",
+                "description": "Just an awesome list dawg.",
+                "language": "en"
+            }
+        },
         "trait:paginated": {
             "type": "object",
             "properties": {
@@ -10646,6 +10653,17 @@
             "properties": {
                 "id": {
                     "type": "integer"
+                }
+            }
+        },
+        "status-code-message": {
+            "type": "object",
+            "properties": {
+                "status_code": {
+                    "type": "integer"
+                },
+                "status_message": {
+                    "type": "string"
                 }
             }
         },
