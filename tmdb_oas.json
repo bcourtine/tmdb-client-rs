@@ -852,6 +852,91 @@
                 ]
             }
         },
+        "/authentication/session": {
+            "delete": {
+                "operationId": "delete-authentication-session",
+                "summary": "Delete Session",
+                "tags": [
+                    "Authentication"
+                ],
+                "description": "If you would like to delete (or \"logout\") from a session, call this method with a valid session ID.",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:session:session_id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/success-response"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "success": true
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/authentication/session/convert/4": {
+            "post": {
+                "operationId": "post-authentication-session-convert-4",
+                "summary": "Create Session (from v4 access token)",
+                "tags": [
+                    "Authentication"
+                ],
+                "description": "Use this method to create a v3 session ID if you already have a valid v4 access token. The v4 token needs to be authenticated by the user. Your standard \"read token\" will not validate to create a session ID.",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:tokenBody"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/session-response"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "success": true,
+                                "session_id": "2629f70fb498edc263a0adb99118ac41f0053e8c"
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/authentication/session/new": {
             "get": {
                 "operationId": "get-new-authentication-session",
@@ -7810,6 +7895,78 @@
                 ]
             }
         },
+        "/tv/{tv_id}/episode_groups": {
+            "parameters": [
+                {
+                    "name": "tv_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-tv-episode-groups",
+                "summary": "Get Episode Groups",
+                "tags": [
+                    "TV"
+                ],
+                "description": "Get all of the episode groups that have been created for a TV show.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/episode-group-list"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "results": [
+                                    {
+                                        "description": "All episodes chronologically split by calendar year.",
+                                        "episode_count": 903,
+                                        "group_count": 23,
+                                        "id": "5af83d88c3a3682ac8007b28",
+                                        "name": "Year Split",
+                                        "network": {
+                                            "id": 569,
+                                            "logo_path": "/cIMyE9cw1W4kMFGxmC17HKTnVz9.png",
+                                            "name": "Yomiuri Telecasting Corporation",
+                                            "origin_country": "JP"
+                                        },
+                                        "type": 1
+                                    },
+                                    {
+                                        "description": "All specials chronologically split by different groups of specials, for examples, OVAs and Magic Files.",
+                                        "episode_count": 50,
+                                        "group_count": 7,
+                                        "id": "5b09cf3892514146fb007a0e",
+                                        "name": "Specials",
+                                        "network": null,
+                                        "type": 1
+                                    }
+                                ],
+                                "id": 30983
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/tv/{tv_id}/external_ids": {
             "parameters": [
                 {
@@ -8420,6 +8577,60 @@
                         "$ref": "#/responses/StatusCodeMsgResponse"
                     },
                     "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/tv/{tv_id}/screened_theatrically": {
+            "parameters": [
+                {
+                    "name": "tv_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "operationId": "get-tv-screened-theatrically",
+                "summary": "Get Screened Theatrically",
+                "tags": [
+                    "TV"
+                ],
+                "description": "Get a list of seasons or episodes that have been screened in a film festival or theatre.",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/season-episode-list"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "id": 68716,
+                                "results": [
+                                    {
+                                        "id": 1279700,
+                                        "episode_number": 1,
+                                        "season_number": 1
+                                    },
+                                    {
+                                        "id": 1332116,
+                                        "episode_number": 2,
+                                        "season_number": 1
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
                         "$ref": "#/responses/StatusCodeMsgResponse"
                     }
                 },
@@ -9991,6 +10202,174 @@
                 ]
             }
         },
+        "/tv/episode_group/{episode_group_id}": {
+            "parameters": [
+                {
+                    "name": "episode_group_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "operationId": "get-episode-group-details",
+                "summary": "Get Details",
+                "tags": [
+                    "TV Episode Groups"
+                ],
+                "description": "Get the details of a TV episode group. Groups support 7 different types which are enumerated as the following:\n1. Original air date\n2. Absolute\n3. DVD\n4. Digital\n5. Story arc\n6. Production\n7. TV.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/episode-group-details"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "description": "Comedians in Cars organized in Netflix's collections.",
+                                "episode_count": 71,
+                                "group_count": 5,
+                                "groups": [
+                                    {
+                                        "id": "5acf93efc3a368739a0000a9",
+                                        "name": "First Cup",
+                                        "order": 1,
+                                        "episodes": [
+                                            {
+                                                "air_date": "2015-06-17",
+                                                "episode_number": 3,
+                                                "id": 1078262,
+                                                "name": "Jim Carrey: We Love Breathing What You're Burning, Baby",
+                                                "overview": "Jerry’s full of testosterone as he steps into a ‘76 Lamborghini Countach with Jim Carrey, who’s between a three-week cleanse and a five-day silent retreat. After coffee, it’s off to Carrey’s studio to study a portrait of a gorilla with a machine gun. Wow.",
+                                                "production_code": null,
+                                                "season_number": 6,
+                                                "show_id": 59717,
+                                                "still_path": "/aOyE420zuFq9zWtEWjIccAiTrzU.jpg",
+                                                "vote_average": 0,
+                                                "vote_count": 0,
+                                                "order": 0
+                                            },
+                                            {
+                                                "air_date": "2014-12-18",
+                                                "episode_number": 7,
+                                                "id": 1033379,
+                                                "name": "Jimmy Fallon: The Unsinkable Legend: Part 1",
+                                                "overview": "Jerry and his special guest Jimmy Fallon cruise over to Jerry's actual car in a 1956 Chevy Corvette convertible to hop aboard yet another vehicle to enjoy some comedic sailing out at sea.",
+                                                "production_code": null,
+                                                "season_number": 5,
+                                                "show_id": 59717,
+                                                "still_path": "/m9wwqDv6mPMcIpGrh7nkR4zQp3s.jpg",
+                                                "vote_average": 0,
+                                                "vote_count": 0,
+                                                "order": 1
+                                            }
+                                        ],
+                                        "locked": true
+                                    },
+                                    {
+                                        "id": "5acf93f69251413b390000dd",
+                                        "name": "Light & Sweet",
+                                        "order": 2,
+                                        "episodes": [
+                                            {
+                                                "air_date": "2015-12-30",
+                                                "episode_number": 1,
+                                                "id": 1149915,
+                                                "name": "President Barack Obama: Just Tell Him You’re the President",
+                                                "overview": "For the premiere episode of Season 7, Jerry takes President Barack Obama for a spin in a 1963 Corvette Stingray Split Window Coupe but finds it hard to spirit the leader of the free world off the White House grounds.",
+                                                "production_code": null,
+                                                "season_number": 7,
+                                                "show_id": 59717,
+                                                "still_path": "/zKkizD50quQHzlOGl54zMc4DNlM.jpg",
+                                                "vote_average": 0,
+                                                "vote_count": 0,
+                                                "order": 0
+                                            },
+                                            {
+                                                "air_date": "2014-11-06",
+                                                "episode_number": 1,
+                                                "id": 1021931,
+                                                "name": "Kevin Hart: You Look Amazing in the Wind",
+                                                "overview": "Jerry Seinfeld and his special guest Kevin Hart stylishly cruise around town in a 1959 Porsche RSK Spyder for their \"weird male date.\" Plus special extra feature: \"Dick Corcoran\"",
+                                                "production_code": null,
+                                                "season_number": 5,
+                                                "show_id": 59717,
+                                                "still_path": "/4VwK7ceYcVtYqqivXR0DhNEhYXJ.jpg",
+                                                "vote_average": 0,
+                                                "vote_count": 0,
+                                                "order": 1
+                                            }
+                                        ],
+                                        "locked": true
+                                    },
+                                    {
+                                        "id": "5acf93fdc3a36873920000b9",
+                                        "name": "Just Made a Fresh Pot",
+                                        "order": 3,
+                                        "episodes": [
+                                            {
+                                                "air_date": "2014-11-13",
+                                                "episode_number": 2,
+                                                "id": 1021932,
+                                                "name": "Amy Schumer: I'm Wondering What It's Like to Date Me",
+                                                "overview": "Jerry Seinfeld and his special guest Amy Schumer check out “cute bongs” as they walk to a local diner for some coffee after their 1971 Ferrari Daytona breaks down.",
+                                                "production_code": null,
+                                                "season_number": 5,
+                                                "show_id": 59717,
+                                                "still_path": "/y4u7S6qtWXeDLxCS7lhSDQ52QOn.jpg",
+                                                "vote_average": 0,
+                                                "vote_count": 0,
+                                                "order": 0
+                                            },
+                                            {
+                                                "air_date": "2015-06-10",
+                                                "episode_number": 2,
+                                                "id": 1074965,
+                                                "name": "Steve Harvey: Always Do the Banana Joke First",
+                                                "overview": "Jerry and Steve Harvey prowl Chicago in a ‘57 Chevy Bel Air convertible, enjoy some fine cigars and muse about offensive jokes and the futility of comedy class.",
+                                                "production_code": null,
+                                                "season_number": 6,
+                                                "show_id": 59717,
+                                                "still_path": "/52QtVCQpRyyYgm6nKuHilcfcpUj.jpg",
+                                                "vote_average": 0,
+                                                "vote_count": 0,
+                                                "order": 1
+                                            }
+                                        ],
+                                        "locked": true
+                                    }
+                                ],
+                                "id": "5acf93e60e0a26346d0000ce",
+                                "name": "Netflix Collections",
+                                "network": {
+                                    "id": 213,
+                                    "logo_path": "/wwemzKWzjKYJFfCeiB57q3r4Bcm.png",
+                                    "name": "Netflix",
+                                    "origin_country": ""
+                                },
+                                "type": 4
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    },
+                    "404": {
+                        "$ref": "#/responses/StatusCodeMsgResponse"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/tv/latest": {
             "get": {
                 "operationId": "get-tv-latest-details",
@@ -10618,6 +10997,13 @@
             "schema": {
                 "$ref": "#/definitions/value-body"
             }
+        },
+        "trait:tokenBody": {
+            "name": "body",
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/access-token-body"
+            }
         }
     },
     "responses": {
@@ -10635,6 +11021,20 @@
         }
     },
     "definitions": {
+        "access-token-body": {
+            "type": "object",
+            "properties": {
+                "access_token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "access_token"
+            ],
+            "example": {
+                "access_token": "eyK0eXAiOiJAV1QiLCJhbGciOiUIUzI1NiJ9.eyJhdWQiOiI0Ozc2YzA1ZTg4YTY1Yzk0MjFjZDI1NmBiYzRiNGE0NyIsInN1YiI6IjRiYzg4OTJhMDE3YTNjMGY5MjAwMDAwMiIsInNjb3BlayI6WyJhcGlfcmVhZCJdLCL2ZXJzaW9uIjoxfQ.Bn660W0Vi-_AI5HvwIEqtc2s5mAXDknBnTrUREZYH7A"
+            }
+        },
         "media-watchlist-body": {
             "type": "object",
             "properties": {
@@ -10805,6 +11205,14 @@
                 },
                 "session_id": {
                     "type": "string"
+                }
+            }
+        },
+        "success-response": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
                 }
             }
         },
@@ -12248,6 +12656,12 @@
                 },
                 "name": {
                     "type": "string"
+                },
+                "logo_path":  {
+                    "type": "string"
+                },
+                "origin_country": {
+                    "type": "string"
                 }
             }
         },
@@ -12756,6 +13170,34 @@
                 }
             }
         },
+        "season-episode-ids": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "season_id": {
+                    "type": "integer"
+                },
+                "episode_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "season-episode-list": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/season-episode-ids"
+                    }
+                }
+            }
+        },
         "ratings-list": {
             "type": "object",
             "properties": {
@@ -12807,6 +13249,101 @@
                 },
                 "season_number": {
                     "type": "integer"
+                }
+            }
+        },
+        "episode-group-list": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/episode-group-object"
+                    }
+                }
+            }
+        },
+        "episode-group-object": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "episode_count": {
+                    "type": "integer"
+                },
+                "group_count": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "network": {
+                    "$ref": "#/definitions/network"
+                },
+                "type": {
+                    "type": "integer"
+                }
+            }
+        },
+        "episode-group-details": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "episode_count": {
+                    "type": "integer"
+                },
+                "group_count": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "network": {
+                    "$ref": "#/definitions/network"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/episode-group-group"
+                    }
+                }
+            }
+        },
+        "episode-group-group": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "order": {
+                    "type": "integer"
+                },
+                "locked": {
+                    "type": "boolean"
+                },
+                "episodes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/tv-episode-object"
+                    }
                 }
             }
         },

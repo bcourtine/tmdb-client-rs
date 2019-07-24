@@ -14,6 +14,10 @@ pub struct Network {
     pub id: Option<i32>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
+    #[serde(rename = "logo_path", skip_serializing_if = "Option::is_none")]
+    pub logo_path: Option<String>,
+    #[serde(rename = "origin_country", skip_serializing_if = "Option::is_none")]
+    pub origin_country: Option<String>,
 }
 
 impl Network {
@@ -21,6 +25,8 @@ impl Network {
         Network {
             id: None,
             name: None,
+            logo_path: None,
+            origin_country: None,
         }
     }
 }
