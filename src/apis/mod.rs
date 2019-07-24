@@ -76,6 +76,8 @@ mod tv_api;
 pub use self::tv_api::{TVApi, TVApiClient};
 mod tv_episodes_api;
 pub use self::tv_episodes_api::{TVEpisodesApi, TVEpisodesApiClient};
+mod tv_episode_groups_api;
+pub use self::tv_episode_groups_api::{TVEpisodeGroupsApi, TVEpisodeGroupsApiClient};
 mod tv_seasons_api;
 pub use self::tv_seasons_api::{TVSeasonsApi, TVSeasonsApiClient};
 

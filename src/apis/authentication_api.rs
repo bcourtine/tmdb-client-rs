@@ -28,25 +28,42 @@ impl AuthenticationApiClient {
 }
 
 pub trait AuthenticationApi {
-    fn get_new_authentication_guest_session(
-        &self,
-    ) -> Result<crate::models::GuestSessionResponse, Error>;
-    fn get_new_authentication_session(
-        &self,
-        request_token: &str,
-    ) -> Result<crate::models::SessionResponse, Error>;
-    fn get_new_authentication_token(
-        &self,
-    ) -> Result<crate::models::TokenResponseWithExpiration, Error>;
+    fn delete_authentication_session(&self, session_id: &str) -> Result<crate::models::SuccessResponse, Error>;
+    fn get_new_authentication_guest_session(&self) -> Result<crate::models::GuestSessionResponse, Error>;
+    fn get_new_authentication_session(&self, request_token: &str) -> Result<crate::models::SessionResponse, Error>;
+    fn get_new_authentication_token(&self) -> Result<crate::models::TokenResponseWithExpiration, Error>;
     fn get_validate_authentication_token_with_login(
         &self,
         username: &str,
         password: &str,
         request_token: &str,
     ) -> Result<crate::models::TokenResponse, Error>;
+    fn post_authentication_session_convert4(&self, body: crate::models::AccessTokenBody) -> Result<crate::models::SessionResponse, Error>;
 }
 
 impl AuthenticationApi for AuthenticationApiClient {
+    fn delete_authentication_session(&self, session_id: &str) -> Result<crate::models::SuccessResponse, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!("{}/authentication/session", configuration.base_path);
+        let mut req_builder = client.delete(uri_str.as_str());
+
+        req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
+
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
     fn get_new_authentication_guest_session(
         &self,
     ) -> Result<crate::models::GuestSessionResponse, Error> {
@@ -142,6 +159,27 @@ impl AuthenticationApi for AuthenticationApiClient {
         if let Some(ref user_agent) = configuration.user_agent {
             req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
         }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn post_authentication_session_convert4(&self, body: crate::models::AccessTokenBody) -> Result<crate::models::SessionResponse, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!("{}/authentication/session/convert/4", configuration.base_path);
+        let mut req_builder = client.post(uri_str.as_str());
+
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+        req_builder = req_builder.json(&body);
 
         // send request
         let req = req_builder.build()?;

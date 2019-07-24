@@ -76,6 +76,7 @@ pub trait TVApi {
         language: Option<&str>,
         append_to_response: Option<&str>,
     ) -> Result<crate::models::TvDetails, Error>;
+    fn get_tv_episode_groups(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::EpisodeGroupList, Error>;
     fn get_tv_external_ids(
         &self,
         tv_id: i32,
@@ -107,6 +108,7 @@ pub trait TVApi {
         language: Option<&str>,
         page: Option<i32>,
     ) -> Result<crate::models::TvPaginated, Error>;
+    fn get_tv_screened_theatrically(&self, tv_id: i32) -> Result<crate::models::SeasonEpisodeList, Error>;
     fn get_tv_similar_paginated(
         &self,
         tv_id: i32,
@@ -408,6 +410,33 @@ impl TVApi for TVApiClient {
         Ok(client.execute(req)?.error_for_status()?.json()?)
     }
 
+    fn get_tv_episode_groups(
+        &self,
+        tv_id: i32,
+        language: Option<&str>
+    ) -> Result<crate::models::EpisodeGroupList, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!("{}/tv/{tv_id}/episode_groups", configuration.base_path, tv_id = tv_id);
+        let mut req_builder = client.get(uri_str.as_str());
+
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
     fn get_tv_external_ids(
         &self,
         tv_id: i32,
@@ -602,6 +631,30 @@ impl TVApi for TVApiClient {
         if let Some(ref s) = page {
             req_builder = req_builder.query(&[("page", &s.to_string())]);
         }
+        if let Some(ref apikey) = configuration.api_key {
+            req_builder = req_builder.query(&[("api_key", apikey)]);
+        }
+        if let Some(ref user_agent) = configuration.user_agent {
+            req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+        }
+
+        // send request
+        let req = req_builder.build()?;
+
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+    }
+
+    fn get_tv_screened_theatrically(&self, tv_id: i32) -> Result<crate::models::SeasonEpisodeList, Error> {
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+        let mut client = configuration.rate_limit_client();
+
+        let uri_str = format!(
+            "{}/tv/{tv_id}/screened_theatrically",
+            configuration.base_path,
+            tv_id = tv_id
+        );
+        let mut req_builder = client.get(uri_str.as_str());
+
         if let Some(ref apikey) = configuration.api_key {
             req_builder = req_builder.query(&[("api_key", apikey)]);
         }

@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_tv_content_ratings_list**](TVApi.md#get_tv_content_ratings_list) | **get** /tv/{tv_id}/content_ratings | Get Content Ratings
 [**get_tv_credits**](TVApi.md#get_tv_credits) | **get** /tv/{tv_id}/credits | Get Credits
 [**get_tv_details**](TVApi.md#get_tv_details) | **get** /tv/{tv_id} | Get Details
+[**get_tv_episode_groups**](TVApi.md#get_tv_episode_groups) | **get** /tv/{tv_id}/episode_groups | Get Episode Groups
 [**get_tv_external_ids**](TVApi.md#get_tv_external_ids) | **get** /tv/{tv_id}/external_ids | Get External IDs
 [**get_tv_images**](TVApi.md#get_tv_images) | **get** /tv/{tv_id}/images | Get Images
 [**get_tv_keywords_list**](TVApi.md#get_tv_keywords_list) | **get** /tv/{tv_id}/keywords | Get Keywords
@@ -19,6 +20,7 @@ Method | HTTP request | Description
 [**get_tv_on_the_air_paginated**](TVApi.md#get_tv_on_the_air_paginated) | **get** /tv/on_the_air | Get TV On The Air
 [**get_tv_popular_paginated**](TVApi.md#get_tv_popular_paginated) | **get** /tv/popular | Get Popular
 [**get_tv_recommendations_paginated**](TVApi.md#get_tv_recommendations_paginated) | **get** /tv/{tv_id}/recommendations | Get Recommendations
+[**get_tv_screened_theatrically**](TVApi.md#get_tv_screened_theatrically) | **get** /tv/{tv_id}/screened_theatrically | Get Screened Theatrically
 [**get_tv_similar_paginated**](TVApi.md#get_tv_similar_paginated) | **get** /tv/{tv_id}/similar | Get Similar TV Shows
 [**get_tv_top_rated_paginated**](TVApi.md#get_tv_top_rated_paginated) | **get** /tv/top_rated | Get Top Rated
 [**get_tv_translations_list**](TVApi.md#get_tv_translations_list) | **get** /tv/{tv_id}/translations | Get Translations
@@ -236,7 +238,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Credits**](Credits.md)
+[**crate::models::Credits**](credits.md)
 
 ### Authorization
 
@@ -269,6 +271,37 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**crate::models::TvDetails**](TvDetails.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_tv_episode_groups
+
+> crate::models::EpisodeGroupList get_tv_episode_groups(tv_id, language)
+Get Episode Groups
+
+Get all of the episode groups that have been created for a TV show.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
+
+### Return type
+
+[**crate::models::EpisodeGroupList**](EpisodeGroupList.md)
 
 ### Authorization
 
@@ -485,6 +518,36 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**crate::models::TvPaginated**](TvPaginated.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_tv_screened_theatrically
+
+> crate::models::SeasonEpisodeList get_tv_screened_theatrically(tv_id)
+Get Screened Theatrically
+
+Get a list of seasons or episodes that have been screened in a film festival or theatre.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**tv_id** | **i32** |  | Required | 
+
+### Return type
+
+[**crate::models::SeasonEpisodeList**](SeasonEpisodeList.md)
 
 ### Authorization
 

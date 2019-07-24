@@ -4,11 +4,43 @@ All URIs are relative to *https://api.themoviedb.org/3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**delete_authentication_session**](AuthenticationApi.md#delete_authentication_session) | **delete** /authentication/session | Delete Session
 [**get_new_authentication_guest_session**](AuthenticationApi.md#get_new_authentication_guest_session) | **get** /authentication/guest_session/new | Create Guest Session
 [**get_new_authentication_session**](AuthenticationApi.md#get_new_authentication_session) | **get** /authentication/session/new | Create Session
 [**get_new_authentication_token**](AuthenticationApi.md#get_new_authentication_token) | **get** /authentication/token/new | Create Request Token
 [**get_validate_authentication_token_with_login**](AuthenticationApi.md#get_validate_authentication_token_with_login) | **get** /authentication/token/validate_with_login | Validate Request Token
+[**post_authentication_session_convert4**](AuthenticationApi.md#post_authentication_session_convert4) | **post** /authentication/session/convert/4 | Create Session (from v4 access token)
 
+
+
+## delete_authentication_session
+
+> crate::models::SuccessResponse delete_authentication_session(session_id)
+Delete Session
+
+If you would like to delete (or \"logout\") from a session, call this method with a valid session ID.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**session_id** | **String** |  | Required | 
+
+### Return type
+
+[**crate::models::SuccessResponse**](SuccessResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## get_new_authentication_guest_session
@@ -122,6 +154,36 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_authentication_session_convert4
+
+> crate::models::SessionResponse post_authentication_session_convert4(body)
+Create Session (from v4 access token)
+
+Use this method to create a v3 session ID if you already have a valid v4 access token. The v4 token needs to be authenticated by the user. Your standard \"read token\" will not validate to create a session ID.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**body** | [**AccessTokenBody**](AccessTokenBody.md) |  |  | 
+
+### Return type
+
+[**crate::models::SessionResponse**](SessionResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
