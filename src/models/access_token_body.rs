@@ -10,7 +10,7 @@
 
 
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct AccessTokenBody {
     #[serde(rename = "access_token")]
     pub access_token: String,
