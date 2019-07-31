@@ -46,6 +46,7 @@ pub trait PeopleApi {
         &self,
         person_id: i32,
         language: Option<&str>,
+        include_image_language: Option<&str>,
         append_to_response: Option<&str>,
     ) -> Result<crate::models::PersonDetails, Error>;
     fn get_person_external_ids(
@@ -56,6 +57,8 @@ pub trait PeopleApi {
     fn get_person_images(
         &self,
         person_id: i32,
+        language: Option<&str>,
+        include_image_language: Option<&str>,
     ) -> Result<crate::models::Images, Error>;
     fn get_person_latest_details(
         &self,
@@ -75,6 +78,7 @@ pub trait PeopleApi {
         &self,
         person_id: i32,
         language: Option<&str>,
+        include_image_language: Option<&str>,
         page: Option<i32>,
     ) -> Result<crate::models::PersonTaggedImagesPaginated, Error>;
     fn get_person_translations_list(
@@ -168,6 +172,7 @@ impl PeopleApi for PeopleApiClient {
         &self,
         person_id: i32,
         language: Option<&str>,
+        include_image_language: Option<&str>,
         append_to_response: Option<&str>,
     ) -> Result<crate::models::PersonDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
@@ -182,6 +187,9 @@ impl PeopleApi for PeopleApiClient {
 
         if let Some(ref s) = language {
             req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = include_image_language {
+            req_builder = req_builder.query(&[("include_image_language", &s.to_string())]);
         }
         if let Some(ref s) = append_to_response {
             req_builder = req_builder.query(&[("append_to_response", &s.to_string())]);
@@ -233,6 +241,8 @@ impl PeopleApi for PeopleApiClient {
     fn get_person_images(
         &self,
         person_id: i32,
+        language: Option<&str>,
+        include_image_language: Option<&str>,
     ) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
@@ -244,6 +254,12 @@ impl PeopleApi for PeopleApiClient {
         );
         let mut req_builder = client.get(uri_str.as_str());
 
+        if let Some(ref s) = language {
+            req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = include_image_language {
+            req_builder = req_builder.query(&[("include_image_language", &s.to_string())]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             req_builder = req_builder.query(&[("api_key", apikey)]);
         }
@@ -348,6 +364,7 @@ impl PeopleApi for PeopleApiClient {
         &self,
         person_id: i32,
         language: Option<&str>,
+        include_image_language: Option<&str>,
         page: Option<i32>,
     ) -> Result<crate::models::PersonTaggedImagesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
@@ -362,6 +379,9 @@ impl PeopleApi for PeopleApiClient {
 
         if let Some(ref s) = language {
             req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = include_image_language {
+            req_builder = req_builder.query(&[("include_image_language", &s.to_string())]);
         }
         if let Some(ref s) = page {
             req_builder = req_builder.query(&[("page", &s.to_string())]);

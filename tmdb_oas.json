@@ -3587,6 +3587,9 @@
                 "description": "Get the primary information about a movie.\n\nSupports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
+                    },
+                    {
                         "$ref": "#/parameters/trait:languageParam:language"
                     },
                     {
@@ -3970,9 +3973,7 @@
                 "description": "Get the images that belong to a movie.\n\nQuerying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.",
                 "parameters": [
                     {
-                        "name": "include_image_language",
-                        "in": "query",
-                        "type": "string"
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
                     },
                     {
                         "$ref": "#/parameters/trait:languageParam:language"
@@ -5318,6 +5319,9 @@
                 "description": "Get the primary person details by id.\n\nSupports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).\n\n#### New as of November 9, 2016\n\nBiographies are now translatable on TMDb. This means you can query person details with a language parameter.",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
+                    },
+                    {
                         "$ref": "#/parameters/trait:languageParam:language"
                     },
                     {
@@ -5623,6 +5627,14 @@
                     "People"
                 ],
                 "description": "Get the images for a person.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "",
@@ -5780,6 +5792,9 @@
                 ],
                 "description": "Get the images that this person has been tagged in.",
                 "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
+                    },
                     {
                         "$ref": "#/parameters/trait:languageParam:language"
                     },
@@ -7215,6 +7230,9 @@
                 "description": "Get the primary TV show details by id.\n\nSupports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
+                    },
+                    {
                         "$ref": "#/parameters/trait:languageParam:language"
                     },
                     {
@@ -8037,6 +8055,9 @@
                 "description": "Get the images that belong to a TV show.\n\nQuerying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
+                    },
+                    {
                         "$ref": "#/parameters/trait:languageParam:language"
                     }
                 ],
@@ -8665,6 +8686,9 @@
                 "description": "Get the TV season details by id.\n\nSupports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
+                    },
+                    {
                         "$ref": "#/parameters/trait:languageParam:language"
                     },
                     {
@@ -9097,6 +9121,9 @@
                 "description": "Get the images that belong to a TV season.\n\nQuerying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
+                    },
+                    {
                         "$ref": "#/parameters/trait:languageParam:language"
                     }
                 ],
@@ -9269,6 +9296,9 @@
                 ],
                 "description": "Get the TV episode details by id.\n\nSupports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).",
                 "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
+                    },
                     {
                         "$ref": "#/parameters/trait:languageParam:language"
                     },
@@ -9655,6 +9685,14 @@
                     "TV Episodes"
                 ],
                 "description": "Get the images that belong to a TV episode.\n\nQuerying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/trait:languageParam:include_image_language"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:languageParam:language"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "",
@@ -10905,6 +10943,14 @@
             "required": true,
             "type": "string",
             "default": "application/json;charset=utf-8"
+        },
+        "trait:languageParam:include_image_language": {
+            "name": "include_image_language",
+            "in": "query",
+            "description": "Pass a ISO 639-1 value to get additional images (cf. https://developers.themoviedb.org/3/getting-started/image-languages).",
+            "type": "string",
+            "minLength": 2,
+            "pattern": "([a-z]{2})"
         },
         "trait:languageParam:language": {
             "name": "language",

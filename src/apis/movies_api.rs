@@ -60,6 +60,7 @@ pub trait MoviesApi {
         &self,
         movie_id: i32,
         language: Option<&str>,
+        include_image_language: Option<&str>,
         append_to_response: Option<&str>,
     ) -> Result<crate::models::MovieDetails, Error>;
     fn get_movie_images(
@@ -350,6 +351,7 @@ impl MoviesApi for MoviesApiClient {
         &self,
         movie_id: i32,
         language: Option<&str>,
+        include_image_language: Option<&str>,
         append_to_response: Option<&str>,
     ) -> Result<crate::models::MovieDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
@@ -364,6 +366,9 @@ impl MoviesApi for MoviesApiClient {
 
         if let Some(ref s) = language {
             req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = include_image_language {
+            req_builder = req_builder.query(&[("include_image_language", &s.to_string())]);
         }
         if let Some(ref s) = append_to_response {
             req_builder = req_builder.query(&[("append_to_response", &s.to_string())]);

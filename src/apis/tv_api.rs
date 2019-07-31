@@ -74,6 +74,7 @@ pub trait TVApi {
         &self,
         tv_id: i32,
         language: Option<&str>,
+        include_image_language: Option<&str>,
         append_to_response: Option<&str>,
     ) -> Result<crate::models::TvDetails, Error>;
     fn get_tv_episode_groups(&self, tv_id: i32, language: Option<&str>) -> Result<crate::models::EpisodeGroupList, Error>;
@@ -86,6 +87,7 @@ pub trait TVApi {
         &self,
         tv_id: i32,
         language: Option<&str>,
+        include_image_language: Option<&str>,
     ) -> Result<crate::models::Images, Error>;
     fn get_tv_keywords_list(&self, tv_id: i32) -> Result<crate::models::KeywordsList, Error>;
     fn get_tv_latest_details(
@@ -383,6 +385,7 @@ impl TVApi for TVApiClient {
         &self,
         tv_id: i32,
         language: Option<&str>,
+        include_image_language: Option<&str>,
         append_to_response: Option<&str>,
     ) -> Result<crate::models::TvDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
@@ -393,6 +396,9 @@ impl TVApi for TVApiClient {
 
         if let Some(ref s) = language {
             req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = include_image_language {
+            req_builder = req_builder.query(&[("include_image_language", &s.to_string())]);
         }
         if let Some(ref s) = append_to_response {
             req_builder = req_builder.query(&[("append_to_response", &s.to_string())]);
@@ -472,6 +478,7 @@ impl TVApi for TVApiClient {
         &self,
         tv_id: i32,
         language: Option<&str>,
+        include_image_language: Option<&str>,
     ) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
@@ -485,6 +492,9 @@ impl TVApi for TVApiClient {
 
         if let Some(ref s) = language {
             req_builder = req_builder.query(&[("language", &s.to_string())]);
+        }
+        if let Some(ref s) = include_image_language {
+            req_builder = req_builder.query(&[("include_image_language", &s.to_string())]);
         }
         if let Some(ref apikey) = configuration.api_key {
             req_builder = req_builder.query(&[("api_key", apikey)]);
