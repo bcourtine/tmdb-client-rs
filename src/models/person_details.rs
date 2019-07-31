@@ -36,6 +36,23 @@ pub struct PersonDetails {
     pub popularity: Option<f32>,
     #[serde(rename = "profile_path", skip_serializing_if = "Option::is_none")]
     pub profile_path: Option<String>,
+    // "append-to" options
+    #[serde(rename = "changes", skip_serializing_if = "Option::is_none")]
+    pub changes: Option<crate::models::ChangeDetails>,
+    #[serde(rename = "combined_credits", skip_serializing_if = "Option::is_none")]
+    pub combined_credits: Option<crate::models::PersonCredits>,
+    #[serde(rename = "external_ids", skip_serializing_if = "Option::is_none")]
+    pub external_ids: Option<crate::models::ExternalIds>,
+    #[serde(rename = "images", skip_serializing_if = "Option::is_none")]
+    pub images: Option<crate::models::Images>,
+    #[serde(rename = "movie_credits", skip_serializing_if = "Option::is_none")]
+    pub movie_credits: Option<crate::models::PersonCredits>,
+    #[serde(rename = "tagged_images", skip_serializing_if = "Option::is_none")]
+    pub tagged_images: Option<crate::models::PersonTaggedImagesPaginated>,
+    #[serde(rename = "translations", skip_serializing_if = "Option::is_none")]
+    pub translations: Option<crate::models::TranslationsList>,
+    #[serde(rename = "tv_credits", skip_serializing_if = "Option::is_none")]
+    pub tv_credits: Option<crate::models::PersonCredits>,
 }
 
 impl PersonDetails {
@@ -54,6 +71,14 @@ impl PersonDetails {
             place_of_birth: None,
             popularity: None,
             profile_path: None,
+            changes: None,
+            combined_credits: None,
+            external_ids: None,
+            images: None,
+            movie_credits: None,
+            tagged_images: None,
+            translations: None,
+            tv_credits: None,
         }
     }
 }

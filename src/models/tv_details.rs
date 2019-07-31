@@ -65,6 +65,39 @@ pub struct TvDetails {
     pub vote_average: Option<f32>,
     #[serde(rename = "vote_count", skip_serializing_if = "Option::is_none")]
     pub vote_count: Option<i32>,
+    // "append-to" options
+    #[serde(rename = "alternative_titles", skip_serializing_if = "Option::is_none")]
+    pub alternative_titles: Option<crate::models::Credits>,
+    #[serde(rename = "changes", skip_serializing_if = "Option::is_none")]
+    pub changes: Option<crate::models::ChangeDetails>,
+    #[serde(rename = "content_ratings", skip_serializing_if = "Option::is_none")]
+    pub content_ratings: Option<crate::models::RatingsList>,
+    #[serde(rename = "credits", skip_serializing_if = "Option::is_none")]
+    pub credits: Option<crate::models::Credits>,
+    #[serde(rename = "episode_groups", skip_serializing_if = "Option::is_none")]
+    pub episode_groups: Option<crate::models::EpisodeGroupList>,
+    #[serde(rename = "external_ids", skip_serializing_if = "Option::is_none")]
+    pub external_ids: Option<crate::models::ExternalIds>,
+    #[serde(rename = "images", skip_serializing_if = "Option::is_none")]
+    pub images: Option<crate::models::Images>,
+    #[serde(rename = "keywords", skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<crate::models::KeywordsList>,
+    #[serde(rename = "lists", skip_serializing_if = "Option::is_none")]
+    pub lists: Option<crate::models::ListsPaginated>,
+    #[serde(rename = "recommendations", skip_serializing_if = "Option::is_none")]
+    pub recommendations: Option<crate::models::TvPaginated>,
+    #[serde(rename = "release_dates", skip_serializing_if = "Option::is_none")]
+    pub release_dates: Option<crate::models::ReleaseDatesList>,
+    #[serde(rename = "reviews", skip_serializing_if = "Option::is_none")]
+    pub reviews: Option<crate::models::ReviewsPaginated>,
+    #[serde(rename = "similar", skip_serializing_if = "Option::is_none")]
+    pub screened_theatrically: Option<crate::models::SeasonEpisodeList>,
+    #[serde(rename = "screened_theatrically", skip_serializing_if = "Option::is_none")]
+    pub similar: Option<crate::models::TvPaginated>,
+    #[serde(rename = "translations", skip_serializing_if = "Option::is_none")]
+    pub translations: Option<crate::models::TranslationsList>,
+    #[serde(rename = "videos", skip_serializing_if = "Option::is_none")]
+    pub videos: Option<crate::models::VideosList>,
 }
 
 impl TvDetails {
@@ -96,6 +129,22 @@ impl TvDetails {
             _type: None,
             vote_average: None,
             vote_count: None,
+            alternative_titles: None,
+            changes: None,
+            content_ratings: None,
+            credits: None,
+            episode_groups: None,
+            external_ids: None,
+            images: None,
+            keywords: None,
+            lists: None,
+            recommendations: None,
+            release_dates: None,
+            reviews: None,
+            screened_theatrically: None,
+            similar: None,
+            translations: None,
+            videos: None,
         }
     }
 }

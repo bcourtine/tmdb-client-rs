@@ -26,6 +26,17 @@ pub struct SeasonDetails {
     pub poster_path: Option<String>,
     #[serde(rename = "season_number", skip_serializing_if = "Option::is_none")]
     pub season_number: Option<i32>,
+    // "append-to" options
+    #[serde(rename = "changes", skip_serializing_if = "Option::is_none")]
+    pub changes: Option<crate::models::ChangeDetails>,
+    #[serde(rename = "credits", skip_serializing_if = "Option::is_none")]
+    pub credits: Option<crate::models::Credits>,
+    #[serde(rename = "external_ids", skip_serializing_if = "Option::is_none")]
+    pub external_ids: Option<crate::models::ExternalIds>,
+    #[serde(rename = "images", skip_serializing_if = "Option::is_none")]
+    pub images: Option<crate::models::Images>,
+    #[serde(rename = "videos", skip_serializing_if = "Option::is_none")]
+    pub videos: Option<crate::models::VideosList>,
 }
 
 impl SeasonDetails {
@@ -39,6 +50,11 @@ impl SeasonDetails {
             id: None,
             poster_path: None,
             season_number: None,
+            changes: None,
+            credits: None,
+            external_ids: None,
+            images: None,
+            videos: None,
         }
     }
 }

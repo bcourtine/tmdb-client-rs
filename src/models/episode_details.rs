@@ -34,6 +34,19 @@ pub struct EpisodeDetails {
     pub vote_average: Option<f32>,
     #[serde(rename = "vote_count", skip_serializing_if = "Option::is_none")]
     pub vote_count: Option<i32>,
+    // "append-to" options
+    #[serde(rename = "changes", skip_serializing_if = "Option::is_none")]
+    pub changes: Option<crate::models::ChangeDetails>,
+    #[serde(rename = "credits", skip_serializing_if = "Option::is_none")]
+    pub credits: Option<crate::models::Credits>,
+    #[serde(rename = "external_ids", skip_serializing_if = "Option::is_none")]
+    pub external_ids: Option<crate::models::ExternalIds>,
+    #[serde(rename = "images", skip_serializing_if = "Option::is_none")]
+    pub images: Option<crate::models::Images>,
+    #[serde(rename = "translations", skip_serializing_if = "Option::is_none")]
+    pub translations: Option<crate::models::TranslationsList>,
+    #[serde(rename = "videos", skip_serializing_if = "Option::is_none")]
+    pub videos: Option<crate::models::VideosList>,
 }
 
 impl EpisodeDetails {
@@ -51,6 +64,12 @@ impl EpisodeDetails {
             still_path: None,
             vote_average: None,
             vote_count: None,
+            changes: None,
+            credits: None,
+            external_ids: None,
+            images: None,
+            translations: None,
+            videos: None,
         }
     }
 }

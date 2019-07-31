@@ -11835,6 +11835,24 @@
                 },
                 "vote_count": {
                     "type": "integer"
+                },
+                "changes": {
+                    "$ref": "#/definitions/change-details"
+                },
+                "credits": {
+                    "$ref": "#/definitions/credits"
+                },
+                "external_ids": {
+                    "$ref": "#/definitions/external-ids"
+                },
+                "images": {
+                    "$ref": "#/definitions/images"
+                },
+                "translations": {
+                    "$ref": "#/definitions/translations-list"
+                },
+                "videos": {
+                    "$ref": "#/definitions/videos-list"
                 }
             }
         },
@@ -12509,29 +12527,44 @@
                 "vote_count": {
                     "type": "integer"
                 },
+                "alternative_titles": {
+                    "$ref": "#/definitions/alternative-titles-list"
+                },
+                "changes": {
+                    "$ref": "#/definitions/change-details"
+                },
                 "credits": {
                     "$ref": "#/definitions/credits"
                 },
-                "videos": {
-                    "$ref": "#/definitions/videos-list"
+                "external_ids": {
+                    "$ref": "#/definitions/external-ids"
                 },
                 "images": {
                     "$ref": "#/definitions/images"
                 },
-                "release_dates": {
-                    "$ref": "#/definitions/release-dates-list"
-                },
-                "translations": {
-                    "$ref": "#/definitions/translations-list"
-                },
                 "keywords": {
                     "$ref": "#/definitions/keywords-list"
+                },
+                "lists": {
+                    "$ref": "#/definitions/lists-paginated"
+                },
+                "recommendations": {
+                    "$ref": "#/definitions/movie-paginated"
+                },
+                "release_dates": {
+                    "$ref": "#/definitions/release-dates-list"
                 },
                 "reviews": {
                     "$ref": "#/definitions/reviews-paginated"
                 },
-                "external_ids": {
-                    "$ref": "#/definitions/external-ids"
+                "similar": {
+                    "$ref": "#/definitions/movie-paginated"
+                },
+                "translations": {
+                    "$ref": "#/definitions/translations-list"
+                },
+                "videos": {
+                    "$ref": "#/definitions/videos-list"
                 }
             }
         },
@@ -12714,6 +12747,30 @@
                 },
                 "profile_path": {
                     "$ref": "#/definitions/image-path"
+                },
+                "changes": {
+                    "$ref": "#/definitions/change-details"
+                },
+                "combined_credits": {
+                    "$ref": "#/definitions/person-credits"
+                },
+                "external_ids": {
+                    "$ref": "#/definitions/external-ids"
+                },
+                "images": {
+                    "$ref": "#/definitions/images"
+                },
+                "movie_credits": {
+                    "$ref": "#/definitions/person-credits"
+                },
+                "tagged_images": {
+                    "$ref": "#/definitions/person-tagged-images-paginated"
+                },
+                "translations": {
+                    "$ref": "#/definitions/translations-list"
+                },
+                "tv_credits": {
+                    "$ref": "#/definitions/person-credits"
                 }
             }
         },
@@ -12990,6 +13047,21 @@
                 },
                 "season_number": {
                     "type": "integer"
+                },
+                "changes": {
+                    "$ref": "#/definitions/change-details"
+                },
+                "credits": {
+                    "$ref": "#/definitions/credits"
+                },
+                "external_ids": {
+                    "$ref": "#/definitions/external-ids"
+                },
+                "images": {
+                    "$ref": "#/definitions/images"
+                },
+                "videos": {
+                    "$ref": "#/definitions/videos-list"
                 }
             }
         },
@@ -13318,6 +13390,54 @@
                 },
                 "vote_count": {
                     "type": "integer"
+                },
+                "alternative_titles": {
+                    "$ref": "#/definitions/alternative-titles-list"
+                },
+                "changes": {
+                    "$ref": "#/definitions/change-details"
+                },
+                "content_ratings": {
+                    "$ref": "#/definitions/ratings-list"
+                },
+                "credits": {
+                    "$ref": "#/definitions/credits"
+                },
+                "episode_groups": {
+                    "$ref": "#/definitions/episode-group-list"
+                },
+                "external_ids": {
+                    "$ref": "#/definitions/external-ids"
+                },
+                "images": {
+                    "$ref": "#/definitions/images"
+                },
+                "keywords": {
+                    "$ref": "#/definitions/keywords-list"
+                },
+                "lists": {
+                    "$ref": "#/definitions/lists-paginated"
+                },
+                "recommendations": {
+                    "$ref": "#/definitions/tv-paginated"
+                },
+                "release_dates": {
+                    "$ref": "#/definitions/release-dates-list"
+                },
+                "reviews": {
+                    "$ref": "#/definitions/reviews-paginated"
+                },
+                "screened_theatrically": {
+                    "$ref": "#/definitions/season-episode-list"
+                },
+                "similar": {
+                    "$ref": "#/definitions/tv-paginated"
+                },
+                "translations": {
+                    "$ref": "#/definitions/translations-list"
+                },
+                "videos": {
+                    "$ref": "#/definitions/videos-list"
                 }
             }
         },
