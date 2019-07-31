@@ -18,19 +18,19 @@ use reqwest::IntoUrl;
 /// TMDB rate limit is 40 reqs every 10s. In a naive approah, we convert this limit into one req every 250ms.
 const TMDB_DELAY_BETWEEN_CALLS_IN_MS: u64 = 250;
 
-pub struct Configuration {
+pub struct Configuration<T: HttpClient + 'static> {
     pub base_path: String,
     pub user_agent: Option<String>,
-    pub client: Mutex<RateLimitReqwestClient>,
+    pub client: Mutex<T>,
     pub api_key: Option<String>,
 }
 
-impl Configuration {
-    pub fn new() -> Configuration {
+impl <T: HttpClient + 'static> Configuration<T> {
+    pub fn new() -> Configuration<BasicRateLimitHttpClient> {
         Configuration::default()
     }
 
-    pub fn new_with_api_key<T: Into<String>>(api_key: T) -> Self {
+    pub fn new_with_api_key<U: Into<String>>(api_key: U) -> Configuration<BasicRateLimitHttpClient> {
         let mut result = Configuration::default();
         result.api_key = Some(api_key.into());
         result
@@ -38,62 +38,69 @@ impl Configuration {
 
     /// Ignore poisoned lock by previous error: last_call is updated before Reqwest invocation, so RateLimitClient
     /// still works as intended after a Reqwest exception.
-    pub fn rate_limit_client(&self) -> MutexGuard<RateLimitReqwestClient> {
+    pub fn inner_client_guard(&self) -> MutexGuard<T> {
         let client = match self.client.lock() {
             Ok(g) => g,
             Err(p) => p.into_inner()
         };
         client
     }
-
 }
 
-impl Default for Configuration {
+impl Default for Configuration<BasicRateLimitHttpClient> {
     fn default() -> Self {
         let min_delay_between_calls = std::time::Duration::from_millis(TMDB_DELAY_BETWEEN_CALLS_IN_MS);
+        let http_client = BasicRateLimitHttpClient::new(reqwest::Client::new(), min_delay_between_calls);
 
         Configuration {
             base_path: "https://api.themoviedb.org/3".to_owned(),
             user_agent: Some("OpenAPI-Generator/3/rust".to_owned()),
-            client: Mutex::new(RateLimitReqwestClient::new(reqwest::Client::new(), min_delay_between_calls)),
+            client: Mutex::new(http_client),
             api_key: None,
         }
     }
 }
 
-pub struct RateLimitReqwestClient {
+pub struct BasicRateLimitHttpClient {
     pub client: reqwest::Client,
     pub min_delay_between_calls: Option<Duration>,
     pub last_call: Instant,
 }
 
-impl RateLimitReqwestClient {
+impl BasicRateLimitHttpClient {
 
-    pub fn new<T: Into<Option<Duration>>>(client: reqwest::Client, min_delay_between_calls: T) -> RateLimitReqwestClient {
-        RateLimitReqwestClient {
+    pub fn new<T: Into<Option<Duration>>>(client: reqwest::Client, min_delay_between_calls: T) -> BasicRateLimitHttpClient {
+        BasicRateLimitHttpClient {
             client,
             min_delay_between_calls: min_delay_between_calls.into(),
             last_call: Instant::now()
         }
     }
+}
 
-    pub fn get<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder {
-        self.client.get(url)
-    }
+pub trait HttpClient {
+    fn get<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder;
+    fn post<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder;
+    fn put<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder;
+    fn delete<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder;
+    fn execute(&mut self, req: reqwest::Request) -> reqwest::Result<reqwest::Response>;
+}
 
-    pub fn post<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder {
-        self.client.post(url)
-    }
+impl HttpClient for reqwest::Client {
+    fn get<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder { self.get(url) }
+    fn post<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder { self.post(url) }
+    fn put<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder { self.put(url) }
+    fn delete<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder { self.delete(url) }
+    fn execute(&mut self, req: reqwest::Request) -> reqwest::Result<reqwest::Response> { self.execute(req) }
+}
 
-    pub fn put<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder {
-        self.client.put(url)
-    }
+impl HttpClient for BasicRateLimitHttpClient {
+    fn get<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder { self.client.get(url) }
+    fn post<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder { self.client.post(url) }
+    fn put<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder { self.client.put(url) }
+    fn delete<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder { self.client.delete(url) }
 
-    pub fn delete<T: IntoUrl>(&self, url: T) -> reqwest::RequestBuilder {
-        self.client.delete(url)
-    }
-
-    pub fn execute(&mut self, req: reqwest::Request) -> reqwest::Result<reqwest::Response> {
+    fn execute(&mut self, req: reqwest::Request) -> reqwest::Result<reqwest::Response> {
 
         if let Some(limit) = self.min_delay_between_calls {
             if self.last_call.elapsed() < limit {

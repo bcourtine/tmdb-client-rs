@@ -15,14 +15,14 @@ use reqwest;
 
 use super::{Error, configuration, urlencode};
 
-pub struct TVEpisodeGroupsApiClient {
-    configuration: Rc<configuration::Configuration>,
+pub struct TVEpisodeGroupsApiClient<T: crate::apis::configuration::HttpClient + 'static> {
+    configuration: Rc<configuration::Configuration<T>>,
 }
 
-impl TVEpisodeGroupsApiClient {
-    pub fn new(configuration: Rc<configuration::Configuration>) -> TVEpisodeGroupsApiClient {
+impl <T: crate::apis::configuration::HttpClient + 'static> TVEpisodeGroupsApiClient<T> {
+    pub fn new(configuration: Rc<configuration::Configuration<T>>) -> TVEpisodeGroupsApiClient<T> {
         TVEpisodeGroupsApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }
@@ -31,10 +31,10 @@ pub trait TVEpisodeGroupsApi {
     fn get_episode_group_details(&self, episode_group_id: &str, language: Option<&str>,) -> Result<crate::models::EpisodeGroupDetails, Error>;
 }
 
-impl TVEpisodeGroupsApi for TVEpisodeGroupsApiClient {
+impl <T: crate::apis::configuration::HttpClient + 'static> TVEpisodeGroupsApi for TVEpisodeGroupsApiClient<T> {
     fn get_episode_group_details(&self, episode_group_id: &str, language: Option<&str>,) -> Result<crate::models::EpisodeGroupDetails, Error> {
-        let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let configuration: &configuration::Configuration<T> = self.configuration.borrow();
+        let mut client = configuration.inner_client_guard();
 
         let uri_str = format!("{}/tv/episode_group/{episode_group_id}", configuration.base_path, episode_group_id=urlencode(episode_group_id));
         let mut req_builder = client.get(uri_str.as_str());

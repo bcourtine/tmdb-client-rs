@@ -1,40 +1,42 @@
 use std::env;
 use std::rc::Rc;
 
-use super::configuration::Configuration;
+use super::configuration::{Configuration, HttpClient};
+use crate::apis::configuration::BasicRateLimitHttpClient;
 
-pub struct APIClient {
-    configuration: Rc<Configuration>,
-    account_api: Box<crate::apis::AccountApi>,
-    authentication_api: Box<crate::apis::AuthenticationApi>,
-    certifications_api: Box<crate::apis::CertificationsApi>,
-    changes_api: Box<crate::apis::ChangesApi>,
-    collections_api: Box<crate::apis::CollectionsApi>,
-    companies_api: Box<crate::apis::CompaniesApi>,
-    configuration_api: Box<crate::apis::ConfigurationApi>,
-    credits_api: Box<crate::apis::CreditsApi>,
-    discover_api: Box<crate::apis::DiscoverApi>,
-    find_api: Box<crate::apis::FindApi>,
-    genres_api: Box<crate::apis::GenresApi>,
-    guest_sessions_api: Box<crate::apis::GuestSessionsApi>,
-    keywords_api: Box<crate::apis::KeywordsApi>,
-    lists_api: Box<crate::apis::ListsApi>,
-    movies_api: Box<crate::apis::MoviesApi>,
-    networks_api: Box<crate::apis::NetworksApi>,
-    people_api: Box<crate::apis::PeopleApi>,
-    reviews_api: Box<crate::apis::ReviewsApi>,
-    search_api: Box<crate::apis::SearchApi>,
-    trending_api: Box<crate::apis::TrendingApi>,
-    tv_api: Box<crate::apis::TVApi>,
-    tv_episodes_api: Box<crate::apis::TVEpisodesApi>,
-    tv_seasons_api: Box<crate::apis::TVSeasonsApi>,
+pub struct APIClient<T: HttpClient + 'static> {
+    configuration: Rc<Configuration<T>>,
+    account_api: Box<dyn crate::apis::AccountApi>,
+    authentication_api: Box<dyn crate::apis::AuthenticationApi>,
+    certifications_api: Box<dyn crate::apis::CertificationsApi>,
+    changes_api: Box<dyn crate::apis::ChangesApi>,
+    collections_api: Box<dyn crate::apis::CollectionsApi>,
+    companies_api: Box<dyn crate::apis::CompaniesApi>,
+    configuration_api: Box<dyn crate::apis::ConfigurationApi>,
+    credits_api: Box<dyn crate::apis::CreditsApi>,
+    discover_api: Box<dyn crate::apis::DiscoverApi>,
+    find_api: Box<dyn crate::apis::FindApi>,
+    genres_api: Box<dyn crate::apis::GenresApi>,
+    guest_sessions_api: Box<dyn crate::apis::GuestSessionsApi>,
+    keywords_api: Box<dyn crate::apis::KeywordsApi>,
+    lists_api: Box<dyn crate::apis::ListsApi>,
+    movies_api: Box<dyn crate::apis::MoviesApi>,
+    networks_api: Box<dyn crate::apis::NetworksApi>,
+    people_api: Box<dyn crate::apis::PeopleApi>,
+    reviews_api: Box<dyn crate::apis::ReviewsApi>,
+    search_api: Box<dyn crate::apis::SearchApi>,
+    trending_api: Box<dyn crate::apis::TrendingApi>,
+    tv_api: Box<dyn crate::apis::TVApi>,
+    tv_episodes_api: Box<dyn crate::apis::TVEpisodesApi>,
+    tv_seasons_api: Box<dyn crate::apis::TVSeasonsApi>,
 }
 
-impl APIClient {
-    pub fn new(configuration: Configuration) -> APIClient {
-        let rc = Rc::new(configuration);
+impl <T: HttpClient + 'static> APIClient<T> {
 
-        APIClient {
+    pub fn new(configuration: Configuration<T>) -> Self {
+        let rc: Rc<Configuration<T>> = Rc::new(configuration);
+
+        Self {
             configuration: rc.clone(),
             account_api: Box::new(crate::apis::AccountApiClient::new(rc.clone())),
             authentication_api: Box::new(crate::apis::AuthenticationApiClient::new(rc.clone())),
@@ -62,105 +64,105 @@ impl APIClient {
         }
     }
 
-    pub fn new_with_api_key<T: Into<String>>(api_key: T) -> APIClient {
-        let configuration = Configuration::new_with_api_key(api_key);
+    pub fn new_with_api_key<U: Into<String>>(api_key: U) -> APIClient<BasicRateLimitHttpClient> {
+        let configuration: Configuration<BasicRateLimitHttpClient> = Configuration::new_with_api_key(api_key);
         APIClient::new(configuration)
     }
 
-    pub fn new_from_env() -> APIClient {
+    pub fn new_from_env() -> APIClient<BasicRateLimitHttpClient> {
         let api_key = env::var("TMDB_API_KEY").expect("Missing TMDB_API_KEY env var");
         APIClient::new_with_api_key(api_key)
     }
 
-    pub fn account_api(&self) -> &crate::apis::AccountApi {
+    pub fn account_api(&self) -> &dyn crate::apis::AccountApi {
         self.account_api.as_ref()
     }
 
-    pub fn authentication_api(&self) -> &crate::apis::AuthenticationApi {
+    pub fn authentication_api(&self) -> &dyn crate::apis::AuthenticationApi {
         self.authentication_api.as_ref()
     }
 
-    pub fn certifications_api(&self) -> &crate::apis::CertificationsApi {
+    pub fn certifications_api(&self) -> &dyn crate::apis::CertificationsApi {
         self.certifications_api.as_ref()
     }
 
-    pub fn changes_api(&self) -> &crate::apis::ChangesApi {
+    pub fn changes_api(&self) -> &dyn crate::apis::ChangesApi {
         self.changes_api.as_ref()
     }
 
-    pub fn collections_api(&self) -> &crate::apis::CollectionsApi {
+    pub fn collections_api(&self) -> &dyn crate::apis::CollectionsApi {
         self.collections_api.as_ref()
     }
 
-    pub fn companies_api(&self) -> &crate::apis::CompaniesApi {
+    pub fn companies_api(&self) -> &dyn crate::apis::CompaniesApi {
         self.companies_api.as_ref()
     }
 
-    pub fn configuration_api(&self) -> &crate::apis::ConfigurationApi {
+    pub fn configuration_api(&self) -> &dyn crate::apis::ConfigurationApi {
         self.configuration_api.as_ref()
     }
 
-    pub fn credits_api(&self) -> &crate::apis::CreditsApi {
+    pub fn credits_api(&self) -> &dyn crate::apis::CreditsApi {
         self.credits_api.as_ref()
     }
 
-    pub fn discover_api(&self) -> &crate::apis::DiscoverApi {
+    pub fn discover_api(&self) -> &dyn crate::apis::DiscoverApi {
         self.discover_api.as_ref()
     }
 
-    pub fn find_api(&self) -> &crate::apis::FindApi {
+    pub fn find_api(&self) -> &dyn crate::apis::FindApi {
         self.find_api.as_ref()
     }
 
-    pub fn genres_api(&self) -> &crate::apis::GenresApi {
+    pub fn genres_api(&self) -> &dyn crate::apis::GenresApi {
         self.genres_api.as_ref()
     }
 
-    pub fn guest_sessions_api(&self) -> &crate::apis::GuestSessionsApi {
+    pub fn guest_sessions_api(&self) -> &dyn crate::apis::GuestSessionsApi {
         self.guest_sessions_api.as_ref()
     }
 
-    pub fn keywords_api(&self) -> &crate::apis::KeywordsApi {
+    pub fn keywords_api(&self) -> &dyn crate::apis::KeywordsApi {
         self.keywords_api.as_ref()
     }
 
-    pub fn lists_api(&self) -> &crate::apis::ListsApi {
+    pub fn lists_api(&self) -> &dyn crate::apis::ListsApi {
         self.lists_api.as_ref()
     }
 
-    pub fn movies_api(&self) -> &crate::apis::MoviesApi {
+    pub fn movies_api(&self) -> &dyn crate::apis::MoviesApi {
         self.movies_api.as_ref()
     }
 
-    pub fn networks_api(&self) -> &crate::apis::NetworksApi {
+    pub fn networks_api(&self) -> &dyn crate::apis::NetworksApi {
         self.networks_api.as_ref()
     }
 
-    pub fn people_api(&self) -> &crate::apis::PeopleApi {
+    pub fn people_api(&self) -> &dyn crate::apis::PeopleApi {
         self.people_api.as_ref()
     }
 
-    pub fn reviews_api(&self) -> &crate::apis::ReviewsApi {
+    pub fn reviews_api(&self) -> &dyn crate::apis::ReviewsApi {
         self.reviews_api.as_ref()
     }
 
-    pub fn search_api(&self) -> &crate::apis::SearchApi {
+    pub fn search_api(&self) -> &dyn crate::apis::SearchApi {
         self.search_api.as_ref()
     }
 
-    pub fn trending_api(&self) -> &crate::apis::TrendingApi {
+    pub fn trending_api(&self) -> &dyn crate::apis::TrendingApi {
         self.trending_api.as_ref()
     }
 
-    pub fn tv_api(&self) -> &crate::apis::TVApi {
+    pub fn tv_api(&self) -> &dyn crate::apis::TVApi {
         self.tv_api.as_ref()
     }
 
-    pub fn tv_episodes_api(&self) -> &crate::apis::TVEpisodesApi {
+    pub fn tv_episodes_api(&self) -> &dyn crate::apis::TVEpisodesApi {
         self.tv_episodes_api.as_ref()
     }
 
-    pub fn tv_seasons_api(&self) -> &crate::apis::TVSeasonsApi {
+    pub fn tv_seasons_api(&self) -> &dyn crate::apis::TVSeasonsApi {
         self.tv_seasons_api.as_ref()
     }
 }
