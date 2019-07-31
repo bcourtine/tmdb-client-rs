@@ -100,7 +100,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::PersonCredits**](person-Credits.md)
+[**crate::models::PersonCredits**](PersonCredits.md)
 
 ### Authorization
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_person_details
 
-> crate::models::PersonDetails get_person_details(person_id, language, append_to_response)
+> crate::models::PersonDetails get_person_details(person_id, include_image_language, language, append_to_response)
 Get Details
 
 Get the primary person details by id.  Supports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).  #### New as of November 9, 2016  Biographies are now translatable on TMDb. This means you can query person details with a language parameter.
@@ -127,6 +127,7 @@ Get the primary person details by id.  Supports `append_to_response`. Read more 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **person_id** | **i32** |  | Required | 
+**include_image_language** | **String** | Pass a ISO 639-1 value to get additional images (cf. https://developers.themoviedb.org/3/getting-started/image-languages). |  | 
 **language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 **append_to_response** | **String** | Append requests within the same namespace to the response. |  | 
 
@@ -148,7 +149,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_person_images_list
 
-> crate::models::Images get_person_images_list(person_id)
+> crate::models::Images get_person_images_list(person_id, include_image_language, language)
 Get Images
 
 Get the images for a person.
@@ -159,6 +160,8 @@ Get the images for a person.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **person_id** | **i32** |  | Required | 
+**include_image_language** | **String** | Pass a ISO 639-1 value to get additional images (cf. https://developers.themoviedb.org/3/getting-started/image-languages). |  | 
+**language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
 
@@ -223,7 +226,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::PersonCredits**](person-Credits.md)
+[**crate::models::PersonCredits**](PersonCredits.md)
 
 ### Authorization
 
@@ -254,7 +257,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::PersonPaginated**](PersonPaginated.md)
+[**crate::models::PersonPaginated**](Images.md)
 
 ### Authorization
 
@@ -270,7 +273,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_person_tagged_images_paginated
 
-> crate::models::PersonTaggedImagesPaginated get_person_tagged_images_paginated(person_id, language, page)
+> crate::models::PersonTaggedImagesPaginated get_person_tagged_images_paginated(person_id, include_image_language, language, page)
 Get Tagged Images
 
 Get the images that this person has been tagged in.
@@ -281,6 +284,7 @@ Get the images that this person has been tagged in.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **person_id** | **i32** |  | Required | 
+**include_image_language** | **String** | Pass a ISO 639-1 value to get additional images (cf. https://developers.themoviedb.org/3/getting-started/image-languages). |  | 
 **language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 **page** | **i32** | Specify which page to query. |  | [default to 1]
 
@@ -348,7 +352,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::PersonCredits**](person-Credits.md)
+[**crate::models::PersonCredits**](PersonCredits.md)
 
 ### Authorization
 

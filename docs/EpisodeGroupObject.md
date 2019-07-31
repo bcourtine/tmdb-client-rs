@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **group_count** | **i32** |  | [optional] 
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**network** | [***crate::models::Network**](Network.md) |  | [optional] 
+**network** | [**crate::models::Network**](Network.md) |  | [optional] 
 **_type** | **i32** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

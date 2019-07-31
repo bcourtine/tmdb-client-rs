@@ -30,6 +30,22 @@ Name | Type | Description | Notes
 **_type** | **String** |  | [optional] 
 **vote_average** | **f32** |  | [optional] 
 **vote_count** | **i32** |  | [optional] 
+**alternative_titles** | [**crate::models::AlternativeTitlesList**](AlternativeTitlesList.md) |  | [optional] 
+**changes** | [**crate::models::ChangeDetails**](ChangeDetails.md) |  | [optional] 
+**content_ratings** | [**crate::models::RatingsList**](RatingsList.md) |  | [optional] 
+**credits** | [**crate::models::Credits**](Credits.md) |  | [optional] 
+**episode_groups** | [**crate::models::EpisodeGroupList**](EpisodeGroupList.md) |  | [optional] 
+**external_ids** | [**crate::models::ExternalIds**](ExternalIds.md) |  | [optional] 
+**images** | [**crate::models::Images**](Images.md) |  | [optional] 
+**keywords** | [**crate::models::KeywordsList**](KeywordsList.md) |  | [optional] 
+**lists** | [**crate::models::ListsPaginated**](ListsPaginated.md) |  | [optional] 
+**recommendations** | [**crate::models::TvPaginated**](TvPaginated.md) |  | [optional] 
+**release_dates** | [**crate::models::ReleaseDatesList**](ReleaseDatesList.md) |  | [optional] 
+**reviews** | [**crate::models::ReviewsPaginated**](ReviewsPaginated.md) |  | [optional] 
+**screened_theatrically** | [**crate::models::SeasonEpisodeList**](SeasonEpisodeList.md) |  | [optional] 
+**similar** | [**crate::models::TvPaginated**](TvPaginated.md) |  | [optional] 
+**translations** | [**crate::models::TranslationsList**](TranslationsList.md) |  | [optional] 
+**videos** | [**crate::models::VideosList**](VideosList.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

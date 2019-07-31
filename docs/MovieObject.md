@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **vote_average** | **f32** |  | [optional] 
 **rating** | **i32** |  | [optional] 
 **media_type** | **String** |  | 
-**dates** | [***crate::models::MovieobjectDates**](movieobject_dates.md) |  | [optional] 
+**dates** | [**crate::models::MovieobjectDates**](movieobject_dates.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -115,7 +115,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_tv_season_details
 
-> crate::models::SeasonDetails get_tv_season_details(tv_id, season_number, language, append_to_response)
+> crate::models::SeasonDetails get_tv_season_details(tv_id, season_number, include_image_language, language, append_to_response)
 Get Details
 
 Get the TV season details by id.  Supports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).
@@ -127,6 +127,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **tv_id** | **i32** |  | Required | 
 **season_number** | **i32** |  | Required | 
+**include_image_language** | **String** | Pass a ISO 639-1 value to get additional images (cf. https://developers.themoviedb.org/3/getting-started/image-languages). |  | 
 **language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 **append_to_response** | **String** | Append requests within the same namespace to the response. |  | 
 
@@ -180,7 +181,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_tv_season_images
 
-> crate::models::Images get_tv_season_images(tv_id, season_number, language)
+> crate::models::Images get_tv_season_images(tv_id, season_number, include_image_language, language)
 Get Images
 
 Get the images that belong to a TV season.  Querying images with a `language` parameter will filter the results. If you want to include a fallback language (especially useful for backdrops) you can use the `include_image_language` parameter. This should be a comma seperated value like so: `include_image_language=en,null`.
@@ -192,6 +193,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **tv_id** | **i32** |  | Required | 
 **season_number** | **i32** |  | Required | 
+**include_image_language** | **String** | Pass a ISO 639-1 value to get additional images (cf. https://developers.themoviedb.org/3/getting-started/image-languages). |  | 
 **language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type

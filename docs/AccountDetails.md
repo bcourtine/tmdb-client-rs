@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**avatar** | [***crate::models::AccountdetailsAvatar**](accountdetails_avatar.md) |  | [optional] 
+**avatar** | [**crate::models::AccountdetailsAvatar**](accountdetails_avatar.md) |  | [optional] 
 **id** | **i32** |  | [optional] 
 **iso_639_1** | **String** |  | [optional] 
 **iso_3166_1** | **String** |  | [optional] 

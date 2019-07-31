@@ -16,6 +16,12 @@ Name | Type | Description | Notes
 **still_path** | **String** |  | [optional] 
 **vote_average** | **f32** |  | [optional] 
 **vote_count** | **i32** |  | [optional] 
+**changes** | [**crate::models::ChangeDetails**](ChangeDetails.md) |  | [optional] 
+**credits** | [**crate::models::Credits**](Credits.md) |  | [optional] 
+**external_ids** | [**crate::models::ExternalIds**](ExternalIds.md) |  | [optional] 
+**images** | [**crate::models::Images**](Images.md) |  | [optional] 
+**translations** | [**crate::models::TranslationsList**](TranslationsList.md) |  | [optional] 
+**videos** | [**crate::models::VideosList**](VideosList.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

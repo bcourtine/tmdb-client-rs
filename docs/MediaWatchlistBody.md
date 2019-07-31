@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**media_type** | [***crate::models::MediaType**](MediaType.md) |  | 
+**media_type** | [**crate::models::MediaType**](MediaType.md) |  | 
 **media_id** | **i32** |  | 
 **watchlist** | **bool** |  | 
 

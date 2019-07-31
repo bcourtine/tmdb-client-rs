@@ -190,7 +190,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_movie_details
 
-> crate::models::MovieDetails get_movie_details(movie_id, language, append_to_response)
+> crate::models::MovieDetails get_movie_details(movie_id, include_image_language, language, append_to_response)
 Get Details
 
 Get the primary information about a movie.  Supports `append_to_response`. Read more about this [here](#docTextSection:JdZq8ctmcxNqyLQjp).
@@ -201,6 +201,7 @@ Get the primary information about a movie.  Supports `append_to_response`. Read 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **movie_id** | **i32** |  | Required | 
+**include_image_language** | **String** | Pass a ISO 639-1 value to get additional images (cf. https://developers.themoviedb.org/3/getting-started/image-languages). |  | 
 **language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 **append_to_response** | **String** | Append requests within the same namespace to the response. |  | 
 
@@ -263,7 +264,7 @@ Get the images that belong to a movie.  Querying images with a `language` parame
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **movie_id** | **i32** |  | Required | 
-**include_image_language** | **String** |  |  | 
+**include_image_language** | **String** | Pass a ISO 639-1 value to get additional images (cf. https://developers.themoviedb.org/3/getting-started/image-languages). |  | 
 **language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
@@ -362,7 +363,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ListsPaginated**](ListsPaginated.md.md)
+[**crate::models::ListsPaginated**](ListsPaginated.md)
 
 ### Authorization
 

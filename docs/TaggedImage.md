@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **file_type** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
 **image_type** | **String** |  | [optional] 
-**media** | [***serde_json::Value**](.md) |  | [optional] 
+**media** | [**serde_json::Value**](.md) |  | [optional] 
 **media_type** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
