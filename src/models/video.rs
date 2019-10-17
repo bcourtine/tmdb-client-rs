@@ -42,4 +42,6 @@ pub enum Type {
     OpeningCredits,
     #[serde(rename = "Behind the Scenes")]
     BehindTheScenes,
+    #[serde(rename = "Bloopers")]
+    Bloopers,
 }
