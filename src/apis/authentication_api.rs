@@ -22,7 +22,7 @@ pub struct AuthenticationApiClient {
 impl AuthenticationApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> AuthenticationApiClient {
         AuthenticationApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

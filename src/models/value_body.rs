@@ -17,6 +17,6 @@ pub struct ValueBody {
 
 impl ValueBody {
     pub fn new(value: f32) -> ValueBody {
-        ValueBody { value: value }
+        ValueBody { value }
     }
 }

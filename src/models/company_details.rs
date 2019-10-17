@@ -10,7 +10,7 @@
 
 use crate::models::CompanyObject;
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, Default)]
 pub struct CompanyDetails {
     #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
@@ -28,19 +28,4 @@ pub struct CompanyDetails {
     pub origin_country: Option<String>,
     #[serde(rename = "parent_company", skip_serializing_if = "Option::is_none")]
     pub parent_company: Option<CompanyObject>,
-}
-
-impl CompanyDetails {
-    pub fn new() -> CompanyDetails {
-        CompanyDetails {
-            description: None,
-            headquarters: None,
-            homepage: None,
-            logo_path: None,
-            id: None,
-            name: None,
-            origin_country: None,
-            parent_company: None,
-        }
-    }
 }

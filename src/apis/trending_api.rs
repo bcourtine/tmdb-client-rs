@@ -22,7 +22,7 @@ pub struct TrendingApiClient {
 impl TrendingApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> TrendingApiClient {
         TrendingApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

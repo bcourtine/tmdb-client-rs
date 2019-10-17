@@ -22,7 +22,7 @@ pub struct CertificationsApiClient {
 impl CertificationsApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> CertificationsApiClient {
         CertificationsApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

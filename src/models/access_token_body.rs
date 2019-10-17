@@ -19,7 +19,7 @@ pub struct AccessTokenBody {
 impl AccessTokenBody {
     pub fn new(access_token: String) -> AccessTokenBody {
         AccessTokenBody {
-            access_token: access_token,
+            access_token,
         }
     }
 }

@@ -26,8 +26,8 @@ pub struct PersonObject {
     pub media_type: Option<PersonMediaType>,
 }
 
-impl PersonObject {
-    pub fn new() -> PersonObject {
+impl Default for PersonObject {
+    fn default() -> PersonObject {
         PersonObject {
             profile_path: None,
             adult: None,
@@ -40,7 +40,6 @@ impl PersonObject {
     }
 }
 
-///
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub enum PersonMediaType {
     #[serde(rename = "person")]

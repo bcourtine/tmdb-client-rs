@@ -23,7 +23,7 @@ pub struct DiscoverApiClient {
 impl DiscoverApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> DiscoverApiClient {
         DiscoverApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

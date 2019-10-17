@@ -25,9 +25,9 @@ impl MediaFavoriteBody {
         favorite: bool,
     ) -> MediaFavoriteBody {
         MediaFavoriteBody {
-            media_type: media_type,
-            media_id: media_id,
-            favorite: favorite,
+            media_type,
+            media_id,
+            favorite,
         }
     }
 }

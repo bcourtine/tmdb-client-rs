@@ -23,7 +23,7 @@ pub struct GuestSessionsApiClient {
 impl GuestSessionsApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> GuestSessionsApiClient {
         GuestSessionsApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

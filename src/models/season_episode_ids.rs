@@ -10,7 +10,7 @@
 
 
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, Default)]
 pub struct SeasonEpisodeIds {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
@@ -19,15 +19,3 @@ pub struct SeasonEpisodeIds {
     #[serde(rename = "episode_id", skip_serializing_if = "Option::is_none")]
     pub episode_id: Option<i32>,
 }
-
-impl SeasonEpisodeIds {
-    pub fn new() -> SeasonEpisodeIds {
-        SeasonEpisodeIds {
-            id: None,
-            season_id: None,
-            episode_id: None,
-        }
-    }
-}
-
-

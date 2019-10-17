@@ -10,7 +10,7 @@
 
 
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, Default)]
 pub struct EpisodeGroupObject {
     #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
@@ -27,19 +27,3 @@ pub struct EpisodeGroupObject {
     #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
     pub _type: Option<i32>,
 }
-
-impl EpisodeGroupObject {
-    pub fn new() -> EpisodeGroupObject {
-        EpisodeGroupObject {
-            description: None,
-            episode_count: None,
-            group_count: None,
-            id: None,
-            name: None,
-            network: None,
-            _type: None,
-        }
-    }
-}
-
-

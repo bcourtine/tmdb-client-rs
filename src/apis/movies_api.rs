@@ -23,7 +23,7 @@ pub struct MoviesApiClient {
 impl MoviesApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> MoviesApiClient {
         MoviesApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

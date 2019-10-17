@@ -23,7 +23,7 @@ pub struct GenresApiClient {
 impl GenresApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> GenresApiClient {
         GenresApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

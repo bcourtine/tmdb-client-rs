@@ -23,7 +23,7 @@ pub struct TVSeasonsApiClient {
 impl TVSeasonsApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> TVSeasonsApiClient {
         TVSeasonsApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

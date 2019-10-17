@@ -23,7 +23,7 @@ pub struct KeywordsApiClient {
 impl KeywordsApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> KeywordsApiClient {
         KeywordsApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

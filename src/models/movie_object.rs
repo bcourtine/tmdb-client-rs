@@ -46,8 +46,8 @@ pub struct MovieObject {
     pub dates: Option<crate::models::MovieobjectDates>,
 }
 
-impl MovieObject {
-    pub fn new() -> MovieObject {
+impl Default for MovieObject {
+    fn default() -> MovieObject {
         MovieObject {
             poster_path: None,
             adult: None,
@@ -70,7 +70,6 @@ impl MovieObject {
     }
 }
 
-///
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub enum MovieMediaType {
     #[serde(rename = "movie")]

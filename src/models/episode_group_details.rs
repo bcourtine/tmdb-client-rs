@@ -10,7 +10,7 @@
 
 
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, Default)]
 pub struct EpisodeGroupDetails {
     #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
@@ -29,20 +29,3 @@ pub struct EpisodeGroupDetails {
     #[serde(rename = "groups", skip_serializing_if = "Option::is_none")]
     pub groups: Option<Vec<crate::models::EpisodeGroupGroup>>,
 }
-
-impl EpisodeGroupDetails {
-    pub fn new() -> EpisodeGroupDetails {
-        EpisodeGroupDetails {
-            description: None,
-            episode_count: None,
-            group_count: None,
-            id: None,
-            name: None,
-            network: None,
-            _type: None,
-            groups: None,
-        }
-    }
-}
-
-

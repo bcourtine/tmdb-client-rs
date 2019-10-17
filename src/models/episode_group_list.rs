@@ -10,21 +10,10 @@
 
 
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, Default)]
 pub struct EpisodeGroupList {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
     pub results: Option<Vec<crate::models::EpisodeGroupObject>>,
 }
-
-impl EpisodeGroupList {
-    pub fn new() -> EpisodeGroupList {
-        EpisodeGroupList {
-            id: None,
-            results: None,
-        }
-    }
-}
-
-

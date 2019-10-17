@@ -23,7 +23,7 @@ pub struct FindApiClient {
 impl FindApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> FindApiClient {
         FindApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

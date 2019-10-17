@@ -22,7 +22,7 @@ pub struct CreditsApiClient {
 impl CreditsApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> CreditsApiClient {
         CreditsApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

@@ -22,7 +22,7 @@ pub struct NetworksApiClient {
 impl NetworksApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> NetworksApiClient {
         NetworksApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

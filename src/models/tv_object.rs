@@ -42,8 +42,8 @@ pub struct TvObject {
     pub media_type: Option<TvMediaType>,
 }
 
-impl TvObject {
-    pub fn new() -> TvObject {
+impl Default for TvObject {
+    fn default() -> TvObject {
         TvObject {
             poster_path: None,
             popularity: None,

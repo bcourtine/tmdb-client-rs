@@ -25,9 +25,9 @@ impl MediaWatchlistBody {
         watchlist: bool,
     ) -> MediaWatchlistBody {
         MediaWatchlistBody {
-            media_type: media_type,
-            media_id: media_id,
-            watchlist: watchlist,
+            media_type,
+            media_id,
+            watchlist,
         }
     }
 }

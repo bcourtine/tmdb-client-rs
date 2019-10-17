@@ -22,7 +22,7 @@ pub struct ReviewsApiClient {
 impl ReviewsApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> ReviewsApiClient {
         ReviewsApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

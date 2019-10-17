@@ -16,6 +16,6 @@ pub struct MediaIdBody {
 
 impl MediaIdBody {
     pub fn new(media_id: i32) -> MediaIdBody {
-        MediaIdBody { media_id: media_id }
+        MediaIdBody { media_id }
     }
 }

@@ -23,7 +23,7 @@ pub struct PeopleApiClient {
 impl PeopleApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> PeopleApiClient {
         PeopleApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

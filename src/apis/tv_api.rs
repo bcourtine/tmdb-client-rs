@@ -23,7 +23,7 @@ pub struct TVApiClient {
 impl TVApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> TVApiClient {
         TVApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

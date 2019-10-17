@@ -22,7 +22,7 @@ pub struct TVEpisodeGroupsApiClient {
 impl TVEpisodeGroupsApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> TVEpisodeGroupsApiClient {
         TVEpisodeGroupsApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }

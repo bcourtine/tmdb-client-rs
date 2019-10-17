@@ -23,7 +23,7 @@ pub struct CompaniesApiClient {
 impl CompaniesApiClient {
     pub fn new(configuration: Rc<configuration::Configuration>) -> CompaniesApiClient {
         CompaniesApiClient {
-            configuration: configuration,
+            configuration,
         }
     }
 }
