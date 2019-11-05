@@ -4,7 +4,7 @@ use tmdb_client::apis::client::APIClient;
 #[test]
 fn movie_by_id_should_give_results() {
     let client = APIClient::new_from_env();
-    let result = client.movies_api().get_movie_details(19995, None, None);
+    let result = client.movies_api().get_movie_details(19995, None, None, None);
     let movie = result.expect("Error querying movie 19995 (Avatar)");
 
     assert_eq!(movie.title, Some("Avatar".to_owned()));
@@ -26,7 +26,8 @@ fn appends_to_movie_by_id_should_be_valuated() {
     let result = client.movies_api().get_movie_details(
         19995,
         None,
-        Some("credits,videos,images,release_dates,translations,keywords,reviews,external_ids")
+        None,
+        Some("credits,videos,images,release_dates,translations,keywords,reviews,external_ids"),
     );
     let movie = result.expect("Error querying movie 19995 (Avatar)");
 

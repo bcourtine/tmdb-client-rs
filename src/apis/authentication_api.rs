@@ -13,7 +13,8 @@ use std::rc::Rc;
 
 use reqwest;
 
-use super::{configuration, Error};
+use super::configuration;
+use crate::Error;
 
 pub struct AuthenticationApiClient {
     configuration: Rc<configuration::Configuration>,

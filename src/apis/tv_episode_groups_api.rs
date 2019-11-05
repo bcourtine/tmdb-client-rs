@@ -13,7 +13,8 @@ use std::borrow::Borrow;
 
 use reqwest;
 
-use super::{Error, configuration, urlencode};
+use super::{configuration, urlencode};
+use crate::Error;
 
 pub struct TVEpisodeGroupsApiClient {
     configuration: Rc<configuration::Configuration>,

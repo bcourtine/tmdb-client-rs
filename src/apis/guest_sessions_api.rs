@@ -14,7 +14,8 @@ use std::rc::Rc;
 
 use reqwest;
 
-use super::{configuration, urlencode, Error};
+use super::{configuration, urlencode};
+use crate::Error;
 
 pub struct GuestSessionsApiClient {
     configuration: Rc<configuration::Configuration>,
