@@ -15,8 +15,8 @@ use std::time::{Duration, Instant};
 use reqwest;
 use reqwest::IntoUrl;
 
-/// TMDB rate limit is 40 reqs every 10s. In a naive approah, we convert this limit into one req every 250ms.
-const TMDB_DELAY_BETWEEN_CALLS_IN_MS: u64 = 250;
+/// TMDB rate limit is 40 reqs every 10s. In a naive approah, we convert this limit into one req every 260ms (250ms + 10ms by security).
+const TMDB_DELAY_BETWEEN_CALLS_IN_MS: u64 = 260;
 
 pub struct Configuration {
     pub base_path: String,
@@ -96,8 +96,9 @@ impl RateLimitReqwestClient {
     pub fn execute(&mut self, req: reqwest::Request) -> reqwest::Result<reqwest::Response> {
 
         if let Some(limit) = self.min_delay_between_calls {
-            if self.last_call.elapsed() < limit {
-                thread::sleep(limit)
+            let elapsed = self.last_call.elapsed();
+            if elapsed < limit {
+                thread::sleep(limit - elapsed)
             }
         }
 
