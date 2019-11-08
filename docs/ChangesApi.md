@@ -24,6 +24,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **start_date** | **String** | Filter the results with a start date. |  | 
 **end_date** | **String** | Filter the results with a end date. |  | 
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
@@ -55,6 +56,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **start_date** | **String** | Filter the results with a start date. |  | 
 **end_date** | **String** | Filter the results with a end date. |  | 
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 
@@ -86,6 +88,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **start_date** | **String** | Filter the results with a start date. |  | 
 **end_date** | **String** | Filter the results with a end date. |  | 
+**page** | **i32** | Specify which page to query. |  | [default to 1]
 
 ### Return type
 

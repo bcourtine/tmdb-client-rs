@@ -34,16 +34,19 @@ pub trait ChangesApi {
         &self,
         start_date: Option<String>,
         end_date: Option<String>,
+        page: Option<i32>,
     ) -> Result<crate::models::ChangesPaginated, Error>;
     fn get_person_changes_paginated(
         &self,
         start_date: Option<String>,
         end_date: Option<String>,
+        page: Option<i32>,
     ) -> Result<crate::models::ChangesPaginated, Error>;
     fn get_tv_changes_paginated(
         &self,
         start_date: Option<String>,
         end_date: Option<String>,
+        page: Option<i32>,
     ) -> Result<crate::models::ChangesPaginated, Error>;
 }
 
@@ -52,6 +55,7 @@ impl ChangesApi for ChangesApiClient {
         &self,
         start_date: Option<String>,
         end_date: Option<String>,
+        page: Option<i32>,
     ) -> Result<crate::models::ChangesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
@@ -65,6 +69,9 @@ impl ChangesApi for ChangesApiClient {
         if let Some(ref s) = end_date {
             req_builder = req_builder.query(&[("end_date", &s.to_string())]);
         }
+        if let Some(ref i) = page {
+            req_builder = req_builder.query(&[("page", i)]);
+        }
         if let Some(ref apikey) = configuration.api_key {
             req_builder = req_builder.query(&[("api_key", apikey)]);
         }
@@ -82,6 +89,7 @@ impl ChangesApi for ChangesApiClient {
         &self,
         start_date: Option<String>,
         end_date: Option<String>,
+        page: Option<i32>,
     ) -> Result<crate::models::ChangesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
@@ -94,6 +102,9 @@ impl ChangesApi for ChangesApiClient {
         }
         if let Some(ref s) = end_date {
             req_builder = req_builder.query(&[("end_date", &s.to_string())]);
+        }
+        if let Some(ref i) = page {
+            req_builder = req_builder.query(&[("page", i)]);
         }
         if let Some(ref apikey) = configuration.api_key {
             req_builder = req_builder.query(&[("api_key", apikey)]);
@@ -112,6 +123,7 @@ impl ChangesApi for ChangesApiClient {
         &self,
         start_date: Option<String>,
         end_date: Option<String>,
+        page: Option<i32>,
     ) -> Result<crate::models::ChangesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
@@ -124,6 +136,9 @@ impl ChangesApi for ChangesApiClient {
         }
         if let Some(ref s) = end_date {
             req_builder = req_builder.query(&[("end_date", &s.to_string())]);
+        }
+        if let Some(ref i) = page {
+            req_builder = req_builder.query(&[("page", i)]);
         }
         if let Some(ref apikey) = configuration.api_key {
             req_builder = req_builder.query(&[("api_key", apikey)]);

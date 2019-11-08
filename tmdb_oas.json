@@ -4679,6 +4679,9 @@
                     },
                     {
                         "$ref": "#/parameters/trait:endDateParam:end_date"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:pageParam:page"
                     }
                 ],
                 "responses": {
@@ -6091,6 +6094,9 @@
                     },
                     {
                         "$ref": "#/parameters/trait:endDateParam:end_date"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:pageParam:page"
                     }
                 ],
                 "responses": {
@@ -10088,6 +10094,9 @@
                     },
                     {
                         "$ref": "#/parameters/trait:endDateParam:end_date"
+                    },
+                    {
+                        "$ref": "#/parameters/trait:pageParam:page"
                     }
                 ],
                 "responses": {
