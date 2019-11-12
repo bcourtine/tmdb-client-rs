@@ -25,11 +25,11 @@ pub struct Video {
     #[serde(rename = "size", skip_serializing_if = "Option::is_none")]
     pub size: Option<i32>,
     #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
-    pub _type: Option<Type>,
+    pub _type: Option<VideoType>,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
-pub enum Type {
+pub enum VideoType {
     #[serde(rename = "Trailer")]
     Trailer,
     #[serde(rename = "Teaser")]
