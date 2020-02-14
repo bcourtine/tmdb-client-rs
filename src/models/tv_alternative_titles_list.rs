@@ -9,9 +9,9 @@
  */
 
 #[derive(Debug, Serialize, Deserialize, Clone, Default)]
-pub struct AlternativetitleslistTitles {
-    #[serde(rename = "iso_3166_1", skip_serializing_if = "Option::is_none")]
-    pub iso_3166_1: Option<String>,
-    #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
-    pub title: Option<String>,
+pub struct TvAlternativeTitlesList {
+    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
+    pub id: Option<i32>,
+    #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
+    pub results: Option<Vec<crate::models::AlternativetitleslistItem>>,
 }

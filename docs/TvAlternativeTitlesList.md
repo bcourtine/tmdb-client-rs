@@ -1,12 +1,11 @@
-# AlternativetitleslistTitles
+# TvAlternativeTitlesList
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**iso_3166_1** | **String** |  | [optional] 
-**title** | **String** |  | [optional] 
-**_type** | **String** |  | [optional] 
+**id** | **i32** |  | [optional] 
+**results** | [**Vec<crate::models::AlternativetitleslistItem>**](AlternativetitleslistItem.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

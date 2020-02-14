@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **video** | **bool** |  | [optional] 
 **vote_average** | **f32** |  | [optional] 
 **vote_count** | **i32** |  | [optional] 
-**alternative_titles** | [**crate::models::AlternativeTitlesList**](AlternativeTitlesList.md) |  | [optional] 
+**alternative_titles** | [**crate::models::MovieAlternativeTitlesList**](MovieAlternativeTitlesList.md) |  | [optional] 
 **changes** | [**crate::models::ChangeDetails**](ChangeDetails.md) |  | [optional] 
 **credits** | [**crate::models::Credits**](Credits.md) |  | [optional] 
 **external_ids** | [**crate::models::ExternalIds**](ExternalIds.md) |  | [optional] 

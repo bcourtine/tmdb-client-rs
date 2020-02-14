@@ -53,7 +53,7 @@ pub trait TVApi {
         &self,
         tv_id: i32,
         language: Option<&str>,
-    ) -> Result<crate::models::AlternativeTitlesList, Error>;
+    ) -> Result<crate::models::TvAlternativeTitlesList, Error>;
     fn get_tv_changes(
         &self,
         tv_id: i32,
@@ -254,7 +254,7 @@ impl TVApi for TVApiClient {
         &self,
         tv_id: i32,
         language: Option<&str>,
-    ) -> Result<crate::models::AlternativeTitlesList, Error> {
+    ) -> Result<crate::models::TvAlternativeTitlesList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 

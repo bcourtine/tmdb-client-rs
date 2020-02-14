@@ -111,7 +111,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::AlternativeTitlesList**](AlternativeTitlesList.md)
+[**crate::models::MovieAlternativeTitlesList**](MovieAlternativeTitlesList.md)
 
 ### Authorization
 

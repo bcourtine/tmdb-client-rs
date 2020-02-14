@@ -128,7 +128,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_tv_alternative_titles_list
 
-> crate::models::AlternativeTitlesList get_tv_alternative_titles_list(tv_id, language)
+> crate::models::TvAlternativeTitlesList get_tv_alternative_titles_list(tv_id, language)
 Get Alternative Titles
 
 Returns all of the alternative titles for a TV show.
@@ -143,7 +143,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::AlternativeTitlesList**](AlternativeTitlesList.md)
+[**crate::models::TvAlternativeTitlesList**](TvAlternativeTitlesList.md)
 
 ### Authorization
 

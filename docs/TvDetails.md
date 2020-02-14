@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **_type** | **String** |  | [optional] 
 **vote_average** | **f32** |  | [optional] 
 **vote_count** | **i32** |  | [optional] 
-**alternative_titles** | [**crate::models::AlternativeTitlesList**](AlternativeTitlesList.md) |  | [optional] 
+**alternative_titles** | [**crate::models::TvAlternativeTitlesList**](TvAlternativeTitlesList.md) |  | [optional] 
 **changes** | [**crate::models::ChangeDetails**](ChangeDetails.md) |  | [optional] 
 **content_ratings** | [**crate::models::RatingsList**](RatingsList.md) |  | [optional] 
 **credits** | [**crate::models::Credits**](Credits.md) |  | [optional] 

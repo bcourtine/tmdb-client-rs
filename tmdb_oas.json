@@ -3751,7 +3751,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/alternative-titles-list"
+                            "$ref": "#/definitions/movie-alternative-titles-list"
                         },
                         "examples": {
                             "application/json": {
@@ -7487,7 +7487,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/alternative-titles-list"
+                            "$ref": "#/definitions/tv-alternative-titles-list"
                         },
                         "examples": {
                             "application/json": {
@@ -11168,28 +11168,17 @@
                 }
             }
         },
-        "alternative-titles-list": {
+        "alternative-title-item": {
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "integer"
+                "iso_3166_1": {
+                    "type": "string"
                 },
-                "titles": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "iso_3166_1": {
-                                "type": "string"
-                            },
-                            "title": {
-                                "type": "string"
-                            },
-                            "type": {
-                                "type": "string"
-                            }
-                        }
-                    }
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
                 }
             }
         },
@@ -12442,6 +12431,20 @@
                 "watchlist": true
             }
         },
+        "movie-alternative-titles-list": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "titles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/alternative-title-item"
+                    }
+                }
+            }
+        },
         "movie-details": {
             "type": "object",
             "properties": {
@@ -13291,6 +13294,20 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/translation"
+                    }
+                }
+            }
+        },
+        "tv-alternative-titles-list": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/alternative-title-item"
                     }
                 }
             }

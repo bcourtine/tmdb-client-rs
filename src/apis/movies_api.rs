@@ -47,7 +47,7 @@ pub trait MoviesApi {
         &self,
         movie_id: i32,
         country: Option<&str>,
-    ) -> Result<crate::models::AlternativeTitlesList, Error>;
+    ) -> Result<crate::models::MovieAlternativeTitlesList, Error>;
     fn get_movie_changes_list(
         &self,
         movie_id: &str,
@@ -234,7 +234,7 @@ impl MoviesApi for MoviesApiClient {
         &self,
         movie_id: i32,
         country: Option<&str>,
-    ) -> Result<crate::models::AlternativeTitlesList, Error> {
+    ) -> Result<crate::models::MovieAlternativeTitlesList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
         let mut client = configuration.rate_limit_client();
 
