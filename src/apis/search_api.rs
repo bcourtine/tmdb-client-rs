@@ -89,7 +89,7 @@ impl SearchApi for SearchApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::CollectionPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/search/collection", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -120,7 +120,7 @@ impl SearchApi for SearchApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::CompanyPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/search/company", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -148,7 +148,7 @@ impl SearchApi for SearchApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::KeywordPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/search/keyword", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -181,7 +181,7 @@ impl SearchApi for SearchApiClient {
         region: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/search/movie", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -227,7 +227,7 @@ impl SearchApi for SearchApiClient {
         region: Option<&str>,
     ) -> Result<crate::models::SearchMultiResultsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/search/multi", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -267,7 +267,7 @@ impl SearchApi for SearchApiClient {
         region: Option<&str>,
     ) -> Result<crate::models::PersonPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/search/person", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -306,7 +306,7 @@ impl SearchApi for SearchApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/search/tv", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());

@@ -46,7 +46,7 @@ impl FindApi for FindApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::FindByExternalIdResults, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/find/{external_id}",

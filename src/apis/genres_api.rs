@@ -53,7 +53,7 @@ impl GenresApi for GenresApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::GenresList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/genre/movie/list", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -79,7 +79,7 @@ impl GenresApi for GenresApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::GenresList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/genre/tv/list", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -108,7 +108,7 @@ impl GenresApi for GenresApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/genre/{genre_id}/movies",

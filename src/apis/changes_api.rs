@@ -58,7 +58,7 @@ impl ChangesApi for ChangesApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::ChangesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/movie/changes", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -92,7 +92,7 @@ impl ChangesApi for ChangesApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::ChangesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/person/changes", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -126,7 +126,7 @@ impl ChangesApi for ChangesApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::ChangesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/tv/changes", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());

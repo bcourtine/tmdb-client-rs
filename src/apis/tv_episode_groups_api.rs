@@ -35,7 +35,7 @@ pub trait TVEpisodeGroupsApi {
 impl TVEpisodeGroupsApi for TVEpisodeGroupsApiClient {
     fn get_episode_group_details(&self, episode_group_id: &str, language: Option<&str>,) -> Result<crate::models::EpisodeGroupDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/tv/episode_group/{episode_group_id}", configuration.base_path, episode_group_id=urlencode(episode_group_id));
         let mut req_builder = client.get(uri_str.as_str());

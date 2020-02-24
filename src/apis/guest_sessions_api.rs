@@ -58,7 +58,7 @@ impl GuestSessionsApi for GuestSessionsApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/guest_session/{guest_session_id}/rated/movies",
@@ -93,7 +93,7 @@ impl GuestSessionsApi for GuestSessionsApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::TvEpisodesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/guest_session/{guest_session_id}/rated/tv/episodes",
@@ -128,7 +128,7 @@ impl GuestSessionsApi for GuestSessionsApiClient {
         sort_by: Option<&str>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/guest_session/{guest_session_id}/rated/tv",

@@ -52,7 +52,7 @@ impl ConfigurationApi for ConfigurationApiClient {
         api_key: Option<&str>,
     ) -> Result<crate::models::Configuration, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/configuration", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -75,7 +75,7 @@ impl ConfigurationApi for ConfigurationApiClient {
 
     fn get_timezones_list(&self) -> Result<Vec<crate::models::Timezones>, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/configuration/timezones", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -95,7 +95,7 @@ impl ConfigurationApi for ConfigurationApiClient {
 
     fn get_jobs_list(&self) -> Result<Vec<crate::models::Jobs>, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/configuration/jobs", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -115,7 +115,7 @@ impl ConfigurationApi for ConfigurationApiClient {
 
     fn get_countries_list(&self) -> Result<Vec<crate::models::Translation>, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/configuration/countries", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -135,7 +135,7 @@ impl ConfigurationApi for ConfigurationApiClient {
 
     fn get_languages_list(&self) -> Result<Vec<crate::models::Translation>, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/configuration/languages", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -155,7 +155,7 @@ impl ConfigurationApi for ConfigurationApiClient {
 
     fn get_primary_translations_list(&self) -> Result<Vec<String>, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/configuration/primary_translations", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());

@@ -152,7 +152,7 @@ impl TVApi for TVApiClient {
         session_id: Option<&str>,
     ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/rating",
@@ -189,7 +189,7 @@ impl TVApi for TVApiClient {
         session_id: Option<&str>,
     ) -> Result<crate::models::AccountStates, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/account_states",
@@ -226,7 +226,7 @@ impl TVApi for TVApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/tv/airing_today", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -256,7 +256,7 @@ impl TVApi for TVApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::TvAlternativeTitlesList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/alternative_titles",
@@ -289,7 +289,7 @@ impl TVApi for TVApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::ChangeDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/changes",
@@ -326,7 +326,7 @@ impl TVApi for TVApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::RatingsList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/content_ratings",
@@ -357,7 +357,7 @@ impl TVApi for TVApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::Credits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/credits",
@@ -390,7 +390,7 @@ impl TVApi for TVApiClient {
         append_to_response: Option<&str>,
     ) -> Result<crate::models::TvDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}", configuration.base_path, tv_id = tv_id);
         let mut req_builder = client.get(uri_str.as_str());
@@ -423,7 +423,7 @@ impl TVApi for TVApiClient {
         language: Option<&str>
     ) -> Result<crate::models::EpisodeGroupList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/tv/{tv_id}/episode_groups", configuration.base_path, tv_id = tv_id);
         let mut req_builder = client.get(uri_str.as_str());
@@ -450,7 +450,7 @@ impl TVApi for TVApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::ExternalIds, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/external_ids",
@@ -482,7 +482,7 @@ impl TVApi for TVApiClient {
         include_image_language: Option<&str>,
     ) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/images",
@@ -512,7 +512,7 @@ impl TVApi for TVApiClient {
 
     fn get_tv_keywords_list(&self, tv_id: i32) -> Result<crate::models::KeywordsList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/keywords",
@@ -539,7 +539,7 @@ impl TVApi for TVApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::TvDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/tv/latest", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -566,7 +566,7 @@ impl TVApi for TVApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/tv/on_the_air", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -596,7 +596,7 @@ impl TVApi for TVApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/tv/popular", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -627,7 +627,7 @@ impl TVApi for TVApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/recommendations",
@@ -657,7 +657,7 @@ impl TVApi for TVApiClient {
 
     fn get_tv_screened_theatrically(&self, tv_id: i32) -> Result<crate::models::SeasonEpisodeList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/screened_theatrically",
@@ -686,7 +686,7 @@ impl TVApi for TVApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/similar",
@@ -720,7 +720,7 @@ impl TVApi for TVApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/tv/top_rated", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -750,7 +750,7 @@ impl TVApi for TVApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::TranslationsList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/translations",
@@ -781,7 +781,7 @@ impl TVApi for TVApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::VideosList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/videos",
@@ -815,7 +815,7 @@ impl TVApi for TVApiClient {
         body: Option<crate::models::ValueBody>,
     ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/rating",

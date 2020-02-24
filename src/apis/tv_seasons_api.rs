@@ -90,7 +90,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         session_id: Option<&str>,
     ) -> Result<crate::models::EpisodeRatingList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/account_states",
@@ -130,7 +130,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::ChangeDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/season/{season_id}/changes",
@@ -168,7 +168,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::Credits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/credits",
@@ -203,7 +203,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         append_to_response: Option<&str>,
     ) -> Result<crate::models::SeasonDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}",
@@ -242,7 +242,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::ExternalIds, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/external_ids",
@@ -276,7 +276,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         include_image_language: Option<&str>,
     ) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/images",
@@ -312,7 +312,7 @@ impl TVSeasonsApi for TVSeasonsApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::VideosList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/tv/{tv_id}/season/{season_number}/videos",

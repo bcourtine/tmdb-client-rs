@@ -80,7 +80,7 @@ impl ListsApi for ListsApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::ListDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/list/{list_id}",
@@ -111,7 +111,7 @@ impl ListsApi for ListsApiClient {
         movie_id: i32,
     ) -> Result<crate::models::ItemStatus, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/list/{list_id}/item_status",
@@ -141,7 +141,7 @@ impl ListsApi for ListsApiClient {
         body: Option<crate::models::ListBody>,
     ) -> Result<crate::models::ListStatusResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/list", configuration.base_path);
         let mut req_builder = client.post(uri_str.as_str());
@@ -170,7 +170,7 @@ impl ListsApi for ListsApiClient {
         body: Option<crate::models::MediaIdBody>,
     ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/list/{list_id}/add_item",
@@ -202,7 +202,7 @@ impl ListsApi for ListsApiClient {
         session_id: &str,
     ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/list/{list_id}/clear",
@@ -234,7 +234,7 @@ impl ListsApi for ListsApiClient {
         body: Option<crate::models::MediaIdBody>,
     ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/list/{list_id}/remove_item",
@@ -265,7 +265,7 @@ impl ListsApi for ListsApiClient {
         session_id: &str,
     ) -> Result<crate::models::StatusCodeMessage, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/list/{list_id}",

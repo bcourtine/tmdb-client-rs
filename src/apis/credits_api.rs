@@ -35,7 +35,7 @@ pub trait CreditsApi {
 impl CreditsApi for CreditsApiClient {
     fn get_credit_details(&self, credit_id: &str) -> Result<crate::models::Credit, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/credit/{credit_id}",

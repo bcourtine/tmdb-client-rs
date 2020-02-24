@@ -124,7 +124,7 @@ impl DiscoverApi for DiscoverApiClient {
         region: Option<&str>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/discover/movie", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -258,7 +258,7 @@ impl DiscoverApi for DiscoverApiClient {
         without_keywords: Option<&str>,
     ) -> Result<crate::models::TvPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/discover/tv", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());

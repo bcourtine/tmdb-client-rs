@@ -104,7 +104,7 @@ impl PeopleApi for PeopleApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::ChangeDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/person/{person_id}/changes",
@@ -144,7 +144,7 @@ impl PeopleApi for PeopleApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::PersonCredits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/person/{person_id}/combined_credits",
@@ -177,7 +177,7 @@ impl PeopleApi for PeopleApiClient {
         append_to_response: Option<&str>,
     ) -> Result<crate::models::PersonDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/person/{person_id}",
@@ -214,7 +214,7 @@ impl PeopleApi for PeopleApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::ExternalIds, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/person/{person_id}/external_ids",
@@ -246,7 +246,7 @@ impl PeopleApi for PeopleApiClient {
         include_image_language: Option<&str>,
     ) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/person/{person_id}/images",
@@ -279,7 +279,7 @@ impl PeopleApi for PeopleApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::PersonDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/person/latest", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -306,7 +306,7 @@ impl PeopleApi for PeopleApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::PersonCredits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/person/{person_id}/movie_credits",
@@ -337,7 +337,7 @@ impl PeopleApi for PeopleApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::PersonPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/person/popular", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -369,7 +369,7 @@ impl PeopleApi for PeopleApiClient {
         page: Option<i32>,
     ) -> Result<crate::models::PersonTaggedImagesPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/person/{person_id}/tagged_images",
@@ -406,7 +406,7 @@ impl PeopleApi for PeopleApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::TranslationsList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/person/{person_id}/translations",
@@ -437,7 +437,7 @@ impl PeopleApi for PeopleApiClient {
         language: Option<&str>,
     ) -> Result<crate::models::PersonCredits, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/person/{person_id}/tv_credits",

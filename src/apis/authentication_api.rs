@@ -45,7 +45,7 @@ pub trait AuthenticationApi {
 impl AuthenticationApi for AuthenticationApiClient {
     fn delete_authentication_session(&self, session_id: &str) -> Result<crate::models::SuccessResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/authentication/session", configuration.base_path);
         let mut req_builder = client.delete(uri_str.as_str());
@@ -69,7 +69,7 @@ impl AuthenticationApi for AuthenticationApiClient {
         &self,
     ) -> Result<crate::models::GuestSessionResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/authentication/guest_session/new",
@@ -95,7 +95,7 @@ impl AuthenticationApi for AuthenticationApiClient {
         request_token: &str,
     ) -> Result<crate::models::SessionResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/authentication/session/new", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -118,7 +118,7 @@ impl AuthenticationApi for AuthenticationApiClient {
         &self,
     ) -> Result<crate::models::TokenResponseWithExpiration, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/authentication/token/new", configuration.base_path);
         let mut req_builder = client.get(uri_str.as_str());
@@ -143,7 +143,7 @@ impl AuthenticationApi for AuthenticationApiClient {
         request_token: &str,
     ) -> Result<crate::models::TokenResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/authentication/token/validate_with_login",
@@ -169,7 +169,7 @@ impl AuthenticationApi for AuthenticationApiClient {
 
     fn post_authentication_session_convert4(&self, body: crate::models::AccessTokenBody) -> Result<crate::models::SessionResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!("{}/authentication/session/convert/4", configuration.base_path);
         let mut req_builder = client.post(uri_str.as_str());

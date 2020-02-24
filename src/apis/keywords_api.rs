@@ -42,7 +42,7 @@ pub trait KeywordsApi {
 impl KeywordsApi for KeywordsApiClient {
     fn get_keyword_details(&self, keyword_id: i32) -> Result<crate::models::Keyword, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/keyword/{keyword_id}",
@@ -71,7 +71,7 @@ impl KeywordsApi for KeywordsApiClient {
         include_adult: Option<bool>,
     ) -> Result<crate::models::MoviePaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/keyword/{keyword_id}/movies",

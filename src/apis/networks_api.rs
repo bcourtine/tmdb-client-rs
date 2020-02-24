@@ -37,7 +37,7 @@ pub trait NetworksApi {
 impl NetworksApi for NetworksApiClient {
     fn get_network_details(&self, network_id: i32) -> Result<crate::models::Network, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/network/{network_id}",
@@ -61,7 +61,7 @@ impl NetworksApi for NetworksApiClient {
 
     fn get_network_alternative_names_list(&self, network_id: i32) -> Result<crate::models::AlternativeNamesList, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/network/{network_id}/alternative_names",
@@ -85,7 +85,7 @@ impl NetworksApi for NetworksApiClient {
 
     fn get_network_images(&self, network_id: i32) -> Result<crate::models::Images, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/network/{network_id}/images",

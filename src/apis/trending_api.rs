@@ -43,7 +43,7 @@ impl TrendingApi for TrendingApiClient {
         time_window: &crate::models::TimeWindow,
     ) -> Result<crate::models::SearchMultiResultsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
-        let mut client = configuration.rate_limit_client();
+        let client = &configuration.client;
 
         let uri_str = format!(
             "{}/trending/{media_type}/{time_window}",
