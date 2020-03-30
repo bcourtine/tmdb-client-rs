@@ -89,11 +89,6 @@
                 "description": "Get all of the lists created by an account. Will invlude private lists if you are the owner.",
                 "parameters": [
                     {
-                        "name": "api_key",
-                        "in": "query",
-                        "type": "string"
-                    },
-                    {
                         "$ref": "#/parameters/trait:session:session_id"
                     },
                     {

@@ -87,7 +87,6 @@ pub trait AccountApi {
         &self,
         account_id: i32,
         session_id: &str,
-        api_key: Option<&str>,
         language: Option<&str>,
     ) -> Result<crate::models::ListsPaginated, Error>;
     fn post_account_favorite(
@@ -394,7 +393,6 @@ impl AccountApi for AccountApiClient {
         &self,
         account_id: i32,
         session_id: &str,
-        api_key: Option<&str>,
         language: Option<&str>,
     ) -> Result<crate::models::ListsPaginated, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
@@ -407,9 +405,6 @@ impl AccountApi for AccountApiClient {
         );
         let mut req_builder = client.get(uri_str.as_str());
 
-        if let Some(ref s) = api_key {
-            req_builder = req_builder.query(&[("api_key", &s.to_string())]);
-        }
         req_builder = req_builder.query(&[("session_id", &session_id.to_string())]);
         if let Some(ref s) = language {
             req_builder = req_builder.query(&[("language", &s.to_string())]);

@@ -281,7 +281,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_current_account_lists_paginated
 
-> crate::models::ListsPaginated get_current_account_lists_paginated(account_id, session_id, api_key, language)
+> crate::models::ListsPaginated get_current_account_lists_paginated(account_id, session_id, language)
 Get Created Lists
 
 Get all of the lists created by an account. Will invlude private lists if you are the owner.
@@ -293,7 +293,6 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **account_id** | **i32** |  | Required | 
 **session_id** | **String** |  | Required | 
-**api_key** | **String** |  |  | 
 **language** | **String** | Pass a ISO 639-1 value to display translated data for the fields that support it. |  | [default to <<language>>]
 
 ### Return type
