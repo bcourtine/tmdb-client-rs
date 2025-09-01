@@ -16,11 +16,11 @@ edition = "2021"
 
 [dependencies]
 chrono = "^0.4"
-flate2 = "^1.0"
+flate2 = "^1.1"
 serde = "^1.0"
 serde_derive = "^1.0"
 serde_json = "^1.0"
-serde_with = "^3.0"
+serde_with = "^3.14"
 thiserror = "2.0"
 url = "2.5"
 reqwest = { version = "0.12", features = ["json", "gzip", "blocking"] }
