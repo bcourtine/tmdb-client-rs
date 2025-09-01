@@ -42,7 +42,7 @@ pub fn get_ids<T>(export_type: impl AsRef<str>, export_date: NaiveDate) -> Resul
     let file_name = format!("{}_ids_{}.json.gz", export_type.as_ref(), file_date);
     let url = format!("{}/{}", EXPORT_BASE_URL, &file_name);
 
-    let response = reqwest::get(&url)?;
+    let response = reqwest::blocking::get(&url)?;
     let response_buffered = BufReader::new(response);
     let uncompressed_content = GzDecoder::new(response_buffered);
     let uncompressed_content_buffered = BufReader::new(uncompressed_content);

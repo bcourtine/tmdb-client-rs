@@ -13,7 +13,7 @@ use reqwest;
 pub struct Configuration {
     pub base_path: String,
     pub user_agent: Option<String>,
-    pub client: reqwest::Client,
+    pub client: reqwest::blocking::Client,
     pub api_key: Option<String>,
 }
 
@@ -34,7 +34,7 @@ impl Default for Configuration {
         Configuration {
             base_path: "https://api.themoviedb.org/3".to_owned(),
             user_agent: Some("OpenAPI-Generator/3/rust".to_owned()),
-            client: reqwest::Client::new(),
+            client: reqwest::blocking::Client::new(),
             api_key: None,
         }
     }
