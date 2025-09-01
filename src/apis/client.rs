@@ -4,7 +4,6 @@ use std::rc::Rc;
 use super::configuration::Configuration;
 
 pub struct APIClient {
-    configuration: Rc<Configuration>,
     account_api: Box<dyn crate::apis::AccountApi>,
     authentication_api: Box<dyn crate::apis::AuthenticationApi>,
     certifications_api: Box<dyn crate::apis::CertificationsApi>,
@@ -35,7 +34,6 @@ impl APIClient {
         let rc = Rc::new(configuration);
 
         APIClient {
-            configuration: rc.clone(),
             account_api: Box::new(crate::apis::AccountApiClient::new(rc.clone())),
             authentication_api: Box::new(crate::apis::AuthenticationApiClient::new(rc.clone())),
             certifications_api: Box::new(crate::apis::CertificationsApiClient::new(rc.clone())),
