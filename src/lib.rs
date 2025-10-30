@@ -3,6 +3,8 @@ extern crate serde_derive;
 
 pub mod apis;
 pub mod models;
+
+#[cfg(feature = "daily-exports")]
 pub mod files;
 
 #[derive(thiserror::Error, Debug)]

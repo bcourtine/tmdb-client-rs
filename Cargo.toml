@@ -16,7 +16,7 @@ edition = "2021"
 
 [dependencies]
 chrono = "^0.4"
-flate2 = "^1.1"
+flate2 = { version = "^1.1", optional = true }
 serde = "^1.0"
 serde_derive = "^1.0"
 serde_json = "^1.0"
@@ -29,5 +29,6 @@ reqwest = { version = "0.12", default-features = false, features = ["json", "gzi
 default = ["native-tls"]
 native-tls = ["reqwest/default-tls"]
 rustls-tls = ["reqwest/rustls-tls"]
+daily-exports = ["dep:flate2"]
 
 [dev-dependencies]

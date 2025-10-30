@@ -58,7 +58,7 @@ All API clients share a single `Configuration` wrapped in `Rc` for efficient clo
   - `client.rs` - Main `APIClient` facade that aggregates all API clients
   - `configuration.rs` - HTTP client configuration (base URL, user agent, API key)
 - `src/models/` - Data models for requests/responses (auto-generated from OpenAPI spec)
-- `src/files/` - Helper functions for downloading and parsing TMDB daily export files
+- `src/files/` - Helper functions for downloading and parsing TMDB daily export files (requires `daily-exports` feature)
   - `exports.rs` - Functions to fetch gzipped JSON exports for movies, TV shows, people, etc.
   - `models.rs` - Models for exported ID data structures
 
@@ -73,7 +73,7 @@ Unified error type in `src/lib.rs` using `thiserror`:
 - `serde` / `serde_json` - Serialization
 - `serde_with` (3.14+) - Handles TMDB's inconsistent API (fields that can be String or Int)
 - `chrono` - Date/time handling for releases and daily exports
-- `flate2` - Decompress gzipped daily export files
+- `flate2` (optional, requires `daily-exports` feature) - Decompress gzipped daily export files
 
 ### Important Implementation Details
 
@@ -83,7 +83,7 @@ Unified error type in `src/lib.rs` using `thiserror`:
 
 **Optional Append-To-Response**: Many TMDB endpoints support an `append_to_response` parameter that allows fetching related data in a single request (e.g., credits, videos, images). When this parameter is not provided, the corresponding fields in response models will be `None`.
 
-**Daily Export Files**: The `files` module provides utilities to download TMDB's daily export files (http://files.tmdb.org/p/exports). These are gzipped newline-delimited JSON files containing entity IDs and basic metadata.
+**Daily Export Files**: The `files` module (requires `daily-exports` feature) provides utilities to download TMDB's daily export files (http://files.tmdb.org/p/exports). These are gzipped newline-delimited JSON files containing entity IDs and basic metadata. This feature is optional and must be explicitly enabled in `Cargo.toml`.
 
 ## Testing Strategy
 
