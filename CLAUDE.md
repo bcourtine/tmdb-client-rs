@@ -10,19 +10,43 @@ This is a Rust API client library for The Movie Database (TMDB) API, generated f
 
 ### Build
 ```bash
+# Default (blocking + native-tls)
 cargo build
+
+# Async only (smaller binary)
+cargo build --no-default-features --features "async,native-tls"
+
+# Both blocking and async
+cargo build --features "blocking,async"
 ```
 
 ### Run Tests
 Tests require a TMDB API key set in the `TMDB_API_KEY` environment variable:
 ```bash
 export TMDB_API_KEY="your_api_key_here"
+
+# Run all tests (requires blocking feature, which is default)
 cargo test
+
+# Run tests without daily-exports tests
+cargo test --no-default-features --features "blocking,native-tls"
+
+# Run with daily-exports tests
+cargo test --features "blocking,daily-exports"
 ```
 
 To run a single test:
 ```bash
 cargo test <test_name>
+```
+
+**Note**: Most tests require the `blocking` feature (enabled by default). The `external_id_tests` require the `daily-exports` feature.
+
+### Run Examples
+```bash
+# Async example
+export TMDB_API_KEY="your_api_key_here"
+cargo run --example async_example --no-default-features --features "async,native-tls"
 ```
 
 ### Documentation
@@ -44,13 +68,32 @@ cargo upgrade  # Updates dependencies
 ## Architecture
 
 ### Client Initialization Pattern
-The library uses a centralized `APIClient` that manages all API endpoint clients. Three initialization methods are available:
 
-1. `APIClient::new(configuration)` - With custom configuration
-2. `APIClient::new_with_api_key(api_key)` - Direct API key
-3. `APIClient::new_from_env()` - Reads from `TMDB_API_KEY` env var
+The library provides **two client implementations**:
 
-All API clients share a single `Configuration` wrapped in `Rc` for efficient cloning and shared state management.
+#### 1. Blocking (Synchronous) Client
+- Uses `reqwest::blocking::Client` for synchronous HTTP requests
+- Located in `src/apis/`
+- Entry point: `APIClient` from `tmdb_client::apis::client`
+- Configuration wrapped in `Rc` for shared state
+- Initialization methods:
+  - `APIClient::new(configuration)` - With custom configuration
+  - `APIClient::new_with_api_key(api_key)` - Direct API key
+  - `APIClient::new_from_env()` - Reads from `TMDB_API_KEY` env var
+
+#### 2. Async Client (NEW in 1.9.0)
+- Uses `reqwest::Client` for asynchronous HTTP requests with tokio
+- Located in `src/async_apis/`
+- Entry point: `AsyncAPIClient` from `tmdb_client::async_apis`
+- Configuration wrapped in `Arc` for thread-safe shared state
+- All methods are `async` and must be `.await`ed
+- Requires `#[async_trait]` for trait definitions (handled automatically)
+- Initialization methods (same as blocking):
+  - `AsyncAPIClient::new(configuration)`
+  - `AsyncAPIClient::new_with_api_key(api_key)`
+  - `AsyncAPIClient::new_from_env()`
+
+Both clients share the same models (`src/models/`) and error types.
 
 ### Module Structure
 - `src/apis/` - API endpoint implementations (one file per TMDB API category)
@@ -69,7 +112,9 @@ Unified error type in `src/lib.rs` using `thiserror`:
 - `Error::Io` - I/O errors (file operations)
 
 ### Key Dependencies
-- `reqwest` (0.12) - HTTP client with blocking API, JSON and gzip support
+- `reqwest` (0.12) - HTTP client with both blocking and async APIs, JSON and gzip support
+- `tokio` (1.47+, optional) - Async runtime for async features
+- `async-trait` (0.1, optional) - Enables async traits for async API
 - `serde` / `serde_json` - Serialization
 - `serde_with` (3.14+) - Handles TMDB's inconsistent API (fields that can be String or Int)
 - `chrono` - Date/time handling for releases and daily exports
@@ -79,7 +124,11 @@ Unified error type in `src/lib.rs` using `thiserror`:
 
 **TMDB API Inconsistencies**: The API sometimes returns inconsistent types for the same field (e.g., a field might be a String in one response and an Int in another). The library uses the `serde_with` crate to handle these cases gracefully. If you encounter deserialization errors, check if a field needs flexible type handling.
 
-**Blocking Client**: This library uses `reqwest::blocking::Client`. All API calls are synchronous/blocking.
+**Blocking vs Async**:
+- The blocking client uses `reqwest::blocking::Client` - all API calls are synchronous
+- The async client uses `reqwest::Client` - all API calls return `Future`s that must be `.await`ed
+- Both clients share the same models and can coexist in the same project
+- The async client is thread-safe (`Send + Sync`) and uses `Arc` instead of `Rc`
 
 **Optional Append-To-Response**: Many TMDB endpoints support an `append_to_response` parameter that allows fetching related data in a single request (e.g., credits, videos, images). When this parameter is not provided, the corresponding fields in response models will be `None`.
 

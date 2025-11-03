@@ -1,3 +1,5 @@
+#![cfg(feature = "blocking")]
+
 
 use tmdb_client::apis::client::APIClient;
 

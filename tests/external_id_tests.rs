@@ -1,3 +1,5 @@
+#![cfg(feature = "daily-exports")]
+
 use chrono::Duration;
 use chrono::Local;
 
