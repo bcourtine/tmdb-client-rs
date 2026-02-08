@@ -10,6 +10,8 @@
 
 #[derive(Debug, Serialize, Deserialize, Clone, Default)]
 pub struct TvDetails {
+    #[serde(rename = "adult", skip_serializing_if = "Option::is_none")]
+    pub adult: Option<bool>,
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
     pub backdrop_path: Option<String>,
     #[serde(rename = "created_by", skip_serializing_if = "Option::is_none")]
@@ -92,7 +94,10 @@ pub struct TvDetails {
     pub reviews: Option<crate::models::ReviewsPaginated>,
     #[serde(rename = "similar", skip_serializing_if = "Option::is_none")]
     pub screened_theatrically: Option<crate::models::SeasonEpisodeList>,
-    #[serde(rename = "screened_theatrically", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "screened_theatrically",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub similar: Option<crate::models::TvPaginated>,
     #[serde(rename = "translations", skip_serializing_if = "Option::is_none")]
     pub translations: Option<crate::models::TranslationsList>,
