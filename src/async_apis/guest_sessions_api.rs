@@ -29,8 +29,9 @@ impl GuestSessionsApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait GuestSessionsApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait GuestSessionsApi: crate::async_apis::SendSync {
     async fn get_guest_session_rated_movies_paginated(
         &self,
         guest_session_id: &str,
@@ -51,7 +52,8 @@ pub trait GuestSessionsApi {
     ) -> Result<crate::models::TvPaginated, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl GuestSessionsApi for GuestSessionsApiClient {
     async fn get_guest_session_rated_movies_paginated(
         &self,

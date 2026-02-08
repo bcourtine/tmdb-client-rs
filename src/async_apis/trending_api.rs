@@ -28,8 +28,9 @@ impl TrendingApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait TrendingApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait TrendingApi: crate::async_apis::SendSync {
     async fn get_trending_paginated(
         &self,
         media_type: &crate::models::MediaType,
@@ -37,7 +38,8 @@ pub trait TrendingApi {
     ) -> Result<crate::models::SearchMultiResultsPaginated, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl TrendingApi for TrendingApiClient {
     async fn get_trending_paginated(
         &self,

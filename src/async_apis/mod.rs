@@ -39,8 +39,8 @@ pub mod tv_seasons_api;
 pub mod client;
 
 // Re-exports for convenience
-pub use configuration::Configuration;
 pub use client::AsyncAPIClient;
+pub use configuration::Configuration;
 
 // Re-export all API traits
 pub use account_api::{AccountApi, AccountApiClient};
@@ -72,3 +72,13 @@ pub use tv_seasons_api::{TVSeasonsApi, TVSeasonsApiClient};
 pub fn urlencode<T: AsRef<str>>(s: T) -> String {
     url::form_urlencoded::byte_serialize(s.as_ref().as_bytes()).collect()
 }
+
+#[cfg(not(target_arch = "wasm32"))]
+pub trait SendSync: Send + Sync {}
+#[cfg(not(target_arch = "wasm32"))]
+impl<T: Send + Sync> SendSync for T {}
+
+#[cfg(target_arch = "wasm32")]
+pub trait SendSync {}
+#[cfg(target_arch = "wasm32")]
+impl<T> SendSync for T {}

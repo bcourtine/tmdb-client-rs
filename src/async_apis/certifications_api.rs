@@ -28,13 +28,15 @@ impl CertificationsApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait CertificationsApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait CertificationsApi: crate::async_apis::SendSync {
     async fn get_movie_certifications_list(&self) -> Result<crate::models::Certifications, Error>;
     async fn get_tv_certifications_list(&self) -> Result<crate::models::Certifications, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl CertificationsApi for CertificationsApiClient {
     async fn get_movie_certifications_list(&self) -> Result<crate::models::Certifications, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();

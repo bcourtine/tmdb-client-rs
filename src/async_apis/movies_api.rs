@@ -29,8 +29,9 @@ impl MoviesApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait MoviesApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait MoviesApi: crate::async_apis::SendSync {
     async fn delete_movie_rating(
         &self,
         movie_id: i32,
@@ -158,7 +159,8 @@ pub trait MoviesApi {
     ) -> Result<crate::models::StatusCodeMessage, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl MoviesApi for MoviesApiClient {
     async fn delete_movie_rating(
         &self,

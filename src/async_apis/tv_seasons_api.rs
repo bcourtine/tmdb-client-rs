@@ -29,8 +29,9 @@ impl TVSeasonsApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait TVSeasonsApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait TVSeasonsApi: crate::async_apis::SendSync {
     async fn get_tv_season_account_states(
         &self,
         tv_id: i32,
@@ -81,7 +82,8 @@ pub trait TVSeasonsApi {
     ) -> Result<crate::models::VideosList, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl TVSeasonsApi for TVSeasonsApiClient {
     async fn get_tv_season_account_states(
         &self,

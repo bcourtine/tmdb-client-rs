@@ -51,30 +51,30 @@ use super::configuration::Configuration;
 /// # }
 /// ```
 pub struct AsyncAPIClient {
-    account_api: Box<dyn crate::async_apis::AccountApi + Send + Sync>,
-    authentication_api: Box<dyn crate::async_apis::AuthenticationApi + Send + Sync>,
-    certifications_api: Box<dyn crate::async_apis::CertificationsApi + Send + Sync>,
-    changes_api: Box<dyn crate::async_apis::ChangesApi + Send + Sync>,
-    collections_api: Box<dyn crate::async_apis::CollectionsApi + Send + Sync>,
-    companies_api: Box<dyn crate::async_apis::CompaniesApi + Send + Sync>,
-    configuration_api: Box<dyn crate::async_apis::ConfigurationApi + Send + Sync>,
-    credits_api: Box<dyn crate::async_apis::CreditsApi + Send + Sync>,
-    discover_api: Box<dyn crate::async_apis::DiscoverApi + Send + Sync>,
-    find_api: Box<dyn crate::async_apis::FindApi + Send + Sync>,
-    genres_api: Box<dyn crate::async_apis::GenresApi + Send + Sync>,
-    guest_sessions_api: Box<dyn crate::async_apis::GuestSessionsApi + Send + Sync>,
-    keywords_api: Box<dyn crate::async_apis::KeywordsApi + Send + Sync>,
-    lists_api: Box<dyn crate::async_apis::ListsApi + Send + Sync>,
-    movies_api: Box<dyn crate::async_apis::MoviesApi + Send + Sync>,
-    networks_api: Box<dyn crate::async_apis::NetworksApi + Send + Sync>,
-    people_api: Box<dyn crate::async_apis::PeopleApi + Send + Sync>,
-    reviews_api: Box<dyn crate::async_apis::ReviewsApi + Send + Sync>,
-    search_api: Box<dyn crate::async_apis::SearchApi + Send + Sync>,
-    trending_api: Box<dyn crate::async_apis::TrendingApi + Send + Sync>,
-    tv_api: Box<dyn crate::async_apis::TVApi + Send + Sync>,
-    tv_episodes_api: Box<dyn crate::async_apis::TVEpisodesApi + Send + Sync>,
-    tv_seasons_api: Box<dyn crate::async_apis::TVSeasonsApi + Send + Sync>,
-    tv_episode_groups_api: Box<dyn crate::async_apis::TVEpisodeGroupsApi + Send + Sync>,
+    account_api: Box<dyn crate::async_apis::AccountApi>,
+    authentication_api: Box<dyn crate::async_apis::AuthenticationApi>,
+    certifications_api: Box<dyn crate::async_apis::CertificationsApi>,
+    changes_api: Box<dyn crate::async_apis::ChangesApi>,
+    collections_api: Box<dyn crate::async_apis::CollectionsApi>,
+    companies_api: Box<dyn crate::async_apis::CompaniesApi>,
+    configuration_api: Box<dyn crate::async_apis::ConfigurationApi>,
+    credits_api: Box<dyn crate::async_apis::CreditsApi>,
+    discover_api: Box<dyn crate::async_apis::DiscoverApi>,
+    find_api: Box<dyn crate::async_apis::FindApi>,
+    genres_api: Box<dyn crate::async_apis::GenresApi>,
+    guest_sessions_api: Box<dyn crate::async_apis::GuestSessionsApi>,
+    keywords_api: Box<dyn crate::async_apis::KeywordsApi>,
+    lists_api: Box<dyn crate::async_apis::ListsApi>,
+    movies_api: Box<dyn crate::async_apis::MoviesApi>,
+    networks_api: Box<dyn crate::async_apis::NetworksApi>,
+    people_api: Box<dyn crate::async_apis::PeopleApi>,
+    reviews_api: Box<dyn crate::async_apis::ReviewsApi>,
+    search_api: Box<dyn crate::async_apis::SearchApi>,
+    trending_api: Box<dyn crate::async_apis::TrendingApi>,
+    tv_api: Box<dyn crate::async_apis::TVApi>,
+    tv_episodes_api: Box<dyn crate::async_apis::TVEpisodesApi>,
+    tv_seasons_api: Box<dyn crate::async_apis::TVSeasonsApi>,
+    tv_episode_groups_api: Box<dyn crate::async_apis::TVEpisodeGroupsApi>,
 }
 
 impl AsyncAPIClient {
@@ -88,17 +88,25 @@ impl AsyncAPIClient {
 
         AsyncAPIClient {
             account_api: Box::new(crate::async_apis::AccountApiClient::new(arc.clone())),
-            authentication_api: Box::new(crate::async_apis::AuthenticationApiClient::new(arc.clone())),
-            certifications_api: Box::new(crate::async_apis::CertificationsApiClient::new(arc.clone())),
+            authentication_api: Box::new(crate::async_apis::AuthenticationApiClient::new(
+                arc.clone(),
+            )),
+            certifications_api: Box::new(crate::async_apis::CertificationsApiClient::new(
+                arc.clone(),
+            )),
             changes_api: Box::new(crate::async_apis::ChangesApiClient::new(arc.clone())),
             collections_api: Box::new(crate::async_apis::CollectionsApiClient::new(arc.clone())),
             companies_api: Box::new(crate::async_apis::CompaniesApiClient::new(arc.clone())),
-            configuration_api: Box::new(crate::async_apis::ConfigurationApiClient::new(arc.clone())),
+            configuration_api: Box::new(crate::async_apis::ConfigurationApiClient::new(
+                arc.clone(),
+            )),
             credits_api: Box::new(crate::async_apis::CreditsApiClient::new(arc.clone())),
             discover_api: Box::new(crate::async_apis::DiscoverApiClient::new(arc.clone())),
             find_api: Box::new(crate::async_apis::FindApiClient::new(arc.clone())),
             genres_api: Box::new(crate::async_apis::GenresApiClient::new(arc.clone())),
-            guest_sessions_api: Box::new(crate::async_apis::GuestSessionsApiClient::new(arc.clone())),
+            guest_sessions_api: Box::new(crate::async_apis::GuestSessionsApiClient::new(
+                arc.clone(),
+            )),
             keywords_api: Box::new(crate::async_apis::KeywordsApiClient::new(arc.clone())),
             lists_api: Box::new(crate::async_apis::ListsApiClient::new(arc.clone())),
             movies_api: Box::new(crate::async_apis::MoviesApiClient::new(arc.clone())),
@@ -110,7 +118,9 @@ impl AsyncAPIClient {
             tv_api: Box::new(crate::async_apis::TVApiClient::new(arc.clone())),
             tv_episodes_api: Box::new(crate::async_apis::TVEpisodesApiClient::new(arc.clone())),
             tv_seasons_api: Box::new(crate::async_apis::TVSeasonsApiClient::new(arc.clone())),
-            tv_episode_groups_api: Box::new(crate::async_apis::TVEpisodeGroupsApiClient::new(arc.clone())),
+            tv_episode_groups_api: Box::new(crate::async_apis::TVEpisodeGroupsApiClient::new(
+                arc.clone(),
+            )),
         }
     }
 
@@ -136,99 +146,99 @@ impl AsyncAPIClient {
 
     // Accessor methods for all APIs
 
-    pub fn account_api(&self) -> &(dyn crate::async_apis::AccountApi + Send + Sync) {
+    pub fn account_api(&self) -> &(dyn crate::async_apis::AccountApi) {
         self.account_api.as_ref()
     }
 
-    pub fn authentication_api(&self) -> &(dyn crate::async_apis::AuthenticationApi + Send + Sync) {
+    pub fn authentication_api(&self) -> &(dyn crate::async_apis::AuthenticationApi) {
         self.authentication_api.as_ref()
     }
 
-    pub fn certifications_api(&self) -> &(dyn crate::async_apis::CertificationsApi + Send + Sync) {
+    pub fn certifications_api(&self) -> &(dyn crate::async_apis::CertificationsApi) {
         self.certifications_api.as_ref()
     }
 
-    pub fn changes_api(&self) -> &(dyn crate::async_apis::ChangesApi + Send + Sync) {
+    pub fn changes_api(&self) -> &(dyn crate::async_apis::ChangesApi) {
         self.changes_api.as_ref()
     }
 
-    pub fn collections_api(&self) -> &(dyn crate::async_apis::CollectionsApi + Send + Sync) {
+    pub fn collections_api(&self) -> &(dyn crate::async_apis::CollectionsApi) {
         self.collections_api.as_ref()
     }
 
-    pub fn companies_api(&self) -> &(dyn crate::async_apis::CompaniesApi + Send + Sync) {
+    pub fn companies_api(&self) -> &(dyn crate::async_apis::CompaniesApi) {
         self.companies_api.as_ref()
     }
 
-    pub fn configuration_api(&self) -> &(dyn crate::async_apis::ConfigurationApi + Send + Sync) {
+    pub fn configuration_api(&self) -> &(dyn crate::async_apis::ConfigurationApi) {
         self.configuration_api.as_ref()
     }
 
-    pub fn credits_api(&self) -> &(dyn crate::async_apis::CreditsApi + Send + Sync) {
+    pub fn credits_api(&self) -> &(dyn crate::async_apis::CreditsApi) {
         self.credits_api.as_ref()
     }
 
-    pub fn discover_api(&self) -> &(dyn crate::async_apis::DiscoverApi + Send + Sync) {
+    pub fn discover_api(&self) -> &(dyn crate::async_apis::DiscoverApi) {
         self.discover_api.as_ref()
     }
 
-    pub fn find_api(&self) -> &(dyn crate::async_apis::FindApi + Send + Sync) {
+    pub fn find_api(&self) -> &(dyn crate::async_apis::FindApi) {
         self.find_api.as_ref()
     }
 
-    pub fn genres_api(&self) -> &(dyn crate::async_apis::GenresApi + Send + Sync) {
+    pub fn genres_api(&self) -> &(dyn crate::async_apis::GenresApi) {
         self.genres_api.as_ref()
     }
 
-    pub fn guest_sessions_api(&self) -> &(dyn crate::async_apis::GuestSessionsApi + Send + Sync) {
+    pub fn guest_sessions_api(&self) -> &(dyn crate::async_apis::GuestSessionsApi) {
         self.guest_sessions_api.as_ref()
     }
 
-    pub fn keywords_api(&self) -> &(dyn crate::async_apis::KeywordsApi + Send + Sync) {
+    pub fn keywords_api(&self) -> &(dyn crate::async_apis::KeywordsApi) {
         self.keywords_api.as_ref()
     }
 
-    pub fn lists_api(&self) -> &(dyn crate::async_apis::ListsApi + Send + Sync) {
+    pub fn lists_api(&self) -> &(dyn crate::async_apis::ListsApi) {
         self.lists_api.as_ref()
     }
 
-    pub fn movies_api(&self) -> &(dyn crate::async_apis::MoviesApi + Send + Sync) {
+    pub fn movies_api(&self) -> &(dyn crate::async_apis::MoviesApi) {
         self.movies_api.as_ref()
     }
 
-    pub fn networks_api(&self) -> &(dyn crate::async_apis::NetworksApi + Send + Sync) {
+    pub fn networks_api(&self) -> &(dyn crate::async_apis::NetworksApi) {
         self.networks_api.as_ref()
     }
 
-    pub fn people_api(&self) -> &(dyn crate::async_apis::PeopleApi + Send + Sync) {
+    pub fn people_api(&self) -> &(dyn crate::async_apis::PeopleApi) {
         self.people_api.as_ref()
     }
 
-    pub fn reviews_api(&self) -> &(dyn crate::async_apis::ReviewsApi + Send + Sync) {
+    pub fn reviews_api(&self) -> &(dyn crate::async_apis::ReviewsApi) {
         self.reviews_api.as_ref()
     }
 
-    pub fn search_api(&self) -> &(dyn crate::async_apis::SearchApi + Send + Sync) {
+    pub fn search_api(&self) -> &(dyn crate::async_apis::SearchApi) {
         self.search_api.as_ref()
     }
 
-    pub fn trending_api(&self) -> &(dyn crate::async_apis::TrendingApi + Send + Sync) {
+    pub fn trending_api(&self) -> &(dyn crate::async_apis::TrendingApi) {
         self.trending_api.as_ref()
     }
 
-    pub fn tv_api(&self) -> &(dyn crate::async_apis::TVApi + Send + Sync) {
+    pub fn tv_api(&self) -> &(dyn crate::async_apis::TVApi) {
         self.tv_api.as_ref()
     }
 
-    pub fn tv_episodes_api(&self) -> &(dyn crate::async_apis::TVEpisodesApi + Send + Sync) {
+    pub fn tv_episodes_api(&self) -> &(dyn crate::async_apis::TVEpisodesApi) {
         self.tv_episodes_api.as_ref()
     }
 
-    pub fn tv_seasons_api(&self) -> &(dyn crate::async_apis::TVSeasonsApi + Send + Sync) {
+    pub fn tv_seasons_api(&self) -> &(dyn crate::async_apis::TVSeasonsApi) {
         self.tv_seasons_api.as_ref()
     }
 
-    pub fn tv_episode_groups_api(&self) -> &(dyn crate::async_apis::TVEpisodeGroupsApi + Send + Sync) {
+    pub fn tv_episode_groups_api(&self) -> &(dyn crate::async_apis::TVEpisodeGroupsApi) {
         self.tv_episode_groups_api.as_ref()
     }
 }

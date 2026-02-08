@@ -29,8 +29,9 @@ impl SearchApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait SearchApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait SearchApi: crate::async_apis::SendSync {
     async fn get_search_collection_paginated(
         &self,
         query: &str,
@@ -82,7 +83,8 @@ pub trait SearchApi {
     ) -> Result<crate::models::TvPaginated, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl SearchApi for SearchApiClient {
     async fn get_search_collection_paginated(
         &self,

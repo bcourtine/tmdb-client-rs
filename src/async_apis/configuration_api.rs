@@ -29,8 +29,9 @@ impl ConfigurationApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait ConfigurationApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait ConfigurationApi: crate::async_apis::SendSync {
     async fn get_configuration(
         &self,
         api_key: Option<&str>,
@@ -47,7 +48,8 @@ pub trait ConfigurationApi {
     async fn get_primary_translations_list(&self) -> Result<Vec<String>, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl ConfigurationApi for ConfigurationApiClient {
     async fn get_configuration(
         &self,

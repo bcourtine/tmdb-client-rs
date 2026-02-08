@@ -29,8 +29,9 @@ impl CollectionsApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait CollectionsApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait CollectionsApi: crate::async_apis::SendSync {
     async fn get_collection_details(
         &self,
         collection_id: i32,
@@ -48,7 +49,8 @@ pub trait CollectionsApi {
     ) -> Result<crate::models::TranslationsList, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl CollectionsApi for CollectionsApiClient {
     async fn get_collection_details(
         &self,

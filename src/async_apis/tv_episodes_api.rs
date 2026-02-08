@@ -29,8 +29,9 @@ impl TVEpisodesApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait TVEpisodesApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait TVEpisodesApi: crate::async_apis::SendSync {
     async fn delete_tv_season_episode_rating(
         &self,
         tv_id: i32,
@@ -109,7 +110,8 @@ pub trait TVEpisodesApi {
     ) -> Result<crate::models::StatusCodeMessage, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl TVEpisodesApi for TVEpisodesApiClient {
     async fn delete_tv_season_episode_rating(
         &self,

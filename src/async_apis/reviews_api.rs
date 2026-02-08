@@ -28,12 +28,14 @@ impl ReviewsApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait ReviewsApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait ReviewsApi: crate::async_apis::SendSync {
     async fn get_review_details(&self, review_id: &str) -> Result<crate::models::Review, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl ReviewsApi for ReviewsApiClient {
     async fn get_review_details(&self, review_id: &str) -> Result<crate::models::Review, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();

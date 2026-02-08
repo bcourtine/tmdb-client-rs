@@ -62,6 +62,22 @@ tmdb_client = { version = "1.9.0", features = ["blocking", "async"] }
 
 See the [Async Usage Example](#async-usage-example) section below for details.
 
+#### WASM Support (NEW in 1.9.0)
+
+The library supports compilation to `wasm32-unknown-unknown` target. This allows you to use the library in web applications (e.g., with `wasm-bindgen`, `yew`, `leptos`).
+
+**Configuration:**
+To use on WASM, you must disable default features (to avoid `native-tls` and `blocking`) and enable `async`.
+
+```toml
+tmdb_client = { version = "1.9.0", default-features = false, features = ["async"] }
+```
+
+**Note:**
+- Only `async` APIs are available on WASM.
+- `reqwest` is used with `fetch` API internally.
+
+
 #### SSL/TLS Backend
 
 By default, the library uses `native-tls` for SSL/TLS connections. You can choose an alternative TLS implementation by disabling default features and selecting the desired backend:

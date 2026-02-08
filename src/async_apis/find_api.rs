@@ -29,8 +29,9 @@ impl FindApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait FindApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait FindApi: crate::async_apis::SendSync {
     async fn get_find_external_id(
         &self,
         external_id: &str,
@@ -39,7 +40,8 @@ pub trait FindApi {
     ) -> Result<crate::models::FindByExternalIdResults, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl FindApi for FindApiClient {
     async fn get_find_external_id(
         &self,
