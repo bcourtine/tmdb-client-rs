@@ -1,12 +1,13 @@
 #![cfg(feature = "blocking")]
 
-
 use tmdb_client::apis::client::APIClient;
 
 #[test]
 fn movie_by_id_should_give_results() {
     let client = APIClient::new_from_env();
-    let result = client.movies_api().get_movie_details(19995, None, None, None);
+    let result = client
+        .movies_api()
+        .get_movie_details(19995, None, None, None);
     let movie = result.expect("Error querying movie 19995 (Avatar)");
 
     assert_eq!(movie.title, Some("Avatar".to_owned()));
@@ -29,7 +30,7 @@ fn appends_to_movie_by_id_should_be_valuated() {
         19995,
         None,
         None,
-        Some("credits,videos,images,release_dates,translations,keywords,reviews,external_ids"),
+        Some("credits,videos,images,release_dates,translations,keywords,reviews,external_ids,alternative_titles"),
     );
     let movie = result.expect("Error querying movie 19995 (Avatar)");
 
@@ -44,6 +45,9 @@ fn appends_to_movie_by_id_should_be_valuated() {
     assert!(movie.keywords.is_some());
     assert!(movie.reviews.is_some());
     assert!(movie.external_ids.is_some());
+    assert!(movie.alternative_titles.is_some());
+    // Verify the type has 'titles' field
+    let _ = movie.alternative_titles.unwrap().titles;
 }
 
 #[test]

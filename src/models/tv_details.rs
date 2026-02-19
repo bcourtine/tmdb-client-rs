@@ -69,7 +69,7 @@ pub struct TvDetails {
     pub vote_count: Option<i32>,
     // "append-to" options
     #[serde(rename = "alternative_titles", skip_serializing_if = "Option::is_none")]
-    pub alternative_titles: Option<crate::models::Credits>,
+    pub alternative_titles: Option<crate::models::TvAlternativeTitlesList>,
     #[serde(rename = "changes", skip_serializing_if = "Option::is_none")]
     pub changes: Option<crate::models::ChangeDetails>,
     #[serde(rename = "content_ratings", skip_serializing_if = "Option::is_none")]
