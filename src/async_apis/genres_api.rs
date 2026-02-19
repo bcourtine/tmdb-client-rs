@@ -29,8 +29,9 @@ impl GenresApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait GenresApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait GenresApi: crate::async_apis::SendSync {
     async fn get_all_movie_genres_list(
         &self,
         language: Option<&str>,
@@ -48,7 +49,8 @@ pub trait GenresApi {
     ) -> Result<crate::models::MoviePaginated, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl GenresApi for GenresApiClient {
     async fn get_all_movie_genres_list(
         &self,

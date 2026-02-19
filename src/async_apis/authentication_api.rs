@@ -28,8 +28,9 @@ impl AuthenticationApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait AuthenticationApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait AuthenticationApi: crate::async_apis::SendSync {
     async fn delete_authentication_session(&self, session_id: &str) -> Result<crate::models::SuccessResponse, Error>;
     async fn get_new_authentication_guest_session(&self) -> Result<crate::models::GuestSessionResponse, Error>;
     async fn get_new_authentication_session(&self, request_token: &str) -> Result<crate::models::SessionResponse, Error>;
@@ -43,7 +44,8 @@ pub trait AuthenticationApi {
     async fn post_authentication_session_convert4(&self, body: crate::models::AccessTokenBody) -> Result<crate::models::SessionResponse, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl AuthenticationApi for AuthenticationApiClient {
     async fn delete_authentication_session(&self, session_id: &str) -> Result<crate::models::SuccessResponse, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();

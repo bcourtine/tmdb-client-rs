@@ -29,8 +29,9 @@ impl AccountApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait AccountApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait AccountApi: crate::async_apis::SendSync {
     async fn get_account_favorite_movies_paginated(
         &self,
         account_id: i32,
@@ -106,7 +107,8 @@ pub trait AccountApi {
     ) -> Result<crate::models::StatusCodeMessage, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl AccountApi for AccountApiClient {
     async fn get_account_favorite_movies_paginated(
         &self,

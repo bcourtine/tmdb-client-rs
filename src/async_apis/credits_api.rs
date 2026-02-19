@@ -28,12 +28,14 @@ impl CreditsApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait CreditsApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait CreditsApi: crate::async_apis::SendSync {
     async fn get_credit_details(&self, credit_id: &str) -> Result<crate::models::Credit, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl CreditsApi for CreditsApiClient {
     async fn get_credit_details(&self, credit_id: &str) -> Result<crate::models::Credit, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();

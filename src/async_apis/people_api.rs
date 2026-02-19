@@ -29,8 +29,9 @@ impl PeopleApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait PeopleApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait PeopleApi: crate::async_apis::SendSync {
     async fn get_person_changes(
         &self,
         person_id: i32,
@@ -95,7 +96,8 @@ pub trait PeopleApi {
     ) -> Result<crate::models::PersonCredits, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl PeopleApi for PeopleApiClient {
     async fn get_person_changes(
         &self,

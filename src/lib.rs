@@ -1,7 +1,7 @@
 #[macro_use]
 extern crate serde_derive;
 
-#[cfg(feature = "blocking")]
+#[cfg(all(feature = "blocking", not(target_arch = "wasm32")))]
 pub mod apis;
 
 pub mod models;
@@ -16,10 +16,10 @@ pub mod async_apis;
 pub enum Error {
     #[error("HTTP request error")]
     Reqwest(#[from] reqwest::Error),
-    
+
     #[error("JSON serialization/deserialization error")]
     Serde(#[from] serde_json::Error),
-    
+
     #[error("I/O error")]
     Io(#[from] std::io::Error),
 }

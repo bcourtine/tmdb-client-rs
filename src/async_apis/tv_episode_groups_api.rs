@@ -28,12 +28,14 @@ impl TVEpisodeGroupsApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait TVEpisodeGroupsApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait TVEpisodeGroupsApi: crate::async_apis::SendSync {
     async fn get_episode_group_details(&self, episode_group_id: &str, language: Option<&str>,) -> Result<crate::models::EpisodeGroupDetails, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl TVEpisodeGroupsApi for TVEpisodeGroupsApiClient {
     async fn get_episode_group_details(&self, episode_group_id: &str, language: Option<&str>,) -> Result<crate::models::EpisodeGroupDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();

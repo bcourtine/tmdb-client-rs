@@ -28,14 +28,16 @@ impl NetworksApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait NetworksApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait NetworksApi: crate::async_apis::SendSync {
     async fn get_network_details(&self, network_id: i32) -> Result<crate::models::Network, Error>;
     async fn get_network_alternative_names_list(&self, network_id: i32) -> Result<crate::models::AlternativeNamesList, Error>;
     async fn get_network_images(&self, network_id: i32) -> Result<crate::models::Images, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl NetworksApi for NetworksApiClient {
     async fn get_network_details(&self, network_id: i32) -> Result<crate::models::Network, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();

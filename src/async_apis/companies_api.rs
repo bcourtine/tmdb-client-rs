@@ -29,8 +29,9 @@ impl CompaniesApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait CompaniesApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait CompaniesApi: crate::async_apis::SendSync {
     async fn get_company_details(&self, company_id: i32) -> Result<crate::models::CompanyDetails, Error>;
     async fn get_company_movies_paginated(
         &self,
@@ -40,7 +41,8 @@ pub trait CompaniesApi {
     async fn get_company_images(&self, company_id: i32) -> Result<crate::models::Images, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl CompaniesApi for CompaniesApiClient {
     async fn get_company_details(&self, company_id: i32) -> Result<crate::models::CompanyDetails, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();

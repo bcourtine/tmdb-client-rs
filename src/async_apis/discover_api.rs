@@ -29,8 +29,9 @@ impl DiscoverApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait DiscoverApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait DiscoverApi: crate::async_apis::SendSync {
     async fn get_discover_movie_paginated(
         &self,
         sort_by: Option<&str>,
@@ -89,7 +90,8 @@ pub trait DiscoverApi {
     ) -> Result<crate::models::TvPaginated, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl DiscoverApi for DiscoverApiClient {
     async fn get_discover_movie_paginated(
         &self,

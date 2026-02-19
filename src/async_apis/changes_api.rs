@@ -29,8 +29,9 @@ impl ChangesApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait ChangesApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait ChangesApi: crate::async_apis::SendSync {
     async fn get_movie_changes_paginated(
         &self,
         start_date: Option<String>,
@@ -51,7 +52,8 @@ pub trait ChangesApi {
     ) -> Result<crate::models::ChangesPaginated, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl ChangesApi for ChangesApiClient {
     async fn get_movie_changes_paginated(
         &self,

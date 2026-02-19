@@ -29,8 +29,9 @@ impl TVApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait TVApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait TVApi: crate::async_apis::SendSync {
     async fn delete_tv_rating(
         &self,
         tv_id: i32,
@@ -144,7 +145,8 @@ pub trait TVApi {
     ) -> Result<crate::models::StatusCodeMessage, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl TVApi for TVApiClient {
     async fn delete_tv_rating(
         &self,

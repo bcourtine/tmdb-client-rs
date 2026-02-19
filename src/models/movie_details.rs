@@ -14,7 +14,10 @@ pub struct MovieDetails {
     pub adult: Option<bool>,
     #[serde(rename = "backdrop_path", skip_serializing_if = "Option::is_none")]
     pub backdrop_path: Option<String>,
-    #[serde(rename = "belongs_to_collection", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "belongs_to_collection",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub belongs_to_collection: Option<serde_json::Value>,
     #[serde(rename = "budget", skip_serializing_if = "Option::is_none")]
     pub budget: Option<i64>,
@@ -68,7 +71,7 @@ pub struct MovieDetails {
     pub vote_count: Option<i32>,
     // "append-to" options
     #[serde(rename = "alternative_titles", skip_serializing_if = "Option::is_none")]
-    pub alternative_titles: Option<crate::models::Credits>,
+    pub alternative_titles: Option<crate::models::MovieAlternativeTitlesList>,
     #[serde(rename = "changes", skip_serializing_if = "Option::is_none")]
     pub changes: Option<crate::models::ChangeDetails>,
     #[serde(rename = "credits", skip_serializing_if = "Option::is_none")]

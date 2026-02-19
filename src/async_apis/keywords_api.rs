@@ -29,8 +29,9 @@ impl KeywordsApiClient {
     }
 }
 
-#[async_trait::async_trait]
-pub trait KeywordsApi {
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
+pub trait KeywordsApi: crate::async_apis::SendSync {
     async fn get_keyword_details(&self, keyword_id: i32) -> Result<crate::models::Keyword, Error>;
     async fn get_movies_by_keyword_paginated(
         &self,
@@ -40,7 +41,8 @@ pub trait KeywordsApi {
     ) -> Result<crate::models::MoviePaginated, Error>;
 }
 
-#[async_trait::async_trait]
+#[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]
+#[cfg_attr(not(target_arch = "wasm32"), async_trait::async_trait)]
 impl KeywordsApi for KeywordsApiClient {
     async fn get_keyword_details(&self, keyword_id: i32) -> Result<crate::models::Keyword, Error> {
         let configuration: &configuration::Configuration = self.configuration.borrow();
